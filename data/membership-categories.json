@@ -1,0 +1,257 @@
+[
+  {
+    "id": "adult",
+    "title": "Adult Memberships",
+    "blurb": "Our adult memberships are designed to reward long-term commitments with lower rates while still offering flexible options for those who prefer shorter durations. The pricing progression reflects the value we provide as a high-level strength and conditioning facility, emphasising the benefits of staying committed to a structured training program.",
+    "plans": [
+      {
+        "id": "adult-12",
+        "term": "12-MONTH",
+        "price": "$50",
+        "cycle": "/week",
+        "tagline": "Best value for long-term commitment",
+        "image": "/image/memberships/adult/12-month.jpg",
+        "features": [
+          "Unlimited Classes",
+          "Use of gym (after S&C Consultation)",
+          "1st Force Plates benchmark test (FREE)",
+          "1st S&C consultation /program (FREE)",
+          "Physio Led Screening (FREE)"
+        ]
+      },
+      {
+        "id": "adult-6",
+        "term": "6-MONTH",
+        "price": "$60",
+        "cycle": "/week",
+        "tagline": "Balance flexibility and commitment",
+        "image": "/image/memberships/adult/6-month.jpg",
+        "features": [
+          "Unlimited Classes",
+          "Use of gym (after S&C Consultation)",
+          "1st Force Plates benchmark test (FREE)",
+          "1st S&C consultation /program (FREE)",
+          "Physio Led Screening (FREE)"
+        ]
+      },
+      {
+        "id": "adult-3",
+        "term": "3-MONTH",
+        "price": "$65",
+        "cycle": "/week",
+        "tagline": "Ideal for those trialling our services with a shorter-term commitment",
+        "image": "/image/memberships/adult/3-month.jpg",
+        "features": [
+          "Unlimited Classes",
+          "Use of gym (after S&C Consultation)",
+          "1st Force Plates benchmark test (FREE)",
+          "1st S&C consultation /program (FREE)",
+          "Physio Led Screening (FREE)"
+        ]
+      },
+      {
+        "id": "adult-mtm",
+        "term": "MONTH-TO-MONTH",
+        "price": "$70",
+        "cycle": "/week",
+        "tagline": "Maximum flexibility for short term access",
+        "image": "/image/memberships/adult/month-to-month.jpg",
+        "features": [
+          "Unlimited Classes",
+          "Use of gym (after S&C Consultation)",
+          "1st Force Plates benchmark test (FREE)",
+          "1st S&C consultation /program (FREE)",
+          "Physio Led Screening (FREE)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "youth",
+    "title": "Youth Memberships",
+    "blurb": "We are committed to doing things the right way, not the quick way. Our Long-Term Youth Athlete Development (LTAD) model focuses on consistent, structured training to build competence and resilience over time. This is why we no longer offer month-to-month memberships for youth — short-term fixes don't deliver meaningful progress. Our goal is to set every young athlete on a path to long-term success.",
+    "plans": [
+      {
+        "id": "youth-12",
+        "term": "12-MONTH",
+        "price": "$42",
+        "cycle": "/week",
+        "tagline": "Provides the best value and supports long-term athletic development",
+        "image": "/image/memberships/youth/12-month.png",
+        "features": [
+          "Unlimited Youth Classes",
+          "Free S&C program — Development only",
+          "Physio Led Screening"
+        ]
+      },
+      {
+        "id": "youth-6",
+        "term": "6-MONTH",
+        "price": "$48",
+        "cycle": "/week",
+        "tagline": "Great for families looking for medium-term results",
+        "image": "/image/memberships/youth/6-month.jpg",
+        "features": [
+          "Unlimited Youth Classes",
+          "Free S&C program — Development only",
+          "Physio Led Screening"
+        ]
+      },
+      {
+        "id": "youth-3",
+        "term": "3-MONTH",
+        "price": "$52",
+        "cycle": "/week",
+        "tagline": "Suitable for those exploring the benefits of structured training",
+        "image": "/image/memberships/youth/3-month.jpg",
+        "features": [
+          "Unlimited Youth Classes",
+          "Free S&C program — Development only",
+          "Physio Led Screening"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "family",
+    "title": "Family Memberships",
+    "blurb": "Our family memberships save money while fostering health and fitness as a shared experience. Training together allows parents to role model healthy habits and spend quality time with their kids, creating a strong culture of wellness within the family.",
+    "plans": [
+      {
+        "id": "family-12",
+        "term": "12-MONTH",
+        "price": "$120",
+        "cycle": "/week",
+        "tagline": "Provides the best value and supports long-term athletic development",
+        "image": "/image/memberships/family/12-month.jpg",
+        "features": [
+          "Best value for families committed to long-term health and fitness",
+          "4 FAMILY members",
+          "Unlimited Classes",
+          "Free Force Plates benchmark (Adults)",
+          "S&C consultation",
+          "Free Physio Led Screening",
+          "Larger family? No problem! We add members pro-rata"
+        ]
+      },
+      {
+        "id": "family-6",
+        "term": "6-MONTH",
+        "price": "$140",
+        "cycle": "/week",
+        "tagline": "Provides the best value and supports long-term athletic development",
+        "image": "/image/memberships/family/6-month.jpg",
+        "features": [
+          "Great for families with shorter-term goals",
+          "4 FAMILY members",
+          "Unlimited Classes",
+          "Free Force Plates benchmark (Adults)",
+          "Free Physio Led Screening",
+          "Larger family? No problem! We add members pro-rata"
+        ]
+      },
+      {
+        "id": "family-3",
+        "term": "3-MONTH",
+        "price": "$155",
+        "cycle": "/week",
+        "tagline": "Provides the best value and supports long-term athletic development",
+        "image": "/image/memberships/family/3-month.jpg",
+        "features": [
+          "Flexible option for families trying out our gym",
+          "4 FAMILY members",
+          "Unlimited Classes",
+          "Free Force Plates benchmark (Adults)",
+          "S&C consultation",
+          "Free Physio Led Screening",
+          "Larger family? No problem! We add members pro-rata"
+        ]
+      },
+      {
+        "id": "family-mtm",
+        "term": "MONTH-TO-MONTH",
+        "price": "$165",
+        "cycle": "/week",
+        "tagline": "Provides the best value and supports long-term athletic development",
+        "image": "/image/memberships/family/month-to-month.jpg",
+        "features": [
+          "Allows families to access our facilities on a short-term basis",
+          "4 FAMILY members",
+          "Unlimited Classes",
+          "Free Force Plates benchmark",
+          "Free Physio Led Screening",
+          "Larger family? No problem! We add members pro-rata"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "performance",
+    "title": "Performance Memberships",
+    "blurb": "Tailored programs for serious athletes and individuals looking for high-touch coaching, recovery focus, or hybrid PT + class access.",
+    "plans": [
+      {
+        "id": "perf-athlete",
+        "term": "ATHLETE",
+        "price": "$150",
+        "cycle": "/week",
+        "tagline": "Designed for athletes (elite, sub-elite and recreational) pursuing structured, long-term performance development.",
+        "image": "/image/memberships/performance/athlete.jpg",
+        "features": [
+          "Quarterly testing on force plates",
+          "Weekly Privately Coached session",
+          "12-month full programming",
+          "Free Physio Led Screening",
+          "Liaison with Team/Sport coach",
+          "Full class and gym access",
+          "Support for workload management"
+        ]
+      },
+      {
+        "id": "perf-pt-gym",
+        "term": "PT + GYM ACCESS",
+        "price": "$120",
+        "cycle": "/week",
+        "tagline": "Ideal for personalised training combined with gym access.",
+        "image": "/image/memberships/performance/pt-gym.jpg",
+        "features": [
+          "Free Physio Led Screening",
+          "Training programs provided",
+          "1 weekly PT session",
+          "Full Gym access during open hours",
+          "1 weekly RECOVERY class (Mat Pilates/Mobility)",
+          "Support for workload management"
+        ]
+      },
+      {
+        "id": "perf-pt-classes",
+        "term": "PT + CLASSES",
+        "price": "$140",
+        "cycle": "/week",
+        "tagline": "Combines personalised training with group classes for added variety and progress.",
+        "image": "/image/memberships/performance/pt-classes.jpg",
+        "features": [
+          "Free Physio Led Screening",
+          "Training programs provided",
+          "1 weekly PT session",
+          "Unlimited CLASSES",
+          "FULL GYM access during open hours",
+          "Support for workload management"
+        ]
+      },
+      {
+        "id": "perf-recovery",
+        "term": "RECOVERY",
+        "price": "$45",
+        "cycle": "/week",
+        "tagline": "Perfect for individuals returning from injury (with a physio plan) or currently injured, offering gym access for rehab plus Pilates and mobility classes for maintenance.",
+        "image": "/image/memberships/performance/recovery.jpg",
+        "features": [
+          "Free Physio Led Screening",
+          "FULL GYM access during open hours",
+          "Unlimited Pilates/Mobility classes"
+        ]
+      }
+    ]
+  }
+]

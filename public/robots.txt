@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /seo-dashboard.html
+
+Sitemap: https://athletix.com.au/sitemap.xml

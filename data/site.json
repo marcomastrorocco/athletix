@@ -1,0 +1,53 @@
+{
+  "announce": "$7 FOR 7 DAYS TRIAL PASS · REFUNDABLE · ALL CLASSES INCLUDED",
+  "meta": {
+    "title": "ATHLETIX — Train Like an Athlete | Brisbane Strength & Conditioning",
+    "description": "Elite strength and conditioning in Fortitude Valley, Brisbane. Small group classes, athlete programs, allied health and NDIS support."
+  },
+  "hero": {
+    "pill": "ELITE STRENGTH & CONDITIONING · BRISBANE",
+    "lede": "You don't have to be an athlete to train like one. Experience challenging, exciting and unique small-group fitness classes, led by elite strength and conditioning coaches the pros train with.",
+    "rotatingWords": [
+      "ATHLETE.",
+      "CHAMPION.",
+      "LEGEND.",
+      "PRO."
+    ],
+    "stats": [
+      {
+        "value": 4,
+        "label": "Years in Business",
+        "plus": true
+      },
+      {
+        "value": 20,
+        "label": "Resident Athletes",
+        "plus": false
+      },
+      {
+        "value": 9,
+        "label": "Pro Partners",
+        "plus": false
+      }
+    ]
+  },
+  "manifesto": {
+    "eyebrow": "Our Philosophy",
+    "heading": "Teamwork combined with science is the secret that makes common people achieve uncommon results.",
+    "body": "Athletix is an elite athletic development centre in Fortitude Valley. Whether you're chasing a podium or your first pull-up, our coaches use data-driven programming built on the same principles that shape professional sport."
+  },
+  "team": {
+    "heading": "OUR ELITE COACHES",
+    "sub": "All our coaches are members of the 2 major national organisations for exercise professionals and strength and conditioning (ASCA and ESSA). They have merged their degrees with on-the-field expertise, cooperating with some of the major high-performance institutions in Australia."
+  },
+  "trial": {
+    "heading": "$7 for 7 days. Unlimited access.",
+    "body": "All classes included. Fully refundable. Meet the coaches, test the floor, and see why athletes across Brisbane train with us."
+  },
+  "contact": {
+    "phone": "0499 981 286",
+    "email": "info@athletix.com.au",
+    "address": "42 Baxter Street, Fortitude Valley, QLD 4006",
+    "areas": "Fortitude Valley · Newstead · Kangaroo Point · South Brisbane · Spring Hill · Bowen Hills · Woolloongabba · Kelvin Grove"
+  }
+}

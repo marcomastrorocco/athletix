@@ -1,0 +1,10 @@
+[
+  { "id": "mastrorocco", "name": "Marco Mastrorocco", "displayName": "M. Mastrorocco", "role": "Director Ath. Dev.", "image": "/image/Elite%20Coach/mastro.jpeg" },
+  { "id": "reza", "name": "Reza Sharifian", "displayName": "Reza Sharifian", "role": "S&C Coach", "image": "/image/Elite%20Coach/Reza.jpg" },
+  { "id": "isaac", "name": "Isaac Corvo", "displayName": "Isaac Corvo", "role": "S&C Coach", "image": "/image/Elite%20Coach/isaac.jpg" },
+  { "id": "ritti", "name": "Ritti Kaci", "displayName": "Ritti Kaci", "role": "S&C Coach", "image": "/image/Elite%20Coach/ritti.jpg" },
+  { "id": "jacob", "name": "Jacob Nilsson", "displayName": "Jacob Nilsson", "role": "S&C Coach", "image": "/image/Elite%20Coach/jacob.jpg" },
+  { "id": "david", "name": "David Lawrence", "displayName": "David Lawrence", "role": "Exercise Physiologist", "image": "/image/Elite%20Coach/David.jpg" },
+  { "id": "sasha", "name": "Sasha Cochrane", "displayName": "Sasha Cochrane", "role": "S&C Coach", "image": "/image/Elite%20Coach/Sasha.jpg" },
+  { "id": "campbell", "name": "Campbell Antonio", "displayName": "Campbell Antonio", "role": "Physiotherapist", "image": "/image/Elite%20Coach/campbell.jpg" }
+]

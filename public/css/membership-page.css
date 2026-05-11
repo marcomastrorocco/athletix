@@ -1,0 +1,173 @@
+/* ============================================================
+   Membership page — categorized layout
+   ============================================================ */
+
+.mship-section {
+  padding: 80px 0 70px;
+  position: relative;
+}
+.mship-section.alt { background: rgba(255,255,255,0.02); }
+.mship-section + .mship-section { border-top: 1px solid rgba(255,255,255,0.05); }
+
+.mship-head {
+  text-align: center;
+  margin-bottom: 44px;
+}
+.mship-head h2 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: 0.04em;
+  margin: 0 0 14px;
+}
+.mship-head .underline {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #00b9d4, #4ade80);
+  border-radius: 999px;
+  margin: 0 auto;
+}
+
+.mship-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+.mship-grid.three { grid-template-columns: repeat(3, 1fr); max-width: 1100px; margin: 0 auto; }
+
+.mship-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s, border 0.2s, box-shadow 0.2s;
+}
+.mship-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,214,10,0.5);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.mship-card .img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-color: #111;
+}
+
+.mship-card .body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+}
+
+.mship-card .term {
+  font-family: "Anton", "Inter", sans-serif;
+  letter-spacing: 0.06em;
+  font-size: 14px;
+  color: #e5e7eb;
+  margin: 0;
+}
+.mship-card .price {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 30px;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.mship-card .price small {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.04em;
+  margin-left: 4px;
+}
+.mship-card .tagline {
+  margin: 0 0 6px;
+  color: rgba(255,255,255,0.6);
+  font-size: 13.5px;
+  line-height: 1.55;
+  min-height: 38px;
+}
+.mship-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.mship-card ul li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+}
+.mship-card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background:
+    linear-gradient(135deg, rgba(74,222,128,0.18), rgba(0,185,212,0.18));
+  border: 1px solid rgba(74,222,128,0.4);
+}
+.mship-card ul li::after {
+  content: "✓";
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  font-size: 11px;
+  color: #4ade80;
+  font-weight: 800;
+}
+
+.mship-enroll {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  background: #0e0e14;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: auto;
+  transition: background 0.15s, border 0.15s;
+}
+.mship-enroll:hover {
+  background: #ffd60a;
+  color: #0a0a12;
+  border-color: #ffd60a;
+}
+
+.mship-blurb {
+  max-width: 920px;
+  margin: 36px auto 0;
+  text-align: center;
+  color: rgba(255,255,255,0.62);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1100px) {
+  .mship-grid { grid-template-columns: repeat(2, 1fr); }
+  .mship-grid.three { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .mship-grid, .mship-grid.three { grid-template-columns: 1fr; }
+  .mship-section { padding: 56px 0 50px; }
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "youth",
+    "title": "Youth",
+    "price": "$42",
+    "cycle": "/ week",
+    "note": "",
+    "featured": false,
+    "image": "/image/membership%20plan/youth.png",
+    "imageAlt": "Youth membership training",
+    "features": [
+      "Unlimited Classes",
+      "Free benchmark test days",
+      "30 min of 1-1 consultation (development only)",
+      "Physio Screening",
+      "All Area Access"
+    ]
+  },
+  {
+    "id": "adult",
+    "title": "Adults",
+    "price": "$50",
+    "cycle": "/ week",
+    "note": "",
+    "featured": true,
+    "image": "/image/membership%20plan/adult.jpg",
+    "imageAlt": "Adult membership training",
+    "features": [
+      "Unlimited Classes",
+      "Free benchmark test days",
+      "30 min of 1-1 consultation",
+      "Physio Screening",
+      "S&C Consultation",
+      "All Area Access"
+    ]
+  },
+  {
+    "id": "family",
+    "title": "Family",
+    "price": "$120",
+    "cycle": "/ week",
+    "note": "",
+    "featured": false,
+    "image": "/image/membership%20plan/family.jpg",
+    "imageAlt": "Family membership training",
+    "features": [
+      "Unlimited Classes",
+      "Free benchmark test days",
+      "30 min of 1-1 consultation",
+      "Physio Screening",
+      "S&C Consultation",
+      "All Area Access"
+    ]
+  },
+  {
+    "id": "athlete",
+    "title": "Athlete",
+    "price": "$150",
+    "cycle": "/ week",
+    "note": "12 months subscription",
+    "featured": false,
+    "image": "/image/membership%20plan/athlete.jpg",
+    "imageAlt": "Athlete membership training",
+    "features": [
+      "Unlimited Force Plates Tests",
+      "Dedicated Coach",
+      "Weekly PT",
+      "All Area Access"
+    ]
+  }
+]

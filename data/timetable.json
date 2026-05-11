@@ -1,0 +1,78 @@
+{
+  "days": [
+    "Monday 27 Apr",
+    "Tuesday 28 Apr",
+    "Wednesday 29 Apr",
+    "Thursday 30 Apr",
+    "Friday 1 May",
+    "Saturday 2 May"
+  ],
+  "rows": [
+    {
+      "time": "06:00 AM",
+      "cells": [
+        { "kind": "adult", "title": "LIFT", "sub": "Adults · 06:00-06:45" },
+        { "kind": "adult", "title": "STRENGTH & CON", "sub": "Adults · 06:00-06:45" },
+        { "kind": "adult", "title": "LIFT", "sub": "Adults · 06:00-06:45" },
+        { "kind": "performance", "title": "HIT - PUSH & DRAG", "sub": "Adults · 06:00-06:45" },
+        { "kind": "adult", "title": "LIFT", "sub": "Adults · 06:00-06:45" },
+        { "kind": "adult", "title": "LIFT", "sub": "Adults · 06:00-06:45" }
+      ]
+    },
+    {
+      "time": "07:00 AM",
+      "cells": [
+        null,
+        { "kind": "youth", "title": "YOUTH OPEN WORKOUT", "sub": "Invite only · 07:00-08:00" },
+        { "kind": "recovery", "title": "MOBILITY", "sub": "Recovery · 07:00-07:45" },
+        { "kind": "recovery", "title": "MAT PILATES", "sub": "Recovery · 07:00-07:45" },
+        { "kind": "youth", "title": "YOUTH OPEN WORKOUT", "sub": "Invite only · 07:00-08:00" },
+        { "kind": "recovery", "title": "MOBILITY", "sub": "Recovery · 07:00-07:45" }
+      ]
+    },
+    {
+      "time": "09:30 AM",
+      "cells": [
+        { "kind": "adult", "title": "LIFT", "sub": "Adults · 09:30-10:15" },
+        { "kind": "performance", "title": "MET-CON", "sub": "Adults · 09:30-10:15" },
+        { "kind": "recovery", "title": "MAT PILATES", "sub": "Recovery · 09:30-10:15" },
+        { "kind": "adult", "title": "LIFT", "sub": "Adults · 09:30-10:15" },
+        { "kind": "adult", "title": "STRENGTH & CON", "sub": "Adults · 09:30-10:15" },
+        { "kind": "performance", "title": "HIT - PUSH & DRAG", "sub": "Adults · 09:30-10:15" }
+      ]
+    },
+    {
+      "time": "12:15 PM",
+      "cells": [
+        { "kind": "youth", "title": "YOUTH FITNESS FOUNDATION", "sub": "Youth · 12:15-01:00" },
+        { "kind": "youth", "title": "YOUTH SPEED DEVELOPMENT", "sub": "Youth · 12:15-01:00" },
+        { "kind": "youth", "title": "YOUTH FITNESS FOUNDATION", "sub": "Youth · 12:15-01:00" },
+        { "kind": "youth", "title": "YOUTH STRENGTH DEVELOPMENT", "sub": "Youth · 12:15-01:00" },
+        { "kind": "performance", "title": "YOUTH AGILITY DEVELOPMENT", "sub": "Youth · 12:15-01:00" },
+        null
+      ]
+    },
+    {
+      "time": "04:15 PM",
+      "cells": [
+        { "kind": "youth", "title": "YOUTH STRENGTH DEVELOPMENT", "sub": "Youth · 04:15-05:00" },
+        { "kind": "youth", "title": "YOUTH AGILITY FOUNDATIONS", "sub": "Youth · 04:15-05:00" },
+        { "kind": "youth", "title": "YOUTH AGILITY DEVELOPMENT", "sub": "Youth · 04:15-05:00" },
+        { "kind": "youth", "title": "YOUTH SPEED FOUNDATIONS", "sub": "Youth · 04:15-05:00" },
+        null,
+        null
+      ]
+    },
+    {
+      "time": "06:15 PM",
+      "cells": [
+        { "kind": "adult", "title": "LIFT", "sub": "Adults · 06:15-07:00" },
+        { "kind": "performance", "title": "MET-CON", "sub": "Adults · 06:15-07:00" },
+        { "kind": "performance", "title": "HIT - PUSH & DRAG", "sub": "Adults · 06:15-07:00" },
+        { "kind": "adult", "title": "LIFT", "sub": "Adults · 06:15-07:00" },
+        { "kind": "recovery", "title": "MOBILITY", "sub": "Adults · 06:30-07:15" },
+        null
+      ]
+    }
+  ]
+}
