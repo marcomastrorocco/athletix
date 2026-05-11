@@ -17,7 +17,8 @@
           "1st Force Plates benchmark test (FREE)",
           "1st S&C consultation /program (FREE)",
           "Physio Led Screening (FREE)"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/1bde582320687fee51e8ead84fd0d99e"
       },
       {
         "id": "adult-6",
@@ -32,7 +33,8 @@
           "1st Force Plates benchmark test (FREE)",
           "1st S&C consultation /program (FREE)",
           "Physio Led Screening (FREE)"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/ceb5ba45d12f86050e397b2edbe0af01"
       },
       {
         "id": "adult-3",
@@ -47,7 +49,8 @@
           "1st Force Plates benchmark test (FREE)",
           "1st S&C consultation /program (FREE)",
           "Physio Led Screening (FREE)"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/5322ae3ebe5198287af64f37bba261b7"
       },
       {
         "id": "adult-mtm",
@@ -62,7 +65,8 @@
           "1st Force Plates benchmark test (FREE)",
           "1st S&C consultation /program (FREE)",
           "Physio Led Screening (FREE)"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/42581d0d5ac77eb8b6b05083fca9b89f"
       }
     ]
   },
@@ -82,7 +86,8 @@
           "Unlimited Youth Classes",
           "Free S&C program — Development only",
           "Physio Led Screening"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/fe8259bc4f7ca227cb6d8186bfae4a9d"
       },
       {
         "id": "youth-6",
@@ -95,7 +100,8 @@
           "Unlimited Youth Classes",
           "Free S&C program — Development only",
           "Physio Led Screening"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/f638e3b1a786c55aebee7d533a827c60"
       },
       {
         "id": "youth-3",
@@ -108,7 +114,8 @@
           "Unlimited Youth Classes",
           "Free S&C program — Development only",
           "Physio Led Screening"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/f399baf24bdfae634c9a8ceeaa9aa21a"
       }
     ]
   },
@@ -132,7 +139,8 @@
           "S&C consultation",
           "Free Physio Led Screening",
           "Larger family? No problem! We add members pro-rata"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/becf53439484020f9e0498c34bad04cb"
       },
       {
         "id": "family-6",
@@ -148,7 +156,8 @@
           "Free Force Plates benchmark (Adults)",
           "Free Physio Led Screening",
           "Larger family? No problem! We add members pro-rata"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/signup/details/1e37fc86e27c47ba07f99cbd99593b6b?companyid=2&src=purchase"
       },
       {
         "id": "family-3",
@@ -165,7 +174,8 @@
           "S&C consultation",
           "Free Physio Led Screening",
           "Larger family? No problem! We add members pro-rata"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/signup/details/ba3311b7b04ee8b10905176920b6b8bd?companyid=2&src=purchase"
       },
       {
         "id": "family-mtm",
@@ -181,7 +191,8 @@
           "Free Force Plates benchmark",
           "Free Physio Led Screening",
           "Larger family? No problem! We add members pro-rata"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/f403872de8f1b7b3dec0e8b3fa960925"
       }
     ]
   },
@@ -205,7 +216,8 @@
           "Liaison with Team/Sport coach",
           "Full class and gym access",
           "Support for workload management"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/b564c458daaeb3b9c32e337b355371c2"
       },
       {
         "id": "perf-pt-gym",
@@ -221,7 +233,8 @@
           "Full Gym access during open hours",
           "1 weekly RECOVERY class (Mat Pilates/Mobility)",
           "Support for workload management"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/628fee642a30bdd8200b8491de29f987"
       },
       {
         "id": "perf-pt-classes",
@@ -237,7 +250,8 @@
           "Unlimited CLASSES",
           "FULL GYM access during open hours",
           "Support for workload management"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/c800efddf8e6691eb08585d2343b2949"
       },
       {
         "id": "perf-recovery",
@@ -250,7 +264,8 @@
           "Free Physio Led Screening",
           "FULL GYM access during open hours",
           "Unlimited Pilates/Mobility classes"
-        ]
+        ],
+        "enrollUrl": "https://athletix.gymmasteronline.com/portal/membership/24807c4818ea7b7c02892afa01f67225"
       }
     ]
   }

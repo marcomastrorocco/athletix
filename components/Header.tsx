@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import BookTrialModal from "@/components/BookTrialModal";
 
 const ABOUT_PATHS = [
   "/about",
@@ -31,6 +32,7 @@ export default function Header({ contact }: Props) {
   const pathname = usePathname();
   const [navOpen, setNavOpen] = useState(false);
   const [sideOpen, setSideOpen] = useState(false);
+  const [trialOpen, setTrialOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -156,9 +158,16 @@ export default function Header({ contact }: Props) {
             </Link>
           </nav>
           <div className="header-cta">
-            <Link href="/contact" className="btn btn-primary">
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={() => {
+                setTrialOpen(true);
+                closeNav();
+              }}
+            >
               Book Trial
-            </Link>
+            </button>
             <button
               className="side-toggle"
               id="sideToggle"
@@ -269,6 +278,8 @@ export default function Header({ contact }: Props) {
         id="sideBackdrop"
         onClick={() => setSideOpen(false)}
       ></div>
+
+      <BookTrialModal open={trialOpen} onClose={() => setTrialOpen(false)} />
     </>
   );
 }

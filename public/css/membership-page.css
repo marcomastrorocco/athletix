@@ -5,6 +5,7 @@
 .mship-section {
   padding: 80px 0 70px;
   position: relative;
+  scroll-margin-top: 90px;
 }
 .mship-section.alt { background: rgba(255,255,255,0.02); }
 .mship-section + .mship-section { border-top: 1px solid rgba(255,255,255,0.05); }
@@ -46,8 +47,8 @@
 }
 .mship-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255,214,10,0.5);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  border-color: rgba(0,212,240,0.5);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45), 0 0 30px rgba(0,212,240,0.08);
 }
 
 .mship-card .img {
@@ -149,9 +150,9 @@
   transition: background 0.15s, border 0.15s;
 }
 .mship-enroll:hover {
-  background: #ffd60a;
+  background: #00d4f0;
   color: #0a0a12;
-  border-color: #ffd60a;
+  border-color: #00d4f0;
 }
 
 .mship-blurb {

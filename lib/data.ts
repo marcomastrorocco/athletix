@@ -52,6 +52,7 @@ export type MembershipCategoryPlan = {
   tagline: string;
   image: string;
   features: string[];
+  enrollUrl?: string;
 };
 export type MembershipCategory = {
   id: string;

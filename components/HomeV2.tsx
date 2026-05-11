@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 export default function HomeV2() {
@@ -23,6 +24,15 @@ export default function HomeV2() {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const seekToMiddle = (e: React.SyntheticEvent<HTMLVideoElement>) => {
+    const v = e.currentTarget;
+    if (v.dataset.posterSet === "1") return;
+    if (v.duration && isFinite(v.duration)) {
+      v.currentTime = v.duration / 2;
+      v.dataset.posterSet = "1";
+    }
   };
 
   const toggleVid = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -748,7 +758,7 @@ export default function HomeV2() {
           <div className="testi-grid">
             <div className="testi-card">
               <div className="testi-video" onClick={toggleVid}>
-                <video preload="none" loop>
+                <video preload="metadata" loop onLoadedMetadata={seekToMiddle}>
                   <source src="https://athletix.com.au/wp-content/uploads/2024/07/Testimonial-2-Website.mp4" type="video/mp4" />
                 </video>
                 <div className="testi-play">
@@ -773,7 +783,7 @@ export default function HomeV2() {
             </div>
             <div className="testi-card">
               <div className="testi-video" onClick={toggleVid}>
-                <video preload="none" loop>
+                <video preload="metadata" loop onLoadedMetadata={seekToMiddle}>
                   <source src="https://athletix.com.au/wp-content/uploads/2024/07/Testimonial-1-Website.mp4" type="video/mp4" />
                 </video>
                 <div className="testi-play">
@@ -798,7 +808,7 @@ export default function HomeV2() {
             </div>
             <div className="testi-card">
               <div className="testi-video" onClick={toggleVid}>
-                <video preload="none" loop>
+                <video preload="metadata" loop onLoadedMetadata={seekToMiddle}>
                   <source src="https://athletix.com.au/wp-content/uploads/2024/07/DARCY.mp4" type="video/mp4" />
                 </video>
                 <div className="testi-play">
@@ -853,9 +863,9 @@ export default function HomeV2() {
                   <li>Physio Screening</li>
                   <li>All Area Access</li>
                 </ul>
-                <button className="btn-plan-out" onClick={() => scrollTo("book")}>
+                <Link href="/membership#youth" className="btn-plan-out">
                   View Options
-                </button>
+                </Link>
               </div>
             </div>
             <div className="plan-card featured">
@@ -879,9 +889,9 @@ export default function HomeV2() {
                   <li>S&amp;C Consultation</li>
                   <li>All Area Access</li>
                 </ul>
-                <button className="btn-plan" onClick={() => scrollTo("book")}>
+                <Link href="/membership#adult" className="btn-plan">
                   View Options
-                </button>
+                </Link>
               </div>
             </div>
             <div className="plan-card">
@@ -904,9 +914,9 @@ export default function HomeV2() {
                   <li>S&amp;C Consultation</li>
                   <li>All Area Access</li>
                 </ul>
-                <button className="btn-plan-out" onClick={() => scrollTo("book")}>
+                <Link href="/membership#family" className="btn-plan-out">
                   View Options
-                </button>
+                </Link>
               </div>
             </div>
             <div className="plan-card">
@@ -929,9 +939,9 @@ export default function HomeV2() {
                   <li>Sports Dietitian Access</li>
                   <li>All Area Access</li>
                 </ul>
-                <button className="btn-plan-out" onClick={() => scrollTo("book")}>
+                <Link href="/membership#performance" className="btn-plan-out">
                   View Options
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -966,10 +976,7 @@ export default function HomeV2() {
         <div className="book-top">
           <div>
             <div className="f-logo">
-              <div className="f-hex">
-                <span>A</span>
-              </div>
-              ATHLETIX
+              <img src="/image/athlethix-logo.png" alt="Athletix" />
             </div>
             <p className="f-tagline">
               Elite S&amp;C coaching, sports physiotherapy, and sports nutrition — all under one roof. World-class expertise, built for

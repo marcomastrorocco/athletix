@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getMembershipCategories } from "@/lib/data";
+import MembersTrusted from "@/components/MembersTrusted";
 
 export const metadata: Metadata = {
   title: "Membership — ATHLETIX",
@@ -36,6 +37,7 @@ export default async function MembershipPage() {
       {categories.map((cat, idx) => (
         <section
           key={cat.id}
+          id={cat.id}
           className={`mship-section${idx % 2 === 1 ? " alt" : ""}`}
         >
           <div className="container">
@@ -67,9 +69,20 @@ export default async function MembershipPage() {
                         <li key={f}>{f}</li>
                       ))}
                     </ul>
-                    <Link href="/contact" className="mship-enroll">
-                      Enroll now
-                    </Link>
+                    {p.enrollUrl ? (
+                      <a
+                        href={p.enrollUrl}
+                        className="mship-enroll"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Enroll now
+                      </a>
+                    ) : (
+                      <Link href="/contact" className="mship-enroll">
+                        Enroll now
+                      </Link>
+                    )}
                   </div>
                 </article>
               ))}
@@ -79,6 +92,8 @@ export default async function MembershipPage() {
           </div>
         </section>
       ))}
+
+      <MembersTrusted />
     </>
   );
 }
