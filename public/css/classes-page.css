@@ -1,0 +1,154 @@
+/* Classes page — ported from WordPress */
+
+.classes-intro {
+  padding: 70px 0 50px;
+}
+.classes-intro .container {
+  max-width: 1000px;
+  text-align: center;
+}
+.classes-intro h2 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0 0 22px;
+  color: #fff;
+}
+.classes-intro p {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 16px;
+}
+.classes-intro p strong {
+  color: #fff;
+  font-weight: 600;
+}
+.classes-intro .btn {
+  margin-top: 16px;
+}
+
+.classes-cards {
+  padding: 50px 0 90px;
+}
+.class-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.class-tile {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 28px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.class-tile:hover {
+  border-color: rgba(0, 212, 240, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 30px rgba(0, 212, 240, 0.08);
+}
+.class-tile .tile-type {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+.class-tile .tile-type span {
+  color: #00d4f0;
+}
+.class-tile h3 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  color: #fff;
+  line-height: 1.15;
+}
+.class-tile p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 18px;
+  flex: 1;
+}
+.class-tile p strong {
+  color: #fff;
+  font-weight: 600;
+}
+.class-tile .arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #00d4f0;
+  text-decoration: none;
+  margin-top: auto;
+  transition: gap 0.2s;
+}
+.class-tile .arrow-link span {
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.class-tile:hover .arrow-link span {
+  transform: translateX(4px);
+}
+
+.classes-longform {
+  padding: 70px 0 80px;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.classes-longform .container {
+  max-width: 920px;
+}
+.classes-longform h3 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(22px, 2.5vw, 30px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 36px 0 14px;
+  color: #fff;
+}
+.classes-longform h3:first-child {
+  margin-top: 0;
+}
+.classes-longform p {
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.68);
+  margin: 0 0 12px;
+}
+.classes-longform p strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .class-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .class-card-grid {
+    grid-template-columns: 1fr;
+  }
+  .classes-intro {
+    padding: 50px 0 30px;
+  }
+  .classes-cards {
+    padding: 30px 0 60px;
+  }
+  .classes-longform {
+    padding: 50px 0 60px;
+  }
+}

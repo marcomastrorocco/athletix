@@ -1,0 +1,197 @@
+/* Adult Classes page — extras on top of youth-classes-page.css */
+
+/* Subheading inside intro copy */
+.youth-intro-sub {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 22px 0 12px;
+  color: #fff;
+}
+
+/* Radio pill group — "About you" */
+.adult-radio-group {
+  border: none;
+  padding: 0;
+  margin: 6px 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.adult-radio-group legend {
+  width: 100%;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 0 10px;
+}
+.radio-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.radio-pill input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+}
+.radio-pill span {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: border-color 0.18s, background 0.18s, color 0.18s;
+}
+.radio-pill:hover span {
+  border-color: rgba(0, 212, 240, 0.45);
+  color: #fff;
+}
+.radio-pill input:checked + span {
+  background: #00d4f0;
+  border-color: #00d4f0;
+  color: #0b0b0b;
+  font-weight: 600;
+}
+
+/* Adult cards grid — only 6 tiles, so default 3-column works.
+   Keep an alias hook in case we need to tweak later. */
+.adult-card-grid {
+  /* inherits .class-card-grid */
+}
+
+/* Tile body wrapper — for cards with multiple paragraphs (e.g. Family page) */
+.class-tile .tile-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 18px;
+  flex: 1;
+}
+.class-tile .tile-body p {
+  margin: 0 0 12px;
+}
+.class-tile .tile-body p:last-child {
+  margin-bottom: 0;
+}
+.class-tile .tile-body strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* FAQ accordion */
+.adult-faq {
+  padding: 70px 0 90px;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.adult-faq .container {
+  max-width: 920px;
+}
+.adult-faq-title {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(26px, 3.4vw, 40px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 36px;
+}
+
+.faq-item {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  margin: 0 0 14px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item[open] {
+  border-color: rgba(0, 212, 240, 0.35);
+}
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 56px 20px 22px;
+  position: relative;
+  font-size: 15.5px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 212, 240, 0.12);
+  color: #00d4f0;
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.2s, background 0.2s;
+}
+.faq-item[open] summary::after {
+  content: "−";
+  background: #00d4f0;
+  color: #0b0b0b;
+}
+.faq-body {
+  padding: 0 22px 22px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+.faq-body p {
+  margin: 0 0 12px;
+}
+.faq-body p:last-child {
+  margin-bottom: 0;
+}
+.faq-list {
+  margin: 8px 0 0;
+  padding: 0 0 0 22px;
+}
+.faq-list li {
+  margin: 0 0 10px;
+}
+.faq-list-numbered li {
+  margin-bottom: 16px;
+}
+.faq-list-numbered li strong {
+  display: block;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.faq-list-numbered li p {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .faq-item summary {
+    padding: 16px 50px 16px 18px;
+    font-size: 14.5px;
+  }
+  .faq-body {
+    padding: 0 18px 18px;
+  }
+}

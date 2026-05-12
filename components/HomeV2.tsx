@@ -229,27 +229,45 @@ export default function HomeV2() {
             A Performance Village.
           </h2>
           <div className="vs-grid">
-            <div className="vs-head them">Regular 24/7 Gyms</div>
-            <div className="vs-head mid">vs</div>
-            <div className="vs-head us">Athletix</div>
-            <div className="vs-c bad"><span className="ic">✕</span>No coach on the floor</div>
-            <div className="vs-c midc">01</div>
-            <div className="vs-c good"><span className="ic">✓</span>ASCA &amp; ESSA coaches every session</div>
-            <div className="vs-c bad"><span className="ic">✕</span>Generic programs for everyone</div>
-            <div className="vs-c midc">02</div>
-            <div className="vs-c good"><span className="ic">✓</span>Science-based, personalised programming</div>
-            <div className="vs-c bad"><span className="ic">✕</span>No injury support or physio</div>
-            <div className="vs-c midc">03</div>
-            <div className="vs-c good"><span className="ic">✓</span>Specialist sports physio on-site</div>
-            <div className="vs-c bad"><span className="ic">✕</span>No nutrition guidance</div>
-            <div className="vs-c midc">04</div>
-            <div className="vs-c good"><span className="ic">✓</span>Sports dietitian (Olympic / NRL / NBL)</div>
-            <div className="vs-c bad"><span className="ic">✕</span>Adults only — no youth or family</div>
-            <div className="vs-c midc">05</div>
-            <div className="vs-c good"><span className="ic">✓</span>Youth, adults, families &amp; elite athletes</div>
-            <div className="vs-c bad"><span className="ic">✕</span>No results tracking or data</div>
-            <div className="vs-c midc">06</div>
-            <div className="vs-c good"><span className="ic">✓</span>Force plate testing &amp; benchmarking</div>
+            <div className="vs-headers">
+              <div className="vs-head them">Regular 24/7 Gyms</div>
+              <div className="vs-head mid">vs</div>
+              <div className="vs-head us">Athletix</div>
+            </div>
+            <div className="vs-mobile-legend" aria-hidden="true">
+              <span className="them"><span className="ic">✕</span> Regular 24/7 Gyms</span>
+              <span className="us"><span className="ic">✓</span> Athletix</span>
+            </div>
+            <div className="vs-row">
+              <div className="vs-c bad"><span className="ic">✕</span>No coach on the floor</div>
+              <div className="vs-c midc">01</div>
+              <div className="vs-c good"><span className="ic">✓</span>ASCA &amp; ESSA coaches every session</div>
+            </div>
+            <div className="vs-row">
+              <div className="vs-c bad"><span className="ic">✕</span>Generic programs for everyone</div>
+              <div className="vs-c midc">02</div>
+              <div className="vs-c good"><span className="ic">✓</span>Science-based, personalised programming</div>
+            </div>
+            <div className="vs-row">
+              <div className="vs-c bad"><span className="ic">✕</span>No injury support or physio</div>
+              <div className="vs-c midc">03</div>
+              <div className="vs-c good"><span className="ic">✓</span>Specialist sports physio on-site</div>
+            </div>
+            <div className="vs-row">
+              <div className="vs-c bad"><span className="ic">✕</span>No nutrition guidance</div>
+              <div className="vs-c midc">04</div>
+              <div className="vs-c good"><span className="ic">✓</span>Sports dietitian (Olympic / NRL / NBL)</div>
+            </div>
+            <div className="vs-row">
+              <div className="vs-c bad"><span className="ic">✕</span>Adults only — no youth or family</div>
+              <div className="vs-c midc">05</div>
+              <div className="vs-c good"><span className="ic">✓</span>Youth, adults, families &amp; elite athletes</div>
+            </div>
+            <div className="vs-row">
+              <div className="vs-c bad"><span className="ic">✕</span>No results tracking or data</div>
+              <div className="vs-c midc">06</div>
+              <div className="vs-c good"><span className="ic">✓</span>Force plate testing &amp; benchmarking</div>
+            </div>
           </div>
         </div>
       </section>

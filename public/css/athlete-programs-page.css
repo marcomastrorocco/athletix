@@ -1,0 +1,178 @@
+/* Athlete Programs page — extras */
+
+/* The intro media on this page is a static image, not a video. */
+.athlete-intro-image {
+  align-self: stretch;
+}
+.athlete-intro-image {
+  background: rgba(255, 255, 255, 0.02);
+}
+.athlete-intro-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  aspect-ratio: 4 / 5;
+}
+@media (max-width: 900px) {
+  .athlete-intro-image img {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* Inline form inside the intro copy column */
+.athlete-inline-form {
+  margin-top: 14px;
+}
+
+/* Eyebrow / heading centering helpers (used by testimonials) */
+.eyebrow.center,
+.section-heading.center {
+  text-align: center;
+}
+.section-heading {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 6px 0 14px;
+  line-height: 1.1;
+}
+.testimonials-header {
+  margin-bottom: 38px;
+}
+
+/* Coaches — vertical-name layout */
+.coaches {
+  padding: 90px 0 30px;
+}
+.coaches-title {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  margin: 0 0 48px;
+  position: relative;
+  display: block;
+}
+.coaches-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #00d4f0;
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+.coach-card {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 40px;
+  align-items: stretch;
+  margin: 0 0 56px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.coach-card:hover {
+  border-color: rgba(0, 212, 240, 0.35);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+}
+
+.coach-photo {
+  position: relative;
+  background: #0b0b0b;
+  min-height: 460px;
+}
+.coach-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.coach-name-vert {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.75);
+  z-index: 2;
+  padding: 14px 4px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border-radius: 4px;
+}
+
+.coach-body {
+  padding: 36px 36px 36px 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.coach-body p {
+  margin: 0 0 12px;
+}
+.coach-body p:last-of-type {
+  margin-bottom: 18px;
+}
+.coach-sub {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 24px 0 12px;
+}
+.coach-list {
+  margin: 0;
+  padding: 0 0 0 22px;
+  list-style: disc;
+}
+.coach-list li {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.coach-list li::marker {
+  color: #00d4f0;
+}
+
+@media (max-width: 900px) {
+  .coach-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .coach-photo {
+    min-height: 340px;
+  }
+  .coach-name-vert {
+    top: auto;
+    bottom: 16px;
+    left: 18px;
+    transform: none;
+    writing-mode: horizontal-tb;
+    font-size: 22px;
+  }
+  .coach-body {
+    padding: 28px 24px 32px;
+  }
+}

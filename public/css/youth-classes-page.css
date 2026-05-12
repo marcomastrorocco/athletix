@@ -1,0 +1,220 @@
+/* Youth Classes page — ported from WordPress */
+
+/* Intro section — text + media */
+.youth-intro {
+  padding: 70px 0 50px;
+}
+.youth-intro-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.youth-intro-copy h2 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(26px, 3.4vw, 40px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0 0 22px;
+  color: #fff;
+  line-height: 1.15;
+}
+.youth-intro-copy p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 14px;
+}
+.youth-intro-copy p strong {
+  color: #fff;
+  font-weight: 600;
+}
+.youth-intro-copy .btn {
+  margin-top: 18px;
+}
+.youth-intro-image {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+.youth-intro-image img,
+.youth-intro-image video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 5;
+}
+
+/* Form section */
+.youth-form-section {
+  padding: 60px 0 70px;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.youth-form-section .container {
+  max-width: 920px;
+}
+.youth-form-lead {
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 30px;
+}
+.youth-form-lead strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.youth-form {
+  display: grid;
+  gap: 16px;
+}
+.youth-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.youth-form-field {
+  position: relative;
+}
+.youth-form-field input,
+.youth-form-field textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #fff;
+  font: 15px/1.5 "Inter", sans-serif;
+  padding: 18px 16px 14px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.youth-form-field textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+.youth-form-field input:focus,
+.youth-form-field textarea:focus {
+  border-color: rgba(0, 212, 240, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+.youth-form-field label {
+  position: absolute;
+  top: 16px;
+  left: 17px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  transition: transform 0.18s ease, color 0.18s ease, font-size 0.18s ease;
+  background: transparent;
+  padding: 0 4px;
+}
+.youth-form-field input:focus + label,
+.youth-form-field input:not(:placeholder-shown) + label,
+.youth-form-field textarea:focus + label,
+.youth-form-field textarea:not(:placeholder-shown) + label {
+  transform: translateY(-22px);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #00d4f0;
+  background: #0b0b0b;
+}
+.youth-form-field-full {
+  grid-column: 1 / -1;
+}
+
+.youth-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.youth-captcha {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.yc-box {
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  background: #fff;
+  display: inline-block;
+}
+.yc-logo {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-left: 6px;
+}
+.youth-form-submit {
+  background: #00d4f0;
+  color: #0b0b0b;
+  border: none;
+  font: 700 13px/1 "Inter", sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+.youth-form-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 212, 240, 0.28);
+}
+.youth-form-readmore {
+  display: inline-block;
+  margin: 26px auto 0;
+}
+.youth-form-section .youth-form-readmore {
+  display: block;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .youth-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .youth-intro-image img,
+  .youth-intro-image video {
+    aspect-ratio: 16 / 10;
+  }
+}
+@media (max-width: 600px) {
+  .youth-intro {
+    padding: 50px 0 30px;
+  }
+  .youth-form-row {
+    grid-template-columns: 1fr;
+  }
+  .youth-form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .youth-form-submit {
+    justify-content: center;
+  }
+}
