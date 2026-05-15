@@ -49,17 +49,23 @@ export default function PageEditor({ initial }: { initial: PageContent }) {
   const save = async (e: React.FormEvent) => {
     e.preventDefault();
     setSaving(true);
-    const res = await fetch(`/api/admin/pages/${page.slug}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(page),
-    });
-    setSaving(false);
-    if (res.ok) {
-      showToast("Saved", "ok");
-      setRefreshToken(Date.now());
-    } else {
-      showToast("Save failed", "err");
+    try {
+      const res = await fetch(`/api/admin/pages/${page.slug}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(page),
+      });
+      if (res.ok) {
+        showToast("Saved", "ok");
+        setRefreshToken(Date.now());
+      } else {
+        const data = await res.json().catch(() => ({}));
+        showToast(data.error || `Save failed (HTTP ${res.status})`, "err");
+      }
+    } catch (err) {
+      showToast(`Network error: ${(err as Error).message}`, "err");
+    } finally {
+      setSaving(false);
     }
   };
 
