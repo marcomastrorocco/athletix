@@ -1,1060 +1,688 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef } from "react";
+import type { Coach, SiteContent } from "@/lib/data";
 
-export default function HomeV2() {
-  const rootRef = useRef<HTMLDivElement>(null);
+export default function HomeV2({
+  site,
+  coaches,
+}: {
+  site: SiteContent;
+  coaches: Coach[];
+}) {
+  const sectionRefs = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-    const obs = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((x) => {
-          if (x.isIntersecting) x.target.classList.add("visible");
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add("visible");
         });
       },
       { threshold: 0.07 }
     );
-    root.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
+    sectionRefs.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  const registerRef = (el: HTMLElement | null) => {
+    if (el && !sectionRefs.current.includes(el)) sectionRefs.current.push(el);
   };
 
-  const seekToMiddle = (e: React.SyntheticEvent<HTMLVideoElement>) => {
-    const v = e.currentTarget;
-    if (v.dataset.posterSet === "1") return;
-    if (v.duration && isFinite(v.duration)) {
-      v.currentTime = v.duration / 2;
-      v.dataset.posterSet = "1";
-    }
-  };
-
-  const toggleVid = (e: React.MouseEvent<HTMLDivElement>) => {
-    const w = e.currentTarget;
-    const v = w.querySelector("video");
-    const o = w.querySelector(".testi-play") as HTMLElement | null;
+  const toggleVideo = (e: React.MouseEvent<HTMLDivElement>) => {
+    const wrap = e.currentTarget;
+    const v = wrap.querySelector("video") as HTMLVideoElement | null;
+    const play = wrap.querySelector(".testi-play") as HTMLElement | null;
     if (!v) return;
     if (v.paused) {
       document
-        .querySelectorAll<HTMLVideoElement>(".home-v2 .testi-video video")
+        .querySelectorAll<HTMLVideoElement>(".testi-video video")
         .forEach((x) => x.pause());
       document
-        .querySelectorAll<HTMLElement>(".home-v2 .testi-play")
+        .querySelectorAll<HTMLElement>(".testi-play")
         .forEach((x) => (x.style.opacity = "1"));
       v.play();
-      if (o) o.style.opacity = "0";
+      if (play) play.style.opacity = "0";
     } else {
       v.pause();
-      if (o) o.style.opacity = "1";
+      if (play) play.style.opacity = "1";
     }
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    alert("Thanks! A coach will call you within 24 hours.");
+    (e.currentTarget as HTMLFormElement).reset();
+  };
+
+  const { hero, trust, community, vs, classes, disciplines, coaches: coachesCfg, hub, space, testimonials, membership, cta, footer } = site;
+
   return (
-    <div className="home-v2" ref={rootRef}>
-      <link rel="stylesheet" href="/css/home-v2.css" />
+    <>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,900&family=Barlow:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="stylesheet" href="/css/home-v3.css" />
 
-      {/* HERO */}
-      <section className="hero">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="https://athletix.com.au/wp-content/uploads/2024/07/DSC02067-768x512.jpg"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 0,
-            background:
-              "url('https://athletix.com.au/wp-content/uploads/2024/07/DSC02067-768x512.jpg') center/cover no-repeat",
-          }}
-        />
-        <div className="hero-grid" />
-        <div className="hero-overlay" />
-        <div className="hero-content">
-          <div className="hero-kicker">Elite Strength &amp; Conditioning · Fortitude Valley, Brisbane</div>
-          <h1 className="hero-h1">
-            High Performance
-            <br />
-            <em>Village.</em>
-          </h1>
-          <p className="hero-sub">
-            <strong>World-class S&amp;C coaching, sports physio, and elite sports nutrition</strong> — trusted by Brisbane&apos;s pro
-            clubs, and open to every kid, adult, and family. No experience needed. Every level welcome.
-          </p>
-          <div className="hero-btns">
-            <button className="btn-primary" onClick={() => scrollTo("book")}>
-              Start Your Trial
-            </button>
-            <button className="btn-ghost" onClick={() => scrollTo("classes")}>
-              Explore Training
-            </button>
+      <div className="ax-home">
+        {/* HERO */}
+        <section className="hero">
+          <div className="hero-bg">
+            <iframe
+              src={hero.videoEmbedUrl}
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              title="Athletix hero video"
+            />
           </div>
-        </div>
-        <div className="hero-stats">
-          <div className="hero-stat">
-            <span className="hstat-n">400+</span>
-            <span className="hstat-l">Members Trained</span>
-          </div>
-          <div className="hero-stat">
-            <span className="hstat-n">9</span>
-            <span className="hstat-l">Pro Club Partners</span>
-          </div>
-          <div className="hero-stat">
-            <span className="hstat-n">200+</span>
-            <span className="hstat-l">Uni Placement Students</span>
-          </div>
-          <div className="hero-stat">
-            <span className="hstat-n">25+</span>
-            <span className="hstat-l">Yrs Allied Health XP</span>
-          </div>
-        </div>
-      </section>
-
-      {/* TRUST */}
-      <div className="trust-wrap reveal" id="about">
-        <div className="trust-inner">
-          <h2 className="trust-h">Trusted by Brisbane&apos;s Elite Clubs &amp; Institutions</h2>
-          <p className="trust-tagline">
-            The coaches and physios who work with <strong>professional athletes</strong> choose Athletix for their own players. If they
-            trust us — you can too.
-          </p>
-          <div className="logo-row">
-            <div className="logo-pill"><img src="https://athletix.com.au/wp-content/uploads/2024/07/brisbane-lions-logo.png" alt="Brisbane Lions" /></div>
-            <div className="logo-pill"><img src="https://athletix.com.au/wp-content/uploads/2024/07/cricket-australia-logo.png" alt="Cricket Australia" /></div>
-            <div className="logo-pill"><img src="https://athletix.com.au/wp-content/uploads/2024/07/Queensland-Bulls.png" alt="Queensland Bulls" /></div>
-            <div className="logo-pill"><img src="https://athletix.com.au/wp-content/uploads/2024/07/gold-coast-titans-logo.png" alt="Gold Coast Titans" /></div>
-            <div className="logo-pill"><img src="https://athletix.com.au/wp-content/uploads/2024/07/Brisbane-Bullets-logo.png" alt="Brisbane Bullets" /></div>
-            <div className="logo-pill"><img src="https://athletix.com.au/wp-content/uploads/2024/07/kisspng-brisbane-heat-logo.png" alt="Brisbane Heat" /></div>
-            <div className="logo-pill"><img src="https://athletix.com.au/wp-content/uploads/2024/07/Baseball_Australia_logo.png" alt="Baseball Australia" /></div>
-            <div className="logo-pill"><img src="https://athletix.com.au/wp-content/uploads/2024/07/crest-villanova-crest-logo.png" alt="Villanova College" /></div>
-          </div>
-          <p className="trust-quote">
-            &quot;The same science, the same standards, the same care used by <strong>NRL, cricket, and basketball clubs</strong> —
-            built into a facility where every kid, adult, and family in Brisbane can access it.&quot;
-          </p>
-        </div>
-      </div>
-
-      {/* COMMUNITY */}
-      <section className="community-section reveal">
-        <div className="community-inner">
-          <div className="kicker">Our Purpose</div>
-          <h2 className="sec-title">
-            Built for Everyone.
-            <br />
-            Standards for Athletes.
-          </h2>
-          <div className="community-grid">
-            <div>
-              <p className="sec-body">
-                Most people never had access to proper athletic coaching growing up. We built Athletix to change that — for every kid,
-                adult, and family in Brisbane. The athletes are our proof. They&apos;re what tells the regular person:{" "}
-                <em style={{ color: "var(--cyan)", fontStyle: "normal" }}>&quot;this place is serious — and it&apos;s for me too.&quot;</em>
-              </p>
-              <div className="community-audiences">
-                <div className="audience-card">
-                  <div className="audience-icon">🏆</div>
-                  <div>
-                    <div className="audience-title">Sub-Elite &amp; Aspiring Athletes</div>
-                    <p className="audience-desc">
-                      You want to go elite. We&apos;ll get you there. Same methods, same science, same physio, same dietitian as the
-                      pros. No shortcuts — just the work that actually moves the needle.
-                    </p>
-                  </div>
-                </div>
-                <div className="audience-card">
-                  <div className="audience-icon">💪</div>
-                  <div>
-                    <div className="audience-title">Regular Adults</div>
-                    <p className="audience-desc">
-                      You don&apos;t need to be an athlete to train like one. Our coaches meet you exactly where you are. No judgment.
-                      No one-size-fits-all. Just proper coaching built around you.
-                    </p>
-                  </div>
-                </div>
-                <div className="audience-card">
-                  <div className="audience-icon">👨‍👩‍👧</div>
-                  <div>
-                    <div className="audience-title">Sporty &amp; Non-Sporty Parents</div>
-                    <p className="audience-desc">
-                      Whether your kid loves sport or has never tried it — we build their confidence, movement, and love of being
-                      active. We develop the whole person, not just the athlete.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="community-visual">
-              <div className="cv-cell tall">
-                <img src="https://athletix.com.au/wp-content/uploads/2021/07/IMG_5921-scaled-e1723499457589.jpeg" alt="Athletix coaching" />
-                <div className="cv-label">
-                  <span>The Village</span>Our Community
-                </div>
-              </div>
-              <div className="cv-cell">
-                <img src="https://athletix.com.au/wp-content/uploads/2024/07/DSC02067-768x512.jpg" alt="Athletix facility" />
-                <div className="cv-label">
-                  <span>The Floor</span>Our Space
-                </div>
-              </div>
-              <div className="cv-cell">
-                <img src="https://athletix.com.au/wp-content/uploads/2022/01/Youth-sport-1-e1684274091394.png" alt="Youth training" />
-                <div className="cv-label">
-                  <span>Youth</span>Next Generation
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* VS */}
-      <section className="vs-section reveal">
-        <div className="vs-inner">
-          <div className="kicker">The Difference</div>
-          <h2 className="sec-title">
-            Not a Gym.
-            <br />
-            A Performance Village.
-          </h2>
-          <div className="vs-grid">
-            <div className="vs-headers">
-              <div className="vs-head them">Regular 24/7 Gyms</div>
-              <div className="vs-head mid">vs</div>
-              <div className="vs-head us">Athletix</div>
-            </div>
-            <div className="vs-mobile-legend" aria-hidden="true">
-              <span className="them"><span className="ic">✕</span> Regular 24/7 Gyms</span>
-              <span className="us"><span className="ic">✓</span> Athletix</span>
-            </div>
-            <div className="vs-row">
-              <div className="vs-c bad"><span className="ic">✕</span>No coach on the floor</div>
-              <div className="vs-c midc">01</div>
-              <div className="vs-c good"><span className="ic">✓</span>ASCA &amp; ESSA coaches every session</div>
-            </div>
-            <div className="vs-row">
-              <div className="vs-c bad"><span className="ic">✕</span>Generic programs for everyone</div>
-              <div className="vs-c midc">02</div>
-              <div className="vs-c good"><span className="ic">✓</span>Science-based, personalised programming</div>
-            </div>
-            <div className="vs-row">
-              <div className="vs-c bad"><span className="ic">✕</span>No injury support or physio</div>
-              <div className="vs-c midc">03</div>
-              <div className="vs-c good"><span className="ic">✓</span>Specialist sports physio on-site</div>
-            </div>
-            <div className="vs-row">
-              <div className="vs-c bad"><span className="ic">✕</span>No nutrition guidance</div>
-              <div className="vs-c midc">04</div>
-              <div className="vs-c good"><span className="ic">✓</span>Sports dietitian (Olympic / NRL / NBL)</div>
-            </div>
-            <div className="vs-row">
-              <div className="vs-c bad"><span className="ic">✕</span>Adults only — no youth or family</div>
-              <div className="vs-c midc">05</div>
-              <div className="vs-c good"><span className="ic">✓</span>Youth, adults, families &amp; elite athletes</div>
-            </div>
-            <div className="vs-row">
-              <div className="vs-c bad"><span className="ic">✕</span>No results tracking or data</div>
-              <div className="vs-c midc">06</div>
-              <div className="vs-c good"><span className="ic">✓</span>Force plate testing &amp; benchmarking</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CLASSES */}
-      <section className="classes-section reveal" id="classes">
-        <div className="classes-inner">
-          <div className="kicker">What We Offer</div>
-          <h2 className="sec-title">
-            Classes for Every
-            <br />
-            Stage of Your Journey.
-          </h2>
-          <p className="sec-body">
-            Small group sessions led by elite S&amp;C coaches. The same methods used by professional athletes — built for every level,
-            every age, every goal.
-          </p>
-          <div className="classes-grid">
-            <div className="class-card">
-              <div className="class-img">
-                <img src="https://athletix.com.au/wp-content/uploads/2024/08/2.png" alt="Youth Classes" />
-                <div className="class-grad" />
-                <div className="class-overlay" />
-              </div>
-              <div className="class-info">
-                <span className="class-tag">Ages 8–17</span>
-                <div className="class-name">Youth Classes</div>
-                <p className="class-desc">
-                  Build confidence, coordination, strength and athletic foundations. We develop the whole person — not just the
-                  athlete. Safe, expert-led, and genuinely fun.
-                </p>
-                <div className="class-cta">
-                  Learn More <span>→</span>
-                </div>
-              </div>
-            </div>
-            <div className="class-card">
-              <div className="class-img">
-                <img src="https://athletix.com.au/wp-content/uploads/2024/08/DSC06320-scaled-e1723546921926.jpg" alt="Adult Classes" />
-                <div className="class-grad" />
-                <div className="class-overlay" />
-              </div>
-              <div className="class-info">
-                <span className="class-tag">All Levels</span>
-                <div className="class-name">Adult Classes</div>
-                <p className="class-desc">
-                  Challenging, exciting small group sessions scaled to you. Our coaches meet you exactly where you are — then push you
-                  further than you expected.
-                </p>
-                <div className="class-cta">
-                  Learn More <span>→</span>
-                </div>
-              </div>
-            </div>
-            <div className="class-card">
-              <div className="class-img">
-                <img src="https://athletix.com.au/wp-content/uploads/2024/08/DSC06236-scaled-e1733203149463.jpg" alt="Family Classes" />
-                <div className="class-grad" />
-                <div className="class-overlay" />
-              </div>
-              <div className="class-info">
-                <span className="class-tag">All Ages</span>
-                <div className="class-name">Family Classes</div>
-                <p className="class-desc">
-                  Train side-by-side with the people who matter most. Fun, challenging, built for all ages. The whole family — one
-                  roof, one community.
-                </p>
-                <div className="class-cta">
-                  Learn More <span>→</span>
-                </div>
-              </div>
-            </div>
-            <div className="class-card">
-              <div className="class-img">
-                <img src="https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-AFT-53-scaled-e1733206277887.jpg" alt="Athlete Programs" />
-                <div className="class-grad" />
-                <div className="class-overlay" />
-              </div>
-              <div className="class-info">
-                <span className="class-tag">Sub-Elite &amp; Pro</span>
-                <div className="class-name">Athlete Programs</div>
-                <p className="class-desc">
-                  You want to go elite. We&apos;ll get you there. Speed, power, mechanics, force plate testing, physio, and sports
-                  nutrition — the complete package.
-                </p>
-                <div className="class-cta">
-                  Learn More <span>→</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* DISCIPLINES */}
-      <section className="disc-section reveal">
-        <div className="disc-inner">
-          <div className="kicker">Specialisations</div>
-          <h2 className="sec-title">
-            Every Discipline
-            <br />
-            Under One Roof.
-          </h2>
-          <div className="disc-grid">
-            <div className="disc-card">
-              <div className="disc-num">01</div>
-              <div className="disc-name">Strength Training</div>
-              <p className="disc-desc">Progressive overload, perfected. Barbell fundamentals through advanced periodisation — built for every level.</p>
-            </div>
-            <div className="disc-card">
-              <div className="disc-num">02</div>
-              <div className="disc-name">Speed &amp; Agility</div>
-              <p className="disc-desc">Acceleration, deceleration, and change of direction built around your sport and tested every block.</p>
-            </div>
-            <div className="disc-card">
-              <div className="disc-num">03</div>
-              <div className="disc-name">Conditioning</div>
-              <p className="disc-desc">Aerobic and anaerobic capacity — measured, programmed, and progressed every session without exception.</p>
-            </div>
-            <div className="disc-card">
-              <div className="disc-num">04</div>
-              <div className="disc-name">Sprint Mechanics</div>
-              <p className="disc-desc">Drills and video feedback to refine stride, posture, and ground contact for faster times.</p>
-            </div>
-            <div className="disc-card">
-              <div className="disc-num">05</div>
-              <div className="disc-name">Pilates</div>
-              <p className="disc-desc">Core control, breath work, and precision movement to complement heavy training and build long-term resilience.</p>
-            </div>
-            <div className="disc-card">
-              <div className="disc-num">06</div>
-              <div className="disc-name">Mobility</div>
-              <p className="disc-desc">Structured routines that keep joints healthy and training uninterrupted — designed for the long haul.</p>
-            </div>
-            <div className="disc-card">
-              <div className="disc-num">07</div>
-              <div className="disc-name">Allied Health</div>
-              <p className="disc-desc">Sports physiotherapy and rehab integrated directly with your S&amp;C coaching — seamless care, zero gaps.</p>
-            </div>
-            <div className="disc-card">
-              <div className="disc-num">08</div>
-              <div className="disc-name">NDIS Program</div>
-              <p className="disc-desc">Tailored movement and strength programs delivered with genuine care by qualified professionals.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* COACHES */}
-      <section className="coaches-section reveal" id="coaches">
-        <div className="coaches-inner">
-          <div className="coaches-top">
-            <div>
-              <div className="kicker">Our Team</div>
-              <h2 className="sec-title">
-                Our Elite
-                <br />
-                Coaches.
-              </h2>
-              <p className="sec-body">
-                Every Athletix coach holds dual accreditation from Australia&apos;s two peak national bodies — ASCA and ESSA.
-                University degrees merged with real on-field experience at the highest level of Australian sport.
-              </p>
-            </div>
-            <div className="cred-bar">
-              <div className="cred-item">
-                <span className="cred-val">ASCA</span>
-                <span className="cred-lbl">Accredited</span>
-              </div>
-              <div className="cred-sep" />
-              <div className="cred-item">
-                <span className="cred-val">ESSA</span>
-                <span className="cred-lbl">Certified</span>
-              </div>
-              <div className="cred-sep" />
-              <div className="cred-item">
-                <span className="cred-val">8</span>
-                <span className="cred-lbl">Elite Coaches</span>
-              </div>
-              <div className="cred-sep" />
-              <div className="cred-item">
-                <span className="cred-val">Uni</span>
-                <span className="cred-lbl">All Qualified</span>
-              </div>
-            </div>
-          </div>
-          <div className="coaches-grid">
-            <div className="coach-card">
-              <div className="coach-photo">
-                <img src="https://athletix.com.au/wp-content/uploads/2021/07/IMG_5921-scaled-e1723499457589.jpeg" alt="Marco Mastrorocco" />
-                <div className="coach-grad" />
-              </div>
-              <div className="coach-info">
-                <div className="coach-name">Marco Mastrorocco</div>
-                <span className="coach-role">Director of Athletic Performance</span>
-                <div className="coach-tags">
-                  <span className="coach-tag">ASCA L2</span>
-                  <span className="coach-tag">ESSA</span>
-                  <span className="coach-tag">Youth Dev</span>
-                  <span className="coach-tag">Founder</span>
-                </div>
-              </div>
-            </div>
-            <div className="coach-card">
-              <div className="coach-photo">
-                <img src="https://athletix.com.au/wp-content/uploads/2023/05/IMG_9109-scaled-e1684449065529.jpg" alt="Reza Sharifian" />
-                <div className="coach-grad" />
-              </div>
-              <div className="coach-info">
-                <div className="coach-name">Reza Sharifian</div>
-                <span className="coach-role">Head Coach</span>
-                <div className="coach-tags">
-                  <span className="coach-tag">ASCA</span>
-                  <span className="coach-tag">ESSA</span>
-                  <span className="coach-tag">Performance</span>
-                </div>
-              </div>
-            </div>
-            <div className="coach-card">
-              <div className="coach-photo">
-                <img src="https://athletix.com.au/wp-content/uploads/2025/08/1000133313-1-e1759098729912.jpg" alt="Sam Mulherin" />
-                <div className="coach-grad" />
-              </div>
-              <div className="coach-info">
-                <div className="coach-name">Sam Mulherin</div>
-                <span className="coach-role">S&amp;C Coach</span>
-                <div className="coach-tags">
-                  <span className="coach-tag">ASCA</span>
-                  <span className="coach-tag">ESSA</span>
-                  <span className="coach-tag">Athlete Dev</span>
-                </div>
-              </div>
-            </div>
-            <div className="coach-card">
-              <div className="coach-photo">
-                <img src="https://athletix.com.au/wp-content/uploads/2023/05/IMG_9049-scaled-e1684450928402.jpg" alt="Ritti Kagi" />
-                <div className="coach-grad" />
-              </div>
-              <div className="coach-info">
-                <div className="coach-name">Ritti Kagi</div>
-                <span className="coach-role">S&amp;C Coach</span>
-                <div className="coach-tags">
-                  <span className="coach-tag">ASCA</span>
-                  <span className="coach-tag">Speed</span>
-                  <span className="coach-tag">Agility</span>
-                </div>
-              </div>
-            </div>
-            <div className="coach-card">
-              <div className="coach-photo">
-                <img src="https://athletix.com.au/wp-content/uploads/2026/04/20260319_123309-scaled-e1775810245164.jpg" alt="Sam Kwong" />
-                <div className="coach-grad" />
-              </div>
-              <div className="coach-info">
-                <div className="coach-name">Sam Kwong</div>
-                <span className="coach-role">S&amp;C Coach</span>
-                <div className="coach-tags">
-                  <span className="coach-tag">UQ Honours</span>
-                  <span className="coach-tag">AFL</span>
-                  <span className="coach-tag">Youth</span>
-                </div>
-              </div>
-            </div>
-            <div className="coach-card">
-              <div className="coach-photo">
-                <img src="https://athletix.com.au/wp-content/uploads/2023/05/IMG_0147-e1685322267891.jpg" alt="David Lawrence" />
-                <div className="coach-grad" />
-              </div>
-              <div className="coach-info">
-                <div className="coach-name">David Lawrence</div>
-                <span className="coach-role">Exercise Physiologist</span>
-                <div className="coach-tags">
-                  <span className="coach-tag">ESSA</span>
-                  <span className="coach-tag">NDIS</span>
-                  <span className="coach-tag">Clinical</span>
-                </div>
-              </div>
-            </div>
-            <div className="coach-card">
-              <div className="coach-photo">
-                <img src="https://athletix.com.au/wp-content/uploads/2024/08/DSC06038-scaled-e1723499280792.jpg" alt="Sasha Cochrane" />
-                <div className="coach-grad" />
-              </div>
-              <div className="coach-info">
-                <div className="coach-name">Sasha Cochrane</div>
-                <span className="coach-role">S&amp;C Coach</span>
-                <div className="coach-tags">
-                  <span className="coach-tag">ASCA</span>
-                  <span className="coach-tag">ESSA</span>
-                  <span className="coach-tag">Mobility</span>
-                </div>
-              </div>
-            </div>
-            <div className="coach-card">
-              <div className="coach-photo">
-                <img src="https://athletix.com.au/wp-content/uploads/2026/04/20260320_144026-scaled-e1775810315378.jpg" alt="Toby Wallis" />
-                <div className="coach-grad" />
-              </div>
-              <div className="coach-info">
-                <div className="coach-name">Toby Wallis</div>
-                <span className="coach-role">S&amp;C Coach</span>
-                <div className="coach-tags">
-                  <span className="coach-tag">ASCA</span>
-                  <span className="coach-tag">AFL</span>
-                  <span className="coach-tag">Rugby</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* HUB */}
-      <section className="hub-section reveal" id="hub">
-        <div className="hub-inner">
-          <div className="kicker">Allied Health &amp; Nutrition</div>
-          <h2 className="sec-title">
-            The Full Hub.
-            <br />
-            Nothing Missing.
-          </h2>
-          <p className="sec-body" style={{ maxWidth: 700 }}>
-            Most gyms stop at coaching. We don&apos;t. Athletix is a complete high performance environment — S&amp;C, physio, rehab,
-            sports nutrition, and return to play. All under one roof. All talking to each other.
-          </p>
-          <div className="hub-layout">
-            <div>
-              <div className="hub-card">
-                <div className="hub-badge">
-                  <div className="hub-dot" />
-                  <span>Live on the Floor</span>
-                </div>
-                <div className="hub-card-title">Sports Physiotherapy &amp; Rehab</div>
-                <p className="hub-card-desc">
-                  25+ years of combined clinical experience. Our physios work alongside coaches — not in a separate clinic. Integrated
-                  care, real communication, zero gaps between training and recovery.
-                </p>
-                <div className="hub-services">
-                  <div className="hub-svc">
-                    <div className="hub-svc-icon">⚡</div>
-                    <span className="hub-svc-text">Specialist Sports Physiotherapy — on-site weekly</span>
-                  </div>
-                  <div className="hub-svc">
-                    <div className="hub-svc-icon">🔬</div>
-                    <span className="hub-svc-text">Injury screening &amp; prevention protocols</span>
-                  </div>
-                  <div className="hub-svc">
-                    <div className="hub-svc-icon">📈</div>
-                    <span className="hub-svc-text">Structured rehabilitation programs</span>
-                  </div>
-                  <div className="hub-svc">
-                    <div className="hub-svc-icon">🏅</div>
-                    <span className="hub-svc-text">Best practice return to sport &amp; return to play</span>
-                  </div>
-                  <div className="hub-svc">
-                    <div className="hub-svc-icon">📊</div>
-                    <span className="hub-svc-text">Force plate testing &amp; performance benchmarking</span>
-                  </div>
-                </div>
-              </div>
-              <div className="dietitian-callout">
-                <span className="diet-label">Sports Nutrition · Athlete Members</span>
-                <div className="diet-title">
-                  Elite Sports Dietitian.
-                  <br />
-                  Olympic &amp; Pro Credentials.
-                </div>
-                <p className="diet-desc">
-                  Our resident sports dietitian has fuelled athletes at the highest levels of Australian sport — NRL, NBL basketball,
-                  and Olympic programs. Now working with Athletix athletes to optimise every session and every plate. Available to
-                  Athlete members.
-                </p>
-                <div className="diet-creds">
-                  <span className="diet-cred">NRL Programs</span>
-                  <span className="diet-cred">NBL Basketball</span>
-                  <span className="diet-cred">Olympic Teams</span>
-                  <span className="diet-cred">Accredited APD</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="hub-physios">
-                <div className="physio-card">
-                  <div className="physio-photo">
-                    <img src="https://athletix.com.au/wp-content/uploads/2022/12/IMG_9100-scaled-e1670906460682.jpg" alt="Myles Burfield" />
-                  </div>
-                  <div className="physio-info">
-                    <div className="physio-name">Myles Burfield</div>
-                    <span className="physio-role">Head Physio · Specialist Sports &amp; Exercise Physio</span>
-                    <p className="physio-exp">
-                      Fellowship ACP · Australian Institute of Sport · Australian Olympic Canoe/Kayak Team Physio (Rio 2016 Bronze) ·
-                      Cirque du Soleil · 16 yrs private practice · ACU Clinical Educator
-                    </p>
-                  </div>
-                </div>
-                <div className="physio-card">
-                  <div className="physio-photo">
-                    <img src="https://athletix.com.au/wp-content/uploads/2024/07/IMG-20240130-WA0019-e1727084066284.jpg" alt="Bridie Nicholson" />
-                  </div>
-                  <div className="physio-info">
-                    <div className="physio-name">Bridie Nicholson</div>
-                    <span className="physio-role">Physiotherapist · Titled Sport &amp; Exercise Physio</span>
-                    <p className="physio-exp">
-                      7+ yrs sports physio · Canadian Basketball Team · Brisbane Roar FC · NHL Ice Hockey · Para-Swimming · Running
-                      &amp; Boxing
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="hub-stat-row">
-                <div className="hub-stat-box">
-                  <span className="hub-stat-n">25+</span>
-                  <span className="hub-stat-l">Yrs Combined XP</span>
-                </div>
-                <div className="hub-stat-box">
-                  <span className="hub-stat-n">AIS</span>
-                  <span className="hub-stat-l">Experience</span>
-                </div>
-                <div className="hub-stat-box">
-                  <span className="hub-stat-n">Olympic</span>
-                  <span className="hub-stat-l">Games Physio</span>
-                </div>
-              </div>
-              <div style={{ marginTop: 3, background: "var(--card)", border: "1px solid var(--border)", padding: "24px 22px" }}>
-                <p style={{ fontSize: 14, lineHeight: 1.8, color: "var(--silver)" }}>
-                  <strong style={{ color: "var(--white)" }}>
-                    &quot;Your physio and your S&amp;C coach are in the same building, working from the same plan.&quot;
-                  </strong>
-                  <br />
-                  <br />
-                  No referral delays. No information gaps. No guessing. This is what integrated care actually looks like — and it&apos;s
-                  what separates Athletix from every gym in Brisbane.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SPACE */}
-      <section className="space-section reveal">
-        <div className="space-inner">
-          <div className="kicker">The Floor</div>
-          <h2 className="sec-title">Inside Athletix.</h2>
-          <p className="sec-body">
-            Open warehouse space. Elite equipment. A sprint track. Built for movement — not intimidation. Where champions train
-            alongside beginners, and everyone belongs.
-          </p>
-          <div className="space-grid">
-            <div className="space-cell tall">
-              <img src="https://athletix.com.au/wp-content/uploads/2024/07/DSC02067-768x512.jpg" alt="Main floor" />
-              <div className="s-grad" />
-              <div className="space-label">
-                <span>Main Training Floor</span>
-                <strong>120sqm S&amp;C Area</strong>
-              </div>
-            </div>
-            <div className="space-cell">
-              <img src="https://athletix.com.au/wp-content/uploads/2024/06/DSC01921-768x512.jpg" alt="Sprint track" />
-              <div className="s-grad" />
-              <div className="space-label">
-                <span>Performance</span>
-                <strong>3-Lane Sprint Track</strong>
-              </div>
-            </div>
-            <div className="space-cell">
-              <img src="https://athletix.com.au/wp-content/uploads/2024/08/DSC06320-scaled-e1723546921926.jpg" alt="Coaching" />
-              <div className="s-grad" />
-              <div className="space-label">
-                <span>Coaching</span>
-                <strong>Small Group Sessions</strong>
-              </div>
-            </div>
-            <div className="space-cell">
-              <img src="https://athletix.com.au/wp-content/uploads/2022/01/Youth-sport-1-e1684274091394.png" alt="Youth" />
-              <div className="s-grad" />
-              <div className="space-label">
-                <span>Youth</span>
-                <strong>Athletic Development</strong>
-              </div>
-            </div>
-            <div className="space-cell">
-              <img src="https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-AFT-53-scaled-e1733206277887.jpg" alt="Athletes" />
-              <div className="s-grad" />
-              <div className="space-label">
-                <span>Elite</span>
-                <strong>Athlete Programs</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="testi-section reveal">
-        <div className="testi-inner">
-          <div className="kicker">Member Stories</div>
-          <h2 className="sec-title">
-            What Our
-            <br />
-            Members Say.
-          </h2>
-          <p className="sec-body">
-            Real people. Real results. Hear directly from the athletes, parents, and everyday members who train with us every week.
-          </p>
-          <div className="testi-grid">
-            <div className="testi-card">
-              <div className="testi-video" onClick={toggleVid}>
-                <video preload="metadata" loop onLoadedMetadata={seekToMiddle}>
-                  <source src="https://athletix.com.au/wp-content/uploads/2024/07/Testimonial-2-Website.mp4" type="video/mp4" />
-                </video>
-                <div className="testi-play">
-                  <div className="play-ring">
-                    <svg width="16" height="16" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <p className="testi-quote">
-                &quot;The coaches here genuinely care. <strong>It&apos;s not just a gym — it&apos;s a community</strong> where everyone
-                pushes each other to be better every single session.&quot;
-              </p>
-              <div className="testi-person">
-                <div className="testi-avatar">💪</div>
-                <div>
-                  <div className="testi-name">Athletix Member</div>
-                  <span className="testi-meta">Adult Program</span>
-                </div>
-              </div>
-            </div>
-            <div className="testi-card">
-              <div className="testi-video" onClick={toggleVid}>
-                <video preload="metadata" loop onLoadedMetadata={seekToMiddle}>
-                  <source src="https://athletix.com.au/wp-content/uploads/2024/07/Testimonial-1-Website.mp4" type="video/mp4" />
-                </video>
-                <div className="testi-play">
-                  <div className="play-ring">
-                    <svg width="16" height="16" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <p className="testi-quote">
-                &quot;I never thought I&apos;d be the type of person to love training. <strong>The coaches met me where I was</strong>{" "}
-                and I haven&apos;t looked back since joining.&quot;
-              </p>
-              <div className="testi-person">
-                <div className="testi-avatar">🏃</div>
-                <div>
-                  <div className="testi-name">Athletix Member</div>
-                  <span className="testi-meta">Adult Program</span>
-                </div>
-              </div>
-            </div>
-            <div className="testi-card">
-              <div className="testi-video" onClick={toggleVid}>
-                <video preload="metadata" loop onLoadedMetadata={seekToMiddle}>
-                  <source src="https://athletix.com.au/wp-content/uploads/2024/07/DARCY.mp4" type="video/mp4" />
-                </video>
-                <div className="testi-play">
-                  <div className="play-ring">
-                    <svg width="16" height="16" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <p className="testi-quote">
-                &quot;<strong>Best decision I made for my athletic career.</strong> The level of coaching and the science here is the
-                same as what the pros get. No question.&quot;
-              </p>
-              <div className="testi-person">
-                <div className="testi-avatar">🏆</div>
-                <div>
-                  <div className="testi-name">Darcy</div>
-                  <span className="testi-meta">Athlete Program</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* MEMBERSHIP */}
-      <section className="membership-section reveal" id="membership">
-        <div className="membership-inner">
-          <div className="kicker">Join Athletix</div>
-          <h2 className="sec-title">Membership Plans.</h2>
-          <p className="sec-body">
-            Choose the plan that matches where you are today. Weekly billing, flexible upgrades, full facility access from day one.
-          </p>
-          <div className="membership-grid">
-            <div className="plan-card">
-              <div className="plan-img">
-                <img src="https://athletix.com.au/wp-content/uploads/2024/08/2.png" alt="Youth" />
-                <div className="plan-img-grad" />
-              </div>
-              <div className="plan-content">
-                <div className="plan-tier">Ages 8–17</div>
-                <div className="plan-name">Youth</div>
-                <div className="plan-price">
-                  <span className="plan-price-n">$42</span>
-                  <span className="plan-price-p">/ week</span>
-                </div>
-                <ul className="plan-features">
-                  <li>Unlimited Classes</li>
-                  <li>Free benchmark test days</li>
-                  <li>30 min 1-on-1 consultation</li>
-                  <li>Physio Screening</li>
-                  <li>All Area Access</li>
-                </ul>
-                <Link href="/membership#youth" className="btn-plan-out">
-                  View Options
-                </Link>
-              </div>
-            </div>
-            <div className="plan-card featured">
-              <div className="plan-badge">Most Popular</div>
-              <div className="plan-img">
-                <img src="https://athletix.com.au/wp-content/uploads/2024/08/DSC06320-scaled-e1723546921926.jpg" alt="Adults" />
-                <div className="plan-img-grad" />
-              </div>
-              <div className="plan-content">
-                <div className="plan-tier">All Levels</div>
-                <div className="plan-name">Adults</div>
-                <div className="plan-price">
-                  <span className="plan-price-n">$50</span>
-                  <span className="plan-price-p">/ week</span>
-                </div>
-                <ul className="plan-features">
-                  <li>Unlimited Classes</li>
-                  <li>Free benchmark test days</li>
-                  <li>30 min 1-on-1 consultation</li>
-                  <li>Physio Screening</li>
-                  <li>S&amp;C Consultation</li>
-                  <li>All Area Access</li>
-                </ul>
-                <Link href="/membership#adult" className="btn-plan">
-                  View Options
-                </Link>
-              </div>
-            </div>
-            <div className="plan-card">
-              <div className="plan-img">
-                <img src="https://athletix.com.au/wp-content/uploads/2024/08/DSC06236-scaled-e1733203149463.jpg" alt="Family" />
-                <div className="plan-img-grad" />
-              </div>
-              <div className="plan-content">
-                <div className="plan-tier">All Ages</div>
-                <div className="plan-name">Family</div>
-                <div className="plan-price">
-                  <span className="plan-price-n">$120</span>
-                  <span className="plan-price-p">/ week</span>
-                </div>
-                <ul className="plan-features">
-                  <li>Unlimited Classes</li>
-                  <li>Free benchmark test days</li>
-                  <li>30 min 1-on-1 consultation</li>
-                  <li>Physio Screening</li>
-                  <li>S&amp;C Consultation</li>
-                  <li>All Area Access</li>
-                </ul>
-                <Link href="/membership#family" className="btn-plan-out">
-                  View Options
-                </Link>
-              </div>
-            </div>
-            <div className="plan-card">
-              <div className="plan-img">
-                <img src="https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-AFT-53-scaled-e1733206277887.jpg" alt="Athlete" />
-                <div className="plan-img-grad" />
-              </div>
-              <div className="plan-content">
-                <div className="plan-tier">12-Month Subscription</div>
-                <div className="plan-name">Athlete</div>
-                <div className="plan-price">
-                  <span className="plan-price-n">$150</span>
-                  <span className="plan-price-p">/ week</span>
-                </div>
-                <ul className="plan-features">
-                  <li>Unlimited Force Plate Tests</li>
-                  <li>Unlimited Classes</li>
-                  <li>Dedicated Coach</li>
-                  <li>Weekly PT Session</li>
-                  <li>Sports Dietitian Access</li>
-                  <li>All Area Access</li>
-                </ul>
-                <Link href="/membership#performance" className="btn-plan-out">
-                  View Options
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <div className="cta-section reveal">
-        <div className="cta-grid-bg" />
-        <div className="cta-inner">
-          <div className="cta-tag">Limited Offer</div>
-          <h2 className="cta-h">
-            $7 for
-            <br />
-            <em>7 Days.</em>
-          </h2>
-          <p className="cta-sub">Unlimited access. All classes. Meet the coaches. Feel the difference.</p>
-          <p className="cta-detail">Fully Refundable · No Lock-In · Every Level Welcome</p>
-          <div className="cta-btns">
-            <button className="btn-primary" onClick={() => scrollTo("book")}>
-              Claim Your Trial
-            </button>
-            <button className="btn-ghost" onClick={() => scrollTo("membership")}>
-              See All Plans
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* BOOK (formerly footer) */}
-      <section className="book-section" id="book">
-        <div className="book-top">
-          <div>
-            <div className="f-logo">
-              <img src="/image/athlethix-logo.png" alt="Athletix" />
-            </div>
-            <p className="f-tagline">
-              Elite S&amp;C coaching, sports physiotherapy, and sports nutrition — all under one roof. World-class expertise, built for
-              every level. Fortitude Valley, Brisbane.
+          <div className="hero-grid"></div>
+          <div className="hero-overlay"></div>
+          <div className="hero-content">
+            <div className="hero-kicker">{hero.kicker}</div>
+            <h1 className="hero-h1">
+              {hero.h1Top}
+              <br />
+              <em>{hero.h1Em}</em>
+            </h1>
+            <p className="hero-sub">
+              {hero.sub}{" "}
+              {hero.subBoldStart && <strong>{hero.subBoldStart}</strong>}
             </p>
-            <div className="f-contacts">
-              <div className="f-contact-row">
-                <div className="f-contact-icon">📍</div>42 Baxter Street, Fortitude Valley QLD 4006
+            <div className="hero-btns">
+              <a href={hero.primaryBtn.href} className="btn-primary">
+                {hero.primaryBtn.label}
+              </a>
+              <a href={hero.secondaryBtn.href} className="btn-ghost">
+                {hero.secondaryBtn.label}
+              </a>
+            </div>
+          </div>
+          <div className="hero-stats">
+            {hero.stats.map((s, i) => (
+              <div key={i} className="hero-stat">
+                <span className="hstat-n">{s.n}</span>
+                <span className="hstat-l">{s.l}</span>
               </div>
-              <div className="f-contact-row">
-                <div className="f-contact-icon">📞</div>0499 981 286
+            ))}
+          </div>
+        </section>
+
+        {/* TRUST */}
+        <div className="trust-wrap reveal" ref={registerRef as never}>
+          <div className="trust-inner">
+            <h2 className="trust-h">
+              {trust.headingTop} <em>{trust.headingEm}</em>
+            </h2>
+            <span className="trust-label">{trust.label}</span>
+            <div className="logo-row">
+              {trust.logos.map((l, i) => (
+                <div key={i} className="logo-pill">
+                  <img src={l.src} alt={l.alt} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* COMMUNITY */}
+        <section
+          className="community-section reveal"
+          ref={registerRef as never}
+        >
+          <div className="community-inner">
+            <div className="kicker">{community.kicker}</div>
+            <h2 className="sec-title">
+              {community.h2Top}
+              <br />
+              <em>{community.h2Em}</em>
+            </h2>
+            <div className="community-top">
+              <div>
+                <p className="brand-statement">
+                  {community.brandStatementTop}{" "}
+                  <em>{community.brandStatementEm}</em>
+                </p>
+                <p className="sec-body">{community.body}</p>
               </div>
-              <div className="f-contact-row">
-                <div className="f-contact-icon">✉️</div>info@athletix.com.au
+              <div>
+                <div className="slogan-block">
+                  <span className="slogan-block-label">
+                    {community.sloganLabel}
+                  </span>
+                  <div className="slogan">
+                    {community.sloganTop}
+                    <br />
+                    <em>{community.sloganEm}</em>
+                  </div>
+                </div>
               </div>
-              <div className="f-contact-row">
-                <div className="f-contact-icon">🕐</div>Mon/Wed/Fri 5:15am–7:30pm · Tue/Thu 6am–7:30pm · Sat 6am–11:30am
+            </div>
+            <div className="community-audiences">
+              {community.audiences.map((a, i) => (
+                <div key={i} className="audience-card">
+                  <div className="audience-icon">{a.icon}</div>
+                  <div className="audience-title">{a.title}</div>
+                  <p className="audience-desc">{a.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* VS */}
+        <section className="vs-section reveal" ref={registerRef as never}>
+          <div className="vs-inner">
+            <div className="kicker">{vs.kicker}</div>
+            <h2 className="sec-title">
+              {vs.h2Top}
+              <br />
+              <em>{vs.h2Em}</em>
+            </h2>
+            <p className="sec-body">{vs.body}</p>
+            <div className="vs-grid">
+              <div className="vs-head them">{vs.themHead}</div>
+              <div className="vs-head mid">{vs.midHead}</div>
+              <div className="vs-head us">{vs.usHead}</div>
+
+              {vs.rows.map((r, i) => (
+                <div key={i} style={{ display: "contents" }}>
+                  <div className="vs-c bad">
+                    <span className="ic">✗</span>
+                    {r.bad}
+                  </div>
+                  <div className="vs-c midc">
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                  <div className="vs-c good">
+                    <span className="ic">✓</span>
+                    {r.good}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CLASSES */}
+        <section
+          className="classes-section reveal"
+          id="classes"
+          ref={registerRef as never}
+        >
+          <div className="classes-inner">
+            <div className="kicker">{classes.kicker}</div>
+            <h2 className="sec-title">
+              {classes.h2Top}
+              <br />
+              <em>{classes.h2Em}</em>
+            </h2>
+            <p className="sec-body">{classes.body}</p>
+            <div className="classes-grid">
+              {classes.items.map((c, i) => (
+                <a key={i} className="class-card" href={c.href}>
+                  <div className="class-img">
+                    <img src={c.img} alt={c.alt} />
+                    <div className="class-grad"></div>
+                    <div className="class-overlay"></div>
+                  </div>
+                  <div className="class-info">
+                    <span className="class-tag">{c.tag}</span>
+                    <div className="class-name">{c.name}</div>
+                    <p className="class-desc">{c.desc}</p>
+                    <div className="class-cta">
+                      Learn More <span>→</span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DISCIPLINES */}
+        <section
+          className="disc-section reveal"
+          id="disciplines"
+          ref={registerRef as never}
+        >
+          <div className="disc-inner">
+            <div className="kicker">{disciplines.kicker}</div>
+            <h2 className="sec-title">
+              {disciplines.h2Top}
+              <br />
+              <em>{disciplines.h2Em}</em>
+            </h2>
+            <div className="disc-grid">
+              {disciplines.items.map((d, i) => (
+                <div
+                  key={i}
+                  className={`disc-card${d.hawkin ? " hawkin" : ""}`}
+                >
+                  <div className="disc-num">{d.num}</div>
+                  <div className="disc-name">{d.name}</div>
+                  <p className="disc-desc">{d.desc}</p>
+                  {d.note && <span className="hawkin-note">{d.note}</span>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* COACHES */}
+        <section
+          className="coaches-section reveal"
+          id="coaches"
+          ref={registerRef as never}
+        >
+          <div className="coaches-inner">
+            <div className="coaches-top">
+              <div>
+                <div className="kicker">{coachesCfg.kicker}</div>
+                <h2 className="sec-title">
+                  {coachesCfg.h2Top}
+                  <br />
+                  <em>{coachesCfg.h2Em}</em>
+                </h2>
+                <p className="sec-body">{coachesCfg.body}</p>
+              </div>
+              <div className="cred-bar">
+                {coachesCfg.credBar.map((c, i) => (
+                  <div key={i} className="cred-item">
+                    <span className="cred-val">{c.val}</span>
+                    <span className="cred-lbl">{c.lbl}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="coaches-grid">
+              {coaches.map((c) => (
+                <div key={c.id} className="coach-card">
+                  <div className="coach-photo">
+                    <img src={c.image} alt={c.name} />
+                    <div className="coach-grad"></div>
+                  </div>
+                  <div className="coach-info">
+                    <div className="coach-name">{c.name}</div>
+                    <span className="coach-role">{c.role}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* HUB */}
+        <section
+          className="hub-section reveal"
+          id="hub"
+          ref={registerRef as never}
+        >
+          <div className="hub-inner">
+            <div className="kicker">{hub.kicker}</div>
+            <h2 className="sec-title">
+              {hub.h2Top}
+              <br />
+              <em>{hub.h2Em}</em>
+            </h2>
+            <p className="sec-body" style={{ maxWidth: 760 }}>
+              {hub.body}
+            </p>
+
+            <div className="hub-stat-row">
+              {hub.stats.map((s, i) => (
+                <div key={i} className="hub-stat-box">
+                  <span className="hub-stat-n">{s.n}</span>
+                  <span className="hub-stat-l">{s.l}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="hub-layout">
+              <div>
+                <div className="hub-card">
+                  <div className="hub-badge">
+                    <div className="hub-dot"></div>
+                    <span>{hub.cardBadge}</span>
+                  </div>
+                  <div className="hub-card-title">{hub.cardTitle}</div>
+                  <p className="hub-card-desc">{hub.cardDesc}</p>
+                  <div className="hub-services">
+                    {hub.services.map((s, i) => (
+                      <div key={i} className="hub-svc">
+                        <div className="hub-svc-icon">{s.icon}</div>
+                        <span className="hub-svc-text">{s.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div className="hub-physios">
+                  {hub.physios.map((p, i) => (
+                    <div key={i} className="physio-card">
+                      <div className="physio-photo">
+                        <img src={p.img} alt={p.name} />
+                      </div>
+                      <div className="physio-info">
+                        <div className="physio-name">{p.name}</div>
+                        <span className="physio-role">{p.role}</span>
+                        <p className="physio-exp">{p.exp}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="dietitian-callout">
+                  <span className="diet-label">{hub.dietLabel}</span>
+                  <div className="diet-title">
+                    {hub.dietTitleTop}
+                    <br />
+                    <em>{hub.dietTitleEm}</em>
+                  </div>
+                  <p className="diet-desc">{hub.dietDesc}</p>
+                  <div className="diet-creds">
+                    {hub.dietCreds.map((c, i) => (
+                      <span key={i} className="diet-cred">
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div>
-            <div className="f-form-title">Book Your Trial.</div>
-            <p className="f-form-sub">Tell us about yourself and we&apos;ll have you on the floor this week.</p>
-            <form onSubmit={(e) => e.preventDefault()}>
+        </section>
+
+        {/* SPACE */}
+        <section className="space-section reveal" ref={registerRef as never}>
+          <div className="space-inner">
+            <div className="kicker">{space.kicker}</div>
+            <h2 className="sec-title">
+              {space.h2Top} <em>{space.h2Em}</em>
+            </h2>
+            <p className="sec-body">{space.body}</p>
+            <div className="space-grid">
+              {space.cells.map((c, i) => (
+                <div
+                  key={i}
+                  className={`space-cell${c.tall ? " tall" : ""}`}
+                >
+                  <img src={c.img} alt={c.alt} />
+                  <div className="s-grad"></div>
+                  <div className="space-label">
+                    <span>{c.labelTop}</span>
+                    <strong>{c.labelBottom}</strong>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIALS */}
+        <section className="testi-section reveal" ref={registerRef as never}>
+          <div className="testi-inner">
+            <div className="kicker">{testimonials.kicker}</div>
+            <h2 className="sec-title">
+              {testimonials.h2Top}
+              <br />
+              <em>{testimonials.h2Em}</em>
+            </h2>
+
+            <div className="hero-quote">
+              <p className="hero-quote-text">
+                &ldquo;{testimonials.heroQuoteText}
+                <em>{testimonials.heroQuoteEm}</em>&rdquo;
+              </p>
+              <p className="hero-quote-attr">
+                {testimonials.heroQuoteAttr}
+              </p>
+            </div>
+
+            <div className="testi-grid">
+              {testimonials.videos.map((t, i) => (
+                <div key={i} className="testi-card">
+                  <div className="testi-video" onClick={toggleVideo}>
+                    <video preload="none" loop>
+                      <source src={t.src} type="video/mp4" />
+                    </video>
+                    <div className="testi-play">
+                      <div className="play-ring">
+                        <svg width="18" height="18" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="testi-quote">
+                    &ldquo;{t.quote}
+                    <strong>{t.bold}</strong>
+                    {t.tail}&rdquo;
+                  </p>
+                  <div className="testi-person">
+                    <div className="testi-avatar">{t.avatar}</div>
+                    <div>
+                      <div className="testi-name">{t.name}</div>
+                      <span className="testi-meta">{t.meta}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="community-stories">
+              {testimonials.stories.map((s, i) => (
+                <div key={i} className="story-card">
+                  <div className="story-head">
+                    <span className="story-icon">{s.icon}</span>
+                    <div className="story-title">
+                      {s.titleTop} <em>{s.titleEm}</em>
+                    </div>
+                  </div>
+                  <p className={`story-body${s.isQuote ? " quote" : ""}`}>
+                    {s.isQuote ? <>&ldquo;{s.body}&rdquo;</> : s.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* MEMBERSHIP */}
+        <section
+          className="membership-section reveal"
+          id="membership"
+          ref={registerRef as never}
+        >
+          <div className="membership-inner">
+            <div className="kicker">{membership.kicker}</div>
+            <h2 className="sec-title">
+              {membership.h2Top}
+              <br />
+              <em>{membership.h2Em}</em>
+            </h2>
+            <p className="sec-body">{membership.body}</p>
+            <div className="membership-grid">
+              {membership.plans.map((p, i) => (
+                <div
+                  key={i}
+                  className={`plan-card${p.featured ? " featured" : ""}`}
+                >
+                  {p.featured && (
+                    <div className="plan-badge">★ Most Popular</div>
+                  )}
+                  <div className="plan-img">
+                    <img src={p.img} alt={p.alt} />
+                    <div className="plan-img-grad"></div>
+                  </div>
+                  <div className="plan-content">
+                    <div className="plan-tier">{p.tier}</div>
+                    <div className="plan-name">{p.name}</div>
+                    <div className="plan-price">
+                      <span className="plan-price-n">{p.price}</span>
+                      <span className="plan-price-p">/ week</span>
+                    </div>
+                    <ul className="plan-features">
+                      {p.features.map((f, j) => (
+                        <li key={j}>
+                          <span className="check">✓</span> {f}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      className={p.featured ? "btn-plan" : "btn-plan-out"}
+                      href={p.href}
+                    >
+                      View Plan
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <div className="cta-section reveal" ref={registerRef as never}>
+          <div className="cta-grid-bg"></div>
+          <div className="cta-inner">
+            <div className="cta-tag">{cta.tag}</div>
+            <h2 className="cta-h">
+              {cta.hTop}
+              <br />
+              <em>{cta.hEm}</em>
+            </h2>
+            <p className="cta-sub">{cta.sub}</p>
+            <p className="cta-detail">{cta.detail}</p>
+            <div className="cta-btns">
+              <a href={cta.primaryBtn.href} className="btn-primary">
+                {cta.primaryBtn.label}
+              </a>
+              <a href={cta.secondaryBtn.href} className="btn-ghost">
+                {cta.secondaryBtn.label}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* LEAD FORM */}
+        <footer className="footer-section" id="form">
+          <div className="footer-top">
+            <div>
+              <div className="f-brand">
+                <img src={footer.brandImg} alt="Athletix" />
+              </div>
+              <p className="f-tagline">{footer.tagline}</p>
+              <div className="f-contacts">
+                {footer.contacts.map((c, i) => (
+                  <div key={i} className="f-contact-row">
+                    <div className="f-contact-icon">{c.icon}</div>
+                    <div>
+                      {c.href ? <a href={c.href}>{c.text}</a> : c.text}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <form className="lead-form" onSubmit={handleSubmit}>
+              <h3 className="f-form-title">{footer.formTitle}</h3>
+              <p className="f-form-sub">{footer.formSub}</p>
+
+              <div className="ff">
+                <label className="flbl" htmlFor="fname">
+                  Full Name
+                </label>
+                <input
+                  className="finput"
+                  type="text"
+                  id="fname"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                />
+              </div>
               <div className="frow">
                 <div className="ff">
-                  <label className="flbl">Full Name</label>
-                  <input className="finput" type="text" placeholder="John Athlete" />
+                  <label className="flbl" htmlFor="fphone">
+                    Phone
+                  </label>
+                  <input
+                    className="finput"
+                    type="tel"
+                    id="fphone"
+                    name="phone"
+                    required
+                    placeholder="04xx xxx xxx"
+                  />
                 </div>
                 <div className="ff">
-                  <label className="flbl">Phone</label>
-                  <input className="finput" type="tel" placeholder="04XX XXX XXX" />
+                  <label className="flbl" htmlFor="femail">
+                    Email
+                  </label>
+                  <input
+                    className="finput"
+                    type="email"
+                    id="femail"
+                    name="email"
+                    required
+                    placeholder="you@example.com"
+                  />
                 </div>
               </div>
               <div className="ff">
-                <label className="flbl">Email</label>
-                <input className="finput" type="email" placeholder="you@email.com" />
-              </div>
-              <div className="ff">
-                <label className="flbl">I&apos;m Joining As</label>
-                <select className="finput" defaultValue="">
-                  <option value="">— Select —</option>
-                  <option>Adult Member</option>
-                  <option>Youth (Under 17)</option>
-                  <option>Family</option>
-                  <option>Athlete / Sub-Elite</option>
-                  <option>NDIS Participant</option>
+                <label className="flbl" htmlFor="fjoin">
+                  I'm Joining As
+                </label>
+                <select
+                  className="finput"
+                  id="fjoin"
+                  name="join"
+                  required
+                  defaultValue=""
+                >
+                  <option value="" disabled>
+                    Choose one...
+                  </option>
+                  {footer.joinOptions.map((o, i) => (
+                    <option key={i}>{o}</option>
+                  ))}
                 </select>
               </div>
               <div className="ff">
-                <label className="flbl">What&apos;s Your Goal?</label>
-                <input className="finput" type="text" placeholder="e.g. Get stronger, return from injury, my kid loves sport..." />
+                <label className="flbl" htmlFor="fgoal">
+                  What's Your Goal?
+                </label>
+                <textarea
+                  className="finput"
+                  id="fgoal"
+                  name="goal"
+                  placeholder="Tell us what you're working towards..."
+                />
               </div>
               <button type="submit" className="btn-submit">
-                Claim My $7 Trial
+                {footer.formButtonLabel}
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
               </button>
             </form>
           </div>
-        </div>
-      </section>
-    </div>
+        </footer>
+      </div>
+    </>
   );
 }

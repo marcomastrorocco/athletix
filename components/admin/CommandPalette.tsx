@@ -13,6 +13,8 @@ import {
   Settings,
   PlusCircle,
   ExternalLink,
+  Layers,
+  Image as ImageIcon,
 } from "lucide-react";
 
 type StaticItem = {
@@ -25,12 +27,14 @@ type StaticItem = {
 
 const STATIC: StaticItem[] = [
   { id: "dash", label: "Dashboard", hint: "Overview", href: "/admin", icon: LayoutDashboard },
+  { id: "pages", label: "Pages", hint: "Edit any page", href: "/admin/pages", icon: Layers },
   { id: "blog", label: "Blog Posts", hint: "All posts", href: "/admin/blog", icon: FileText },
   { id: "blog-new", label: "New blog post", hint: "Create a new post", href: "/admin/blog/new", icon: PlusCircle },
-  { id: "site", label: "Site Text & SEO", hint: "Edit homepage copy", href: "/admin/site", icon: Type },
+  { id: "site", label: "Homepage & SEO", hint: "Edit homepage copy", href: "/admin/site", icon: Type },
   { id: "team", label: "Team / Coaches", hint: "Manage coach list", href: "/admin/team", icon: Users },
   { id: "membership", label: "Membership Plans", hint: "Pricing tiers", href: "/admin/membership", icon: Tag },
   { id: "timetable", label: "Timetable", hint: "Weekly schedule", href: "/admin/timetable", icon: CalendarDays },
+  { id: "media", label: "Media Library", hint: "Manage uploaded images", href: "/admin/media", icon: ImageIcon },
   { id: "settings", label: "Backup & Settings", hint: "Export / import data", href: "/admin/settings", icon: Settings },
   { id: "site-view", label: "View website", hint: "Open public site in tab", href: "/", icon: ExternalLink },
 ];

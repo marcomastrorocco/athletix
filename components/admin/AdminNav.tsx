@@ -12,6 +12,8 @@ import {
   ExternalLink,
   Settings,
   LogOut,
+  Layers,
+  Image as ImageIcon,
 } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -30,11 +32,13 @@ const sections: Section[] = [
   {
     label: "Content",
     items: [
+      { href: "/admin/pages", label: "Pages", icon: Layers },
       { href: "/admin/blog", label: "Blog Posts", icon: FileText },
-      { href: "/admin/site", label: "Site Text & SEO", icon: Type },
+      { href: "/admin/site", label: "Homepage & SEO", icon: Type },
       { href: "/admin/team", label: "Team / Coaches", icon: Users },
       { href: "/admin/membership", label: "Membership Plans", icon: Tag },
       { href: "/admin/timetable", label: "Timetable", icon: CalendarDays },
+      { href: "/admin/media", label: "Media Library", icon: ImageIcon },
     ],
   },
   {
@@ -66,7 +70,11 @@ export default function AdminNav() {
             <div className="section-label">{s.label}</div>
             {s.items.map((it) => {
               const Icon = it.icon;
-              const active = pathname === it.href;
+              const active =
+                it.href === "/admin"
+                  ? pathname === "/admin"
+                  : pathname === it.href ||
+                    pathname.startsWith(it.href + "/");
               return (
                 <Link
                   key={it.href}

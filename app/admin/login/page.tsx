@@ -48,10 +48,10 @@ function LoginForm() {
           display: "grid",
           placeItems: "center",
           marginBottom: 18,
-          boxShadow: "0 12px 24px rgba(255,184,0,0.35)",
+          boxShadow: "0 12px 24px rgba(0,184,239,0.35)",
         }}
       >
-        <ShieldCheck color="#000" />
+        <ShieldCheck color="#001018" />
       </div>
       <h1 style={{ margin: 0, fontSize: 22, letterSpacing: "-0.02em" }}>
         Sign in to Admin

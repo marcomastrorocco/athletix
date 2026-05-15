@@ -6,7 +6,15 @@ const file = path.join(process.cwd(), "data", "activity.json");
 export type ActivityEntry = {
   id: string;
   at: string;
-  kind: "blog" | "site" | "team" | "membership" | "timetable" | "upload";
+  kind:
+    | "blog"
+    | "site"
+    | "team"
+    | "membership"
+    | "timetable"
+    | "upload"
+    | "page"
+    | "media";
   action: "create" | "update" | "delete";
   target: string;
 };

@@ -1,0 +1,113 @@
+{
+  "slug": "about",
+  "title": "About Us",
+  "path": "/about",
+  "cssFiles": ["/css/home-v2.css", "/css/about-page.css"],
+  "seo": {
+    "title": "About Us — ATHLETIX Brisbane",
+    "description": "Founded in 2021 by Marco Mastrorocco and Jovan Vucetic, ATHLETIX is on a mission to become the number one private high-performance facility in Australia."
+  },
+  "blocks": [
+    {
+      "type": "pageBanner",
+      "id": "banner",
+      "variant": "about",
+      "crumbs": [
+        { "label": "Home", "href": "/" },
+        { "label": "About Us", "href": "" }
+      ],
+      "title": "ABOUT",
+      "titleAccent": "US",
+      "lede": "An elite athletic development centre in Fortitude Valley, built on evidence-based coaching and a passion for long-term athletic development."
+    },
+    {
+      "type": "video",
+      "id": "why-video",
+      "eyebrow": "Our Story",
+      "heading": "WHY ATHLETIX?",
+      "lede": "Hear from our founders on why we built ATHLETIX and the mission that drives every coach on the floor.",
+      "embedUrl": "https://www.youtube.com/embed/GoBd8nAO650"
+    },
+    {
+      "type": "numberedList",
+      "id": "story-blocks",
+      "items": [
+        {
+          "num": "01",
+          "title": "Train Like an Athlete",
+          "body": "Founded in 2021 by Marco Mastrorocco and Jovan Vucetic, ATHLETIX is on a mission to become the **number one private high-performance facility in Australia**.\n\nWe are committed to **training everyone like athletes**, bridging the high-performance model to **regular people**, *not exclusively to athletes*."
+        },
+        {
+          "num": "02",
+          "title": "What We Do",
+          "body": "At ATHLETIX, we specialise in:\n\n- **Strength and conditioning** training\n- **Athlete training programs**\n- Unique, evidence-based **group fitness classes**\n- Long-term **athlete development (LTAD) pathways for youth athletes**\n- **In-house sports rehabilitation programs**\n- Coaching **professional athletes**\n- Supporting the physical preparedness for any sport"
+        },
+        {
+          "num": "03",
+          "title": "Why We Are Different",
+          "body": "ATHLETIX stands out by integrating **high-performance training principles into every client's program**, regardless of their athletic background. Our approach is rooted in **evidence-based practices**, and we are dedicated to delivering personalized, high-quality coaching that drives results.\n\nWe foster a community where both elite athletes and general fitness enthusiasts can achieve their goals through scientifically backed training methods."
+        },
+        {
+          "num": "04",
+          "title": "Our Philosophy",
+          "body": "> We believe in creating strong and resilient individuals capable of withstanding sport demands and living a pain-free life.\n\nOur passion for **youth development** drives our focus on sound **LTAD principles** and our opposition to early sport specialisation. We emphasise building solid competencies through a **systematic approach to training**. Our coaches are responsible for running programs that align with the ATHLETIX brand, ensuring that every client receives the highest standard of care and expertise."
+        }
+      ]
+    },
+    {
+      "type": "podcast",
+      "id": "asca-podcast",
+      "tag": "FEATURED ON THE ASCA PODCAST",
+      "title": "Our Approach to Youth Training",
+      "body": "Hear our founders on the Australian Strength & Conditioning Association podcast on how we apply LTAD principles, build robust youth athletes, and stay clear of early sport specialisation.",
+      "primaryLabel": "Listen to the podcast",
+      "primaryHref": "https://strengthandconditioning.org/asca-podcast",
+      "secondaryLabel": "Talk to a Coach",
+      "secondaryHref": "/contact"
+    },
+    {
+      "type": "stats",
+      "id": "about-stats",
+      "items": [
+        { "value": "2021", "label": "Founded in Fortitude Valley" },
+        { "value": "8+", "label": "ASCA & ESSA accredited coaches" },
+        { "value": "9", "label": "Pro sporting partners" },
+        { "value": "200+", "label": "University placement students" }
+      ]
+    },
+    {
+      "type": "imageBlock",
+      "id": "team-photo",
+      "eyebrow": "The People",
+      "heading": "THE ATHLETIX S&C TEAM",
+      "lede": "ATHLETIX is made up of an exceptionally talented team of professionals. Our coaches blend higher education (Exercise Science, Human Movement, Physiotherapy degrees) with practical on-the-field experience — training elite athletes, general population and clinical patients.",
+      "image": "/image/new-team.jpg",
+      "imageAlt": "The Athletix S&C team"
+    },
+    {
+      "type": "coaches",
+      "id": "coaches-grid",
+      "eyebrow": "Our Team",
+      "headingTop": "Our Elite",
+      "headingBottom": "Coaches.",
+      "body": "Every Athletix coach holds dual accreditation from Australia's two peak national bodies — ASCA and ESSA. University degrees merged with real on-field experience at the highest level of Australian sport."
+    },
+    {
+      "type": "logoStrip",
+      "id": "trusted-by",
+      "heading": "Trusted by Brisbane's Elite Clubs & Institutions",
+      "tagline": "The coaches and physios who work with **professional athletes** choose Athletix for their own players. If they trust us — you can too.",
+      "logos": [
+        { "src": "/image/Trusted%20By/brisbane-lions-logo.png", "alt": "Brisbane Lions" },
+        { "src": "/image/Trusted%20By/cricket-australia-logo.png", "alt": "Cricket Australia" },
+        { "src": "/image/Trusted%20By/Queensland-Bulls.png", "alt": "Queensland Bulls" },
+        { "src": "/image/Trusted%20By/gold-coast-titans-logo.png", "alt": "Gold Coast Titans" },
+        { "src": "/image/Trusted%20By/Brisbane-Bullets-logo.png", "alt": "Brisbane Bullets" },
+        { "src": "/image/Trusted%20By/kisspng-brisbane-heat-logo.png", "alt": "Brisbane Heat" },
+        { "src": "/image/Trusted%20By/Baseball_Australia_logo.png", "alt": "Baseball Australia" },
+        { "src": "/image/Trusted%20By/crest-villanova-crest-logo.png", "alt": "Villanova College" }
+      ],
+      "quote": "\"The same science, the same standards, the same care used by **NRL, cricket, and basketball clubs** — built into a facility where every kid, adult, and family in Brisbane can access it.\""
+    }
+  ]
+}

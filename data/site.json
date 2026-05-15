@@ -4,50 +4,344 @@
     "title": "ATHLETIX — Train Like an Athlete | Brisbane Strength & Conditioning",
     "description": "Elite strength and conditioning in Fortitude Valley, Brisbane. Small group classes, athlete programs, allied health and NDIS support."
   },
-  "hero": {
-    "pill": "ELITE STRENGTH & CONDITIONING · BRISBANE",
-    "lede": "You don't have to be an athlete to train like one. Experience challenging, exciting and unique small-group fitness classes, led by elite strength and conditioning coaches the pros train with.",
-    "rotatingWords": [
-      "ATHLETE.",
-      "CHAMPION.",
-      "LEGEND.",
-      "PRO."
-    ],
-    "stats": [
-      {
-        "value": 4,
-        "label": "Years in Business",
-        "plus": true
-      },
-      {
-        "value": 20,
-        "label": "Resident Athletes",
-        "plus": false
-      },
-      {
-        "value": 9,
-        "label": "Pro Partners",
-        "plus": false
-      }
-    ]
-  },
-  "manifesto": {
-    "eyebrow": "Our Philosophy",
-    "heading": "Teamwork combined with science is the secret that makes common people achieve uncommon results.",
-    "body": "Athletix is an elite athletic development centre in Fortitude Valley. Whether you're chasing a podium or your first pull-up, our coaches use data-driven programming built on the same principles that shape professional sport."
-  },
-  "team": {
-    "heading": "OUR ELITE COACHES",
-    "sub": "All our coaches are members of the 2 major national organisations for exercise professionals and strength and conditioning (ASCA and ESSA). They have merged their degrees with on-the-field expertise, cooperating with some of the major high-performance institutions in Australia."
-  },
-  "trial": {
-    "heading": "$7 for 7 days. Unlimited access.",
-    "body": "All classes included. Fully refundable. Meet the coaches, test the floor, and see why athletes across Brisbane train with us."
-  },
   "contact": {
     "phone": "0499 981 286",
     "email": "info@athletix.com.au",
     "address": "42 Baxter Street, Fortitude Valley, QLD 4006",
     "areas": "Fortitude Valley · Newstead · Kangaroo Point · South Brisbane · Spring Hill · Bowen Hills · Woolloongabba · Kelvin Grove"
+  },
+  "trial": {
+    "heading": "$7 for 7 days. Unlimited access.",
+    "body": "All classes included. Fully refundable. Meet the coaches, test the floor, and see why athletes across Brisbane train with us."
+  },
+  "hero": {
+    "kicker": "Fortitude Valley, Brisbane · Pro Standards · Every Level Welcome",
+    "h1Top": "High Performance",
+    "h1Em": "Village.",
+    "sub": "The same coaching. The same science. The same standard. Small groups. Elite coaches. A community that shows up for you. No experience needed. No judgment. Just results.",
+    "subBoldStart": "Now available to every kid, adult and family in Brisbane.",
+    "primaryBtn": { "label": "Start for $7 →", "href": "#form" },
+    "secondaryBtn": { "label": "See What We Offer", "href": "#classes" },
+    "videoEmbedUrl": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1",
+    "stats": [
+      { "n": "400+", "l": "Members & Counting" },
+      { "n": "4.9★", "l": "Google Rating" },
+      { "n": "9", "l": "Pro Club Partners" },
+      { "n": "200+", "l": "Uni Athletes Placed" }
+    ]
+  },
+  "trust": {
+    "headingTop": "Pro Standard.",
+    "headingEm": "Available to Everyone.",
+    "label": "Trusted By",
+    "logos": [
+      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/brisbane-lions-logo.png", "alt": "Brisbane Lions (AFL)" },
+      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/cricket-australia-logo.png", "alt": "Cricket Australia" },
+      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/Queensland-Bulls.png", "alt": "Queensland Bulls" },
+      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/gold-coast-titans-logo.png", "alt": "Gold Coast Titans (NRL)" },
+      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/Brisbane-Bullets-logo.png", "alt": "Brisbane Bullets (NBL)" },
+      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/kisspng-brisbane-heat-logo.png", "alt": "Brisbane Heat (BBL)" },
+      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/Baseball_Australia_logo.png", "alt": "Baseball Australia" },
+      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/crest-villanova-crest-logo.png", "alt": "Villanova College" }
+    ]
+  },
+  "community": {
+    "kicker": "Who We Are",
+    "h2Top": "Everyone Has A",
+    "h2Em": "Place Here.",
+    "brandStatementTop": "We built a world-class performance environment.",
+    "brandStatementEm": "Then opened the doors to everyone.",
+    "body": "The elite athlete trains next to the regular Joe. The sub-elite gets coached the same way professionals are. The mum dropping off her kid feels welcomed, not out of place. The dad who's never trained a day in his life gets a coach who actually cares — not a machine and a locker room.",
+    "sloganLabel": "The Athletix Standard",
+    "sloganTop": "Excellence is",
+    "sloganEm": "our average.",
+    "audiences": [
+      {
+        "icon": "🏆",
+        "title": "The Aspiring Athlete",
+        "desc": "Same methods. Same science. Same physio. Same dietitian as the pros. We will close the gap — no shortcuts, no guesswork. Just the work that actually gets you there."
+      },
+      {
+        "icon": "💪",
+        "title": "The Regular Adult",
+        "desc": "You don't need to be an athlete to train like one. Our coaches meet you exactly where you are — no judgment, no guesswork, no being left alone with a machine. Proper coaching. Proper results."
+      },
+      {
+        "icon": "👪",
+        "title": "The Parent",
+        "desc": "Your kid deserves real coaching — not a certificate holder running drills. We build confident, capable kids who actually want to train. Whether they're a budding athlete or just getting started."
+      }
+    ]
+  },
+  "vs": {
+    "kicker": "The Difference",
+    "h2Top": "Not a Gym.",
+    "h2Em": "A Performance Hub.",
+    "body": "Any gym can sell you a membership and a locker key. Here's what we give you instead.",
+    "themHead": "Regular 24/7 Gyms",
+    "midHead": "vs",
+    "usHead": "Athletix",
+    "rows": [
+      { "bad": "A swipe card. No coach. No direction.", "good": "A real coach. Every session. No exceptions." },
+      { "bad": "One program. Fits nobody well.", "good": "Built for your body, your goals, your level." },
+      { "bad": "Injured? Not our problem. Good luck.", "good": "Physio on-site. Coach and physio on the same plan." },
+      { "bad": "Nutrition? Google it yourself.", "good": "Olympic-credentialed sports dietitian. In your corner." },
+      { "bad": "Adults only. Kids and families, try elsewhere.", "good": "8 to 80. Beginners to pros. One community." },
+      { "bad": "Walk in a stranger. Leave a stranger. Repeat.", "good": "Small groups. Real coaches. A community that knows your name." }
+    ]
+  },
+  "classes": {
+    "kicker": "What We Offer",
+    "h2Top": "Train Like An Athlete.",
+    "h2Em": "Feel Like You Belong.",
+    "body": "Small groups. Elite coaches. A program built around you — not the person next to you. Challenging enough to make you better. Welcoming enough to make you stay.",
+    "items": [
+      {
+        "img": "https://athletix.com.au/wp-content/uploads/2024/08/2.png",
+        "alt": "Youth Classes",
+        "tag": "Ages 8–17",
+        "name": "Youth Classes",
+        "desc": "Real coaching. Real development. The same methods elite programs use — built into small groups where every kid is seen, coached, and pushed in the right direction. Confidence and capability, from day one.",
+        "href": "#form"
+      },
+      {
+        "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06320-scaled-e1723546921926.jpg",
+        "alt": "Adult Classes",
+        "tag": "All Levels Welcome",
+        "name": "Adult Classes",
+        "desc": "A real coach. A real program. A room full of people working just as hard as you. Challenging enough to change you. Personal enough to keep you coming back. This is training that actually works.",
+        "href": "#form"
+      },
+      {
+        "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06236-scaled-e1733203149463.jpg",
+        "alt": "Family Classes",
+        "tag": "All Ages Together",
+        "name": "Family Classes",
+        "desc": "Train alongside your kids. Show them what effort looks like. Let them show you the same. One roof. One standard. One community that makes every age, every ability, feel exactly at home.",
+        "href": "#form"
+      },
+      {
+        "img": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-AFT-53-scaled-e1733206277887.jpg",
+        "alt": "Athlete Programs",
+        "tag": "Sub-Elite & Pro",
+        "name": "Athlete Programs",
+        "desc": "Same methods. Same science. Same physio and dietitian as the pros. If you're chasing a contract, a squad spot, or simply the best version of yourself — this is where the gap gets closed.",
+        "href": "#form"
+      }
+    ]
+  },
+  "disciplines": {
+    "kicker": "Specialisations",
+    "h2Top": "Every Discipline.",
+    "h2Em": "One Roof.",
+    "items": [
+      { "num": "01", "name": "Strength Training", "desc": "Progressive overload built for every body. Barbell fundamentals through advanced periodisation — science-led and coach-guided every session." },
+      { "num": "02", "name": "Speed & Agility", "desc": "Acceleration, deceleration, and change of direction — built around your sport. Sprint mechanics, video feedback, stride refinement and ground contact work woven into every block. Run faster. Last longer. Stay injury-free." },
+      { "num": "03", "name": "Conditioning", "desc": "Aerobic capacity and anaerobic power — measured, programmed and progressively overloaded. Never guesswork." },
+      { "num": "04", "name": "Testing & Screening", "desc": "Hawkin Dynamics force plates. Full physio screening. Every member, every time. No guesswork — just a clear, safe pathway from where you are to where you want to be.", "hawkin": true, "note": "Hawkin Dynamics · Force Plates" },
+      { "num": "05", "name": "Pilates", "desc": "Core control, breath work and precision movement that complements heavy training and builds long-term injury resilience." },
+      { "num": "06", "name": "Mobility & Recovery", "desc": "Structured routines that keep joints healthy and training uninterrupted — for the long haul, not just next week." },
+      { "num": "07", "name": "Allied Health", "desc": "Sports physio and rehab integrated directly with coaching — same building, same plan, zero communication gaps." },
+      { "num": "08", "name": "NDIS Program", "desc": "Tailored movement and strength programs delivered with genuine expertise and care by qualified professionals." }
+    ]
+  },
+  "coaches": {
+    "kicker": "Our Coaches",
+    "h2Top": "Coaches Who",
+    "h2Em": "Actually Care.",
+    "body": "ASCA and ESSA accredited. University qualified. Experienced at the highest levels of Australian sport. And genuinely invested in every person they work with — from your first session to your best one.",
+    "credBar": [
+      { "val": "ASCA", "lbl": "Accredited" },
+      { "val": "ESSA", "lbl": "Certified" },
+      { "val": "8", "lbl": "Elite Coaches" },
+      { "val": "Uni", "lbl": "All Qualified" }
+    ]
+  },
+  "hub": {
+    "kicker": "Allied Health & Nutrition",
+    "h2Top": "More Than",
+    "h2Em": "A Gym.",
+    "body": "Coaching. Physio. Rehab. Nutrition. Return to play. All under one roof. All working together — same building, same plan, talking about you.",
+    "stats": [
+      { "n": "25+", "l": "Yrs Combined Clinical XP" },
+      { "n": "AIS", "l": "Experienced Staff" },
+      { "n": "Olympic", "l": "Games Physio XP" },
+      { "n": "APD", "l": "Accredited Dietitian" }
+    ],
+    "cardBadge": "Live on the Floor",
+    "cardTitle": "Sports Physio & Rehab",
+    "cardDesc": "25+ years combined clinical experience — on the floor, not down the road. Your physio and your coach share information, share context, and work from the same plan. No referral delays. No communication gaps.",
+    "services": [
+      { "icon": "⚡", "text": "Specialist sports physiotherapy — on-site weekly" },
+      { "icon": "🔬", "text": "Injury screening & prevention protocols" },
+      { "icon": "📈", "text": "Structured rehabilitation programs" },
+      { "icon": "🏅", "text": "Best practice return to sport & return to play" },
+      { "icon": "📊", "text": "Force plate testing & performance benchmarking" }
+    ],
+    "physios": [
+      {
+        "name": "Myles Burfield",
+        "role": "Head Physio · Specialist Sports & Exercise Physio",
+        "exp": "Fellowship ACP · Australian Institute of Sport · Australian Olympic Canoe/Kayak Team Physio — Rio 2016 (Bronze Medallists) · Cirque du Soleil · 16+ years private practice",
+        "img": "https://athletix.com.au/wp-content/uploads/2022/12/IMG_9100-scaled-e1670906460682.jpg"
+      },
+      {
+        "name": "Bridie Nicholson",
+        "role": "Physiotherapist · Titled Sport & Exercise Physio",
+        "exp": "7+ years sports physio · Canadian Basketball National Team · Brisbane Roar FC · NHL Ice Hockey · Para-Swimming · Running & Boxing rehab",
+        "img": "https://athletix.com.au/wp-content/uploads/2024/07/IMG-20240130-WA0019-e1727084066284.jpg"
+      }
+    ],
+    "dietLabel": "Sports Dietitian · APD",
+    "dietTitleTop": "Olympic-Credentialed.",
+    "dietTitleEm": "In Your Corner.",
+    "dietDesc": "Performance nutrition and body composition coaching from a dietitian who has worked at the highest levels of Australian sport — now working with Athletix members to fuel every session.",
+    "dietCreds": ["NRL", "NBL", "Olympic Teams", "APD"]
+  },
+  "space": {
+    "kicker": "The Floor",
+    "h2Top": "Inside",
+    "h2Em": "Athletix.",
+    "body": "Open warehouse. Sprint track. 120sqm of elite S&C space. Built for performance — designed to feel welcoming. Walk in and you'll understand immediately why this is different.",
+    "cells": [
+      { "img": "https://athletix.com.au/wp-content/uploads/2024/07/DSC02067-768x512.jpg", "alt": "Main training floor", "labelTop": "Main Training Floor", "labelBottom": "120sqm S&C Space", "tall": true },
+      { "img": "https://athletix.com.au/wp-content/uploads/2024/06/DSC01921-768x512.jpg", "alt": "Sprint track", "labelTop": "Performance", "labelBottom": "3-Lane Sprint Track" },
+      { "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06320-scaled-e1723546921926.jpg", "alt": "Small group coaching", "labelTop": "Coaching", "labelBottom": "Small Group Sessions" },
+      { "img": "https://athletix.com.au/wp-content/uploads/2022/01/Youth-sport-1-e1684274091394.png", "alt": "Youth area", "labelTop": "Youth", "labelBottom": "Athletic Development" },
+      { "img": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-AFT-53-scaled-e1733206277887.jpg", "alt": "Athlete programs", "labelTop": "Elite", "labelBottom": "Athlete Programs" }
+    ]
+  },
+  "testimonials": {
+    "kicker": "Member Stories",
+    "h2Top": "Hear It From",
+    "h2Em": "The Community.",
+    "heroQuoteText": "I found a community completely ",
+    "heroQuoteEm": "engaged in my development.",
+    "heroQuoteAttr": "Nicola Stevens · Netball QLD State League Umpire · Returned from a season-ending injury",
+    "videos": [
+      {
+        "src": "https://athletix.com.au/wp-content/uploads/2024/07/Testimonial-2-Website.mp4",
+        "quote": "The coaches here genuinely care about your progress. ",
+        "bold": "It's not just a gym — it's a community",
+        "tail": " where everyone pushes each other to be better, every session.",
+        "avatar": "💪",
+        "name": "Adult Member",
+        "meta": "Adult Program"
+      },
+      {
+        "src": "https://athletix.com.au/wp-content/uploads/2024/07/Testimonial-1-Website.mp4",
+        "quote": "I never thought I'd be someone who loves training. ",
+        "bold": "The coaches met me exactly where I was.",
+        "tail": " I haven't looked back since.",
+        "avatar": "🏃",
+        "name": "Athletix Member",
+        "meta": "Adult Program · 14 months"
+      },
+      {
+        "src": "https://athletix.com.au/wp-content/uploads/2024/07/DARCY.mp4",
+        "quote": "",
+        "bold": "Best decision I made for my athletic career.",
+        "tail": " The level of coaching and the science here is the same as what the professionals get. No question about it.",
+        "avatar": "🏆",
+        "name": "Darcy",
+        "meta": "Athlete Program"
+      }
+    ],
+    "stories": [
+      {
+        "icon": "🏆",
+        "titleTop": "Indianna Baart",
+        "titleEm": "— U14 Nationals",
+        "body": "At only 11 years of age, 6th in Australia in pole vault. Less than 18 months of training at Athletix — sprint, strength, long jump and multi-sport. Two PBs on the national stage. Just 1cm off the QLD State Record."
+      },
+      {
+        "icon": "🏆",
+        "titleTop": "Taylor Baart",
+        "titleEm": "— Bowls QLD State Champion",
+        "body": "U15 Queensland Junior State Champion. Selected into the U18 QLD squad. Prepped like an athlete — strength, balance and conditioning at Athletix to back up his game."
+      },
+      {
+        "icon": "🏆",
+        "titleTop": "Nicola Stevens",
+        "titleEm": "— Netball QLD State League Umpire",
+        "body": "I joined Athletix to help my return to sport after a season-ending injury and found a community completely engaged in my development and wellbeing.",
+        "isQuote": true
+      },
+      {
+        "icon": "🏆",
+        "titleTop": "New Season.",
+        "titleEm": "Same Standard.",
+        "body": "Even the 5am hits different when you're surrounded by people who care about the craft and about each other. Proud of this team.",
+        "isQuote": true
+      }
+    ]
+  },
+  "membership": {
+    "kicker": "Join Athletix",
+    "h2Top": "Find Your Plan.",
+    "h2Em": "Own Your Progress.",
+    "body": "Every membership gets you a real coach, a real program, and a community behind you. Weekly billing. No lock-in. Your first session says it all.",
+    "plans": [
+      {
+        "tier": "Ages 8–17",
+        "name": "Youth",
+        "price": "$42",
+        "img": "https://athletix.com.au/wp-content/uploads/2024/08/2.png",
+        "alt": "Youth",
+        "features": ["Unlimited S&C Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "Full facility access"],
+        "href": "#form"
+      },
+      {
+        "tier": "All Levels",
+        "name": "Adults",
+        "price": "$50",
+        "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06320-scaled-e1723546921926.jpg",
+        "alt": "Adults",
+        "features": ["Unlimited S&C Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "S&C Consultation", "Full facility access"],
+        "featured": true,
+        "href": "#form"
+      },
+      {
+        "tier": "All Ages Together",
+        "name": "Family",
+        "price": "$120",
+        "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06236-scaled-e1733203149463.jpg",
+        "alt": "Family",
+        "features": ["Unlimited Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "S&C Consultation", "Full facility access"],
+        "href": "#form"
+      },
+      {
+        "tier": "12-Month Subscription",
+        "name": "Athlete",
+        "price": "$150",
+        "img": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-AFT-53-scaled-e1733206277887.jpg",
+        "alt": "Athlete",
+        "features": ["Unlimited Force Plate Tests", "Unlimited Classes", "Dedicated Coach", "Weekly PT Session", "Sports Dietitian Access", "Full facility access"],
+        "href": "#form"
+      }
+    ]
+  },
+  "cta": {
+    "tag": "No Risk. Real Results.",
+    "hTop": "$7 for",
+    "hEm": "7 Days.",
+    "sub": "Walk in. Get coached. Feel what this community is about.",
+    "detail": "Fully Refundable · No Lock-In · 8 to 80 · Every Level Welcome",
+    "primaryBtn": { "label": "Claim My 7-Day Trial →", "href": "#form" },
+    "secondaryBtn": { "label": "See All Plans", "href": "#membership" }
+  },
+  "footer": {
+    "brandImg": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/athlethix-logo.png",
+    "tagline": "Pro standard. Open to everyone. Elite S&C coaching, sports physio, sports nutrition and real community — for every kid, adult and family in Brisbane. Fortitude Valley.",
+    "contacts": [
+      { "icon": "📍", "text": "42 Baxter Street, Fortitude Valley QLD 4006" },
+      { "icon": "📞", "text": "0499 981 286", "href": "tel:+61499981286" },
+      { "icon": "✉", "text": "info@athletix.com.au", "href": "mailto:info@athletix.com.au" },
+      { "icon": "🕐", "text": "Mon/Wed/Fri 5:15am–7:30pm · Tue/Thu 6am–7:30pm · Sat 6am–11:30am" }
+    ],
+    "formTitle": "Let's Get Started.",
+    "formSub": "Fill this in and a coach will reach out within 24 hours. No pressure. Just a conversation.",
+    "formButtonLabel": "Claim My $7 Trial",
+    "joinOptions": ["Adult", "Youth Under 17", "Family", "Athlete — Sub-Elite", "NDIS Participant"]
   }
 }
