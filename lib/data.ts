@@ -1,8 +1,9 @@
-import { promises as fs } from "fs";
-import path from "path";
-
-const dataDir = path.join(process.cwd(), "data");
-const pagesDir = path.join(dataDir, "pages");
+import {
+  readJson,
+  writeJson,
+  tryReadJson,
+  listJsonKeys,
+} from "./storage";
 
 export type Btn = { label: string; href: string };
 export type ImgRef = { src: string; alt: string };
@@ -273,16 +274,6 @@ export type BlogPost = {
   tags?: string[];
 };
 
-async function readJson<T>(file: string): Promise<T> {
-  const raw = await fs.readFile(path.join(dataDir, file), "utf8");
-  return JSON.parse(raw) as T;
-}
-
-async function writeJson<T>(file: string, data: T): Promise<void> {
-  const target = path.join(dataDir, file);
-  await fs.writeFile(target, JSON.stringify(data, null, 2) + "\n", "utf8");
-}
-
 export const getSite = () => readJson<SiteContent>("site.json");
 export const setSite = (s: SiteContent) => writeJson("site.json", s);
 
@@ -476,49 +467,33 @@ export type PageSummary = {
   blockCount: number;
 };
 
-async function readPageFile(slug: string): Promise<PageContent | null> {
-  try {
-    const raw = await fs.readFile(path.join(pagesDir, `${slug}.json`), "utf8");
-    return JSON.parse(raw) as PageContent;
-  } catch {
-    return null;
-  }
-}
-
 export async function getPage(slug: string): Promise<PageContent | null> {
-  return readPageFile(slug);
+  return tryReadJson<PageContent>(`pages/${slug}.json`);
 }
 
 export async function setPage(slug: string, page: PageContent): Promise<void> {
-  await fs.mkdir(pagesDir, { recursive: true });
-  await fs.writeFile(
-    path.join(pagesDir, `${slug}.json`),
-    JSON.stringify(page, null, 2) + "\n",
-    "utf8"
-  );
+  await writeJson(`pages/${slug}.json`, page);
 }
 
 export async function listPages(): Promise<PageSummary[]> {
-  try {
-    const files = await fs.readdir(pagesDir);
-    const out: PageSummary[] = [];
-    for (const f of files) {
-      if (!f.endsWith(".json")) continue;
-      const slug = f.replace(/\.json$/, "");
-      const page = await readPageFile(slug);
-      if (page) {
-        out.push({
-          slug: page.slug,
-          title: page.title,
-          path: page.path,
-          blockCount: page.blocks.length,
-        });
-      }
+  const keys = await listJsonKeys("pages");
+  const seen = new Set<string>();
+  const out: PageSummary[] = [];
+  for (const key of keys) {
+    const slug = key.replace(/^pages\//, "").replace(/\.json$/, "");
+    if (seen.has(slug)) continue;
+    seen.add(slug);
+    const page = await tryReadJson<PageContent>(`pages/${slug}.json`);
+    if (page) {
+      out.push({
+        slug: page.slug,
+        title: page.title,
+        path: page.path,
+        blockCount: page.blocks.length,
+      });
     }
-    return out.sort((a, b) => a.title.localeCompare(b.title));
-  } catch {
-    return [];
   }
+  return out.sort((a, b) => a.title.localeCompare(b.title));
 }
 
 export async function getPublishedBlog(): Promise<BlogPost[]> {

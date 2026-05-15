@@ -1,66 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
+import {
+  listMedia,
+  deleteUpload,
+  renameUpload,
+  isBlobEnabled,
+} from "@/lib/storage";
 import { logActivity } from "@/lib/activity";
 
-const ALLOWED_EXT = new Set([
-  ".png",
-  ".jpg",
-  ".jpeg",
-  ".webp",
-  ".gif",
-  ".svg",
-  ".avif",
-]);
-
-type MediaItem = {
-  name: string;
-  url: string;
-  size: number;
-  mtime: string;
-};
-
-async function listDir(dir: string, urlPrefix: string): Promise<MediaItem[]> {
-  try {
-    const names = await fs.readdir(dir);
-    const out: MediaItem[] = [];
-    for (const n of names) {
-      const ext = path.extname(n).toLowerCase();
-      if (!ALLOWED_EXT.has(ext)) continue;
-      const full = path.join(dir, n);
-      const stat = await fs.stat(full);
-      if (!stat.isFile()) continue;
-      out.push({
-        name: n,
-        url: `${urlPrefix}/${n}`,
-        size: stat.size,
-        mtime: stat.mtime.toISOString(),
-      });
-    }
-    return out;
-  } catch {
-    return [];
-  }
-}
-
 export async function GET() {
-  const root = path.join(process.cwd(), "public");
-  const [uploads, images] = await Promise.all([
-    listDir(path.join(root, "uploads"), "/uploads"),
-    listDir(path.join(root, "image"), "/image"),
-  ]);
-  const all = [...uploads, ...images].sort(
-    (a, b) => (a.mtime < b.mtime ? 1 : -1)
-  );
-  return NextResponse.json(all);
-}
-
-function safeUploadPath(filename: string): string | null {
-  if (!filename) return null;
-  if (filename.includes("..") || filename.includes("/") || filename.includes("\\")) {
-    return null;
-  }
-  return path.join(process.cwd(), "public", "uploads", filename);
+  const items = await listMedia();
+  return NextResponse.json(items);
 }
 
 export async function DELETE(req: NextRequest) {
@@ -68,15 +17,11 @@ export async function DELETE(req: NextRequest) {
   if (!name) {
     return NextResponse.json({ error: "Missing name" }, { status: 400 });
   }
-  const target = safeUploadPath(name);
-  if (!target) {
-    return NextResponse.json({ error: "Invalid path" }, { status: 400 });
-  }
   try {
-    await fs.unlink(target);
+    await deleteUpload(name);
   } catch (e) {
     return NextResponse.json(
-      { error: `Could not delete: ${(e as Error).message}` },
+      { error: (e as Error).message || "Could not delete" },
       { status: 404 }
     );
   }
@@ -89,19 +34,18 @@ export async function PATCH(req: NextRequest) {
   if (!from || !to) {
     return NextResponse.json({ error: "Missing from/to" }, { status: 400 });
   }
-  const src = safeUploadPath(from);
-  const dst = safeUploadPath(to);
-  if (!src || !dst) {
-    return NextResponse.json({ error: "Invalid path" }, { status: 400 });
-  }
   try {
-    await fs.rename(src, dst);
+    const url = await renameUpload(from, to);
+    await logActivity({
+      kind: "media",
+      action: "update",
+      target: `${from} → ${to}`,
+    });
+    return NextResponse.json({ ok: true, url });
   } catch (e) {
     return NextResponse.json(
-      { error: `Could not rename: ${(e as Error).message}` },
+      { error: (e as Error).message || "Could not rename" },
       { status: 404 }
     );
   }
-  await logActivity({ kind: "media", action: "update", target: `${from} → ${to}` });
-  return NextResponse.json({ ok: true, url: `/uploads/${to}` });
 }

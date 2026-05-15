@@ -1,9 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
+import { saveUpload } from "@/lib/storage";
 import { logActivity } from "@/lib/activity";
 
-const ALLOWED = ["image/png", "image/jpeg", "image/webp", "image/gif", "image/svg+xml"];
+const ALLOWED = [
+  "image/png",
+  "image/jpeg",
+  "image/webp",
+  "image/gif",
+  "image/svg+xml",
+];
 const MAX = 8 * 1024 * 1024; // 8 MB
 
 function safeName(name: string) {
@@ -28,16 +33,27 @@ export async function POST(req: NextRequest) {
     );
   }
   if (file.size > MAX) {
-    return NextResponse.json({ error: "File too large (>8 MB)" }, { status: 400 });
+    return NextResponse.json(
+      { error: "File too large (>8 MB)" },
+      { status: 400 }
+    );
   }
 
   const buf = Buffer.from(await file.arrayBuffer());
   const fname = safeName(file.name || "upload");
-  const dir = path.join(process.cwd(), "public", "uploads");
-  await fs.mkdir(dir, { recursive: true });
-  await fs.writeFile(path.join(dir, fname), buf);
 
-  const url = `/uploads/${fname}`;
-  await logActivity({ kind: "upload", action: "create", target: fname });
-  return NextResponse.json({ url, name: fname, size: file.size });
+  try {
+    const result = await saveUpload(fname, buf, file.type);
+    await logActivity({ kind: "upload", action: "create", target: fname });
+    return NextResponse.json({
+      url: result.url,
+      name: result.name,
+      size: file.size,
+    });
+  } catch (e) {
+    return NextResponse.json(
+      { error: (e as Error).message || "Upload failed" },
+      { status: 500 }
+    );
+  }
 }

@@ -1,7 +1,4 @@
-import { promises as fs } from "fs";
-import path from "path";
-
-const file = path.join(process.cwd(), "data", "activity.json");
+import { readJson, writeJson, tryReadJson } from "./storage";
 
 export type ActivityEntry = {
   id: string;
@@ -19,13 +16,10 @@ export type ActivityEntry = {
   target: string;
 };
 
+const FILE = "activity.json";
+
 export async function readActivity(): Promise<ActivityEntry[]> {
-  try {
-    const raw = await fs.readFile(file, "utf8");
-    return JSON.parse(raw) as ActivityEntry[];
-  } catch {
-    return [];
-  }
+  return (await tryReadJson<ActivityEntry[]>(FILE)) ?? [];
 }
 
 export async function logActivity(
@@ -38,5 +32,5 @@ export async function logActivity(
     ...entry,
   };
   list.unshift(next);
-  await fs.writeFile(file, JSON.stringify(list.slice(0, 50), null, 2) + "\n");
+  await writeJson(FILE, list.slice(0, 50));
 }
