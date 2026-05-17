@@ -27,6 +27,63 @@ export default function AthletixLoader({ className = "" }: Props) {
         </div>
       </div>
 
+      <div className="ax-gym" aria-hidden>
+        <span className="ax-gym-floor" />
+        <span className="ax-athlete-wrap">
+          <svg
+            className="ax-athlete"
+            viewBox="0 0 80 110"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Back leg (rendered first, behind body, faded for depth) */}
+            <rect x="37" y="50" width="6" height="42" rx="3" opacity="0.55" />
+
+            {/* Back arm with dumbbell, alternating phase */}
+            <g transform="translate(40 24)" opacity="0.55">
+              <rect x="-2.5" y="0" width="5" height="20" rx="2.5" />
+              <g transform="translate(0 20)">
+                <g className="ax-curl ax-curl-back">
+                  <rect x="-2.5" y="0" width="5" height="22" rx="2.5" />
+                  <g transform="translate(0 22)">
+                    <rect x="-6" y="-1.5" width="12" height="3" rx="1" />
+                    <circle cx="-8.5" cy="0" r="5" />
+                    <circle cx="8.5" cy="0" r="5" />
+                  </g>
+                </g>
+              </g>
+            </g>
+
+            {/* Head (profile) with subtle nose bump indicating side view */}
+            <circle cx="40" cy="14" r="6.5" />
+            <path d="M46.2 13 L48.5 14.5 L46.2 16 Z" />
+
+            {/* Torso — side profile (narrower than front view) */}
+            <path d="M36 21 Q33.5 32 35 42 L36 50 L44 50 L45 42 Q46.5 32 44 21 Z" />
+
+            {/* Front leg, full opacity */}
+            <rect x="39" y="50" width="6" height="42" rx="3" />
+
+            {/* Front arm with dumbbell — main visible arm */}
+            <g transform="translate(40 24)">
+              <rect x="-2.5" y="0" width="5" height="20" rx="2.5" />
+              <g transform="translate(0 20)">
+                <g className="ax-curl ax-curl-front">
+                  <rect x="-2.5" y="0" width="5" height="22" rx="2.5" />
+                  <g transform="translate(0 22)">
+                    <rect x="-6" y="-1.5" width="12" height="3" rx="1" />
+                    <circle cx="-8.5" cy="0" r="5" />
+                    <circle cx="8.5" cy="0" r="5" />
+                    <circle cx="-8.5" cy="0" r="2.5" fill="#07090b" />
+                    <circle cx="8.5" cy="0" r="2.5" fill="#07090b" />
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </span>
+      </div>
+
       <div className="ax-loading-bar" aria-hidden>
         <span />
       </div>
@@ -140,11 +197,68 @@ export default function AthletixLoader({ className = "" }: Props) {
           filter: drop-shadow(0 0 28px rgba(0, 212, 240, 0.55));
         }
 
+        /* GYM — standing athlete doing bicep curls */
+        .ax-gym {
+          position: relative;
+          width: 260px;
+          height: 135px;
+          margin-top: 24px;
+        }
+        .ax-gym-floor {
+          position: absolute;
+          bottom: 4px;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(0, 212, 240, 0.55) 18%,
+            rgba(0, 212, 240, 0.55) 82%,
+            transparent 100%);
+          box-shadow: 0 0 12px rgba(0, 212, 240, 0.45);
+        }
+        .ax-athlete-wrap {
+          position: absolute;
+          bottom: 5px;
+          left: 50%;
+          margin-left: -45px;
+          width: 90px;
+          height: 124px;
+          z-index: 2;
+        }
+        .ax-athlete {
+          width: 100%;
+          height: 100%;
+          color: #00d4f0;
+          filter: drop-shadow(0 0 12px rgba(0, 212, 240, 0.6));
+          display: block;
+          animation: axCurlBob 2s ease-in-out infinite;
+        }
+        /* Body squeeze when arms peak */
+        @keyframes axCurlBob {
+          0%, 100% { transform: translateY(0); }
+          40%, 60% { transform: translateY(-2px); }
+        }
+
+        /* Forearm curl (side view): both forearms rotate the same direction
+           around the elbow. Alternating arms — back arm offset by half cycle
+           so when one is up, the other is down. */
+        .ax-curl {
+          transform-origin: 0 0;
+          animation: axCurlSide 2s ease-in-out infinite;
+        }
+        @keyframes axCurlSide {
+          0%, 10%   { transform: rotate(0deg); }       /* rest at bottom */
+          45%, 55%  { transform: rotate(-158deg); }    /* squeeze at top */
+          90%, 100% { transform: rotate(0deg); }       /* back to rest */
+        }
+        .ax-curl-back { animation-delay: -1s; }
+
         .ax-loading-bar {
           position: relative;
           width: 260px;
           height: 2px;
-          margin-top: 56px;
+          margin-top: 20px;
           background: rgba(255, 255, 255, 0.07);
           border-radius: 2px;
           overflow: hidden;
@@ -192,7 +306,9 @@ export default function AthletixLoader({ className = "" }: Props) {
           .ax-ring-2 { width: 175px; height: 175px; }
           .ax-ring-3 { width: 210px; height: 210px; }
           .ax-loading-logo-wrap { width: 105px; }
-          .ax-loading-bar { width: 200px; margin-top: 44px; }
+          .ax-gym { width: 220px; height: 118px; margin-top: 20px; }
+          .ax-athlete-wrap { width: 78px; margin-left: -39px; height: 108px; }
+          .ax-loading-bar { width: 200px; margin-top: 16px; }
           .ax-loading-status { font-size: 10px; letter-spacing: 4px; }
         }
 
@@ -201,6 +317,8 @@ export default function AthletixLoader({ className = "" }: Props) {
           .ax-loading-glow,
           .ax-loading-logo-wrap,
           .ax-ring,
+          .ax-athlete,
+          .ax-curl,
           .ax-loading-bar span,
           .ax-loading-status em {
             animation: none;

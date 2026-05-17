@@ -28,12 +28,50 @@ type Props = {
 
 const phoneHref = (p: string) => `tel:+${p.replace(/[^\d]/g, "")}`;
 
+const SIDE_HOURS = [
+  { weekday: 1, short: "MON", hours: "5:15 AM – 7:30 PM" },
+  { weekday: 2, short: "TUE", hours: "6:00 AM – 7:30 PM" },
+  { weekday: 3, short: "WED", hours: "5:15 AM – 7:30 PM" },
+  { weekday: 4, short: "THU", hours: "6:00 AM – 7:30 PM" },
+  { weekday: 5, short: "FRI", hours: "5:15 AM – 6:00 PM" },
+  { weekday: 6, short: "SAT", hours: "6:00 AM – 11:30 AM" },
+];
+
 export default function Header({ contact }: Props) {
   const pathname = usePathname();
   const [navOpen, setNavOpen] = useState(false);
   const [sideOpen, setSideOpen] = useState(false);
   const [trialOpen, setTrialOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [todayWeekday, setTodayWeekday] = useState<number | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<"classes" | "about" | null>(null);
+
+  useEffect(() => {
+    setTodayWeekday(new Date().getDay());
+  }, []);
+
+  // Close any open dropdown when the mobile nav closes
+  useEffect(() => {
+    if (!navOpen) setOpenDropdown(null);
+  }, [navOpen]);
+
+  const toggleDropdown = (key: "classes" | "about") => {
+    setOpenDropdown((prev) => (prev === key ? null : key));
+  };
+
+  const Chevron = () => (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -86,27 +124,40 @@ export default function Header({ contact }: Props) {
             >
               TIMETABLE
             </Link>
-            <div className="dropdown">
-              <Link
-                href="/classes"
-                className={`dropbtn${isClassesActive ? " active" : ""}`}
-                onClick={closeNav}
-              >
-                CLASSES
-              </Link>
+            <div className={`dropdown${openDropdown === "classes" ? " open" : ""}`}>
+              <div className="dropdown-head">
+                <Link
+                  href="/classes"
+                  className={`dropbtn${isClassesActive ? " active" : ""}`}
+                  onClick={closeNav}
+                >
+                  CLASSES
+                </Link>
+                <button
+                  type="button"
+                  className="dropdown-toggle"
+                  aria-label="Toggle Classes submenu"
+                  aria-expanded={openDropdown === "classes"}
+                  onClick={() => toggleDropdown("classes")}
+                >
+                  <Chevron />
+                </button>
+              </div>
               <div className="dropdown-content">
-                <Link href="/youth-classes" onClick={closeNav}>
-                  YOUTH CLASSES
-                </Link>
-                <Link href="/adult-classes" onClick={closeNav}>
-                  ADULT CLASSES
-                </Link>
-                <Link href="/family-classes" onClick={closeNav}>
-                  FAMILY CLASSES
-                </Link>
-                <Link href="/athlete-programs" onClick={closeNav}>
-                  ATHLETE PROGRAMS
-                </Link>
+                <div className="dropdown-inner">
+                  <Link href="/youth-classes" onClick={closeNav}>
+                    YOUTH CLASSES
+                  </Link>
+                  <Link href="/adult-classes" onClick={closeNav}>
+                    ADULT CLASSES
+                  </Link>
+                  <Link href="/family-classes" onClick={closeNav}>
+                    FAMILY CLASSES
+                  </Link>
+                  <Link href="/athlete-programs" onClick={closeNav}>
+                    ATHLETE PROGRAMS
+                  </Link>
+                </div>
               </div>
             </div>
             <Link
@@ -116,30 +167,43 @@ export default function Header({ contact }: Props) {
             >
               MEMBERSHIP
             </Link>
-            <div className="dropdown">
-              <Link
-                href="/about"
-                className={`dropbtn${isAboutActive ? " active" : ""}`}
-                onClick={closeNav}
-              >
-                ABOUT US
-              </Link>
+            <div className={`dropdown${openDropdown === "about" ? " open" : ""}`}>
+              <div className="dropdown-head">
+                <Link
+                  href="/about"
+                  className={`dropbtn${isAboutActive ? " active" : ""}`}
+                  onClick={closeNav}
+                >
+                  ABOUT US
+                </Link>
+                <button
+                  type="button"
+                  className="dropdown-toggle"
+                  aria-label="Toggle About submenu"
+                  aria-expanded={openDropdown === "about"}
+                  onClick={() => toggleDropdown("about")}
+                >
+                  <Chevron />
+                </button>
+              </div>
               <div className="dropdown-content">
-                <Link href="/our-gym" onClick={closeNav}>
-                  OUR GYM
-                </Link>
-                <Link href="/our-team" onClick={closeNav}>
-                  OUR TEAM
-                </Link>
-                <Link href="/allied-health" onClick={closeNav}>
-                  ALLIED HEALTH
-                </Link>
-                <Link href="/ndis-program" onClick={closeNav}>
-                  NDIS PROGRAM
-                </Link>
-                <Link href="/careers" onClick={closeNav}>
-                  CAREERS
-                </Link>
+                <div className="dropdown-inner">
+                  <Link href="/our-gym" onClick={closeNav}>
+                    OUR GYM
+                  </Link>
+                  <Link href="/our-team" onClick={closeNav}>
+                    OUR TEAM
+                  </Link>
+                  <Link href="/allied-health" onClick={closeNav}>
+                    ALLIED HEALTH
+                  </Link>
+                  <Link href="/ndis-program" onClick={closeNav}>
+                    NDIS PROGRAM
+                  </Link>
+                  <Link href="/careers" onClick={closeNav}>
+                    CAREERS
+                  </Link>
+                </div>
               </div>
             </div>
             <Link
@@ -227,30 +291,16 @@ export default function Header({ contact }: Props) {
 
           <h4 className="side-heading">Working Hours</h4>
           <ul className="side-hours">
-            <li>
-              <span>MON</span>
-              <strong>5:15 AM – 7:30 PM</strong>
-            </li>
-            <li>
-              <span>TUE</span>
-              <strong>6:00 AM – 7:30 PM</strong>
-            </li>
-            <li>
-              <span>WED</span>
-              <strong>5:15 AM – 7:30 PM</strong>
-            </li>
-            <li>
-              <span>THUR</span>
-              <strong>6:00 AM – 7:30 PM</strong>
-            </li>
-            <li>
-              <span>FRI</span>
-              <strong>5:15 AM – 6:00 PM</strong>
-            </li>
-            <li>
-              <span>SAT</span>
-              <strong>6:00 AM – 11:30 AM</strong>
-            </li>
+            {SIDE_HOURS.map((row) => {
+              const isToday = todayWeekday === row.weekday;
+              return (
+                <li key={row.short} className={isToday ? "is-today" : ""}>
+                  <span className="day">{row.short}</span>
+                  <strong className="hours">{row.hours}</strong>
+                  {isToday && <span className="today-badge">Today</span>}
+                </li>
+              );
+            })}
           </ul>
 
           <h4 className="side-heading">Our Socials</h4>
