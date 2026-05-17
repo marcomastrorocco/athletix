@@ -17,11 +17,15 @@ const LOGOS = [
 
 type Props = { open: boolean; onClose: () => void };
 
-const CLOSE_DURATION = 350;
+const CLOSE_DURATION = 450;
+
+type Status = "idle" | "sending" | "success" | "error";
 
 export default function BookTrialModal({ open, onClose }: Props) {
   const [trainingAs, setTrainingAs] = useState<TrainingAs>("Adult");
-  const [form, setForm] = useState({ name: "", email: "", phone: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", hp: "" });
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
   const [mounted, setMounted] = useState(false);
   const [animateIn, setAnimateIn] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -37,7 +41,12 @@ export default function BookTrialModal({ open, onClose }: Props) {
     }
     if (mounted) {
       setAnimateIn(false);
-      closeTimer.current = setTimeout(() => setMounted(false), CLOSE_DURATION);
+      closeTimer.current = setTimeout(() => {
+        setMounted(false);
+        setStatus("idle");
+        setErrorMsg("");
+        setForm({ name: "", email: "", phone: "", hp: "" });
+      }, CLOSE_DURATION);
     }
   }, [open, mounted]);
 
@@ -48,33 +57,50 @@ export default function BookTrialModal({ open, onClose }: Props) {
     };
     document.addEventListener("keydown", onKey);
 
-    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     const prevOverflow = document.body.style.overflow;
-    const prevPaddingRight = document.body.style.paddingRight;
     document.body.style.overflow = "hidden";
-    if (scrollbarWidth > 0) {
-      document.body.style.paddingRight = `${scrollbarWidth}px`;
-    }
 
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
-      document.body.style.paddingRight = prevPaddingRight;
     };
   }, [mounted, onClose]);
 
   if (!mounted) return null;
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Trial submission:", { ...form, trainingAs });
-    alert("Thanks! A coach will call you within 24 hours.");
-    onClose();
+    if (status === "sending") return;
+    setStatus("sending");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          trainingAs,
+          source: "Book Trial popup (header)",
+          _hp: form.hp,
+        }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!res.ok || !data.ok) {
+        setStatus("error");
+        setErrorMsg(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+      setStatus("success");
+    } catch {
+      setStatus("error");
+      setErrorMsg("Network error. Please check your connection and try again.");
+    }
   };
 
   return (
     <>
-      <link rel="stylesheet" href="/css/trial-modal.css" />
       <div
         className={`tm-overlay${animateIn ? " tm-open" : ""}`}
         onClick={onClose}
@@ -128,86 +154,146 @@ export default function BookTrialModal({ open, onClose }: Props) {
           </div>
 
           <div className="tm-right">
-            <h3 className="tm-form-title">Reserve Your Spot</h3>
-            <p className="tm-form-sub">
-              A coach will call within <strong>24 hours</strong> to lock it in.
-            </p>
-
-            <form className="tm-form" onSubmit={onSubmit}>
-              <div className="tm-field">
-                <input
-                  id="tm-name"
-                  type="text"
-                  placeholder=" "
-                  required
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                />
-                <label htmlFor="tm-name">
-                  Full Name <span>*</span>
-                </label>
-              </div>
-
-              <div className="tm-field">
-                <input
-                  id="tm-email"
-                  type="email"
-                  placeholder=" "
-                  required
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                />
-                <label htmlFor="tm-email">
-                  Email address <span>*</span>
-                </label>
-              </div>
-
-              <div className="tm-field">
-                <input
-                  id="tm-phone"
-                  type="tel"
-                  placeholder=" "
-                  required
-                  value={form.phone}
-                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                />
-                <label htmlFor="tm-phone">
-                  Phone number <span>*</span>
-                </label>
-              </div>
-
-              <div className="tm-radio-group">
-                <label className="tm-radio-label">I&apos;m training as</label>
-                <div className="tm-radio-pills" role="radiogroup">
-                  {(["Adult", "Youth", "Family", "Athlete"] as TrainingAs[]).map((opt) => (
-                    <button
-                      key={opt}
-                      type="button"
-                      role="radio"
-                      aria-checked={trainingAs === opt}
-                      className={`tm-radio-pill${trainingAs === opt ? " active" : ""}`}
-                      onClick={() => setTrainingAs(opt)}
-                    >
-                      {opt}
-                    </button>
-                  ))}
+            {status === "success" ? (
+              <div className="tm-success" role="status" aria-live="polite">
+                <div className="tm-success-icon" aria-hidden>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12l5 5L20 7" />
+                  </svg>
+                </div>
+                <h3 className="tm-form-title">You&apos;re In, {form.name.split(" ")[0] || "Champion"}!</h3>
+                <p className="tm-form-sub">
+                  We&apos;ve received your details. A coach will call <strong>{form.phone}</strong> within{" "}
+                  <strong>24 hours</strong> to lock in your 7-day trial.
+                </p>
+                <button type="button" className="tm-submit" onClick={onClose}>
+                  Close
+                </button>
+                <div className="tm-foot">
+                  <span>
+                    📞 Need it sooner? Call <strong>0499 981 286</strong>
+                  </span>
                 </div>
               </div>
+            ) : (
+              <>
+                <h3 className="tm-form-title">Reserve Your Spot</h3>
+                <p className="tm-form-sub">
+                  A coach will call within <strong>24 hours</strong> to lock it in.
+                </p>
 
-              <button type="submit" className="tm-submit">
-                Claim My Trial
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M13 5l7 7-7 7" />
-                </svg>
-              </button>
+                <form className="tm-form" onSubmit={onSubmit} noValidate>
+                  <div className="tm-field">
+                    <input
+                      id="tm-name"
+                      type="text"
+                      placeholder=" "
+                      required
+                      autoComplete="name"
+                      disabled={status === "sending"}
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    />
+                    <label htmlFor="tm-name">
+                      Full Name <span>*</span>
+                    </label>
+                  </div>
 
-              <div className="tm-foot">
-                <span>🔒 No credit card needed</span>
-                <span>
-                  📞 Or call <strong>0499 981 286</strong>
-                </span>
-              </div>
-            </form>
+                  <div className="tm-field">
+                    <input
+                      id="tm-email"
+                      type="email"
+                      placeholder=" "
+                      required
+                      autoComplete="email"
+                      disabled={status === "sending"}
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    />
+                    <label htmlFor="tm-email">
+                      Email address <span>*</span>
+                    </label>
+                  </div>
+
+                  <div className="tm-field">
+                    <input
+                      id="tm-phone"
+                      type="tel"
+                      placeholder=" "
+                      required
+                      autoComplete="tel"
+                      disabled={status === "sending"}
+                      value={form.phone}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    />
+                    <label htmlFor="tm-phone">
+                      Phone number <span>*</span>
+                    </label>
+                  </div>
+
+                  <div className="tm-radio-group">
+                    <label className="tm-radio-label">I&apos;m training as</label>
+                    <div className="tm-radio-pills" role="radiogroup">
+                      {(["Adult", "Youth", "Family", "Athlete"] as TrainingAs[]).map((opt) => (
+                        <button
+                          key={opt}
+                          type="button"
+                          role="radio"
+                          aria-checked={trainingAs === opt}
+                          disabled={status === "sending"}
+                          className={`tm-radio-pill${trainingAs === opt ? " active" : ""}`}
+                          onClick={() => setTrainingAs(opt)}
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Honeypot — hidden from real users, bots fill it */}
+                  <div className="tm-hp" aria-hidden>
+                    <label htmlFor="tm-hp">Leave this field empty</label>
+                    <input
+                      id="tm-hp"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={form.hp}
+                      onChange={(e) => setForm({ ...form, hp: e.target.value })}
+                    />
+                  </div>
+
+                  {status === "error" && (
+                    <div className="tm-error" role="alert">
+                      {errorMsg}
+                    </div>
+                  )}
+
+                  <button type="submit" className="tm-submit" disabled={status === "sending"}>
+                    {status === "sending" ? (
+                      <>
+                        <span className="tm-spinner" aria-hidden />
+                        Sending&hellip;
+                      </>
+                    ) : (
+                      <>
+                        Claim My Trial
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M13 5l7 7-7 7" />
+                        </svg>
+                      </>
+                    )}
+                  </button>
+
+                  <div className="tm-foot">
+                    <span>🔒 No credit card needed</span>
+                    <span>
+                      📞 Or call <strong>0499 981 286</strong>
+                    </span>
+                  </div>
+                </form>
+              </>
+            )}
           </div>
         </div>
       </div>

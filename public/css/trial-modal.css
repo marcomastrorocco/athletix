@@ -1,23 +1,21 @@
 .tm-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
   font-family: 'Barlow', system-ui, -apple-system, sans-serif;
-  transition: background 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-              backdrop-filter 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-              -webkit-backdrop-filter 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
+  transition: opacity 0.28s ease-out;
+  will-change: opacity;
 }
 .tm-overlay.tm-open {
-  background: rgba(0, 0, 0, 0.78);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  opacity: 1;
 }
 
 .tm-modal {
@@ -34,17 +32,15 @@
   position: relative;
   color: #eef2f6;
   opacity: 0;
-  transform: translateY(28px) scale(0.96);
-  filter: blur(6px);
+  transform: translateY(16px) scale(0.98);
   transition:
-    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s,
-    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s,
-    filter 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.05s;
+    opacity 0.32s ease-out 0.04s,
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.04s;
+  will-change: transform, opacity;
 }
 .tm-overlay.tm-open .tm-modal {
   opacity: 1;
   transform: translateY(0) scale(1);
-  filter: blur(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -331,8 +327,73 @@
   gap: 10px;
   transition: all 0.2s;
 }
-.tm-submit:hover { background: #fff; transform: translateY(-1px) }
+.tm-submit:hover:not(:disabled) { background: #fff; transform: translateY(-1px) }
+.tm-submit:disabled { opacity: 0.7; cursor: wait; transform: none }
 .tm-submit svg { width: 18px; height: 18px }
+
+.tm-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: tmSpin 0.7s linear infinite;
+}
+@keyframes tmSpin { to { transform: rotate(360deg) } }
+
+.tm-error {
+  margin-top: 4px;
+  padding: 10px 14px;
+  background: rgba(255, 59, 47, 0.08);
+  border: 1px solid rgba(255, 59, 47, 0.35);
+  border-radius: 8px;
+  color: #ff8a82;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tm-hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.tm-success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 12px 0;
+  animation: tmFadeUp 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tm-success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(0, 212, 240, 0.12);
+  border: 1px solid rgba(0, 212, 240, 0.4);
+  color: #00d4f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tm-success-icon svg { width: 28px; height: 28px }
+.tm-success .tm-form-title { margin: 0 }
+.tm-success .tm-form-sub { margin: 0 }
+.tm-success .tm-submit { align-self: stretch }
+@keyframes tmFadeUp {
+  from { opacity: 0; transform: translateY(8px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+
+.tm-field input:disabled,
+.tm-radio-pill:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
 
 .tm-foot {
   display: flex;

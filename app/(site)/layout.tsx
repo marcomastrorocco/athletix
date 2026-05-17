@@ -24,6 +24,7 @@ export default async function SiteLayout({
         rel="stylesheet"
       />
       <link rel="stylesheet" href="/css/styles.css" />
+      <link rel="stylesheet" href="/css/trial-modal.css" />
       <SiteSplash />
       <AnnounceBar />
       <Header contact={site.contact} />
