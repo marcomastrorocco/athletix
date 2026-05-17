@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnnounceBar from "@/components/AnnounceBar";
 import PageScripts from "@/components/PageScripts";
+import SiteSplash from "@/components/SiteSplash";
 import { getSite } from "@/lib/data";
 
 export default async function SiteLayout({
@@ -23,6 +24,7 @@ export default async function SiteLayout({
         rel="stylesheet"
       />
       <link rel="stylesheet" href="/css/styles.css" />
+      <SiteSplash />
       <AnnounceBar />
       <Header contact={site.contact} />
       {children}
