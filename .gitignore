@@ -12,3 +12,9 @@ next-env.d.ts
 .aider*
 .vscode
 Thumbs.db
+
+# Legacy static-HTML version of the site, kept on disk for reference only
+javascript/
+
+# Standalone duplicate of public/appconcept/, kept on disk for reference only
+/appconcept/

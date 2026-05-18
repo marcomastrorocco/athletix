@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a0a" />
+<title>Athletix App — Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+<!-- Desktop chrome -->
+<div class="desktop-bg" aria-hidden="true"></div>
+
+<!-- Phone frame -->
+<div class="phone-frame">
+  <div class="phone-screen" id="app">
+
+    <!-- Status bar -->
+    <div class="status-bar">
+      <span class="status-time" id="statusTime">9:41</span>
+      <div class="status-right">
+        <span class="status-signal">●●●●</span>
+        <span class="status-wifi">▮</span>
+        <span class="status-batt">100%</span>
+      </div>
+    </div>
+    <div class="notch" aria-hidden="true"></div>
+
+    <!-- Top app bar (changes per screen) -->
+    <header class="app-bar" id="appBar"></header>
+
+    <!-- Main scroll area -->
+    <main class="screen-wrap" id="screenWrap">
+      <!-- Active screen is rendered into here -->
+    </main>
+
+    <!-- Bottom tab nav -->
+    <nav class="tab-nav" id="tabNav">
+      <button class="tab-btn" data-screen="home" aria-label="Home">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </button>
+      <button class="tab-btn" data-screen="classes" aria-label="Classes">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span>Classes</span>
+      </button>
+      <button class="tab-btn" data-screen="train" aria-label="Train">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5l11 11"/><path d="M21 21l-1-1"/><path d="M3 3l1 1"/><path d="M18 22l4-4"/><path d="M2 6l4-4"/><path d="M3 10l7-7"/><path d="M14 21l7-7"/></svg>
+        <span>Train</span>
+      </button>
+      <button class="tab-btn" data-screen="progress" aria-label="Progress">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        <span>Progress</span>
+      </button>
+      <button class="tab-btn" data-screen="profile" aria-label="Profile">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Profile</span>
+      </button>
+    </nav>
+
+    <!-- Overlays -->
+    <div class="overlay" id="overlay" hidden></div>
+    <div class="toast" id="toast" hidden></div>
+    <div class="sheet" id="sheet" hidden></div>
+
+  </div>
+</div>
+
+<!-- Small note for desktop visitors -->
+<p class="desktop-hint">Open in your phone — or resize the browser window to mobile to feel the real experience.</p>
+
+<script src="app.js"></script>
+</body>
+</html>
