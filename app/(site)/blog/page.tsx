@@ -36,7 +36,7 @@ export function BlogListing({
     <>
       <link rel="stylesheet" href="/css/blog-page.css" />
 
-      <section className="page-banner page-banner--blog">
+      <section className="page-banner page-banner--blog page-banner--compact">
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>

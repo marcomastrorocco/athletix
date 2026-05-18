@@ -364,7 +364,7 @@ export default function AthleteProgramsPage() {
       <link rel="stylesheet" href="/css/adult-classes-page.css" />
       <link rel="stylesheet" href="/css/athlete-programs-page.css" />
 
-      <section className="page-banner">
+      <section className="page-banner page-banner--compact">
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>

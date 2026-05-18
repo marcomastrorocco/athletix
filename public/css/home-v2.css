@@ -45,8 +45,10 @@
 .home-v2 .logo-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin-bottom:36px}
 .home-v2 .logo-pill{background:rgba(255,255,255,.02);border:1px solid var(--border2);padding:10px 0;width:120px;display:flex;align-items:center;justify-content:center;transition:all .3s}
 .home-v2 .logo-pill:hover{border-color:rgba(0,212,240,.3);background:var(--cyan-dim)}
-.home-v2 .logo-pill img{max-width:80px;max-height:44px;object-fit:contain;filter:brightness(0) invert(1);opacity:.55;transition:opacity .3s}
-.home-v2 .logo-pill:hover img{opacity:.9}
+.home-v2 .logo-pill img{max-width:80px;max-height:44px;object-fit:contain;opacity:1;transition:transform .3s, opacity .3s}
+.home-v2 .logo-pill:hover img{transform:scale(1.05)}
+.home-v2 .logo-pill{background:#fff}
+.home-v2 .logo-pill:hover{border-color:rgba(0,212,240,.5);background:#fff;box-shadow:0 6px 18px rgba(0,212,240,.18)}
 .home-v2 .trust-quote{font-size:15px;color:var(--silver);font-style:italic;max-width:680px;margin:0 auto;line-height:1.75}
 .home-v2 .trust-quote strong{color:var(--cyan);font-style:normal}
 /* COMMUNITY */

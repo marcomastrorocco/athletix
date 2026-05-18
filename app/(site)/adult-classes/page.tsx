@@ -296,7 +296,7 @@ export default async function AdultClassesPage() {
       <link rel="stylesheet" href="/css/adult-classes-page.css" />
       <link rel="stylesheet" href="/css/home-v2.css" />
 
-      <section className="page-banner">
+      <section className="page-banner page-banner--compact">
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>

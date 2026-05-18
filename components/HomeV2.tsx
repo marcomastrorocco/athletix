@@ -1,7 +1,41 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import {
+  Trophy,
+  Dumbbell,
+  Users,
+  Zap,
+  Microscope,
+  TrendingUp,
+  Medal,
+  BarChart,
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+} from "lucide-react";
 import type { Coach, SiteContent } from "@/lib/data";
+
+const ICONS: Record<string, React.ComponentType<{ size?: number; strokeWidth?: number }>> = {
+  trophy: Trophy,
+  dumbbell: Dumbbell,
+  users: Users,
+  zap: Zap,
+  microscope: Microscope,
+  "trending-up": TrendingUp,
+  medal: Medal,
+  "bar-chart": BarChart,
+  "map-pin": MapPin,
+  phone: Phone,
+  mail: Mail,
+  clock: Clock,
+};
+
+function Icon({ name, size = 20 }: { name: string; size?: number }) {
+  const C = ICONS[name?.toLowerCase?.()] ?? Trophy;
+  return <C size={size} strokeWidth={1.75} />;
+}
 
 export default function HomeV2({
   site,
@@ -71,12 +105,7 @@ export default function HomeV2({
         {/* HERO */}
         <section className="hero">
           <div className="hero-bg">
-            <iframe
-              src={hero.videoEmbedUrl}
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              title="Athletix hero video"
-            />
+            <img src={hero.bgImage} alt="" />
           </div>
           <div className="hero-grid"></div>
           <div className="hero-overlay"></div>
@@ -163,7 +192,7 @@ export default function HomeV2({
             <div className="community-audiences">
               {community.audiences.map((a, i) => (
                 <div key={i} className="audience-card">
-                  <div className="audience-icon">{a.icon}</div>
+                  <div className="audience-icon"><Icon name={a.icon} size={24} /></div>
                   <div className="audience-title">{a.title}</div>
                   <p className="audience-desc">{a.desc}</p>
                 </div>
@@ -352,7 +381,7 @@ export default function HomeV2({
                   <div className="hub-services">
                     {hub.services.map((s, i) => (
                       <div key={i} className="hub-svc">
-                        <div className="hub-svc-icon">{s.icon}</div>
+                        <div className="hub-svc-icon"><Icon name={s.icon} size={14} /></div>
                         <span className="hub-svc-text">{s.text}</span>
                       </div>
                     ))}
@@ -409,9 +438,19 @@ export default function HomeV2({
               {space.cells.map((c, i) => (
                 <div
                   key={i}
-                  className={`space-cell${c.tall ? " tall" : ""}`}
+                  className={`space-cell${c.tall ? " tall" : ""}${c.video ? " has-video" : ""}`}
                 >
-                  <img src={c.img} alt={c.alt} />
+                  {c.video ? (
+                    <iframe
+                      src={c.video}
+                      title={c.alt || "Athletix video"}
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      frameBorder={0}
+                    />
+                  ) : (
+                    <img src={c.img} alt={c.alt} />
+                  )}
                   <div className="s-grad"></div>
                   <div className="space-label">
                     <span>{c.labelTop}</span>
@@ -478,7 +517,7 @@ export default function HomeV2({
               {testimonials.stories.map((s, i) => (
                 <div key={i} className="story-card">
                   <div className="story-head">
-                    <span className="story-icon">{s.icon}</span>
+                    <span className="story-icon"><Icon name={s.icon} size={20} /></span>
                     <div className="story-title">
                       {s.titleTop} <em>{s.titleEm}</em>
                     </div>
@@ -580,7 +619,7 @@ export default function HomeV2({
               <div className="f-contacts">
                 {footer.contacts.map((c, i) => (
                   <div key={i} className="f-contact-row">
-                    <div className="f-contact-icon">{c.icon}</div>
+                    <div className="f-contact-icon"><Icon name={c.icon} size={15} /></div>
                     <div>
                       {c.href ? <a href={c.href}>{c.text}</a> : c.text}
                     </div>

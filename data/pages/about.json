@@ -12,6 +12,7 @@
       "type": "pageBanner",
       "id": "banner",
       "variant": "about",
+      "compact": true,
       "crumbs": [
         { "label": "Home", "href": "/" },
         { "label": "About Us", "href": "" }

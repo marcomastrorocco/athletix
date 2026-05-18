@@ -61,7 +61,7 @@ const steps = [
 export default function NdisPage() {
   return (
     <>
-      <section className="page-banner">
+      <section className="page-banner page-banner--compact">
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>

@@ -21,7 +21,9 @@ function renderBlock(block: Block): React.ReactNode {
         <section
           key={block.id}
           className={
-            "page-banner" + (isAbout ? " page-banner--about" : "")
+            "page-banner" +
+            (isAbout ? " page-banner--about" : "") +
+            (block.compact ? " page-banner--compact" : "")
           }
         >
           <div className="container">
@@ -186,9 +188,20 @@ function renderBlock(block: Block): React.ReactNode {
             </div>
           </div>
           <div className="gallery-strip">
-            {block.images.map((im, i) => (
-              <img key={i} src={im.src} alt={im.alt} />
-            ))}
+            {block.images.map((im, i) =>
+              im.video ? (
+                <div key={i} className="gallery-video">
+                  <iframe
+                    src={im.video}
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    title={im.alt || "Athletix video"}
+                  />
+                </div>
+              ) : (
+                <img key={i} src={im.src} alt={im.alt} />
+              )
+            )}
           </div>
         </section>
       );

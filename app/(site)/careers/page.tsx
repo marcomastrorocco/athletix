@@ -52,7 +52,7 @@ const reasons = [
 export default function CareersPage() {
   return (
     <>
-      <section className="page-banner">
+      <section className="page-banner page-banner--compact">
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>

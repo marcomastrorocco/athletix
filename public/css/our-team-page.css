@@ -1,0 +1,355 @@
+/* Our Team page — rebuilt from WordPress source */
+
+:root {
+  --ot-cyan: #00d4f0;
+  --ot-cyan-soft: rgba(0, 212, 240, 0.12);
+  --ot-line: rgba(255, 255, 255, 0.08);
+  --ot-ink: rgba(255, 255, 255, 0.78);
+  --ot-card: #0f1418;
+  --ot-bg: #07090b;
+}
+
+/* Shared helpers */
+.ot-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ot-cyan);
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding: 6px 14px;
+  background: var(--ot-cyan-soft);
+  border: 1px solid rgba(0, 212, 240, 0.28);
+  border-radius: 999px;
+}
+.ot-eyebrow--center {
+  display: block;
+  margin: 0 auto 16px;
+  width: max-content;
+}
+.ot-h2 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(32px, 4.6vw, 52px);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 22px;
+  line-height: 1.02;
+}
+.ot-h2--center {
+  text-align: center;
+  margin: 0 auto 16px;
+}
+.ot-h2 em {
+  font-style: normal;
+  color: var(--ot-cyan);
+}
+.ot-divider {
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--ot-cyan);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* ===== INTRO ===== */
+.ot-intro {
+  padding: 80px 0;
+  background: var(--ot-bg);
+}
+.ot-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+}
+.ot-intro-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  border: 1px solid var(--ot-line);
+}
+.ot-intro-copy p {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--ot-ink);
+  margin: 0 0 16px;
+}
+.ot-intro-copy p strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== OUR COACHES HEAD ===== */
+.ot-coaches-head {
+  padding: 80px 0 30px;
+  text-align: center;
+}
+
+/* ===== COACH BLOCKS ===== */
+.ot-coaches {
+  padding: 30px 0 100px;
+}
+.ot-tick {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ot-cyan-soft);
+  color: var(--ot-cyan);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+/* ===== Coach slider (multi-card, auto-advance) ===== */
+.ot-slider {
+  position: relative;
+  isolation: isolate;
+}
+.ot-slider-viewport {
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 4px 4px 6px;
+  margin: 0 -4px;
+}
+.ot-slider-track {
+  display: flex;
+  gap: 0;
+  will-change: transform;
+}
+.ot-slide-item {
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+/* Coach card (compact view inside the slider) */
+.ot-coach-card {
+  position: relative;
+  height: 100%;
+  background: var(--ot-card);
+  border: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 0 1px var(--ot-line);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ot-coach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(0, 212, 240, 0.4),
+              0 20px 50px rgba(0, 0, 0, 0.4);
+}
+.ot-coach-card-photo {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 4 / 5;
+  background: #000;
+  overflow: hidden;
+}
+.ot-coach-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition: transform 0.6s ease;
+}
+.ot-coach-card:hover .ot-coach-card-photo img {
+  transform: scale(1.04);
+}
+.ot-coach-card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 32px 20px 16px;
+  background: linear-gradient(180deg, transparent, rgba(7, 9, 11, 0.85));
+}
+.ot-coach-card-role {
+  margin: 0;
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ot-cyan);
+  font-weight: 700;
+  padding: 5px 12px;
+  background: rgba(7, 9, 11, 0.6);
+  border: 1px solid rgba(0, 212, 240, 0.3);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+.ot-coach-card-body {
+  padding: 20px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.ot-coach-card-name {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(20px, 1.6vw, 24px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
+}
+.ot-coach-card-bio {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--ot-ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.ot-coach-card-quals {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  border-top: 1px solid var(--ot-line);
+  padding-top: 14px;
+}
+.ot-coach-card-quals li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ot-ink);
+}
+.ot-coach-card-quals li.ot-coach-card-more {
+  color: var(--ot-cyan);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.ot-coach-card-socials {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+.ot-coach-card-socials a {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 240, 0.28);
+  background: var(--ot-cyan-soft);
+  color: var(--ot-cyan);
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.ot-coach-card-socials a:hover {
+  background: var(--ot-cyan);
+  color: #001821;
+  transform: translateY(-2px);
+}
+
+/* Slider nav */
+.ot-slider-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ot-line);
+}
+.ot-slider-arrow {
+  appearance: none;
+  border: 1px solid rgba(0, 212, 240, 0.4);
+  background: var(--ot-cyan-soft);
+  color: var(--ot-cyan);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease,
+    border-color 0.2s ease;
+}
+.ot-slider-arrow:hover {
+  background: var(--ot-cyan);
+  color: #001821;
+  border-color: var(--ot-cyan);
+  transform: translateY(-2px);
+}
+.ot-slider-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+.ot-slider-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ot-slider-dot {
+  appearance: none;
+  border: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, width 0.2s ease;
+}
+.ot-slider-dot:hover {
+  background: rgba(0, 212, 240, 0.5);
+}
+.ot-slider-dot.is-active {
+  background: var(--ot-cyan);
+  width: 24px;
+  border-radius: 6px;
+}
+
+/* ===== Solo "Trusted By" heading (no Pro Standard above it) ===== */
+.home-v2 .trust-h.trust-h--solo {
+  font-family: "Anton", "Barlow Condensed", sans-serif;
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: 4px;
+  margin-bottom: 36px;
+  color: #fff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 980px) {
+  .ot-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .ot-slide-item {
+    padding: 0 8px;
+  }
+}
+@media (max-width: 560px) {
+  .ot-intro {
+    padding: 60px 0;
+  }
+  .ot-coaches-head {
+    padding: 60px 0 20px;
+  }
+  .ot-coach {
+    padding: 36px 0;
+  }
+}

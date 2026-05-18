@@ -154,7 +154,7 @@ export default async function YouthClassesPage() {
       <link rel="stylesheet" href="/css/youth-classes-page.css" />
       <link rel="stylesheet" href="/css/home-v2.css" />
 
-      <section className="page-banner">
+      <section className="page-banner page-banner--compact">
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>

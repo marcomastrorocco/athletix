@@ -327,10 +327,10 @@ export default function SiteEditor({ initial }: { initial: SiteContent }) {
             />
           </div>
           <TA
-            label="Background video embed URL"
+            label="Background image URL"
             rows={2}
-            value={s.hero.videoEmbedUrl}
-            onChange={(v) => update("hero", { ...s.hero, videoEmbedUrl: v })}
+            value={s.hero.bgImage}
+            onChange={(v) => update("hero", { ...s.hero, bgImage: v })}
           />
           <div className="field">
             <label>Hero stats (bottom row)</label>
@@ -1010,6 +1010,11 @@ export default function SiteEditor({ initial }: { initial: SiteContent }) {
                     onChange={(img) => upd({ ...it, img })}
                   />
                   <TF
+                    label="Video embed URL (optional — overrides image)"
+                    value={it.video || ""}
+                    onChange={(v) => upd({ ...it, video: v })}
+                  />
+                  <TF
                     label="Alt text"
                     value={it.alt}
                     onChange={(v) => upd({ ...it, alt: v })}
@@ -1163,7 +1168,7 @@ export default function SiteEditor({ initial }: { initial: SiteContent }) {
                 update("testimonials", { ...s.testimonials, stories })
               }
               newItem={(): TestiStory => ({
-                icon: "🏆",
+                icon: "trophy",
                 titleTop: "",
                 titleEm: "",
                 body: "",

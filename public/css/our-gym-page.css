@@ -1,0 +1,539 @@
+/* Our Gym page — rebuilt from WordPress source */
+
+.og-section-h {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 14px;
+  text-align: center;
+  line-height: 1.05;
+}
+.og-section-h--left {
+  text-align: left;
+  margin-top: 40px;
+}
+.og-section-h--center {
+  text-align: center;
+}
+.og-divider {
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: #00d4f0;
+  border-radius: 2px;
+  margin: 0 0 26px;
+}
+.og-divider--center {
+  margin: 0 auto 40px;
+}
+
+/* ===== Tour section (videos) ===== */
+.our-gym-tour {
+  padding: 90px 0 80px;
+  background:
+    radial-gradient(900px 500px at 85% 0%, rgba(0, 212, 240, 0.07), transparent 60%),
+    radial-gradient(700px 400px at 0% 100%, rgba(0, 212, 240, 0.05), transparent 60%),
+    #07090b;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.og-tour-head {
+  max-width: 760px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.og-tour-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #00d4f0;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding: 6px 14px;
+  background: rgba(0, 212, 240, 0.1);
+  border: 1px solid rgba(0, 212, 240, 0.28);
+  border-radius: 999px;
+}
+.og-tour-title {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.02;
+}
+.og-tour-title em {
+  font-style: normal;
+  color: #00d4f0;
+}
+.og-tour-sub {
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+.og-tour-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  align-items: stretch;
+}
+.og-tour-card {
+  height: 100%;
+}
+.og-tour-card {
+  background: #0f1418;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.og-tour-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 212, 240, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+.og-tour-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.og-tour-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.og-tour-meta {
+  padding: 24px 28px 28px;
+}
+.og-tour-tag {
+  display: inline-block;
+  font-size: 11.5px;
+  color: #00d4f0;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.og-tour-meta h3 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(22px, 2.4vw, 28px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.1;
+}
+.og-tour-meta p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== Story / Philosophy section ===== */
+.our-gym-story {
+  padding: 100px 0;
+  background:
+    radial-gradient(700px 400px at 0% 0%, rgba(0, 212, 240, 0.05), transparent 60%),
+    #07090b;
+}
+.og-story-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.og-story-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #00d4f0;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding: 6px 14px;
+  background: rgba(0, 212, 240, 0.1);
+  border: 1px solid rgba(0, 212, 240, 0.28);
+  border-radius: 999px;
+}
+.og-story-h {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(32px, 4.4vw, 52px);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 22px;
+  line-height: 1.02;
+}
+.og-story-h em {
+  font-style: normal;
+  color: #00d4f0;
+}
+.og-story-lede {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #fff;
+  margin: 0 0 28px;
+  padding-left: 18px;
+  border-left: 3px solid #00d4f0;
+}
+.og-story-lede strong {
+  color: #00d4f0;
+  font-weight: 700;
+}
+.og-story-lede a {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 212, 240, 0.4);
+  text-underline-offset: 3px;
+}
+.og-story-body {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 16px;
+}
+.og-story-body strong {
+  color: #fff;
+  font-weight: 600;
+}
+.og-story-body a {
+  color: #00d4f0;
+  text-decoration: none;
+}
+.og-story-body a:hover {
+  text-decoration: underline;
+}
+
+/* Pillars */
+.og-story-pillars {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.og-story-pillars li {
+  background: #0f1418;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 16px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.og-story-pillars li:hover {
+  border-color: rgba(0, 212, 240, 0.35);
+  transform: translateY(-2px);
+}
+.og-pillar-n {
+  font-family: "Anton", sans-serif;
+  font-size: 22px;
+  color: #00d4f0;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+.og-story-pillars li > span:last-child {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Sports strip */
+.og-sports-strip {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.og-sports-label {
+  display: block;
+  font-size: 11.5px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 12px;
+}
+.og-sports-strip ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.og-sports-strip li {
+  padding: 6px 14px;
+  border: 1px solid rgba(0, 212, 240, 0.28);
+  border-radius: 999px;
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0, 212, 240, 0.05);
+}
+
+/* Media column */
+.og-story-media {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.og-story-frame {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background: #000;
+}
+.og-story-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(7, 9, 11, 0.6) 100%);
+  pointer-events: none;
+}
+.og-story-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.og-story-frame:hover img {
+  transform: scale(1.04);
+}
+.og-story-frame-tag {
+  position: absolute;
+  z-index: 1;
+  left: 18px;
+  bottom: 18px;
+  padding: 8px 14px;
+  background: rgba(7, 9, 11, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.og-story-quote {
+  position: relative;
+  padding: 22px 24px 20px 52px;
+  background: #0f1418;
+  border: 1px solid rgba(0, 212, 240, 0.18);
+  border-radius: 12px;
+}
+.og-story-quote > span[aria-hidden] {
+  position: absolute;
+  top: 6px;
+  left: 18px;
+  font-family: Georgia, serif;
+  font-size: 64px;
+  line-height: 1;
+  color: #00d4f0;
+  opacity: 0.85;
+}
+.og-story-quote p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+  font-style: italic;
+}
+
+/* ===== Layout / Zones section ===== */
+.our-gym-layout {
+  padding: 100px 0;
+  background:
+    radial-gradient(800px 500px at 100% 50%, rgba(0, 212, 240, 0.06), transparent 60%),
+    #0f1418;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.og-layout-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+.og-layout-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #00d4f0;
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding: 6px 14px;
+  background: rgba(0, 212, 240, 0.1);
+  border: 1px solid rgba(0, 212, 240, 0.28);
+  border-radius: 999px;
+}
+.og-layout-h {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.02;
+}
+.og-layout-h em {
+  font-style: normal;
+  color: #00d4f0;
+}
+.og-layout-sub {
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+.og-layout-sub strong {
+  color: #00d4f0;
+  font-weight: 700;
+}
+
+/* Zone cards */
+.og-layout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.og-zone-card {
+  position: relative;
+  background: #07090b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 30px 28px 28px;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.og-zone-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 212, 240, 0.4);
+}
+.og-zone-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(0, 212, 240, 0.18), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.og-zone-card:hover::before {
+  opacity: 1;
+}
+.og-zone-card--wide {
+  grid-column: span 1;
+}
+.og-zone-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.og-zone-num {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(54px, 7vw, 84px);
+  color: #00d4f0;
+  line-height: 0.9;
+  letter-spacing: 0.005em;
+}
+.og-zone-unit {
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+}
+.og-zone-tag {
+  display: inline-block;
+  font-size: 11.5px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #00d4f0;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.og-zone-body h3 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.15;
+}
+.og-zone-body p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.og-layout-outro {
+  text-align: center;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 56px auto 0;
+  max-width: 600px;
+}
+
+/* Solo "Trusted By" heading on Our Gym (no Pro Standard above it) */
+.home-v2 .trust-h.trust-h--solo {
+  font-family: "Anton", "Barlow Condensed", sans-serif;
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: 4px;
+  margin-bottom: 36px;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .og-story-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .og-story-media {
+    position: static;
+  }
+  .og-story-frame {
+    aspect-ratio: 4 / 3;
+  }
+  .og-story-pillars {
+    grid-template-columns: 1fr;
+  }
+  .og-tour-grid {
+    grid-template-columns: 1fr;
+  }
+  .og-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 560px) {
+  .og-tour-meta {
+    padding: 20px 22px 24px;
+  }
+}

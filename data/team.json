@@ -1,10 +1,127 @@
 [
-  { "id": "mastrorocco", "name": "Marco Mastrorocco", "displayName": "M. Mastrorocco", "role": "Director Ath. Dev.", "image": "/image/Elite%20Coach/mastro.jpeg" },
-  { "id": "reza", "name": "Reza Sharifian", "displayName": "Reza Sharifian", "role": "S&C Coach", "image": "/image/Elite%20Coach/Reza.jpg" },
-  { "id": "isaac", "name": "Isaac Corvo", "displayName": "Isaac Corvo", "role": "S&C Coach", "image": "/image/Elite%20Coach/isaac.jpg" },
-  { "id": "ritti", "name": "Ritti Kaci", "displayName": "Ritti Kaci", "role": "S&C Coach", "image": "/image/Elite%20Coach/ritti.jpg" },
-  { "id": "jacob", "name": "Jacob Nilsson", "displayName": "Jacob Nilsson", "role": "S&C Coach", "image": "/image/Elite%20Coach/jacob.jpg" },
-  { "id": "david", "name": "David Lawrence", "displayName": "David Lawrence", "role": "Exercise Physiologist", "image": "/image/Elite%20Coach/David.jpg" },
-  { "id": "sasha", "name": "Sasha Cochrane", "displayName": "Sasha Cochrane", "role": "S&C Coach", "image": "/image/Elite%20Coach/Sasha.jpg" },
-  { "id": "campbell", "name": "Campbell Antonio", "displayName": "Campbell Antonio", "role": "Physiotherapist", "image": "/image/Elite%20Coach/campbell.jpg" }
+  {
+    "id": "mastrorocco",
+    "name": "Marco Mastrorocco",
+    "displayName": "Marco Mastrorocco",
+    "role": "Director of Athletic Performance",
+    "image": "/image/Elite%20Coach/mastro.jpeg",
+    "bio": "With over 20 years of experience coaching both general and athletic populations across Italy, the UK, Spain, and Australia, Marco Mastrorocco is highly dedicated to enhancing physical development in youth and optimizing performance in athletes.\n\nCurrently, Marco serves as the **Head of Performance for Cricket Italy**, overseeing the Men's ODI and T20 squads. Since 2018, he has also been an S&C consultant for the **High-Performance Team at Queensland Cricket**, working with the Bulls and Pathways programs.\n\nAt Athletix, Marco plays a pivotal role in supporting elite professional athletes, including **Lions W** and **Brisbane Heat players**, during their off-season and recovery phases. Additionally, he coordinates the **Villanova College Strength and Conditioning Program**, fostering athletic development within the school environment.\n\nMarco's expertise extends to academic contributions as the co-author of the published systematic review and meta-analysis: *\"The Relationship Between Neck Strength and Sports-Related Concussion in Team Sports,\"* featured in the Journal of Orthopedic & Sports Physical Therapy.\n\nPassionate about mentoring, Marco supports the next generation of coaches as a Level 1 course presenter within the **Australian Strength and Conditioning Association (ASCA)** framework.",
+    "qualifications": [
+      "Head of Performance - Cricket Italy (T20, ODI) - 2024",
+      "Strength & Conditioning Coach - ASCA Professional L2 (2019)",
+      "S&C Consultant for CRICKET AUSTRALIA and QLD BULLS (2018 - current)",
+      "S&C Coordinator - Villanova College (2021-current)",
+      "Weightlifting Coach (AWF Level 1) - 2018",
+      "Bachelor in High Performance Sports (ACU)",
+      "Co-author Garrett, J. M., Mastrorocco, M., Peek, K., Van den Hoek, D. J., & McGuckian, T. B. (2023). The relationship between neck strength and sports-related concussion in team sports: a systematic review with meta-analysis. journal of orthopaedic & sports physical therapy, 53(10), 585-593.",
+      "4x Italian Thai-Kickboxing Champion",
+      "Bronze Medal at the W.A.K.O. European Kickboxing Championships (2004)"
+    ],
+    "linkedin": "https://www.linkedin.com/in/marco-mastrorocco-14093b104/",
+    "instagram": "https://www.instagram.com/nudojo/",
+    "spotify": "https://open.spotify.com/embed/episode/6zEuLcM78SzYN1ViZqgTDZ?utm_source=generator"
+  },
+  {
+    "id": "isaac",
+    "name": "Isaac Corvo",
+    "displayName": "Isaac Corvo",
+    "role": "Strength & Conditioning Coach",
+    "image": "/image/Elite%20Coach/isaac.jpg",
+    "bio": "Isaac Corvo has lived and breathed sport his entire life. Currently serving as the **Head of Strength and Conditioning for the Brisbane Bullets** and a **Senior Performance Coach at Athletix**, Isaac combines his passion for athletic development with extensive experience as a sub-elite AFL player over the past five years. This exposure to high-level coaching inspired him to pursue a **Bachelor in Exercise Science** and specialize in **Strength and Conditioning**.\n\nIsaac's mission is to assist individuals on their journey to become better versions of themselves — whether that means becoming fitter, stronger, faster, or excelling in other areas of performance. His coaching philosophy is rooted in an **evidence-based approach**, focusing on mastering fundamental movements such as **squatting, pressing, pulling, and hinging**, alongside enhancing motor patterns critical for athletic performance, including **running, jumping, and sprinting**.\n\nAt Athletix, Isaac brings his expertise and passion for performance to help clients achieve their goals, using a structured and scientific methodology tailored to individual needs.",
+    "qualifications": [
+      "Head of S&C - Brisbane Bullets",
+      "Strength & Conditioning Coach - ASCA Level 1",
+      "Bachelor in Exercise and Sports Science (ACU)",
+      "Sub-Elite AFL Athlete"
+    ],
+    "linkedin": "https://www.linkedin.com/in/isaac-corvo-186395233/",
+    "instagram": "https://www.instagram.com/strength2stride"
+  },
+  {
+    "id": "reza",
+    "name": "Reza Sharifian",
+    "displayName": "Reza Sharifian",
+    "role": "Head Coach",
+    "image": "/image/Elite%20Coach/Reza.jpg",
+    "bio": "Reza Sharifian is driven by a deep passion for human movement and athletic performance. A former international rugby player, Reza transitioned into coaching after completing a **Bachelor of Exercise and Sport Sciences (Hons.)**, where he developed a strong foundation in scientific and research-based training methodologies.\n\nAs the **Head Coach at Athletix**, Reza leads and coordinates the programming for the club, ensuring a high-performance approach tailored to athletes and clients of all levels. His extensive coaching experience spans working with the **QLD Bulls (professional cricket)**, sub-elite rugby and soccer players, as well as gym and fitness enthusiasts.\n\nIn addition to his role at Athletix, Reza is a Senior Strength & Conditioning Coach at **Villanova College**, contributing to the Athletic Development Program and helping young athletes unlock their potential.\n\nReza believes in a holistic approach to health and fitness, focusing not just on achieving performance goals but also on fostering long-term well-being. His dedication to continuous learning and exploring new training methods ensures that his clients benefit from cutting-edge techniques and strategies.\n\nReza's blend of experience, knowledge, and enthusiasm makes him an invaluable leader within the Athletix team, committed to helping clients and athletes reach their peak potential.",
+    "qualifications": [
+      "Head Coach - Athletix Team",
+      "Strength & Conditioning Coach",
+      "Bachelor in Exercise Science (Hons.)",
+      "ESSA accredited Exercise and Sport Scientist (AES, ASpS)"
+    ],
+    "instagram": "https://www.instagram.com/m_reza_sharifian"
+  },
+  {
+    "id": "ritti",
+    "name": "Ritti Kagi",
+    "displayName": "Ritti Kagi",
+    "role": "S&C Coach",
+    "image": "/image/Elite%20Coach/ritti.jpg",
+    "bio": "For Ritti, sport has always been the drumbeat to his life. With a passion for movement and performance, Ritti completed a **Bachelor of High Performance Sport**, equipping him with the tools and knowledge to guide others in achieving their fitness and performance goals.\n\nDedicated to helping individuals get stronger, fitter, and faster, Ritti embraces a commitment to continuous professional development, ensuring that his coaching is always grounded in the latest scientific evidence.\n\nAs a first-generation South Sudanese, Ritti is passionate about working with **multicultural athletes**, uncovering untapped potential, and empowering individuals to achieve greatness. He believes in the transformative power of sport to inspire and uplift, fostering growth in both youth and adults alike.\n\nAt Athletix, Ritti plays a vital role in delivering results-driven training programs and contributing to a supportive, inclusive environment where every client can thrive.\n\nRitti's enthusiasm, knowledge, and dedication to his craft make him an integral part of the Athletix coaching team, helping clients of all backgrounds unlock their full potential.",
+    "qualifications": [
+      "Strength & Conditioning Coach - ASCA Level 1",
+      "Bachelor in High Performance Sports",
+      "S&C Coach Villanova College"
+    ],
+    "instagram": "https://www.instagram.com/ritxscience/"
+  },
+  {
+    "id": "sasha",
+    "name": "Sasha Cochrane",
+    "displayName": "Sasha Cochrane",
+    "role": "Strength & Conditioning Coach",
+    "image": "/image/Elite%20Coach/Sasha.jpg",
+    "bio": "Sasha's lifelong passion for sport and fitness began with playing football at a young age and later transitioning to basketball during university. This journey, combined with his academic background in Bachelor's and Master's degrees, has given Sasha a comprehensive understanding of the key factors that drive performance, including strength and conditioning, injury prevention and rehabilitation, nutrition, and beyond.\n\nHis career has taken him across the globe, most notably working with **Division 1 Collegiate Football** as part of the **Iowa Hawkeyes**. These experiences have shaped Sasha into the coach he is today, instilling a coaching philosophy centered on helping athletes reach their full potential, whether they are striving to return to sport, win medals, or achieve personal milestones.\n\nAt Athletix, Sasha is dedicated to guiding individuals to become fitter, faster, and stronger while fostering a positive, enjoyable training environment. He emphasizes the importance of both the hard work required and the joy found in every step of the journey.\n\nSasha also plays a key role in supporting Athletix's youth development programs and is part of the coaching team at **Villanova College**, contributing to their Strength and Conditioning Program. His passion for performance and commitment to athlete success make him an invaluable member of the Athletix team.",
+    "qualifications": [
+      "Master in Strength & Conditioning (Loughborough University) - 2021",
+      "Bachelors in Sport, Exercise & Rehabilitation Sciences (University of Birmingham / University of Cincinnati) - 2018",
+      "NSCA Certified Strength and Conditioning Specialist (CSCS)",
+      "ASCA Coach Level 1",
+      "Mayne Tigers AFL - Lead Performance Coach"
+    ],
+    "instagram": "https://www.instagram.com/coach_sashacochrane/"
+  },
+  {
+    "id": "mulherin",
+    "name": "Sam Mulherin",
+    "displayName": "Sam Mulherin",
+    "role": "Strength & Conditioning Coach",
+    "image": "https://athletix.com.au/wp-content/uploads/2025/08/1000133313-1-e1759098729912.jpg",
+    "bio": "Sam is a passionate and experienced Strength & Conditioning Coach with **7 years in the industry**, working with youth, general, and athletic populations. He holds dual degrees — a **Bachelor of Exercise and Movement Science (Distinction)** and a **Bachelor of Business Finance (Distinction)** — and is an ASCA Level 1 Accredited Coach.\n\nOver his career, Sam has held Head S&C roles with **AFL and Rugby teams in Brisbane**, and has recently returned from two years coaching in the UK, where he broadened his professional knowledge and experience.\n\nSam's coaching philosophy revolves around athletic performance, youth athletic development, and the pillars of **speed, power, and strength training**. He is particularly passionate about supporting athletes across **AFL, cricket, rugby league, triathlon, and track & field**, helping them develop not just for performance now, but for movement quality and resilience in the long term.\n\nMad about sport and dedicated to moving well for life, Sam thrives on seeing every athlete and client he works with achieve their best.",
+    "qualifications": [
+      "ASCA Coach L1",
+      "Bachelor of Exercise and Movement Science (Distinction)",
+      "Bachelor of Business Finance (Distinction)"
+    ]
+  },
+  {
+    "id": "kwong",
+    "name": "Samuel Kwong",
+    "displayName": "Samuel Kwong",
+    "role": "Strength & Conditioning Coach",
+    "image": "https://athletix.com.au/wp-content/uploads/2026/04/20260319_123309-scaled-e1775810245164.jpg",
+    "bio": "Sam is a Strength and Conditioning Coach at Athletix, originally from Hong Kong, with a strong background in multi-sport participation from a young age. His early exposure to different sporting environments shaped a clear interest in athletic development and long-term performance.\n\nSam holds a **Bachelor of Exercise and Sport Science (Honours)** from The University of Queensland, combining formal education with applied coaching experience across youth and competitive settings. His work centres on developing robust athletes through structured, progressive training, with an emphasis on **movement quality, strength development, and physical resilience**.\n\nAt Athletix, Sam delivers programs aligned with a long-term athletic development model, prioritising strong foundational competencies before progressing to higher outputs such as power, speed, and reactive ability. His coaching reflects a systematic approach, where consistency and technical execution underpin performance outcomes.\n\nIn addition to his role at Athletix, Sam is part of the Strength and Conditioning team at **Villanova College** and works as an Assistant S&C Coach with the **Morningside Panthers (AFL)**, contributing to athlete preparation in competitive environments.",
+    "qualifications": [
+      "Bachelor of Exercise and Movement Science (Honours)",
+      "Strength and Conditioning Coach - Villanova College",
+      "Assistant S&C - Morningside Panthers (AFL)"
+    ],
+    "instagram": "https://www.instagram.com/samuelk_fit"
+  },
+  {
+    "id": "wallis",
+    "name": "Toby Wallis",
+    "displayName": "Toby Wallis",
+    "role": "Strength & Conditioning Coach",
+    "image": "https://athletix.com.au/wp-content/uploads/2026/04/20260320_144026-scaled-e1775810315378.jpg",
+    "bio": "Toby is a Strength and Conditioning Coach at Athletix with a background in high-performance sport and team-based athlete development. He holds a **Bachelor of Sport and Exercise Science** from Queensland University of Technology and the **ASCA Level 2 accreditation**.\n\nToby's coaching is centred on developing athletes who can produce and apply force effectively within the demands of competition. His work emphasises **strength, power, and movement efficiency**, with a clear link between gym-based development and on-field performance. His approach is structured and evidence-informed, focusing on building physical qualities that transfer directly to sport.\n\nWorking primarily with team sport athletes, particularly in **AFL and rugby**, Toby applies a systematic progression model to ensure athletes develop robust foundations before advancing to higher intensity outputs.\n\nToby places strong value on the coaching environment, recognising that consistency and athlete buy-in underpin long-term progress. His sessions are designed to be purposeful, with clear intent behind each component of training.\n\nOutside of coaching, Toby competes in AFL and maintains his own strength training, providing a practical understanding of the physical and psychological demands placed on athletes.",
+    "qualifications": [
+      "ASCA Coach L2 Associate",
+      "Bachelor of Exercise and Movement Science",
+      "Accredited ESSA Exercise & Sports Scientist (AES, ASpS)",
+      "S&C Coach - Villanova College and Yeronga State High School"
+    ],
+    "instagram": "https://www.instagram.com/tw_strengthandconditioning"
+  }
 ]

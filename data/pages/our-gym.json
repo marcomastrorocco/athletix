@@ -11,6 +11,7 @@
     {
       "type": "pageBanner",
       "id": "banner",
+      "compact": true,
       "crumbs": [
         { "label": "Home", "href": "/" },
         { "label": "About", "href": "/about" },
@@ -39,7 +40,7 @@
       "eyebrow": "The Floor",
       "heading": "Inside Athletix.",
       "images": [
-        { "src": "/image/671132158_18084950399576243_438399739749615748_n.heiclow.webp", "alt": "" },
+        { "src": "", "alt": "", "video": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1" },
         { "src": "/image/652790960_18080497415576243_5969545006560046515_n.heiclow.webp", "alt": "" },
         { "src": "/image/607718345_1795235724507459_1936522859625566512_nlow.webp", "alt": "" },
         { "src": "/image/507904702_1813077742981167_7068029986108632745_nlow.webp", "alt": "" },

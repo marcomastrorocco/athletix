@@ -16,13 +16,13 @@
   },
   "hero": {
     "kicker": "Fortitude Valley, Brisbane · Pro Standards · Every Level Welcome",
-    "h1Top": "High Performance",
-    "h1Em": "Village.",
-    "sub": "The same coaching. The same science. The same standard. Small groups. Elite coaches. A community that shows up for you. No experience needed. No judgment. Just results.",
-    "subBoldStart": "Now available to every kid, adult and family in Brisbane.",
+    "h1Top": "Sports Performance",
+    "h1Em": "Hub",
+    "sub": "We built a world class Sports performance hub and opened the doors to everyone.",
+    "subBoldStart": "",
     "primaryBtn": { "label": "Start for $7 →", "href": "#form" },
     "secondaryBtn": { "label": "See What We Offer", "href": "#classes" },
-    "videoEmbedUrl": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1",
+    "bgImage": "/image/hero/20220312_073509-1-scaled.jpg",
     "stats": [
       { "n": "400+", "l": "Members & Counting" },
       { "n": "4.9★", "l": "Google Rating" },
@@ -53,21 +53,21 @@
     "brandStatementEm": "Then opened the doors to everyone.",
     "body": "The elite athlete trains next to the regular Joe. The sub-elite gets coached the same way professionals are. The mum dropping off her kid feels welcomed, not out of place. The dad who's never trained a day in his life gets a coach who actually cares — not a machine and a locker room.",
     "sloganLabel": "The Athletix Standard",
-    "sloganTop": "Excellence is",
-    "sloganEm": "our average.",
+    "sloganTop": "You Don't Have to Be an Athlete",
+    "sloganEm": "to Train Like One.",
     "audiences": [
       {
-        "icon": "🏆",
+        "icon": "trophy",
         "title": "The Aspiring Athlete",
         "desc": "Same methods. Same science. Same physio. Same dietitian as the pros. We will close the gap — no shortcuts, no guesswork. Just the work that actually gets you there."
       },
       {
-        "icon": "💪",
+        "icon": "dumbbell",
         "title": "The Regular Adult",
         "desc": "You don't need to be an athlete to train like one. Our coaches meet you exactly where you are — no judgment, no guesswork, no being left alone with a machine. Proper coaching. Proper results."
       },
       {
-        "icon": "👪",
+        "icon": "users",
         "title": "The Parent",
         "desc": "Your kid deserves real coaching — not a certificate holder running drills. We build confident, capable kids who actually want to train. Whether they're a budding athlete or just getting started."
       }
@@ -172,11 +172,11 @@
     "cardTitle": "Sports Physio & Rehab",
     "cardDesc": "25+ years combined clinical experience — on the floor, not down the road. Your physio and your coach share information, share context, and work from the same plan. No referral delays. No communication gaps.",
     "services": [
-      { "icon": "⚡", "text": "Specialist sports physiotherapy — on-site weekly" },
-      { "icon": "🔬", "text": "Injury screening & prevention protocols" },
-      { "icon": "📈", "text": "Structured rehabilitation programs" },
-      { "icon": "🏅", "text": "Best practice return to sport & return to play" },
-      { "icon": "📊", "text": "Force plate testing & performance benchmarking" }
+      { "icon": "zap", "text": "Specialist sports physiotherapy — on-site weekly" },
+      { "icon": "microscope", "text": "Injury screening & prevention protocols" },
+      { "icon": "trending-up", "text": "Structured rehabilitation programs" },
+      { "icon": "medal", "text": "Best practice return to sport & return to play" },
+      { "icon": "bar-chart", "text": "Force plate testing & performance benchmarking" }
     ],
     "physios": [
       {
@@ -204,7 +204,7 @@
     "h2Em": "Athletix.",
     "body": "Open warehouse. Sprint track. 120sqm of elite S&C space. Built for performance — designed to feel welcoming. Walk in and you'll understand immediately why this is different.",
     "cells": [
-      { "img": "https://athletix.com.au/wp-content/uploads/2024/07/DSC02067-768x512.jpg", "alt": "Main training floor", "labelTop": "Main Training Floor", "labelBottom": "120sqm S&C Space", "tall": true },
+      { "img": "https://athletix.com.au/wp-content/uploads/2024/07/DSC02067-768x512.jpg", "alt": "Main training floor", "labelTop": "Welcome to", "labelBottom": "Athletix", "tall": true, "video": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1" },
       { "img": "https://athletix.com.au/wp-content/uploads/2024/06/DSC01921-768x512.jpg", "alt": "Sprint track", "labelTop": "Performance", "labelBottom": "3-Lane Sprint Track" },
       { "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06320-scaled-e1723546921926.jpg", "alt": "Small group coaching", "labelTop": "Coaching", "labelBottom": "Small Group Sessions" },
       { "img": "https://athletix.com.au/wp-content/uploads/2022/01/Youth-sport-1-e1684274091394.png", "alt": "Youth area", "labelTop": "Youth", "labelBottom": "Athletic Development" },
@@ -242,33 +242,33 @@
         "quote": "",
         "bold": "Best decision I made for my athletic career.",
         "tail": " The level of coaching and the science here is the same as what the professionals get. No question about it.",
-        "avatar": "🏆",
+        "avatar": "D",
         "name": "Darcy",
         "meta": "Athlete Program"
       }
     ],
     "stories": [
       {
-        "icon": "🏆",
+        "icon": "trophy",
         "titleTop": "Indianna Baart",
         "titleEm": "— U14 Nationals",
         "body": "At only 11 years of age, 6th in Australia in pole vault. Less than 18 months of training at Athletix — sprint, strength, long jump and multi-sport. Two PBs on the national stage. Just 1cm off the QLD State Record."
       },
       {
-        "icon": "🏆",
+        "icon": "trophy",
         "titleTop": "Taylor Baart",
         "titleEm": "— Bowls QLD State Champion",
         "body": "U15 Queensland Junior State Champion. Selected into the U18 QLD squad. Prepped like an athlete — strength, balance and conditioning at Athletix to back up his game."
       },
       {
-        "icon": "🏆",
+        "icon": "trophy",
         "titleTop": "Nicola Stevens",
         "titleEm": "— Netball QLD State League Umpire",
         "body": "I joined Athletix to help my return to sport after a season-ending injury and found a community completely engaged in my development and wellbeing.",
         "isQuote": true
       },
       {
-        "icon": "🏆",
+        "icon": "trophy",
         "titleTop": "New Season.",
         "titleEm": "Same Standard.",
         "body": "Even the 5am hits different when you're surrounded by people who care about the craft and about each other. Proud of this team.",
@@ -334,10 +334,10 @@
     "brandImg": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/athlethix-logo.png",
     "tagline": "Pro standard. Open to everyone. Elite S&C coaching, sports physio, sports nutrition and real community — for every kid, adult and family in Brisbane. Fortitude Valley.",
     "contacts": [
-      { "icon": "📍", "text": "42 Baxter Street, Fortitude Valley QLD 4006" },
-      { "icon": "📞", "text": "0499 981 286", "href": "tel:+61499981286" },
-      { "icon": "✉", "text": "info@athletix.com.au", "href": "mailto:info@athletix.com.au" },
-      { "icon": "🕐", "text": "Mon/Wed/Fri 5:15am–7:30pm · Tue/Thu 6am–7:30pm · Sat 6am–11:30am" }
+      { "icon": "map-pin", "text": "42 Baxter Street, Fortitude Valley QLD 4006" },
+      { "icon": "phone", "text": "0499 981 286", "href": "tel:+61499981286" },
+      { "icon": "mail", "text": "info@athletix.com.au", "href": "mailto:info@athletix.com.au" },
+      { "icon": "clock", "text": "Mon/Wed/Fri 5:15am–7:30pm · Tue/Thu 6am–7:30pm · Sat 6am–11:30am" }
     ],
     "formTitle": "Let's Get Started.",
     "formSub": "Fill this in and a coach will reach out within 24 hours. No pressure. Just a conversation.",

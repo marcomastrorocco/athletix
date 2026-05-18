@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import AnnounceBar from "@/components/AnnounceBar";
 import PageScripts from "@/components/PageScripts";
 import SiteSplash from "@/components/SiteSplash";
+import CookieBanner from "@/components/CookieBanner";
+import ScrollToTop from "@/components/ScrollToTop";
 import { getSite } from "@/lib/data";
 
 export default async function SiteLayout({
@@ -30,6 +32,8 @@ export default async function SiteLayout({
       <Header contact={site.contact} />
       {children}
       <Footer />
+      <CookieBanner />
+      <ScrollToTop />
       <PageScripts />
     </>
   );

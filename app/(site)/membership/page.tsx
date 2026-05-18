@@ -18,7 +18,7 @@ export default async function MembershipPage() {
     <>
       <link rel="stylesheet" href="/css/membership-page.css" />
 
-      <section className="page-banner">
+      <section className="page-banner page-banner--compact">
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>

@@ -22,6 +22,59 @@ const CLASSES_PATHS = [
   "/athlete-programs",
 ];
 
+type MegaItem = { href: string; title: string; desc: string };
+
+const CLASSES_MEGA: MegaItem[] = [
+  {
+    href: "/youth-classes",
+    title: "Youth Classes",
+    desc: "Ages 7–17. Strength, speed and athletic development.",
+  },
+  {
+    href: "/adult-classes",
+    title: "Adult Classes",
+    desc: "16+. LIFT, MET-CON, mobility — every level welcome.",
+  },
+  {
+    href: "/family-classes",
+    title: "Family Classes",
+    desc: "Train together. Parent + child sessions on the floor.",
+  },
+  {
+    href: "/athlete-programs",
+    title: "Athlete Programs",
+    desc: "Pro-standard S&C for serious competitors.",
+  },
+];
+
+const ABOUT_MEGA: MegaItem[] = [
+  {
+    href: "/our-gym",
+    title: "Our Gym",
+    desc: "A purpose-built sports performance hub in Fortitude Valley.",
+  },
+  {
+    href: "/our-team",
+    title: "Our Team",
+    desc: "Meet the coaches and clinicians on the floor.",
+  },
+  {
+    href: "/allied-health",
+    title: "Allied Health",
+    desc: "Sports physio, rehab and dietetics under one roof.",
+  },
+  {
+    href: "/ndis-program",
+    title: "NDIS Program",
+    desc: "Tailored strength and conditioning for NDIS participants.",
+  },
+  {
+    href: "/careers",
+    title: "Careers",
+    desc: "Coach with us. Join the team building elite athletes.",
+  },
+];
+
 type Props = {
   contact: { phone: string; email: string; address: string };
 };
@@ -54,6 +107,13 @@ export default function Header({ contact }: Props) {
   useEffect(() => {
     if (!navOpen) setOpenDropdown(null);
   }, [navOpen]);
+
+  // Close mobile nav, side panel and dropdowns when navigating between pages
+  useEffect(() => {
+    setNavOpen(false);
+    setSideOpen(false);
+    setOpenDropdown(null);
+  }, [pathname]);
 
   const toggleDropdown = (key: "classes" | "about") => {
     setOpenDropdown((prev) => (prev === key ? null : key));
@@ -110,7 +170,17 @@ export default function Header({ contact }: Props) {
         }}
       >
         <div className="container header-inner">
-          <Link href="/" className="logo" onClick={closeNav}>
+          <Link
+            href="/"
+            className="logo"
+            onClick={(e) => {
+              closeNav();
+              if (pathname === "/") {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+          >
             <img src="/image/athlethix-logo.png" alt="Athletix" />
           </Link>
           <nav
@@ -124,7 +194,7 @@ export default function Header({ contact }: Props) {
             >
               TIMETABLE
             </Link>
-            <div className={`dropdown${openDropdown === "classes" ? " open" : ""}`}>
+            <div className={`dropdown mega${openDropdown === "classes" ? " open" : ""}`}>
               <div className="dropdown-head">
                 <Link
                   href="/classes"
@@ -143,20 +213,14 @@ export default function Header({ contact }: Props) {
                   <Chevron />
                 </button>
               </div>
-              <div className="dropdown-content">
-                <div className="dropdown-inner">
-                  <Link href="/youth-classes" onClick={closeNav}>
-                    YOUTH CLASSES
-                  </Link>
-                  <Link href="/adult-classes" onClick={closeNav}>
-                    ADULT CLASSES
-                  </Link>
-                  <Link href="/family-classes" onClick={closeNav}>
-                    FAMILY CLASSES
-                  </Link>
-                  <Link href="/athlete-programs" onClick={closeNav}>
-                    ATHLETE PROGRAMS
-                  </Link>
+              <div className="dropdown-content mega-panel">
+                <div className="dropdown-inner mega-grid">
+                  {CLASSES_MEGA.map((m) => (
+                    <Link key={m.href} href={m.href} className="mega-item" onClick={closeNav}>
+                      <span className="mega-title">{m.title}</span>
+                      <span className="mega-desc">{m.desc}</span>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
@@ -167,7 +231,7 @@ export default function Header({ contact }: Props) {
             >
               MEMBERSHIP
             </Link>
-            <div className={`dropdown${openDropdown === "about" ? " open" : ""}`}>
+            <div className={`dropdown mega${openDropdown === "about" ? " open" : ""}`}>
               <div className="dropdown-head">
                 <Link
                   href="/about"
@@ -186,23 +250,14 @@ export default function Header({ contact }: Props) {
                   <Chevron />
                 </button>
               </div>
-              <div className="dropdown-content">
-                <div className="dropdown-inner">
-                  <Link href="/our-gym" onClick={closeNav}>
-                    OUR GYM
-                  </Link>
-                  <Link href="/our-team" onClick={closeNav}>
-                    OUR TEAM
-                  </Link>
-                  <Link href="/allied-health" onClick={closeNav}>
-                    ALLIED HEALTH
-                  </Link>
-                  <Link href="/ndis-program" onClick={closeNav}>
-                    NDIS PROGRAM
-                  </Link>
-                  <Link href="/careers" onClick={closeNav}>
-                    CAREERS
-                  </Link>
+              <div className="dropdown-content mega-panel">
+                <div className="dropdown-inner mega-grid">
+                  {ABOUT_MEGA.map((m) => (
+                    <Link key={m.href} href={m.href} className="mega-item" onClick={closeNav}>
+                      <span className="mega-title">{m.title}</span>
+                      <span className="mega-desc">{m.desc}</span>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>

@@ -1,21 +1,27 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getTeam } from "@/lib/data";
+import { getTeam, getSite } from "@/lib/data";
+import CoachSlider from "@/components/CoachSlider";
 
 export const metadata: Metadata = {
-  title: "Our Team — ATHLETIX",
+  title:
+    "Elite Strength & Conditioning Coaches Brisbane — ATHLETIX",
   description:
-    "Members of ASCA and ESSA — meet the accredited S&C coaches, exercise physiologists and sports physiotherapists at Athletix Brisbane.",
+    "Meet the ATHLETIX team — accredited S&C coaches, exercise scientists and sports physios delivering high-performance training in Brisbane.",
 };
 
 export const dynamic = "force-dynamic";
 
 export default async function OurTeamPage() {
-  const team = await getTeam();
+  const [team, site] = await Promise.all([getTeam(), getSite()]);
+  const trust = site.trust;
 
   return (
     <>
-      <section className="page-banner">
+      <link rel="stylesheet" href="/css/our-team-page.css" />
+      <link rel="stylesheet" href="/css/home-v2.css" />
+
+      <section className="page-banner page-banner--compact">
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>
@@ -32,23 +38,80 @@ export default async function OurTeamPage() {
         </div>
       </section>
 
-      <section className="elite-coaches" style={{ paddingTop: "60px" }}>
-        <div className="container">
-          <div className="elite-coaches-grid">
-            {team.map((c) => (
-              <article key={c.id} className="elite-coach-card">
-                <div className="elite-coach-photo">
-                  <img src={c.image} alt={c.name} />
-                </div>
-                <div className="elite-coach-meta">
-                  <p className="elite-role">{c.role}</p>
-                  <h3>{c.displayName}</h3>
-                </div>
-              </article>
-            ))}
+      {/* INTRO — Train Like An Athlete */}
+      <section className="ot-intro">
+        <div className="container ot-intro-grid">
+          <div className="ot-intro-media">
+            <img
+              src="https://athletix.com.au/wp-content/uploads/2026/04/WA_1776648532015.jpeg"
+              alt="ATHLETIX team and athletes training"
+            />
+          </div>
+          <div className="ot-intro-copy">
+            <p className="ot-eyebrow">Train Like An Athlete</p>
+            <h2 className="ot-h2">
+              High-performance training,
+              <br />
+              <em>for everyone.</em>
+            </h2>
+            <p>
+              ATHLETIX was founded with the vision of delivering{" "}
+              <strong>high-performance training to everyone</strong>, not just
+              elite athletes. We wanted to create an environment where training
+              is backed by science and expert coaching, making athletic
+              development accessible to all ages.
+            </p>
+            <p>
+              What truly sets us apart is the level of expertise{" "}
+              <strong>under one roof</strong>. All our{" "}
+              <strong>Strength &amp; Conditioning Coaches</strong> hold degrees
+              in Exercise and Sports Science or Exercise Physiology and are
+              accredited through the <strong>ASCA</strong> (Australian Strength
+              and Conditioning Association). They bring extensive experience
+              working with youth and elite athletes across all sports.
+            </p>
+            <p>
+              Additionally, our elite <strong>sports physios</strong> have
+              worked with some of the most renowned teams in Australia,
+              including the <strong>Reds</strong>, <strong>Brisbane Roar</strong>,
+              and the <strong>AIS</strong> — ensuring that our members receive
+              the highest quality care and guidance.
+            </p>
           </div>
         </div>
       </section>
+
+      {/* OUR COACHES HEADING */}
+      <section className="ot-coaches-head">
+        <div className="container">
+          <p className="ot-eyebrow ot-eyebrow--center">Meet the Team</p>
+          <h2 className="ot-h2 ot-h2--center">OUR COACHES</h2>
+          <span className="ot-divider" />
+        </div>
+      </section>
+
+      {/* COACH SLIDER */}
+      <section className="ot-coaches">
+        <div className="container">
+          <CoachSlider coaches={team} />
+        </div>
+      </section>
+
+      {/* TRUSTED BY */}
+      <div className="home-v2">
+        <div className="trust-wrap">
+          <div className="trust-inner">
+            <h2 className="trust-h trust-h--solo">{trust.label}</h2>
+            <div className="logo-row">
+              {trust.logos.map((l, i) => (
+                <div key={i} className="logo-pill">
+                  <img src={l.src} alt={l.alt} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

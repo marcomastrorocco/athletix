@@ -18,7 +18,7 @@ export type HomeHero = {
   subBoldStart: string; // bold portion at start
   primaryBtn: Btn;
   secondaryBtn: Btn;
-  videoEmbedUrl: string;
+  bgImage: string;
   stats: NL[];
 };
 
@@ -119,6 +119,7 @@ export type SpaceCell = {
   labelTop: string;
   labelBottom: string;
   tall?: boolean;
+  video?: string;
 };
 export type HomeSpace = {
   kicker: string;
@@ -223,6 +224,14 @@ export type Coach = {
   displayName: string;
   role: string;
   image: string;
+  bio?: string;
+  qualifications?: string[];
+  specialties?: string[];
+  sports?: string[];
+  experience?: string;
+  linkedin?: string;
+  instagram?: string;
+  spotify?: string;
 };
 
 export type MembershipPlan = {
@@ -310,6 +319,7 @@ export type PageBannerBlock = {
   lede: string;
   crumbs?: BlockCrumb[];
   variant?: "default" | "about";
+  compact?: boolean;
 };
 
 export type RichTextBlock = {
@@ -370,7 +380,7 @@ export type ImageBlock = {
   imageAlt: string;
 };
 
-export type GalleryImage = { src: string; alt: string };
+export type GalleryImage = { src: string; alt: string; video?: string };
 export type GalleryBlock = {
   type: "gallery";
   id: string;
