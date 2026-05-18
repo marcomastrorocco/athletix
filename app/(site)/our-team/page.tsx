@@ -43,7 +43,7 @@ export default async function OurTeamPage() {
         <div className="container ot-intro-grid">
           <div className="ot-intro-media">
             <img
-              src="https://athletix.com.au/wp-content/uploads/2026/04/WA_1776648532015.jpeg"
+              src="/image/cdn/WA_1776648532015-2dd107.jpeg"
               alt="ATHLETIX team and athletes training"
             />
           </div>

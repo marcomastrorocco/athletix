@@ -35,14 +35,14 @@
     "headingEm": "Available to Everyone.",
     "label": "Trusted By",
     "logos": [
-      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/brisbane-lions-logo.png", "alt": "Brisbane Lions (AFL)" },
-      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/cricket-australia-logo.png", "alt": "Cricket Australia" },
-      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/Queensland-Bulls.png", "alt": "Queensland Bulls" },
-      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/gold-coast-titans-logo.png", "alt": "Gold Coast Titans (NRL)" },
-      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/Brisbane-Bullets-logo.png", "alt": "Brisbane Bullets (NBL)" },
-      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/kisspng-brisbane-heat-logo.png", "alt": "Brisbane Heat (BBL)" },
-      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/Baseball_Australia_logo.png", "alt": "Baseball Australia" },
-      { "src": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/Trusted%20By/crest-villanova-crest-logo.png", "alt": "Villanova College" }
+      { "src": "/image/cdn/brisbane-lions-logo-e29d75.png", "alt": "Brisbane Lions (AFL)" },
+      { "src": "/image/cdn/cricket-australia-logo-97832f.png", "alt": "Cricket Australia" },
+      { "src": "/image/cdn/Queensland-Bulls-fbd3ad.png", "alt": "Queensland Bulls" },
+      { "src": "/image/cdn/gold-coast-titans-logo-c5dffb.png", "alt": "Gold Coast Titans (NRL)" },
+      { "src": "/image/cdn/Brisbane-Bullets-logo-8c1a5f.png", "alt": "Brisbane Bullets (NBL)" },
+      { "src": "/image/cdn/kisspng-brisbane-heat-logo-5b2d0c.png", "alt": "Brisbane Heat (BBL)" },
+      { "src": "/image/cdn/Baseball_Australia_logo-cfa516.png", "alt": "Baseball Australia" },
+      { "src": "/image/cdn/crest-villanova-crest-logo-4fe093.png", "alt": "Villanova College" }
     ]
   },
   "community": {
@@ -97,7 +97,7 @@
     "body": "Small groups. Elite coaches. A program built around you — not the person next to you. Challenging enough to make you better. Welcoming enough to make you stay.",
     "items": [
       {
-        "img": "https://athletix.com.au/wp-content/uploads/2024/08/2.png",
+        "img": "/image/cdn/2-9917b9.png",
         "alt": "Youth Classes",
         "tag": "Ages 8–17",
         "name": "Youth Classes",
@@ -105,7 +105,7 @@
         "href": "#form"
       },
       {
-        "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06320-scaled-e1723546921926.jpg",
+        "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.jpg",
         "alt": "Adult Classes",
         "tag": "All Levels Welcome",
         "name": "Adult Classes",
@@ -113,7 +113,7 @@
         "href": "#form"
       },
       {
-        "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06236-scaled-e1733203149463.jpg",
+        "img": "/image/cdn/DSC06236-scaled-e1733203149463-513964.jpg",
         "alt": "Family Classes",
         "tag": "All Ages Together",
         "name": "Family Classes",
@@ -121,7 +121,7 @@
         "href": "#form"
       },
       {
-        "img": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-AFT-53-scaled-e1733206277887.jpg",
+        "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.jpg",
         "alt": "Athlete Programs",
         "tag": "Sub-Elite & Pro",
         "name": "Athlete Programs",
@@ -183,13 +183,13 @@
         "name": "Myles Burfield",
         "role": "Head Physio · Specialist Sports & Exercise Physio",
         "exp": "Fellowship ACP · Australian Institute of Sport · Australian Olympic Canoe/Kayak Team Physio — Rio 2016 (Bronze Medallists) · Cirque du Soleil · 16+ years private practice",
-        "img": "https://athletix.com.au/wp-content/uploads/2022/12/IMG_9100-scaled-e1670906460682.jpg"
+        "img": "/image/cdn/IMG_9100-scaled-e1670906460682-49a90c.jpg"
       },
       {
         "name": "Bridie Nicholson",
         "role": "Physiotherapist · Titled Sport & Exercise Physio",
         "exp": "7+ years sports physio · Canadian Basketball National Team · Brisbane Roar FC · NHL Ice Hockey · Para-Swimming · Running & Boxing rehab",
-        "img": "https://athletix.com.au/wp-content/uploads/2024/07/IMG-20240130-WA0019-e1727084066284.jpg"
+        "img": "/image/cdn/IMG-20240130-WA0019-e1727084066284-1efb74.jpg"
       }
     ],
     "dietLabel": "Sports Dietitian · APD",
@@ -204,11 +204,11 @@
     "h2Em": "Athletix.",
     "body": "Open warehouse. Sprint track. 120sqm of elite S&C space. Built for performance — designed to feel welcoming. Walk in and you'll understand immediately why this is different.",
     "cells": [
-      { "img": "https://athletix.com.au/wp-content/uploads/2024/07/DSC02067-768x512.jpg", "alt": "Main training floor", "labelTop": "Welcome to", "labelBottom": "Athletix", "tall": true, "video": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1" },
-      { "img": "https://athletix.com.au/wp-content/uploads/2024/06/DSC01921-768x512.jpg", "alt": "Sprint track", "labelTop": "Performance", "labelBottom": "3-Lane Sprint Track" },
-      { "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06320-scaled-e1723546921926.jpg", "alt": "Small group coaching", "labelTop": "Coaching", "labelBottom": "Small Group Sessions" },
-      { "img": "https://athletix.com.au/wp-content/uploads/2022/01/Youth-sport-1-e1684274091394.png", "alt": "Youth area", "labelTop": "Youth", "labelBottom": "Athletic Development" },
-      { "img": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-AFT-53-scaled-e1733206277887.jpg", "alt": "Athlete programs", "labelTop": "Elite", "labelBottom": "Athlete Programs" }
+      { "img": "/image/cdn/DSC02067-768x512-132ccb.jpg", "alt": "Main training floor", "labelTop": "Welcome to", "labelBottom": "Athletix", "tall": true, "video": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1" },
+      { "img": "/image/cdn/DSC01921-768x512-94206e.jpg", "alt": "Sprint track", "labelTop": "Performance", "labelBottom": "3-Lane Sprint Track" },
+      { "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.jpg", "alt": "Small group coaching", "labelTop": "Coaching", "labelBottom": "Small Group Sessions" },
+      { "img": "/image/cdn/Youth-sport-1-e1684274091394-7bb69e.png", "alt": "Youth area", "labelTop": "Youth", "labelBottom": "Athletic Development" },
+      { "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.jpg", "alt": "Athlete programs", "labelTop": "Elite", "labelBottom": "Athlete Programs" }
     ]
   },
   "testimonials": {
@@ -220,7 +220,7 @@
     "heroQuoteAttr": "Nicola Stevens · Netball QLD State League Umpire · Returned from a season-ending injury",
     "videos": [
       {
-        "src": "https://athletix.com.au/wp-content/uploads/2024/07/Testimonial-2-Website.mp4",
+        "src": "/image/video/Testimonial-2-Website.mp4",
         "quote": "The coaches here genuinely care about your progress. ",
         "bold": "It's not just a gym — it's a community",
         "tail": " where everyone pushes each other to be better, every session.",
@@ -229,7 +229,7 @@
         "meta": "Adult Program"
       },
       {
-        "src": "https://athletix.com.au/wp-content/uploads/2024/07/Testimonial-1-Website.mp4",
+        "src": "/image/video/Testimonial-1-Website.mp4",
         "quote": "I never thought I'd be someone who loves training. ",
         "bold": "The coaches met me exactly where I was.",
         "tail": " I haven't looked back since.",
@@ -238,7 +238,7 @@
         "meta": "Adult Program · 14 months"
       },
       {
-        "src": "https://athletix.com.au/wp-content/uploads/2024/07/DARCY.mp4",
+        "src": "/image/video/DARCY.mp4",
         "quote": "",
         "bold": "Best decision I made for my athletic career.",
         "tail": " The level of coaching and the science here is the same as what the professionals get. No question about it.",
@@ -286,7 +286,7 @@
         "tier": "Ages 8–17",
         "name": "Youth",
         "price": "$42",
-        "img": "https://athletix.com.au/wp-content/uploads/2024/08/2.png",
+        "img": "/image/cdn/2-9917b9.png",
         "alt": "Youth",
         "features": ["Unlimited S&C Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "Full facility access"],
         "href": "#form"
@@ -295,7 +295,7 @@
         "tier": "All Levels",
         "name": "Adults",
         "price": "$50",
-        "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06320-scaled-e1723546921926.jpg",
+        "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.jpg",
         "alt": "Adults",
         "features": ["Unlimited S&C Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "S&C Consultation", "Full facility access"],
         "featured": true,
@@ -305,7 +305,7 @@
         "tier": "All Ages Together",
         "name": "Family",
         "price": "$120",
-        "img": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06236-scaled-e1733203149463.jpg",
+        "img": "/image/cdn/DSC06236-scaled-e1733203149463-513964.jpg",
         "alt": "Family",
         "features": ["Unlimited Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "S&C Consultation", "Full facility access"],
         "href": "#form"
@@ -314,7 +314,7 @@
         "tier": "12-Month Subscription",
         "name": "Athlete",
         "price": "$150",
-        "img": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-AFT-53-scaled-e1733206277887.jpg",
+        "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.jpg",
         "alt": "Athlete",
         "features": ["Unlimited Force Plate Tests", "Unlimited Classes", "Dedicated Coach", "Weekly PT Session", "Sports Dietitian Access", "Full facility access"],
         "href": "#form"
@@ -331,7 +331,7 @@
     "secondaryBtn": { "label": "See All Plans", "href": "#membership" }
   },
   "footer": {
-    "brandImg": "https://agrobanglapharma.com/wp-content/themes/athletixx/assets/images/athlethix-logo.png",
+    "brandImg": "/image/cdn/athlethix-logo-bcd582.png",
     "tagline": "Pro standard. Open to everyone. Elite S&C coaching, sports physio, sports nutrition and real community — for every kid, adult and family in Brisbane. Fortitude Valley.",
     "contacts": [
       { "icon": "map-pin", "text": "42 Baxter Street, Fortitude Valley QLD 4006" },

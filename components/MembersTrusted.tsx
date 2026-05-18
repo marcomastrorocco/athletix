@@ -69,7 +69,7 @@ export default function MembersTrusted() {
             <div className="testi-card">
               <div className="testi-video" onClick={toggleVid}>
                 <video preload="metadata" loop onLoadedMetadata={seekToMiddle}>
-                  <source src="https://athletix.com.au/wp-content/uploads/2024/07/Testimonial-2-Website.mp4" type="video/mp4" />
+                  <source src="/image/video/Testimonial-2-Website.mp4" type="video/mp4" />
                 </video>
                 <div className="testi-play">
                   <div className="play-ring">
@@ -94,7 +94,7 @@ export default function MembersTrusted() {
             <div className="testi-card">
               <div className="testi-video" onClick={toggleVid}>
                 <video preload="metadata" loop onLoadedMetadata={seekToMiddle}>
-                  <source src="https://athletix.com.au/wp-content/uploads/2024/07/Testimonial-1-Website.mp4" type="video/mp4" />
+                  <source src="/image/video/Testimonial-1-Website.mp4" type="video/mp4" />
                 </video>
                 <div className="testi-play">
                   <div className="play-ring">
@@ -119,7 +119,7 @@ export default function MembersTrusted() {
             <div className="testi-card">
               <div className="testi-video" onClick={toggleVid}>
                 <video preload="metadata" loop onLoadedMetadata={seekToMiddle}>
-                  <source src="https://athletix.com.au/wp-content/uploads/2024/07/DARCY.mp4" type="video/mp4" />
+                  <source src="/image/video/DARCY.mp4" type="video/mp4" />
                 </video>
                 <div className="testi-play">
                   <div className="play-ring">
