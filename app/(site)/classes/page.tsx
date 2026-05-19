@@ -13,6 +13,7 @@ type ClassTile = {
   type: string;
   title: string;
   body: React.ReactNode;
+  href?: string;
 };
 
 const CLASSES: ClassTile[] = [
@@ -127,6 +128,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MOBILITY",
+    href: "/mobility",
     body: (
       <>
         A recovery class designed for athletic and general populations. Trusted by Cricket Australia and the QLD Bulls. A science-based
@@ -137,6 +139,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "MAT PILATES",
     title: "MAT PILATES",
+    href: "/mat-pilates",
     body: (
       <>
         Coached by our in-house Physiotherapists. Low-impact flexibility, muscular strength and endurance movements. Pilates emphasizes
@@ -198,7 +201,7 @@ export default async function ClassesPage() {
                 </p>
                 <h3>{c.title}</h3>
                 <p>{c.body}</p>
-                <Link href="/contact" className="arrow-link">
+                <Link href={c.href || "/contact"} className="arrow-link">
                   More here <span>→</span>
                 </Link>
               </article>

@@ -7,6 +7,16 @@ export const metadata: Metadata = {
   icons: { icon: "/image/athlethix-logo.png" },
 };
 
+// Inline pre-hydration script: when the user has already seen the splash
+// this session, mark <html> so CSS can hide the loader before React boots.
+const splashSkipScript = `
+try {
+  if (sessionStorage.getItem('athletix.splash.seen')) {
+    document.documentElement.classList.add('splash-skip');
+  }
+} catch (e) {}
+`;
+
 export default function RootLayout({
   children,
 }: {
@@ -14,6 +24,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
+      <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `.splash-skip .ax-loading{display:none!important}`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{ __html: splashSkipScript }}
+        />
+      </head>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );

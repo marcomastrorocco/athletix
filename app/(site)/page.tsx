@@ -11,5 +11,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function HomePage() {
   const [site, team] = await Promise.all([getSite(), getTeam()]);
-  return <HomeV2 site={site} coaches={team} />;
+  const heroBg = site?.hero?.bgImage;
+  return (
+    <>
+      {heroBg ? (
+        <link rel="preload" as="image" href={heroBg} fetchPriority="high" />
+      ) : null}
+      <HomeV2 site={site} coaches={team} />
+    </>
+  );
 }

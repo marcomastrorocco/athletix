@@ -1,0 +1,972 @@
+/* Youth Agility Foundations — class detail page */
+
+/* Section rhythm */
+.yaf-hero,
+.yaf-info,
+.yaf-coach,
+.youth-form-section {
+  padding-block: 70px;
+}
+.yaf-hero {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+.yaf-info {
+  padding-top: 0;
+  padding-bottom: 70px;
+}
+
+/* ─────────── Hero ─────────── */
+.yaf-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 60px;
+  align-items: center;
+}
+.yaf-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.yaf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font: 700 12px/1 "Inter", sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #00d4f0;
+}
+.yaf-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00d4f0;
+}
+.yaf-title {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(36px, 4.4vw, 60px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #fff;
+  line-height: 1.02;
+}
+.yaf-divider {
+  width: 64px;
+  height: 3px;
+  background: #00d4f0;
+  border: 0;
+  margin: 4px 0 6px;
+}
+.yaf-lead {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+.yaf-lead--muted {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 14px;
+}
+.yaf-lead a {
+  color: #00d4f0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.yaf-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.yaf-media {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.55);
+}
+.yaf-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.yaf-media-badge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font: 700 11px/1 "Inter", sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.yaf-media-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00d4f0;
+}
+
+/* ─────────── Info strip (3 equal cards) ─────────── */
+.yaf-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+.yaf-info-card {
+  position: relative;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(0, 212, 240, 0.08), transparent 55%),
+    rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 24px 26px 26px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-auto-rows: auto;
+  gap: 14px 14px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.yaf-info-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 212, 240, 0.45) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.yaf-info-card:hover {
+  border-color: rgba(0, 212, 240, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -16px rgba(0, 212, 240, 0.28);
+}
+.yaf-info-card:hover::after {
+  opacity: 1;
+}
+
+/* Icon → top-right corner badge */
+.yaf-info-card-icon {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 212, 240, 0.1);
+  border: 1px solid rgba(0, 212, 240, 0.28);
+  border-radius: 10px;
+  color: #00d4f0;
+  align-self: start;
+  justify-self: end;
+  box-shadow: 0 0 18px rgba(0, 212, 240, 0.12);
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.yaf-info-card:hover .yaf-info-card-icon {
+  transform: rotate(-6deg) scale(1.05);
+  background: rgba(0, 212, 240, 0.18);
+}
+
+/* Title → top-left, on same row as icon */
+.yaf-info-card h3 {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  align-self: center;
+  padding-block: 6px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+.yaf-info-card h3::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px 0;
+  width: 28px;
+  height: 2px;
+  background: #00d4f0;
+  border-radius: 2px;
+}
+
+/* Body content spans both columns */
+.yaf-info-card p,
+.yaf-info-card .yaf-hours {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+.yaf-info-card p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+}
+.yaf-info-card a {
+  color: rgba(255, 255, 255, 0.88);
+  transition: color 0.18s ease;
+}
+.yaf-info-card a:hover {
+  color: #00d4f0;
+}
+
+/* CTA link → pill button at bottom */
+.yaf-info-card-link {
+  grid-column: 1 / -1;
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  justify-self: start;
+  font: 700 11px/1 "Inter", sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #00d4f0 !important;
+  background: rgba(0, 212, 240, 0.08);
+  border: 1px solid rgba(0, 212, 240, 0.28);
+  border-radius: 999px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+    transform 0.2s ease;
+}
+.yaf-info-card-link:hover {
+  background: rgba(0, 212, 240, 0.18);
+  border-color: rgba(0, 212, 240, 0.55);
+  color: #fff !important;
+  transform: translateX(3px);
+}
+
+/* Working-hours list — alternating row backgrounds */
+.yaf-info-card--hours {
+  grid-column: span 1;
+}
+.yaf-hours {
+  list-style: none;
+  padding: 4px 0 0 0;
+  display: grid;
+  gap: 2px;
+}
+.yaf-hours li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.78);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.yaf-hours li:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.025);
+}
+.yaf-hours li:hover {
+  background: rgba(0, 212, 240, 0.1);
+  color: #fff;
+}
+.yaf-hours .yaf-day {
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  min-width: 42px;
+  font-size: 12px;
+}
+
+/* ─────────── Book form section spacing harmonisation ─────────── */
+.youth-form-section {
+  padding-block: 60px;
+}
+.youth-form-section .container {
+  max-width: 920px;
+}
+
+/* ─────────── Book a class — redesigned ─────────── */
+.yaf-book {
+  position: relative;
+  padding-block: 90px;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 212, 240, 0.04) 0%,
+    rgba(255, 255, 255, 0.02) 60%,
+    transparent 100%
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.yaf-book-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(0, 212, 240, 0.16),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 88% 82%,
+      rgba(0, 181, 239, 0.12),
+      transparent 50%
+    );
+  opacity: 0.7;
+}
+.yaf-book-shell {
+  position: relative;
+  max-width: 1100px;
+}
+.yaf-book-head {
+  text-align: center;
+  margin: 0 auto 50px;
+  max-width: 640px;
+}
+.yaf-book-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(0, 212, 240, 0.1);
+  border: 1px solid rgba(0, 212, 240, 0.3);
+  color: #00d4f0;
+  font: 700 11px/1 "Inter", sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.yaf-book-chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00d4f0;
+  box-shadow: 0 0 0 4px rgba(0, 212, 240, 0.2);
+}
+.yaf-book-title {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(32px, 4.4vw, 52px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 14px;
+  line-height: 1.05;
+}
+.yaf-book-sub {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.yaf-book-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+/* Perks aside */
+.yaf-book-perks {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+.yaf-book-perks-title {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 20px;
+}
+.yaf-book-perks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: grid;
+  gap: 16px;
+}
+.yaf-book-perks-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+}
+.yaf-perk-ico {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 212, 240, 0.12);
+  border: 1px solid rgba(0, 212, 240, 0.3);
+  border-radius: 10px;
+  font-size: 14px;
+}
+.yaf-book-contact {
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.yaf-book-contact-lead {
+  margin: 0 0 10px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.yaf-book-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 700 20px/1 "Anton", "Inter", sans-serif;
+  letter-spacing: 0.04em;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+.yaf-book-phone:hover {
+  color: #00d4f0;
+}
+.yaf-book-contact-link {
+  display: block;
+  margin-top: 12px;
+  font: 700 12px/1 "Inter", sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #00d4f0;
+}
+
+/* Form card */
+.yaf-book-form {
+  position: relative;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.02)
+    ),
+    rgba(11, 11, 11, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 32px;
+  display: grid;
+  gap: 18px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.55);
+}
+.yaf-book-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.yaf-book-row--full {
+  grid-template-columns: 1fr;
+}
+.yaf-book-field {
+  position: relative;
+}
+.yaf-book-field input,
+.yaf-book-field select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  color: #fff;
+  font: 15px/1.5 "Inter", sans-serif;
+  padding: 20px 16px 12px;
+  outline: none;
+  transition: border-color 0.18s ease, background 0.18s ease,
+    box-shadow 0.18s ease;
+  appearance: none;
+}
+.yaf-book-field--select select {
+  padding-right: 44px;
+  cursor: pointer;
+}
+.yaf-book-field input:focus,
+.yaf-book-field select:focus {
+  border-color: rgba(0, 212, 240, 0.65);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 4px rgba(0, 212, 240, 0.12);
+}
+.yaf-book-field label {
+  position: absolute;
+  top: 18px;
+  left: 17px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  transition: transform 0.18s ease, color 0.18s ease, font-size 0.18s ease;
+  background: transparent;
+  padding: 0 4px;
+}
+.yaf-book-field input:focus + label,
+.yaf-book-field input:not(:placeholder-shown) + label,
+.yaf-book-field select:focus + label,
+.yaf-book-field select:valid + label {
+  transform: translateY(-22px);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #00d4f0;
+  background: #0b0b0b;
+}
+.yaf-book-select-arrow {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  font-size: 14px;
+}
+
+/* Captcha + submit */
+.yaf-book-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.yaf-book-captcha {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.yaf-book-captcha-tick {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #00d4f0;
+  color: #0b0b0b;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 13px;
+}
+.yaf-book-captcha-brand {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-left: 4px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+.yaf-book-submit {
+  background: linear-gradient(135deg, #00d4f0, #00b5ef);
+  color: #0b0b0b;
+  border: none;
+  font: 800 13px/1 "Inter", sans-serif;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 18px 32px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.18s ease, box-shadow 0.22s ease, filter 0.18s ease;
+  box-shadow: 0 12px 28px -10px rgba(0, 212, 240, 0.55);
+}
+.yaf-book-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px -10px rgba(0, 212, 240, 0.7);
+  filter: brightness(1.05);
+}
+.yaf-book-submit:active {
+  transform: translateY(0);
+}
+.yaf-book-submit span {
+  font-size: 18px;
+  line-height: 1;
+}
+.yaf-book-disclaimer {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .yaf-book-grid {
+    grid-template-columns: 1fr;
+  }
+  .yaf-book-perks {
+    order: 2;
+  }
+  .yaf-book-form {
+    order: 1;
+  }
+}
+@media (max-width: 620px) {
+  .yaf-book {
+    padding-block: 60px;
+  }
+  .yaf-book-row {
+    grid-template-columns: 1fr;
+  }
+  .yaf-book-form {
+    padding: 24px 20px;
+  }
+  .yaf-book-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .yaf-book-submit {
+    justify-content: center;
+  }
+}
+
+/* ─────────── Coach card ─────────── */
+.yaf-coach {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.yaf-coach h2 {
+  text-align: center;
+  font-family: "Anton", "Inter", sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(28px, 3.4vw, 36px);
+  letter-spacing: 0.04em;
+  margin: 0 0 46px;
+  color: #fff;
+}
+.yaf-coach-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 920px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 36px;
+}
+.yaf-coach-image img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.yaf-coach-eyebrow {
+  color: #00b5ef;
+  text-transform: uppercase;
+  font: 700 12px/1 "Inter", sans-serif;
+  letter-spacing: 0.18em;
+  margin: 0 0 10px;
+}
+.yaf-coach-name {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(26px, 3vw, 34px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+  color: #fff;
+}
+.yaf-coach-bio {
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.75;
+  margin: 0 0 22px;
+  font-size: 15px;
+}
+.yaf-coach-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.yaf-coach-links .btn {
+  padding: 10px 20px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+}
+
+/* ─────────── Responsive ─────────── */
+@media (max-width: 1024px) {
+  .yaf-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .yaf-info-card--hours {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 860px) {
+  .yaf-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .yaf-media {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .yaf-media img {
+    aspect-ratio: 16 / 10;
+  }
+  .yaf-coach-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+    padding: 28px;
+  }
+  .yaf-coach-image {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .yaf-coach-links {
+    justify-content: center;
+  }
+}
+@media (max-width: 620px) {
+  .yaf-hero,
+  .yaf-info,
+  .yaf-coach,
+  .youth-form-section {
+    padding-block: 48px;
+  }
+  .yaf-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .yaf-info-card--hours {
+    grid-column: auto;
+  }
+}
+
+/* ─────────── Includes / pillars grid (Mobility page) ─────────── */
+.yaf-includes {
+  padding-block: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.yaf-includes-head {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+.yaf-includes-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 700 12px/1 "Inter", sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #00d4f0;
+  margin: 0 0 14px;
+}
+.yaf-includes-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00d4f0;
+}
+.yaf-includes h2 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(28px, 3.6vw, 42px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 14px;
+}
+.yaf-includes-sub {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+.yaf-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+.yaf-pillar {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.yaf-pillar:hover {
+  border-color: rgba(0, 212, 240, 0.4);
+  transform: translateY(-3px);
+}
+.yaf-pillar-num {
+  font: 800 12px/1 "Inter", sans-serif;
+  letter-spacing: 0.18em;
+  color: #00d4f0;
+}
+.yaf-pillar h3 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+}
+.yaf-pillar p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+/* ─────────── FAQ accordion ─────────── */
+.yaf-faq {
+  padding-block: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.yaf-faq-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.yaf-faq-head h2 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(28px, 3.6vw, 42px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 10px;
+}
+.yaf-faq-head p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  margin: 0;
+}
+.yaf-faq-list {
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+.yaf-faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.yaf-faq-item[open] {
+  border-color: rgba(0, 212, 240, 0.45);
+  background: rgba(0, 212, 240, 0.05);
+}
+.yaf-faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #fff;
+  font: 600 16px/1.4 "Inter", sans-serif;
+}
+.yaf-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.yaf-faq-item summary::after {
+  content: "+";
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 240, 0.35);
+  color: #00d4f0;
+  font-weight: 700;
+  font-size: 18px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.yaf-faq-item[open] summary::after {
+  content: "−";
+  background: rgba(0, 212, 240, 0.15);
+}
+.yaf-faq-body {
+  padding: 0 26px 22px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.75;
+}
+.yaf-faq-body p {
+  margin: 0 0 10px;
+}
+.yaf-faq-body p:last-child {
+  margin-bottom: 0;
+}
+.yaf-faq-body ul {
+  margin: 8px 0 0;
+  padding-left: 22px;
+}
+.yaf-faq-body ul li {
+  margin: 4px 0;
+}
+
+@media (max-width: 1024px) {
+  .yaf-pillars {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .yaf-includes,
+  .yaf-faq {
+    padding-block: 56px;
+  }
+  .yaf-pillars {
+    grid-template-columns: 1fr;
+  }
+  .yaf-faq-item summary {
+    padding: 18px 20px;
+    font-size: 15px;
+  }
+  .yaf-faq-body {
+    padding: 0 20px 20px;
+  }
+}

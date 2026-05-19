@@ -13,12 +13,14 @@ type ClassTile = {
   type: string;
   title: string;
   body: React.ReactNode;
+  href?: string;
 };
 
 const CLASSES: ClassTile[] = [
   {
     type: "CONDITIONING",
     title: "YOUTH SPEED FOUNDATIONS",
+    href: "/youth-agility-foundations",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong>
@@ -36,6 +38,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "CONDITIONING",
     title: "YOUTH AGILITY FOUNDATIONS",
+    href: "/youth-agility-foundations",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong>
@@ -53,6 +56,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "CONDITIONING",
     title: "YOUTH FITNESS FOUNDATIONS",
+    href: "/youth-agility-development",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong>
@@ -69,6 +73,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "STRENGTH",
     title: "YOUTH STRENGTH DEVELOPMENT",
+    href: "/youth-fitness-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years old</strong>
@@ -86,6 +91,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SPEED SKILLS",
     title: "YOUTH SPEED DEVELOPMENT",
+    href: "/youth-speed-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years old</strong>
@@ -104,6 +110,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "MULTIDIRECTIONAL SPEED",
     title: "YOUTH AGILITY DEVELOPMENT",
+    href: "/youth-speed-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years old</strong>
@@ -122,6 +129,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MOBILITY",
+    href: "/mobility",
     body: (
       <>
         A recovery class designed for athletic and general populations. A
@@ -135,6 +143,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MAT PILATES",
+    href: "/mat-pilates",
     body: (
       <>
         Low-impact flexibility and muscular strength and endurance movements.
@@ -324,7 +333,7 @@ export default async function YouthClassesPage() {
                 </p>
                 <h3>{c.title}</h3>
                 <p>{c.body}</p>
-                <Link href="/contact" className="arrow-link">
+                <Link href={c.href || "/contact"} className="arrow-link">
                   MORE HERE <span>&rarr;</span>
                 </Link>
               </article>

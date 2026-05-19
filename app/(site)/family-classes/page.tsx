@@ -13,6 +13,7 @@ type ClassTile = {
   type?: string;
   title: string;
   body: React.ReactNode;
+  href?: string;
 };
 
 const CLASSES: ClassTile[] = [
@@ -31,6 +32,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MOBILITY",
+    href: "/mobility",
     body: (
       <>
         A recovery class designed for athletic and general populations. A
@@ -44,6 +46,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MAT PILATES",
+    href: "/mat-pilates",
     body: (
       <>
         Low-impact flexibility and muscular strength and endurance movements.
@@ -236,7 +239,7 @@ export default async function FamilyClassesPage() {
                 )}
                 <h3>{c.title}</h3>
                 <div className="tile-body">{c.body}</div>
-                <Link href="/contact" className="arrow-link">
+                <Link href={c.href || "/contact"} className="arrow-link">
                   MORE HERE <span>&rarr;</span>
                 </Link>
               </article>

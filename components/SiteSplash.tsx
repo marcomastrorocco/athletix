@@ -3,27 +3,47 @@
 import { useEffect, useState } from "react";
 import AthletixLoader from "./AthletixLoader";
 
-const MIN_VISIBLE_MS = 1200;
-const FADE_MS = 500;
+const FADE_MS = 250;
+const HARD_CAP_MS = 1500;
+const SESSION_KEY = "athletix.splash.seen";
 
 export default function SiteSplash() {
   const [phase, setPhase] = useState<"visible" | "fading" | "gone">("visible");
 
   useEffect(() => {
-    const start = performance.now();
+    let cancelled = false;
 
-    const onReady = () => {
-      const elapsed = performance.now() - start;
-      const remaining = Math.max(0, MIN_VISIBLE_MS - elapsed);
-      window.setTimeout(() => setPhase("fading"), remaining);
+    try {
+      if (sessionStorage.getItem(SESSION_KEY)) {
+        setPhase("gone");
+        return;
+      }
+    } catch {}
+
+    const fade = () => {
+      if (cancelled) return;
+      try {
+        sessionStorage.setItem(SESSION_KEY, "1");
+      } catch {}
+      setPhase("fading");
     };
 
-    if (document.readyState === "complete") {
-      onReady();
+    if (
+      document.readyState === "interactive" ||
+      document.readyState === "complete"
+    ) {
+      requestAnimationFrame(fade);
     } else {
-      window.addEventListener("load", onReady, { once: true });
-      return () => window.removeEventListener("load", onReady);
+      document.addEventListener("DOMContentLoaded", fade, { once: true });
     }
+
+    const hardCap = window.setTimeout(fade, HARD_CAP_MS);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(hardCap);
+      document.removeEventListener("DOMContentLoaded", fade);
+    };
   }, []);
 
   useEffect(() => {

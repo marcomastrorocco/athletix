@@ -259,6 +259,16 @@ h3 { font-size: 1.4rem; letter-spacing: .4px; }
   transform: translateY(0);
   pointer-events: auto;
 }
+/* After navigation, force-hide the panel even if the mouse is still over
+   the trigger. Released by onMouseLeave on the dropdown. */
+.dropdown.mega.suppress-hover:hover .mega-panel,
+.dropdown.mega.suppress-hover:focus-within .mega-panel,
+.dropdown.suppress-hover:hover .dropdown-content {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
 .dropdown.mega .mega-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

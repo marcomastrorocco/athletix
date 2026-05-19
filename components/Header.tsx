@@ -98,6 +98,10 @@ export default function Header({ contact }: Props) {
   const [scrolled, setScrolled] = useState(false);
   const [todayWeekday, setTodayWeekday] = useState<number | null>(null);
   const [openDropdown, setOpenDropdown] = useState<"classes" | "about" | null>(null);
+  // After navigation, suppress the CSS :hover/:focus-within rules that
+  // would otherwise keep a desktop mega-panel visible while the mouse is
+  // still parked over the dropdown trigger. Released on mouseleave.
+  const [suppressHover, setSuppressHover] = useState(false);
 
   useEffect(() => {
     setTodayWeekday(new Date().getDay());
@@ -113,10 +117,29 @@ export default function Header({ contact }: Props) {
     setNavOpen(false);
     setSideOpen(false);
     setOpenDropdown(null);
+    setSuppressHover(true);
   }, [pathname]);
+
+  // Safety net: never leave hover suppressed for more than ~2.5s
+  useEffect(() => {
+    if (!suppressHover) return;
+    const t = setTimeout(() => setSuppressHover(false), 2500);
+    return () => clearTimeout(t);
+  }, [suppressHover]);
 
   const toggleDropdown = (key: "classes" | "about") => {
     setOpenDropdown((prev) => (prev === key ? null : key));
+  };
+
+  // Used for any nav link tap — closes mobile nav, force-closes any open
+  // dropdown, and suppresses :hover so desktop mega-panels hide instantly.
+  const handleNavLinkClick = () => {
+    setNavOpen(false);
+    setOpenDropdown(null);
+    setSuppressHover(true);
+    if (typeof document !== "undefined") {
+      (document.activeElement as HTMLElement | null)?.blur?.();
+    }
   };
 
   const Chevron = () => (
@@ -159,6 +182,7 @@ export default function Header({ contact }: Props) {
   const isAboutActive = ABOUT_PATHS.includes(pathname);
   const isClassesActive = CLASSES_PATHS.includes(pathname);
   const closeNav = () => setNavOpen(false);
+  const releaseSuppressHover = () => setSuppressHover(false);
 
   return (
     <>
@@ -190,16 +214,19 @@ export default function Header({ contact }: Props) {
             <Link
               href="/timetable"
               className={isActive("/timetable") ? "active" : undefined}
-              onClick={closeNav}
+              onClick={handleNavLinkClick}
             >
               TIMETABLE
             </Link>
-            <div className={`dropdown mega${openDropdown === "classes" ? " open" : ""}`}>
+            <div
+              className={`dropdown mega${openDropdown === "classes" ? " open" : ""}${suppressHover ? " suppress-hover" : ""}`}
+              onMouseLeave={releaseSuppressHover}
+            >
               <div className="dropdown-head">
                 <Link
                   href="/classes"
                   className={`dropbtn${isClassesActive ? " active" : ""}`}
-                  onClick={closeNav}
+                  onClick={handleNavLinkClick}
                 >
                   CLASSES
                 </Link>
@@ -216,7 +243,12 @@ export default function Header({ contact }: Props) {
               <div className="dropdown-content mega-panel">
                 <div className="dropdown-inner mega-grid">
                   {CLASSES_MEGA.map((m) => (
-                    <Link key={m.href} href={m.href} className="mega-item" onClick={closeNav}>
+                    <Link
+                      key={m.href}
+                      href={m.href}
+                      className="mega-item"
+                      onClick={handleNavLinkClick}
+                    >
                       <span className="mega-title">{m.title}</span>
                       <span className="mega-desc">{m.desc}</span>
                     </Link>
@@ -227,16 +259,19 @@ export default function Header({ contact }: Props) {
             <Link
               href="/membership"
               className={isActive("/membership") ? "active" : undefined}
-              onClick={closeNav}
+              onClick={handleNavLinkClick}
             >
               MEMBERSHIP
             </Link>
-            <div className={`dropdown mega${openDropdown === "about" ? " open" : ""}`}>
+            <div
+              className={`dropdown mega${openDropdown === "about" ? " open" : ""}${suppressHover ? " suppress-hover" : ""}`}
+              onMouseLeave={releaseSuppressHover}
+            >
               <div className="dropdown-head">
                 <Link
                   href="/about"
                   className={`dropbtn${isAboutActive ? " active" : ""}`}
-                  onClick={closeNav}
+                  onClick={handleNavLinkClick}
                 >
                   ABOUT US
                 </Link>
@@ -253,7 +288,12 @@ export default function Header({ contact }: Props) {
               <div className="dropdown-content mega-panel">
                 <div className="dropdown-inner mega-grid">
                   {ABOUT_MEGA.map((m) => (
-                    <Link key={m.href} href={m.href} className="mega-item" onClick={closeNav}>
+                    <Link
+                      key={m.href}
+                      href={m.href}
+                      className="mega-item"
+                      onClick={handleNavLinkClick}
+                    >
                       <span className="mega-title">{m.title}</span>
                       <span className="mega-desc">{m.desc}</span>
                     </Link>
@@ -264,14 +304,14 @@ export default function Header({ contact }: Props) {
             <Link
               href="/contact"
               className={isActive("/contact") ? "active" : undefined}
-              onClick={closeNav}
+              onClick={handleNavLinkClick}
             >
               CONTACT US
             </Link>
             <Link
               href="/blog"
               className={isActive("/blog") ? "active" : undefined}
-              onClick={closeNav}
+              onClick={handleNavLinkClick}
             >
               BLOG
             </Link>
@@ -282,7 +322,7 @@ export default function Header({ contact }: Props) {
               className="btn btn-primary"
               onClick={() => {
                 setTrialOpen(true);
-                closeNav();
+                handleNavLinkClick();
               }}
             >
               Book Trial

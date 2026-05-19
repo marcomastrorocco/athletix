@@ -13,6 +13,7 @@ type ClassTile = {
   type: string;
   title: string;
   body: React.ReactNode;
+  href?: string;
 };
 
 const CLASSES: ClassTile[] = [
@@ -44,6 +45,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MOBILITY",
+    href: "/mobility",
     body: (
       <>
         Our Mobility class focuses on active recovery and uses a science-based
@@ -56,6 +58,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MAT PILATES",
+    href: "/mat-pilates",
     body: (
       <>
         Our Mat Pilates class focuses on improving postural alignment, core
@@ -441,7 +444,7 @@ export default async function AdultClassesPage() {
                 </p>
                 <h3>{c.title}</h3>
                 <p>{c.body}</p>
-                <Link href="/contact" className="arrow-link">
+                <Link href={c.href || "/contact"} className="arrow-link">
                   MORE HERE <span>&rarr;</span>
                 </Link>
               </article>

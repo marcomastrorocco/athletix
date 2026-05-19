@@ -1,0 +1,556 @@
+/* Careers page */
+
+:root {
+  --cr-cyan: #00d4f0;
+  --cr-cyan-soft: rgba(0, 212, 240, 0.12);
+  --cr-line: rgba(255, 255, 255, 0.08);
+  --cr-ink: rgba(255, 255, 255, 0.78);
+  --cr-card: #0f1418;
+  --cr-bg: #07090b;
+}
+
+/* Shared */
+.cr-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--cr-cyan);
+  font-weight: 700;
+  margin: 0 0 14px;
+  padding: 6px 14px;
+  background: var(--cr-cyan-soft);
+  border: 1px solid rgba(0, 212, 240, 0.28);
+  border-radius: 999px;
+}
+.cr-eyebrow--center {
+  display: block;
+  margin: 0 auto 16px;
+  width: max-content;
+}
+.cr-h2 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(28px, 4.2vw, 46px);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 22px;
+  line-height: 1.05;
+}
+.cr-h2--center {
+  text-align: center;
+  margin: 0 auto 18px;
+}
+.cr-h2 em {
+  font-style: normal;
+  color: var(--cr-cyan);
+}
+.cr-divider {
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--cr-cyan);
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* ============ Intro band ============ */
+.cr-intro {
+  padding: 90px 0 60px;
+  background: var(--cr-bg);
+}
+.cr-intro-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+.cr-intro-copy p {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--cr-ink);
+  margin: 0 0 16px;
+}
+.cr-intro-copy p strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.cr-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+.cr-stat {
+  padding: 18px 16px;
+  background: var(--cr-card);
+  border: 1px solid var(--cr-line);
+  border-radius: 12px;
+  text-align: center;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.cr-stat:hover {
+  border-color: rgba(0, 212, 240, 0.35);
+  transform: translateY(-3px);
+}
+.cr-stat-num {
+  display: block;
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 30px;
+  color: var(--cr-cyan);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.cr-stat-label {
+  font-size: 11.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Perks pills (right column) */
+.cr-perks {
+  display: grid;
+  gap: 12px;
+}
+.cr-perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--cr-card);
+  border: 1px solid var(--cr-line);
+  border-radius: 12px;
+  transition: border-color 0.25s, transform 0.25s, background 0.25s;
+}
+.cr-perk:hover {
+  border-color: rgba(0, 212, 240, 0.4);
+  background: rgba(0, 212, 240, 0.04);
+  transform: translateX(4px);
+}
+.cr-perk-icon {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cr-cyan-soft);
+  border: 1px solid rgba(0, 212, 240, 0.3);
+  border-radius: 10px;
+  color: var(--cr-cyan);
+  font-size: 18px;
+}
+.cr-perk-title {
+  margin: 0 0 4px;
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-transform: uppercase;
+}
+.cr-perk-desc {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--cr-ink);
+}
+
+/* ============ Jobs section ============ */
+.cr-jobs {
+  padding: 80px 0;
+}
+.cr-jobs-head {
+  text-align: center;
+  margin: 0 auto 50px;
+  max-width: 720px;
+}
+.cr-jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+.cr-job {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 28px;
+  background: var(--cr-card);
+  border: 1px solid var(--cr-line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.cr-job::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--cr-cyan);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s;
+}
+.cr-job:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 212, 240, 0.4);
+  box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+}
+.cr-job:hover::before {
+  transform: scaleY(1);
+}
+.cr-job-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.cr-job-type {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cr-cyan);
+  background: var(--cr-cyan-soft);
+  border: 1px solid rgba(0, 212, 240, 0.3);
+  border-radius: 999px;
+  font-weight: 700;
+}
+.cr-job-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--cr-line);
+  border-radius: 10px;
+}
+.cr-job-title {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: clamp(22px, 2.4vw, 26px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 12px;
+  line-height: 1.1;
+}
+.cr-job-desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--cr-ink);
+  margin: 0 0 18px;
+}
+.cr-job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+.cr-job-tags li {
+  padding: 5px 11px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--cr-line);
+  border-radius: 6px;
+}
+.cr-job-cta {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: transparent;
+  border: 1px solid rgba(0, 212, 240, 0.35);
+  border-radius: 999px;
+  color: var(--cr-cyan);
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  align-self: flex-start;
+}
+.cr-job-cta::after {
+  content: "→";
+  transition: transform 0.2s;
+}
+.cr-job-cta:hover {
+  background: var(--cr-cyan);
+  color: #001821;
+  border-color: var(--cr-cyan);
+}
+.cr-job-cta:hover::after {
+  transform: translateX(3px);
+}
+
+/* ============ Apply section (form) ============ */
+.cr-apply {
+  padding: 80px 0 100px;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--cr-line);
+}
+.cr-apply-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: start;
+}
+.cr-apply-copy {
+  position: sticky;
+  top: 100px;
+}
+.cr-apply-copy p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--cr-ink);
+  margin: 0 0 16px;
+}
+.cr-apply-list {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.cr-apply-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--cr-ink);
+}
+.cr-apply-list li::before {
+  content: "✓";
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cr-cyan-soft);
+  color: var(--cr-cyan);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+/* The form */
+.cf-form {
+  position: relative;
+  background: var(--cr-card);
+  border: 1px solid var(--cr-line);
+  border-radius: 16px;
+  padding: 32px;
+  display: grid;
+  gap: 18px;
+}
+.cf-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.cf-field {
+  display: grid;
+  gap: 6px;
+}
+.cf-field label {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+}
+.cf-optional {
+  letter-spacing: 0;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
+}
+.cf-field input,
+.cf-field select,
+.cf-field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--cr-line);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14.5px;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.cf-field input:focus,
+.cf-field select:focus,
+.cf-field textarea:focus {
+  outline: none;
+  border-color: var(--cr-cyan);
+  background: rgba(0, 212, 240, 0.04);
+  box-shadow: 0 0 0 3px rgba(0, 212, 240, 0.12);
+}
+.cf-field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+.cf-field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--cr-cyan) 50%),
+    linear-gradient(135deg, var(--cr-cyan) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+.cf-submit {
+  appearance: none;
+  border: 0;
+  padding: 14px 24px;
+  background: var(--cr-cyan);
+  color: #001821;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, opacity 0.2s;
+}
+.cf-submit:hover:not(:disabled) {
+  background: #19f3fe;
+  transform: translateY(-1px);
+}
+.cf-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.cf-error {
+  margin: 0;
+  padding: 10px 14px;
+  background: rgba(255, 79, 79, 0.08);
+  border: 1px solid rgba(255, 79, 79, 0.3);
+  border-radius: 8px;
+  color: #ff9a9a;
+  font-size: 13.5px;
+}
+.cf-fineprint {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+.cf-fineprint a {
+  color: var(--cr-cyan);
+}
+.cf-success {
+  background: var(--cr-card);
+  border: 1px solid rgba(0, 212, 240, 0.35);
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+}
+.cf-success-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  color: #001821;
+  background: var(--cr-cyan);
+  border-radius: 50%;
+}
+.cf-success h3 {
+  font-family: "Anton", "Inter", sans-serif;
+  font-size: 26px;
+  color: #fff;
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.cf-success p {
+  max-width: 420px;
+  margin: 0 auto 22px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--cr-ink);
+}
+.cf-secondary {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(0, 212, 240, 0.4);
+  color: var(--cr-cyan);
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.cf-secondary:hover {
+  background: var(--cr-cyan);
+  color: #001821;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 1000px) {
+  .cr-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .cr-jobs-grid {
+    grid-template-columns: 1fr;
+  }
+  .cr-apply-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .cr-apply-copy {
+    position: static;
+  }
+}
+@media (max-width: 640px) {
+  .cr-intro {
+    padding: 60px 0 40px;
+  }
+  .cr-jobs,
+  .cr-apply {
+    padding: 60px 0;
+  }
+  .cr-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .cr-stat {
+    padding: 14px 8px;
+  }
+  .cr-stat-num {
+    font-size: 24px;
+  }
+  .cr-stat-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+  .cf-form {
+    padding: 24px;
+  }
+  .cf-two {
+    grid-template-columns: 1fr;
+  }
+}
