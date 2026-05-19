@@ -313,59 +313,13 @@ textarea.finput{resize:vertical;min-height:80px;font-family: var(--font-barlow),
 .reveal.visible{opacity:1;transform:translateY(0)}
 
 /* RESPONSIVE */
-
-/* Laptop sweet spot: 1180–1440px (most 13"–15" screens) */
-@media (max-width:1440px){
-  .wrap,.community-section,.classes-section,.disc-section,.coaches-section,.hub-section,.space-section,.testi-section,.membership-section{padding:92px 40px}
-  .trust-wrap{padding:72px 40px}
-  .cta-section{padding:88px 40px}
-  .footer-top{padding:80px 40px 60px;gap:64px}
-  .community-top,.coaches-top{gap:64px;margin-bottom:48px}
-  .community-audiences,.testi-grid{gap:3px}
-  .classes-grid,.coaches-grid,.membership-grid{grid-template-columns:repeat(3,1fr);margin-top:48px}
-  .testi-grid{grid-template-columns:repeat(2,1fr);margin-top:28px}
-  .disc-grid{margin-top:48px}
-  .hero-quote{margin-top:48px;padding:40px 44px}
-  .vs-section{padding:0 40px 92px}
-  .hub-stat-row{margin-top:32px}
-  .space-grid{grid-template-rows:260px 260px;margin-top:48px}
-  .hub-card{padding:34px}
-  .hub-card-title{font-size:30px}
-}
-
-/* Tablet landscape & small laptop: 1024–1180px */
 @media (max-width:1180px){
-  .wrap,.community-section,.classes-section,.disc-section,.coaches-section,.hub-section,.space-section,.testi-section,.membership-section{padding:80px 32px}
-  .trust-wrap{padding:60px 32px}
-  .cta-section{padding:76px 32px}
-  .footer-top{padding:68px 32px 52px;gap:52px;grid-template-columns:1fr}
-  .community-top,.coaches-top,.hub-layout{grid-template-columns:1fr;gap:44px;margin-bottom:40px}
-  .classes-grid,.coaches-grid,.membership-grid,.disc-grid{grid-template-columns:repeat(2,1fr);margin-top:40px}
-  .community-audiences{grid-template-columns:repeat(2,1fr);gap:3px}
-  .testi-grid{grid-template-columns:repeat(2,1fr);margin-top:24px}
-  .community-stories{grid-template-columns:1fr;gap:8px;margin-top:40px}
+  .community-top,.coaches-top,.hub-layout,.footer-top{grid-template-columns:1fr;gap:48px}
+  .classes-grid,.coaches-grid,.membership-grid,.disc-grid{grid-template-columns:repeat(2,1fr)}
+  .community-audiences{grid-template-columns:1fr}
   .space-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,240px)}
   .space-cell.tall{grid-row:auto}
-  .hero-quote{padding:36px 36px;margin-top:40px}
-  .vs-section{padding:0 32px 80px}
-  .hub-stat-row{grid-template-columns:repeat(4,1fr);margin-top:28px}
-}
-
-/* Tablet portrait: 900–1024px — start stacking pairs into single column */
-@media (max-width:1024px){
-  .wrap,.community-section,.classes-section,.disc-section,.coaches-section,.hub-section,.space-section,.testi-section,.membership-section{padding:72px 28px}
-  .trust-wrap{padding:54px 28px}
-  .cta-section{padding:68px 28px}
-  .footer-top{padding:60px 28px 48px;gap:44px}
-  .community-audiences{gap:2px}
-  .classes-grid,.coaches-grid,.membership-grid,.disc-grid,.testi-grid{margin-top:32px}
-  .hub-stat-row{grid-template-columns:repeat(2,1fr);margin-top:24px}
-  .cred-bar{grid-template-columns:repeat(2,1fr)}
-  .cred-item{border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
-  .cred-item:nth-child(2n){border-right:none}
-  .cred-item:nth-last-child(-n+2){border-bottom:none}
-  .hero-stat{padding:18px 30px}
-  .vs-section{padding:0 28px 72px}
+  .testi-grid,.community-stories{grid-template-columns:1fr}
 }
 @media (max-width:768px){
   .hero{padding:54px 18px 0;min-height:auto;text-align:center}
@@ -515,67 +469,12 @@ textarea.finput{resize:vertical;min-height:80px;font-family: var(--font-barlow),
 }
 @media (max-width:480px){
   .wrap,.community-section,.classes-section,.disc-section,.coaches-section,.hub-section,.space-section,.testi-section,.membership-section{padding-left:16px;padding-right:16px;padding-top:54px;padding-bottom:54px}
-  .hero{padding:48px 14px 0}
-  .hero-content{padding:0}
-  .hero-h1{font-size:clamp(38px,11vw,58px)}
-  .hero-sub{font-size:15.5px;line-height:1.6;margin:18px auto 26px}
-  .hero-stats{width:calc(100% + 32px);margin-left:-16px;margin-right:-16px}
-  .hero-stat{padding:14px 6px}
-  .hstat-n{font-size:22px}
-  .hstat-l{font-size:10.5px;letter-spacing:.8px}
   .sec-title{font-size:clamp(28px,8vw,38px)}
-  .sec-body{font-size:14px;line-height:1.7}
   .coaches-grid{grid-template-columns:1fr}
-  .logo-row{gap:10px}
-  .logo-pill{width:88px;height:54px;padding:8px 6px}
+  .logo-pill{width:88px;height:54px}
   .logo-pill img{max-width:72px;max-height:36px}
   .testi-card::before{font-size:120px}
-  .testi-card{padding:24px 18px}
-  .testi-video{margin-bottom:18px}
-  .hero-quote{margin-top:30px;padding:26px 20px}
   .hero-quote::before{display:none}
-  .hero-quote-text{font-size:clamp(20px,5vw,24px)}
-  .trust-wrap{padding:40px 16px}
-  .cta-section{padding:60px 16px}
-  .cta-h{font-size:clamp(42px,11vw,62px)}
-  .cta-sub{font-size:14px}
-  .cta-detail{font-size:12px;letter-spacing:.8px;margin-bottom:22px}
-  .footer-top{padding:48px 16px 36px}
-  .f-form-title{font-size:24px}
-  .vs-section{padding:0 16px 60px}
-  .vs-c.bad,.vs-c.good{padding:14px 14px 14px 12px;font-size:13px}
-  .vs-c.bad::after,.vs-c.good::after{display:none}
-  .vs-c.bad::before{font-size:9px;padding:2px 6px}
-  .space-grid{grid-template-rows:repeat(5,180px)}
-}
-
-/* Tiny phones: ≤360px (small Android, older devices) */
-@media (max-width:360px){
-  .wrap,.community-section,.classes-section,.disc-section,.coaches-section,.hub-section,.space-section,.testi-section,.membership-section{padding-left:12px;padding-right:12px;padding-top:46px;padding-bottom:46px}
-  .hero{padding:40px 10px 0}
-  .hero-kicker{font-size:11px;letter-spacing:1px;padding:6px 14px;gap:8px}
-  .hero-h1{font-size:clamp(34px,10vw,48px);letter-spacing:0}
-  .hero-sub{font-size:14.5px;margin:14px auto 22px}
-  .hero-btns{max-width:280px}
-  .btn-primary,.btn-ghost{padding:13px 18px;font-size:13px;letter-spacing:1.4px}
-  .hero-stats{width:calc(100% + 24px);margin-left:-12px;margin-right:-12px}
-  .hstat-n{font-size:20px}
-  .hstat-l{font-size:10px}
-  .sec-title{font-size:clamp(26px,8.5vw,34px)}
-  .kicker{font-size:12px;letter-spacing:1.6px}
-  .logo-pill{width:78px;height:48px}
-  .logo-pill img{max-width:64px;max-height:32px}
-  .trust-h{font-size:clamp(22px,5.5vw,28px)}
-  .audience-card{padding:22px 18px}
-  .audience-title{font-size:20px}
-  .class-info,.testi-card,.disc-card,.story-card,.plan-content,.hub-card,.dietitian-callout{padding:20px 16px}
-  .class-name{font-size:22px}
-  .plan-name{font-size:24px}
-  .plan-price-n{font-size:34px}
-  .cta-h{font-size:clamp(38px,11vw,52px)}
-  .footer-top{padding:42px 14px 32px}
-  .f-brand img{height:54px}
-  .f-form-title{font-size:22px}
 }
 
 }
