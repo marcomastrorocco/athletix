@@ -28,7 +28,7 @@ const PRACTITIONERS: Practitioner[] = [
     role: "Head of Rehab",
     title: "Head Physiotherapist",
     image:
-      "/image/cdn/IMG_9100-scaled-e1670906460682-49a90c.jpg",
+      "/image/cdn/IMG_9100-scaled-e1670906460682-49a90c.webp",
     bio: (
       <>
         <p>
@@ -89,7 +89,7 @@ const PRACTITIONERS: Practitioner[] = [
     role: "Sports Rehab / Physio",
     title: "Physiotherapist",
     image:
-      "/image/cdn/IMG-20240130-WA0019-e1727084066284-1efb74.jpg",
+      "/image/cdn/IMG-20240130-WA0019-e1727084066284-1efb74.webp",
     bio: (
       <>
         <p>
@@ -135,7 +135,7 @@ const PRACTITIONERS: Practitioner[] = [
     role: "Sports Rehab / Physio",
     title: "Physiotherapist",
     image:
-      "/image/cdn/IMG-20230131-WA0002-e1723499488364-68c055.jpg",
+      "/image/cdn/IMG-20230131-WA0002-e1723499488364-68c055.webp",
     bio: (
       <>
         <p>
@@ -187,7 +187,7 @@ const PRACTITIONERS: Practitioner[] = [
     role: "Exercise Physiologist",
     title: "Exercise Physiologist",
     image:
-      "/image/cdn/IMG_0147-e1685322267891-48889f.jpg",
+      "/image/cdn/IMG_0147-e1685322267891-48889f.webp",
     bio: (
       <>
         <p>
@@ -343,7 +343,7 @@ export default function AlliedHealthPage() {
           </div>
           <div className="ah-intro-media">
             <img
-              src="/image/cdn/Youth-sport-1-e1684274091394-7bb69e.png"
+              src="/image/cdn/Youth-sport-1-e1684274091394-7bb69e.webp"
               alt="ATHLETIX allied health team supporting athlete rehab"
             />
           </div>

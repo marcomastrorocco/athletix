@@ -1,3 +1,4 @@
+import { Anton, Inter, Barlow, Barlow_Condensed } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnnounceBar from "@/components/AnnounceBar";
@@ -7,6 +8,35 @@ import CookieBanner from "@/components/CookieBanner";
 import ScrollToTop from "@/components/ScrollToTop";
 import { getSite } from "@/lib/data";
 
+const anton = Anton({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-anton",
+});
+
+const inter = Inter({
+  weight: ["300", "400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const barlow = Barlow({
+  weight: ["300", "400", "500", "600"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-barlow",
+});
+
+const barlowCondensed = Barlow_Condensed({
+  weight: ["300", "400", "600", "700", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-barlow-condensed",
+});
+
 export default async function SiteLayout({
   children,
 }: {
@@ -14,17 +44,9 @@ export default async function SiteLayout({
 }) {
   const site = await getSite();
   return (
-    <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossOrigin=""
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-      />
+    <div
+      className={`${anton.variable} ${inter.variable} ${barlow.variable} ${barlowCondensed.variable}`}
+    >
       <link rel="stylesheet" href="/css/styles.css" />
       <link rel="stylesheet" href="/css/trial-modal.css" />
       <SiteSplash />
@@ -35,6 +57,6 @@ export default async function SiteLayout({
       <CookieBanner />
       <ScrollToTop />
       <PageScripts />
-    </>
+    </div>
   );
 }

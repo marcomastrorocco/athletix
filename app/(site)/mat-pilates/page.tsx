@@ -293,7 +293,7 @@ export default function MatPilatesPage() {
           <div className="yaf-coach-card">
             <div className="yaf-coach-image">
               <img
-                src="/image/cdn/mat-pilates-coach-sarah.jpg"
+                src="/image/cdn/mat-pilates-coach-sarah.webp"
                 alt="Sarah Kitcher — Pilates Coach & Physiotherapist"
                 loading="lazy"
                 width={320}

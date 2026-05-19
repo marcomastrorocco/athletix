@@ -64,7 +64,7 @@ export default function YouthFitnessDevelopmentPage() {
 
           <div className="yaf-media">
             <img
-              src="/image/cdn/youth-strength-development-hero.jpg"
+              src="/image/cdn/youth-strength-development-hero.webp"
               alt="Teen athletes bench pressing under coach supervision at ATHLETIX Brisbane"
               loading="lazy"
               width={2000}

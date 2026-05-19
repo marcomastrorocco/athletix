@@ -176,7 +176,7 @@ export default function LiftPage() {
             style={{ background: "#0b0d10" }}
           >
             <img
-              src="/image/cdn/lift-hero-a1644.jpg"
+              src="/image/cdn/lift-hero-a1644.webp"
               alt="LIFT strength training class at ATHLETIX Brisbane"
               loading="lazy"
               width={1600}
@@ -290,7 +290,7 @@ export default function LiftPage() {
           <div className="yaf-coach-card">
             <div className="yaf-coach-image">
               <img
-                src="/image/cdn/lift-coach-reza-6048.jpg"
+                src="/image/cdn/lift-coach-reza-6048.webp"
                 alt="Reza Sharifian — Strength Coach"
                 loading="lazy"
                 width={320}

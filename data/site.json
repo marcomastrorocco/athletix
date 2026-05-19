@@ -97,7 +97,7 @@
     "body": "Small groups. Elite coaches. A program built around you — not the person next to you. Challenging enough to make you better. Welcoming enough to make you stay.",
     "items": [
       {
-        "img": "/image/cdn/2-9917b9.png",
+        "img": "/image/cdn/2-9917b9.webp",
         "alt": "Youth Classes",
         "tag": "Ages 8–17",
         "name": "Youth Classes",
@@ -105,7 +105,7 @@
         "href": "#form"
       },
       {
-        "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.jpg",
+        "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.webp",
         "alt": "Adult Classes",
         "tag": "All Levels Welcome",
         "name": "Adult Classes",
@@ -121,7 +121,7 @@
         "href": "#form"
       },
       {
-        "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.jpg",
+        "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.webp",
         "alt": "Athlete Programs",
         "tag": "Sub-Elite & Pro",
         "name": "Athlete Programs",
@@ -183,13 +183,13 @@
         "name": "Myles Burfield",
         "role": "Head Physio · Specialist Sports & Exercise Physio",
         "exp": "Fellowship ACP · Australian Institute of Sport · Australian Olympic Canoe/Kayak Team Physio — Rio 2016 (Bronze Medallists) · Cirque du Soleil · 16+ years private practice",
-        "img": "/image/cdn/IMG_9100-scaled-e1670906460682-49a90c.jpg"
+        "img": "/image/cdn/IMG_9100-scaled-e1670906460682-49a90c.webp"
       },
       {
         "name": "Bridie Nicholson",
         "role": "Physiotherapist · Titled Sport & Exercise Physio",
         "exp": "7+ years sports physio · Canadian Basketball National Team · Brisbane Roar FC · NHL Ice Hockey · Para-Swimming · Running & Boxing rehab",
-        "img": "/image/cdn/IMG-20240130-WA0019-e1727084066284-1efb74.jpg"
+        "img": "/image/cdn/IMG-20240130-WA0019-e1727084066284-1efb74.webp"
       }
     ],
     "dietLabel": "Sports Dietitian · APD",
@@ -206,9 +206,9 @@
     "cells": [
       { "img": "/image/cdn/DSC02067-768x512-132ccb.jpg", "alt": "Main training floor", "labelTop": "Welcome to", "labelBottom": "Athletix", "tall": true, "video": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1" },
       { "img": "/image/cdn/DSC01921-768x512-94206e.jpg", "alt": "Sprint track", "labelTop": "Performance", "labelBottom": "3-Lane Sprint Track" },
-      { "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.jpg", "alt": "Small group coaching", "labelTop": "Coaching", "labelBottom": "Small Group Sessions" },
-      { "img": "/image/cdn/Youth-sport-1-e1684274091394-7bb69e.png", "alt": "Youth area", "labelTop": "Youth", "labelBottom": "Athletic Development" },
-      { "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.jpg", "alt": "Athlete programs", "labelTop": "Elite", "labelBottom": "Athlete Programs" }
+      { "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.webp", "alt": "Small group coaching", "labelTop": "Coaching", "labelBottom": "Small Group Sessions" },
+      { "img": "/image/cdn/Youth-sport-1-e1684274091394-7bb69e.webp", "alt": "Youth area", "labelTop": "Youth", "labelBottom": "Athletic Development" },
+      { "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.webp", "alt": "Athlete programs", "labelTop": "Elite", "labelBottom": "Athlete Programs" }
     ]
   },
   "testimonials": {
@@ -286,7 +286,7 @@
         "tier": "Ages 8–17",
         "name": "Youth",
         "price": "$42",
-        "img": "/image/cdn/2-9917b9.png",
+        "img": "/image/cdn/2-9917b9.webp",
         "alt": "Youth",
         "features": ["Unlimited S&C Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "Full facility access"],
         "href": "#form"
@@ -295,7 +295,7 @@
         "tier": "All Levels",
         "name": "Adults",
         "price": "$50",
-        "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.jpg",
+        "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.webp",
         "alt": "Adults",
         "features": ["Unlimited S&C Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "S&C Consultation", "Full facility access"],
         "featured": true,
@@ -314,7 +314,7 @@
         "tier": "12-Month Subscription",
         "name": "Athlete",
         "price": "$150",
-        "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.jpg",
+        "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.webp",
         "alt": "Athlete",
         "features": ["Unlimited Force Plate Tests", "Unlimited Classes", "Dedicated Coach", "Weekly PT Session", "Sports Dietitian Access", "Full facility access"],
         "href": "#form"

@@ -225,7 +225,7 @@ export default function MobilityPage() {
 
           <div className="yaf-media">
             <img
-              src="/image/cdn/mobility-hero.jpg"
+              src="/image/cdn/mobility-hero.webp"
               alt="Mobility class on the turf at ATHLETIX Brisbane"
               loading="lazy"
               width={1600}
@@ -342,7 +342,7 @@ export default function MobilityPage() {
           <div className="yaf-coach-card">
             <div className="yaf-coach-image">
               <img
-                src="/image/cdn/mobility-coach-marco.jpg"
+                src="/image/cdn/mobility-coach-marco.webp"
                 alt="Marco Mastrorocco — Head Coach, Mobility"
                 loading="lazy"
                 width={320}

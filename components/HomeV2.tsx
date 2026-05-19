@@ -93,12 +93,6 @@ export default function HomeV2({
 
   return (
     <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,900&family=Barlow:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-      />
       <link rel="stylesheet" href="/css/home-v3.css" />
 
       <div className="ax-home">

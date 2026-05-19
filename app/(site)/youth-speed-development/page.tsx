@@ -71,7 +71,7 @@ export default function YouthSpeedDevelopmentPage() {
 
           <div className="yaf-media">
             <img
-              src="/image/cdn/youth-speed-development-hero.jpg"
+              src="/image/cdn/youth-speed-development-hero.webp"
               alt="Athletes sled pushing under the ATHLETIC DEVELOPMENT wall at ATHLETIX Brisbane"
               loading="lazy"
               width={2000}

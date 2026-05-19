@@ -56,7 +56,7 @@ export default function YouthAgilityFoundationsPage() {
 
           <div className="yaf-media">
             <img
-              src="/image/cdn/youth-agility-foundations-hero.jpg"
+              src="/image/cdn/youth-agility-foundations-hero.webp"
               alt="Youth athletes stretching on the turf at ATHLETIX Athletic Development gym"
               loading="lazy"
               width={2000}

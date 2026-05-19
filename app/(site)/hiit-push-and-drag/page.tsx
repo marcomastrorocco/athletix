@@ -182,7 +182,7 @@ export default function HiitPushAndDragPage() {
 
           <div className="yaf-media" style={{ background: "#0b0d10" }}>
             <img
-              src="/image/cdn/hiit-push-and-drag-hero.jpg"
+              src="/image/cdn/hiit-push-and-drag-hero.webp"
               alt="HIIT Push and Drag class at ATHLETIX Brisbane — athlete pushing weighted sled on track"
               loading="lazy"
               width={1600}
