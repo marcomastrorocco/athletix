@@ -512,9 +512,49 @@
     box-shadow 0.18s ease;
   appearance: none;
 }
+.yaf-book-field--select {
+  position: relative;
+}
+.yaf-book-field--select::before {
+  content: "";
+  position: absolute;
+  inset: 14px auto 14px 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: linear-gradient(180deg, rgba(0, 212, 240, 0.85) 0%, rgba(0, 212, 240, 0.15) 100%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.yaf-book-field--select:focus-within::before {
+  opacity: 1;
+}
 .yaf-book-field--select select {
-  padding-right: 44px;
+  padding-right: 52px;
+  padding-left: 20px;
   cursor: pointer;
+  /* Hint to the browser to render the native dropdown panel
+     in dark mode (Chrome/Edge/Safari/Firefox honour this). */
+  color-scheme: dark;
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%),
+    rgba(255, 255, 255, 0.04);
+}
+/* Style the option list as a fallback for browsers that ignore color-scheme.
+   Padding/borders are largely ignored on <option> by the OS-native picker,
+   but background + color do apply. */
+.yaf-book-field--select select option,
+.yaf-book-field--select select optgroup {
+  background: #0d1014;
+  color: #e6edf3;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.yaf-book-field--select select option:checked,
+.yaf-book-field--select select option:hover {
+  background: linear-gradient(0deg, rgba(0, 212, 240, 0.18), rgba(0, 212, 240, 0.18)), #0d1014;
+  color: #ffffff;
 }
 .yaf-book-field input:focus,
 .yaf-book-field select:focus {
@@ -546,12 +586,28 @@
 }
 .yaf-book-select-arrow {
   position: absolute;
-  right: 18px;
+  right: 14px;
   top: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.5);
+  color: #00d4f0;
   pointer-events: none;
-  font-size: 14px;
+  font-size: 16px;
+  background: rgba(0, 212, 240, 0.08);
+  border: 1px solid rgba(0, 212, 240, 0.25);
+  border-radius: 8px;
+  transition: transform 0.2s ease, background 0.2s ease,
+    border-color 0.2s ease;
+}
+.yaf-book-field--select:hover .yaf-book-select-arrow,
+.yaf-book-field--select:focus-within .yaf-book-select-arrow {
+  background: rgba(0, 212, 240, 0.18);
+  border-color: rgba(0, 212, 240, 0.55);
+  transform: translateY(-50%) translateY(1px);
 }
 
 /* Captcha + submit */

@@ -186,55 +186,61 @@ export default async function YouthClassesPage() {
               sport practice), <strong>ATHLETICISM</strong> (S&amp;C) and{" "}
               <strong>INJURY REDUCTION</strong> (S&amp;C) longevity.
             </p>
-            <p>
-              Whether your child is involved in court sports such as tennis,
-              netball, or basketball, or field sports such as rugby, AFL,
-              cricket, hockey, or soccer, our programs are designed to develop
-              the physical abilities that are necessary for success on the
-              field or court.
-            </p>
-            <p>
-              The Programs at our youth gym for teenager Brisbane gym are split
-              in 2 groups: the <strong>YOUTH ATHLETIC FOUNDATIONS</strong>{" "}
-              (7&ndash;11yo) and <strong>YOUTH ATHLETIC DEVELOPMENT</strong>{" "}
-              (12&ndash;16yo).
-            </p>
-            <p>
-              The <strong>FOUNDATION</strong> group focuses on developing
-              general fitness, movement competency, and speed and agility.
-              These foundational skills are essential for all sports and will
-              give your child the tools they need to excel in any athletic
-              pursuit.
-            </p>
-            <p>
-              Our Youth <strong>ATHLETIC DEVELOPMENT</strong> group will take
-              their athletic performance to the next level, focusing on
-              strength development, acceleration and agility. These skills are
-              essential for success in field sports such as rugby, AFL, and
-              soccer, where speed and power are key. They are also important
-              for court sports such as tennis, netball, and basketball, where
-              agility and quickness can make the difference between winning and
-              losing.
-            </p>
-            <p>
-              Developing superior athleticism is not just about winning games,
-              it&rsquo;s also about building <strong>confidence</strong>,{" "}
-              <strong>self-discipline</strong>, and{" "}
-              <strong>mental toughness</strong>.
-            </p>
-            <p>
-              These qualities are essential for success both on and off the
-              field or court, and they will serve your child well throughout
-              their lives.
-            </p>
-            <p>
-              So whether your child is a beginner or an experienced athlete,
-              our Youth Strength and Conditioning programs are designed to help
-              them reach their full potential and achieve their goals.
-            </p>
             <Link href="/contact" className="btn btn-outline">
               Book a Trial
             </Link>
+
+            <details className="intro-collapse">
+              <summary className="intro-collapse-toggle">Read more</summary>
+              <div className="intro-collapse-body">
+                <p>
+                  Whether your child is involved in court sports such as tennis,
+                  netball, or basketball, or field sports such as rugby, AFL,
+                  cricket, hockey, or soccer, our programs are designed to develop
+                  the physical abilities that are necessary for success on the
+                  field or court.
+                </p>
+                <p>
+                  The Programs at our youth gym for teenager Brisbane gym are split
+                  in 2 groups: the <strong>YOUTH ATHLETIC FOUNDATIONS</strong>{" "}
+                  (7&ndash;11yo) and <strong>YOUTH ATHLETIC DEVELOPMENT</strong>{" "}
+                  (12&ndash;16yo).
+                </p>
+                <p>
+                  The <strong>FOUNDATION</strong> group focuses on developing
+                  general fitness, movement competency, and speed and agility.
+                  These foundational skills are essential for all sports and will
+                  give your child the tools they need to excel in any athletic
+                  pursuit.
+                </p>
+                <p>
+                  Our Youth <strong>ATHLETIC DEVELOPMENT</strong> group will take
+                  their athletic performance to the next level, focusing on
+                  strength development, acceleration and agility. These skills are
+                  essential for success in field sports such as rugby, AFL, and
+                  soccer, where speed and power are key. They are also important
+                  for court sports such as tennis, netball, and basketball, where
+                  agility and quickness can make the difference between winning and
+                  losing.
+                </p>
+                <p>
+                  Developing superior athleticism is not just about winning games,
+                  it&rsquo;s also about building <strong>confidence</strong>,{" "}
+                  <strong>self-discipline</strong>, and{" "}
+                  <strong>mental toughness</strong>.
+                </p>
+                <p>
+                  These qualities are essential for success both on and off the
+                  field or court, and they will serve your child well throughout
+                  their lives.
+                </p>
+                <p>
+                  So whether your child is a beginner or an experienced athlete,
+                  our Youth Strength and Conditioning programs are designed to help
+                  them reach their full potential and achieve their goals.
+                </p>
+              </div>
+            </details>
           </div>
           <div className="youth-intro-image">
             <video autoPlay muted loop playsInline preload="metadata">

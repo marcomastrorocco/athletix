@@ -20,6 +20,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "STRENGTH",
     title: "LIFT",
+    href: "/lift",
     body: (
       <>
         LIFT is not Cross Fit, not bodybuilding, not a circuit class with weights. WE WORK IN TEAMS and go through periodized blocks of
@@ -31,6 +32,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SKILL/CONDITIONING",
     title: "YOUTH AGILITY FOUNDATIONS",
+    href: "/youth-agility-foundations",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong> This class merges elements of physical fitness, injury prevention, linear and lateral
@@ -41,6 +43,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SKILL/CONDITIONING",
     title: "YOUTH AGILITY DEVELOPMENT",
+    href: "/youth-agility-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years</strong> Everything around Team (Court/Field) sports conditioning. Move faster with confidence!
@@ -52,6 +55,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SKILLS/STRENGTH/FITNESS",
     title: "YOUTH FITNESS FOUNDATIONS",
+    href: "/youth-fitness-foundations",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong> Starter program for Primary School aged kids, developing foundation skills and movement
@@ -63,6 +67,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "STRENGTH",
     title: "YOUTH STRENGTH DEVELOPMENT",
+    href: "/youth-fitness-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years</strong> High School kids will be guided through learning the foundation of resistance
@@ -73,6 +78,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SKILL/CONDITIONING",
     title: "YOUTH SPEED FOUNDATION",
+    href: "/youth-speed-foundation",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong>
@@ -85,6 +91,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SKILL/CONDITIONING",
     title: "YOUTH SPEED DEVELOPMENT",
+    href: "/youth-speed-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years</strong>
@@ -97,6 +104,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "CONDITIONING",
     title: "HIIT — PUSH AND DRAG",
+    href: "/hiit-push-and-drag",
     body: (
       <>
         Develop insane fitness, strength, and resilience! Our SLED and PROWLERS workout is filled with functional movements, a great
@@ -107,6 +115,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "CONDITIONING",
     title: "MET-CON",
+    href: "/met-con",
     body: (
       <>
         A circuit class meant to help you enhance metabolic rate and overall conditioning regardless of your starting fitness level.
@@ -167,27 +176,6 @@ export default async function ClassesPage() {
           <h1>
             <span className="accent">CLASSES</span>
           </h1>
-        </div>
-      </section>
-
-      <section className="classes-intro">
-        <div className="container">
-          <h2>S&amp;C Group Classes in Brisbane</h2>
-          <p>
-            Whether you want to improve your overall fitness, strength, speed or endurance our{" "}
-            <strong>Adult group S&amp;C class programs</strong> like sled workouts are designed to take the same approach used in elite
-            sport teams and provide it to the general population. Athletix Brisbane based personal trainers and exercise and sports
-            scientists offer 1 on 1 services and work with athletes, general population and clinical patients.
-          </p>
-          <p>
-            We also offer tailored <strong>group athletic development classes for Youth</strong>. Whether you want your child or
-            teenager to be better at sprinting, netball, cricket, basketball, soccer or rugby, our group fitness classes are designed
-            to take the same approach used in elite sport teams and provide it to our children. To help improve your teens performance
-            at sport or motivate your children to exercise, our S&amp;C gym in Brisbane offers the following classes below:
-          </p>
-          <Link href="/contact" className="btn btn-outline">
-            Read More
-          </Link>
         </div>
       </section>
 
@@ -412,6 +400,27 @@ export default async function ClassesPage() {
           </div>
         </div>
       </div>
+
+      <section className="classes-intro">
+        <div className="container">
+          <h2>S&amp;C Group Classes in Brisbane</h2>
+          <p>
+            Whether you want to improve your overall fitness, strength, speed or endurance our{" "}
+            <strong>Adult group S&amp;C class programs</strong> like sled workouts are designed to take the same approach used in elite
+            sport teams and provide it to the general population. Athletix Brisbane based personal trainers and exercise and sports
+            scientists offer 1 on 1 services and work with athletes, general population and clinical patients.
+          </p>
+          <p>
+            We also offer tailored <strong>group athletic development classes for Youth</strong>. Whether you want your child or
+            teenager to be better at sprinting, netball, cricket, basketball, soccer or rugby, our group fitness classes are designed
+            to take the same approach used in elite sport teams and provide it to our children. To help improve your teens performance
+            at sport or motivate your children to exercise, our S&amp;C gym in Brisbane offers the following classes below:
+          </p>
+          <Link href="/contact" className="btn btn-outline">
+            Read More
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

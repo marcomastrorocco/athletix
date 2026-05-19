@@ -384,64 +384,70 @@ export default function AthleteProgramsPage() {
               Are you an athlete looking to boost your strength and power in
               speed and agility?
             </p>
-            <p>
-              At ATHLETIX, our team of{" "}
-              <strong>Strength &amp; Conditioning coaches</strong> (ESSA, ASCA,
-              NCSE accredited), have practical experience with elite athletes
-              of all ages. Our programs are tailored to athletes of all levels
-              aiming for peak performance in their respective sports,
-              including{" "}
-              <strong>
-                Netball, Track &amp; Field, Rugby, AFL, Cricket, Soccer and
-                Basketball
-              </strong>
-              .
-            </p>
-            <p>
-              The ATHLETIX Athlete Program is designed to elevate your
-              performance to the next level,{" "}
-              <strong>unlocking your full potential</strong> and gaining
-              access to our comprehensive{" "}
-              <strong>high-performance hub</strong> right at your fingertips.
-            </p>
 
-            <h3 className="youth-intro-sub">A TEAM TO SUPPORT YOU</h3>
-            <p>
-              We understand that reaching peak performance requires a
-              multidisciplinary approach, and that&rsquo;s why we have brought
-              together a team of experts to optimize your training and
-              maximize your potential:{" "}
-              <strong>strength and conditioning coaches</strong>,{" "}
-              <strong>sport scientists</strong>,{" "}
-              <strong>exercise physiologists</strong>, and{" "}
-              <strong>physiotherapists</strong>, all here to support you every
-              step of the way.
-            </p>
-            <p>
-              Our goal is simple: to provide you with the same high
-              standards, attention to detail, and results-driven attitude that
-              professional athletes experience. Our team of dedicated experts
-              will be passionate about helping you develop the physical
-              attributes necessary for success: strength, speed, agility, and
-              power.
-            </p>
+            <details className="intro-collapse">
+              <summary className="intro-collapse-toggle">Read more</summary>
+              <div className="intro-collapse-body">
+                <p>
+                  At ATHLETIX, our team of{" "}
+                  <strong>Strength &amp; Conditioning coaches</strong> (ESSA, ASCA,
+                  NCSE accredited), have practical experience with elite athletes
+                  of all ages. Our programs are tailored to athletes of all levels
+                  aiming for peak performance in their respective sports,
+                  including{" "}
+                  <strong>
+                    Netball, Track &amp; Field, Rugby, AFL, Cricket, Soccer and
+                    Basketball
+                  </strong>
+                  .
+                </p>
+                <p>
+                  The ATHLETIX Athlete Program is designed to elevate your
+                  performance to the next level,{" "}
+                  <strong>unlocking your full potential</strong> and gaining
+                  access to our comprehensive{" "}
+                  <strong>high-performance hub</strong> right at your fingertips.
+                </p>
 
-            <h3 className="youth-intro-sub">DATA DRIVEN SPORTS SCIENCE</h3>
-            <p>
-              Our team of dedicated sport scientists is committed to enhancing
-              your performance through evidence-based methodologies,
-              analyzing, and utilizing{" "}
-              <strong>
-                VALD cutting-edge technology for advanced performance testing
-              </strong>
-              , providing you with invaluable insights into your strengths,
-              weaknesses, and areas for improvement. This data-driven approach
-              ensures that your training is tailored to your specific needs,
-              optimizing your performance outcomes.{" "}
-              <strong>
-                We offer a 7-day trial, book your spot below.
-              </strong>
-            </p>
+                <h3 className="youth-intro-sub">A TEAM TO SUPPORT YOU</h3>
+                <p>
+                  We understand that reaching peak performance requires a
+                  multidisciplinary approach, and that&rsquo;s why we have brought
+                  together a team of experts to optimize your training and
+                  maximize your potential:{" "}
+                  <strong>strength and conditioning coaches</strong>,{" "}
+                  <strong>sport scientists</strong>,{" "}
+                  <strong>exercise physiologists</strong>, and{" "}
+                  <strong>physiotherapists</strong>, all here to support you every
+                  step of the way.
+                </p>
+                <p>
+                  Our goal is simple: to provide you with the same high
+                  standards, attention to detail, and results-driven attitude that
+                  professional athletes experience. Our team of dedicated experts
+                  will be passionate about helping you develop the physical
+                  attributes necessary for success: strength, speed, agility, and
+                  power.
+                </p>
+
+                <h3 className="youth-intro-sub">DATA DRIVEN SPORTS SCIENCE</h3>
+                <p>
+                  Our team of dedicated sport scientists is committed to enhancing
+                  your performance through evidence-based methodologies,
+                  analyzing, and utilizing{" "}
+                  <strong>
+                    VALD cutting-edge technology for advanced performance testing
+                  </strong>
+                  , providing you with invaluable insights into your strengths,
+                  weaknesses, and areas for improvement. This data-driven approach
+                  ensures that your training is tailored to your specific needs,
+                  optimizing your performance outcomes.{" "}
+                  <strong>
+                    We offer a 7-day trial, book your spot below.
+                  </strong>
+                </p>
+              </div>
+            </details>
 
             <h3 className="youth-intro-sub">BOOK 7-DAY TRIAL</h3>
             <form

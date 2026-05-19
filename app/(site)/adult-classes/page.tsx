@@ -324,31 +324,37 @@ export default async function AdultClassesPage() {
               teamwork in general, is a large contributing factor to improving
               performance and achieving fitness goals.
             </p>
-            <p>
-              When you&rsquo;re in a small group, there&rsquo;s a motivation to
-              do your best and <strong>push your limits</strong>. When the
-              class is too large, we find the results are not the same. When
-              paired with a professional strength and conditioning coach, the
-              results can be extraordinary.
-            </p>
-            <p>
-              Our <strong>Strength and Conditioning gym</strong> and training
-              systems are based on current best practices and cutting-edge
-              sport science, ensuring that you achieve remarkable results.
-            </p>
-            <p>
-              We believe in <strong>EDUCATION THROUGH COACHING!</strong>
-            </p>
-            <h3 className="youth-intro-sub">BOOK YOUR 7-DAY TRIAL</h3>
-            <p>
-              Our small group classes deliver dynamic and engaging workouts
-              that target various aspects of fitness. Our expert S&amp;C
-              coaches guide you through each exercise, ensuring proper
-              technique and progression. <strong>Book your spot today!</strong>
-            </p>
             <Link href="#adult-form" className="btn btn-outline">
               Book a Trial
             </Link>
+
+            <details className="intro-collapse">
+              <summary className="intro-collapse-toggle">Read more</summary>
+              <div className="intro-collapse-body">
+                <p>
+                  When you&rsquo;re in a small group, there&rsquo;s a motivation to
+                  do your best and <strong>push your limits</strong>. When the
+                  class is too large, we find the results are not the same. When
+                  paired with a professional strength and conditioning coach, the
+                  results can be extraordinary.
+                </p>
+                <p>
+                  Our <strong>Strength and Conditioning gym</strong> and training
+                  systems are based on current best practices and cutting-edge
+                  sport science, ensuring that you achieve remarkable results.
+                </p>
+                <p>
+                  We believe in <strong>EDUCATION THROUGH COACHING!</strong>
+                </p>
+                <h3 className="youth-intro-sub">BOOK YOUR 7-DAY TRIAL</h3>
+                <p>
+                  Our small group classes deliver dynamic and engaging workouts
+                  that target various aspects of fitness. Our expert S&amp;C
+                  coaches guide you through each exercise, ensuring proper
+                  technique and progression. <strong>Book your spot today!</strong>
+                </p>
+              </div>
+            </details>
           </div>
           <div className="youth-intro-image">
             <video autoPlay muted loop playsInline preload="metadata">

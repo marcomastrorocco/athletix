@@ -1,8 +1,28 @@
 "use client";
 
 import { Fragment, useMemo, useState } from "react";
+import Link from "next/link";
 import BookTrialModal from "@/components/BookTrialModal";
 import type { TimetableData, TimetableCell } from "@/lib/data";
+
+// Map class-title strings (as they appear in the timetable) to the
+// matching detail-page route. Unknown titles fall back to /classes.
+const CLASS_DETAIL_ROUTES: { match: RegExp; href: string }[] = [
+  { match: /mat\s*pilates/i, href: "/mat-pilates" },
+  { match: /mobility/i, href: "/mobility" },
+  { match: /youth\s*agility\s*foundations|^yaf\b/i, href: "/youth-agility-foundations" },
+  { match: /youth\s*agility\s*development|^yad\b/i, href: "/youth-agility-development" },
+  { match: /youth\s*speed\s*development/i, href: "/youth-speed-development" },
+  { match: /youth\s*(strength|fitness)\s*development/i, href: "/youth-fitness-development" },
+  { match: /^lift\b/i, href: "/lift" },
+];
+
+function routeForClass(title: string): string {
+  for (const { match, href } of CLASS_DETAIL_ROUTES) {
+    if (match.test(title)) return href;
+  }
+  return "/classes";
+}
 
 type Kind = "adult" | "youth" | "recovery" | "performance";
 type KindFilter = "all" | Kind;
@@ -215,13 +235,13 @@ export default function TimetableGrid({ data }: { data: TimetableData }) {
               >
                 Book a Trial
               </button>
-              <button
-                type="button"
+              <Link
+                href={routeForClass(selected.cell.title)}
                 className="btn btn-ghost"
                 onClick={() => setSelected(null)}
               >
-                Close
-              </button>
+                View Class
+              </Link>
             </div>
           </div>
         </div>

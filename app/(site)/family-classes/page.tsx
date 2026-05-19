@@ -211,17 +211,23 @@ export default async function FamilyClassesPage() {
             <strong>4 members</strong> can be included under one membership
             and prices are from <strong>$120 per week</strong>.
           </p>
-          <p>
-            Our certified strength and conditioning coaches are dedicated to
-            completing your fitness goals. You will never feel like you are
-            working hard for fitness. Instead, you&rsquo;ll love to spend your
-            fitness quality time with your family and us. For more
-            information, see our <strong>family membership options</strong>{" "}
-            and <strong>book a weekly trial to all our classes</strong>.
-          </p>
           <Link href="/membership" className="btn btn-outline">
-            READ MORE
+            See Membership Plans
           </Link>
+
+          <details className="intro-collapse">
+            <summary className="intro-collapse-toggle">Read more</summary>
+            <div className="intro-collapse-body">
+              <p>
+                Our certified strength and conditioning coaches are dedicated to
+                completing your fitness goals. You will never feel like you are
+                working hard for fitness. Instead, you&rsquo;ll love to spend your
+                fitness quality time with your family and us. For more
+                information, see our <strong>family membership options</strong>{" "}
+                and <strong>book a weekly trial to all our classes</strong>.
+              </p>
+            </div>
+          </details>
         </div>
       </section>
 
