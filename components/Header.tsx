@@ -112,6 +112,14 @@ export default function Header({ contact }: Props) {
     if (!navOpen) setOpenDropdown(null);
   }, [navOpen]);
 
+  // Lock page scroll while the mobile drawer is open
+  useEffect(() => {
+    const root = document.documentElement;
+    if (navOpen) root.classList.add("nav-locked");
+    else root.classList.remove("nav-locked");
+    return () => root.classList.remove("nav-locked");
+  }, [navOpen]);
+
   // Close mobile nav, side panel and dropdowns when navigating between pages
   useEffect(() => {
     setNavOpen(false);
@@ -350,6 +358,12 @@ export default function Header({ contact }: Props) {
           </div>
         </div>
       </header>
+
+      <div
+        className={`nav-backdrop${navOpen ? " open" : ""}`}
+        aria-hidden="true"
+        onClick={closeNav}
+      />
 
       <aside
         className={`side-panel${sideOpen ? " open" : ""}`}

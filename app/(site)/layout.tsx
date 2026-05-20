@@ -47,7 +47,7 @@ export default async function SiteLayout({
     <div
       className={`${anton.variable} ${inter.variable} ${barlow.variable} ${barlowCondensed.variable}`}
     >
-      <link rel="stylesheet" href="/css/styles.css" />
+      <link rel="stylesheet" href="/css/styles.css?v=nav-fix-3" />
       <link rel="stylesheet" href="/css/trial-modal.css" />
       <SiteSplash />
       <AnnounceBar />

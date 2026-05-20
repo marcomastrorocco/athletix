@@ -132,12 +132,23 @@ h3 { font-size: 1.4rem; letter-spacing: .4px; }
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 190;
   background: rgba(8, 8, 8, 0.65);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  backdrop-filter: blur(14px) saturate(140%);
   border-bottom: none;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+/* Desktop only — backdrop-filter breaks position:fixed for mobile drawer */
+@media (min-width: 721px) {
+  .site-header {
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+  }
+}
+/* Mobile gets a more opaque background instead of blur */
+@media (max-width: 720px) {
+  .site-header {
+    background: rgba(8, 8, 8, 0.92);
+  }
 }
 .header-inner {
   display: flex;
@@ -354,6 +365,7 @@ h3 { font-size: 1.4rem; letter-spacing: .4px; }
   cursor: pointer;
   position: relative;
 }
+.nav-backdrop { display: none; }
 .nav-toggle span, .side-toggle span {
   display: block;
   width: 24px;
@@ -2661,23 +2673,24 @@ h3 { font-size: 1.4rem; letter-spacing: .4px; }
   .header-inner { height: 78px; }
   .nav {
     position: fixed;
-    top: 78px; right: 0;
-    width: 100%;
+    top: 78px; right: 0; left: 0;
+    width: 100vw;
+    max-width: 100vw;
     flex-direction: column;
     padding: 36px 24px 60px;
     gap: 8px;
     transform: translateX(100%);
     transition: transform .45s var(--ease);
     height: calc(100vh - 78px);
+    height: calc(100dvh - 78px);
     overflow-y: auto;
+    overscroll-behavior: contain;
     z-index: 180;
-    /* Exact match with desktop .side-panel */
+    /* Solid dark panel — no transparency, no backdrop blur */
     background:
-      radial-gradient(circle at 90% -10%, rgba(0, 184, 239, 0.28), transparent 55%),
-      radial-gradient(circle at -10% 110%, rgba(0, 184, 239, 0.10), transparent 50%),
-      rgba(7, 10, 13, 0.72);
-    backdrop-filter: blur(80px) saturate(150%);
-    -webkit-backdrop-filter: blur(80px) saturate(150%);
+      radial-gradient(circle at 90% -10%, rgba(0, 184, 239, 0.16), transparent 55%),
+      radial-gradient(circle at -10% 110%, rgba(0, 184, 239, 0.06), transparent 50%),
+      #07090b;
     border-top: 1px solid rgba(0, 184, 239, 0.22);
     box-shadow:
       0 30px 80px rgba(0, 0, 0, 0.55),
@@ -2700,6 +2713,29 @@ h3 { font-size: 1.4rem; letter-spacing: .4px; }
     border-radius: 3px;
   }
   .nav.open { transform: translateX(0); }
+  /* Backdrop dims & blocks the page when the mobile drawer is open */
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s var(--ease);
+    z-index: 170;
+  }
+  .nav-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  /* Lock body scroll while the drawer is open */
+  html.nav-locked,
+  html.nav-locked body {
+    overflow: hidden;
+    touch-action: none;
+  }
   /* Nav links styled like side-panel address/phone glass cards */
   .nav a {
     padding: 14px 16px;
