@@ -20,14 +20,32 @@
     "h1Em": "Hub",
     "sub": "We built a world class Sports performance hub and opened the doors to everyone.",
     "subBoldStart": "",
-    "primaryBtn": { "label": "Start for $7 →", "href": "#form" },
-    "secondaryBtn": { "label": "See What We Offer", "href": "#classes" },
+    "primaryBtn": {
+      "label": "Start for $7 →",
+      "href": "#form"
+    },
+    "secondaryBtn": {
+      "label": "See What We Offer",
+      "href": "#classes"
+    },
     "bgImage": "/image/hero/20220312_073509-1-scaled.jpg",
     "stats": [
-      { "n": "400+", "l": "Members & Counting" },
-      { "n": "4.9★", "l": "Google Rating" },
-      { "n": "9", "l": "Pro Club Partners" },
-      { "n": "200+", "l": "Uni Athletes Placed" }
+      {
+        "n": "400+",
+        "l": "Members & Counting"
+      },
+      {
+        "n": "4.9★",
+        "l": "Google Rating"
+      },
+      {
+        "n": "9",
+        "l": "Pro Club Partners"
+      },
+      {
+        "n": "200+",
+        "l": "Uni Athletes Placed"
+      }
     ]
   },
   "trust": {
@@ -35,14 +53,38 @@
     "headingEm": "Available to Everyone.",
     "label": "Trusted By",
     "logos": [
-      { "src": "/image/cdn/brisbane-lions-logo-e29d75.png", "alt": "Brisbane Lions (AFL)" },
-      { "src": "/image/cdn/cricket-australia-logo-97832f.png", "alt": "Cricket Australia" },
-      { "src": "/image/cdn/Queensland-Bulls-fbd3ad.png", "alt": "Queensland Bulls" },
-      { "src": "/image/cdn/gold-coast-titans-logo-c5dffb.png", "alt": "Gold Coast Titans (NRL)" },
-      { "src": "/image/cdn/Brisbane-Bullets-logo-8c1a5f.png", "alt": "Brisbane Bullets (NBL)" },
-      { "src": "/image/cdn/kisspng-brisbane-heat-logo-5b2d0c.png", "alt": "Brisbane Heat (BBL)" },
-      { "src": "/image/cdn/Baseball_Australia_logo-cfa516.png", "alt": "Baseball Australia" },
-      { "src": "/image/cdn/crest-villanova-crest-logo-4fe093.png", "alt": "Villanova College" }
+      {
+        "src": "/image/cdn/brisbane-lions-logo-e29d75.png",
+        "alt": "Brisbane Lions (AFL)"
+      },
+      {
+        "src": "/image/cdn/cricket-australia-logo-97832f.png",
+        "alt": "Cricket Australia"
+      },
+      {
+        "src": "/image/cdn/Queensland-Bulls-fbd3ad.png",
+        "alt": "Queensland Bulls"
+      },
+      {
+        "src": "/image/cdn/gold-coast-titans-logo-c5dffb.png",
+        "alt": "Gold Coast Titans (NRL)"
+      },
+      {
+        "src": "/image/cdn/Brisbane-Bullets-logo-8c1a5f.png",
+        "alt": "Brisbane Bullets (NBL)"
+      },
+      {
+        "src": "/image/cdn/kisspng-brisbane-heat-logo-5b2d0c.png",
+        "alt": "Brisbane Heat (BBL)"
+      },
+      {
+        "src": "/image/cdn/Baseball_Australia_logo-cfa516.png",
+        "alt": "Baseball Australia"
+      },
+      {
+        "src": "/image/cdn/crest-villanova-crest-logo-4fe093.png",
+        "alt": "Villanova College"
+      }
     ]
   },
   "community": {
@@ -82,12 +124,30 @@
     "midHead": "vs",
     "usHead": "Athletix",
     "rows": [
-      { "bad": "A swipe card. No coach. No direction.", "good": "A real coach. Every session. No exceptions." },
-      { "bad": "One program. Fits nobody well.", "good": "Built for your body, your goals, your level." },
-      { "bad": "Injured? Not our problem. Good luck.", "good": "Physio on-site. Coach and physio on the same plan." },
-      { "bad": "Nutrition? Google it yourself.", "good": "Olympic-credentialed sports dietitian. In your corner." },
-      { "bad": "Adults only. Kids and families, try elsewhere.", "good": "8 to 80. Beginners to pros. One community." },
-      { "bad": "Walk in a stranger. Leave a stranger. Repeat.", "good": "Small groups. Real coaches. A community that knows your name." }
+      {
+        "bad": "A swipe card. No coach. No direction.",
+        "good": "A real coach. Every session. No exceptions."
+      },
+      {
+        "bad": "One program. Fits nobody well.",
+        "good": "Built for your body, your goals, your level."
+      },
+      {
+        "bad": "Injured? Not our problem. Good luck.",
+        "good": "Physio on-site. Coach and physio on the same plan."
+      },
+      {
+        "bad": "Nutrition? Google it yourself.",
+        "good": "Olympic-credentialed sports dietitian. In your corner."
+      },
+      {
+        "bad": "Adults only. Kids and families, try elsewhere.",
+        "good": "8 to 80. Beginners to pros. One community."
+      },
+      {
+        "bad": "Walk in a stranger. Leave a stranger. Repeat.",
+        "good": "Small groups. Real coaches. A community that knows your name."
+      }
     ]
   },
   "classes": {
@@ -102,7 +162,7 @@
         "tag": "Ages 8–17",
         "name": "Youth Classes",
         "desc": "Real coaching. Real development. The same methods elite programs use — built into small groups where every kid is seen, coached, and pushed in the right direction. Confidence and capability, from day one.",
-        "href": "#form"
+        "href": "/membership#youth"
       },
       {
         "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.webp",
@@ -110,7 +170,7 @@
         "tag": "All Levels Welcome",
         "name": "Adult Classes",
         "desc": "A real coach. A real program. A room full of people working just as hard as you. Challenging enough to change you. Personal enough to keep you coming back. This is training that actually works.",
-        "href": "#form"
+        "href": "/membership#adult"
       },
       {
         "img": "/image/cdn/DSC06236-scaled-e1733203149463-513964.jpg",
@@ -118,7 +178,7 @@
         "tag": "All Ages Together",
         "name": "Family Classes",
         "desc": "Train alongside your kids. Show them what effort looks like. Let them show you the same. One roof. One standard. One community that makes every age, every ability, feel exactly at home.",
-        "href": "#form"
+        "href": "/membership#family"
       },
       {
         "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.webp",
@@ -126,7 +186,7 @@
         "tag": "Sub-Elite & Pro",
         "name": "Athlete Programs",
         "desc": "Same methods. Same science. Same physio and dietitian as the pros. If you're chasing a contract, a squad spot, or simply the best version of yourself — this is where the gap gets closed.",
-        "href": "#form"
+        "href": "/membership#performance"
       }
     ]
   },
@@ -135,14 +195,48 @@
     "h2Top": "Every Discipline.",
     "h2Em": "One Roof.",
     "items": [
-      { "num": "01", "name": "Strength Training", "desc": "Progressive overload built for every body. Barbell fundamentals through advanced periodisation — science-led and coach-guided every session." },
-      { "num": "02", "name": "Speed & Agility", "desc": "Acceleration, deceleration, and change of direction — built around your sport. Sprint mechanics, video feedback, stride refinement and ground contact work woven into every block. Run faster. Last longer. Stay injury-free." },
-      { "num": "03", "name": "Conditioning", "desc": "Aerobic capacity and anaerobic power — measured, programmed and progressively overloaded. Never guesswork." },
-      { "num": "04", "name": "Testing & Screening", "desc": "Hawkin Dynamics force plates. Full physio screening. Every member, every time. No guesswork — just a clear, safe pathway from where you are to where you want to be.", "hawkin": true, "note": "Hawkin Dynamics · Force Plates" },
-      { "num": "05", "name": "Pilates", "desc": "Core control, breath work and precision movement that complements heavy training and builds long-term injury resilience." },
-      { "num": "06", "name": "Mobility & Recovery", "desc": "Structured routines that keep joints healthy and training uninterrupted — for the long haul, not just next week." },
-      { "num": "07", "name": "Allied Health", "desc": "Sports physio and rehab integrated directly with coaching — same building, same plan, zero communication gaps." },
-      { "num": "08", "name": "NDIS Program", "desc": "Tailored movement and strength programs delivered with genuine expertise and care by qualified professionals." }
+      {
+        "num": "01",
+        "name": "Strength Training",
+        "desc": "Progressive overload built for every body. Barbell fundamentals through advanced periodisation — science-led and coach-guided every session."
+      },
+      {
+        "num": "02",
+        "name": "Speed & Agility",
+        "desc": "Acceleration, deceleration, and change of direction — built around your sport. Sprint mechanics, video feedback, stride refinement and ground contact work woven into every block. Run faster. Last longer. Stay injury-free."
+      },
+      {
+        "num": "03",
+        "name": "Conditioning",
+        "desc": "Aerobic capacity and anaerobic power — measured, programmed and progressively overloaded. Never guesswork."
+      },
+      {
+        "num": "04",
+        "name": "Testing & Screening",
+        "desc": "Hawkin Dynamics force plates. Full physio screening. Every member, every time. No guesswork — just a clear, safe pathway from where you are to where you want to be.",
+        "hawkin": true,
+        "note": "Hawkin Dynamics · Force Plates"
+      },
+      {
+        "num": "05",
+        "name": "Pilates",
+        "desc": "Core control, breath work and precision movement that complements heavy training and builds long-term injury resilience."
+      },
+      {
+        "num": "06",
+        "name": "Mobility & Recovery",
+        "desc": "Structured routines that keep joints healthy and training uninterrupted — for the long haul, not just next week."
+      },
+      {
+        "num": "07",
+        "name": "Allied Health",
+        "desc": "Sports physio and rehab integrated directly with coaching — same building, same plan, zero communication gaps."
+      },
+      {
+        "num": "08",
+        "name": "NDIS Program",
+        "desc": "Tailored movement and strength programs delivered with genuine expertise and care by qualified professionals."
+      }
     ]
   },
   "coaches": {
@@ -151,10 +245,22 @@
     "h2Em": "Actually Care.",
     "body": "ASCA and ESSA accredited. University qualified. Experienced at the highest levels of Australian sport. And genuinely invested in every person they work with — from your first session to your best one.",
     "credBar": [
-      { "val": "ASCA", "lbl": "Accredited" },
-      { "val": "ESSA", "lbl": "Certified" },
-      { "val": "8", "lbl": "Elite Coaches" },
-      { "val": "Uni", "lbl": "All Qualified" }
+      {
+        "val": "ASCA",
+        "lbl": "Accredited"
+      },
+      {
+        "val": "ESSA",
+        "lbl": "Certified"
+      },
+      {
+        "val": "8",
+        "lbl": "Elite Coaches"
+      },
+      {
+        "val": "Uni",
+        "lbl": "All Qualified"
+      }
     ]
   },
   "hub": {
@@ -163,20 +269,47 @@
     "h2Em": "A Gym.",
     "body": "Coaching. Physio. Rehab. Nutrition. Return to play. All under one roof. All working together — same building, same plan, talking about you.",
     "stats": [
-      { "n": "25+", "l": "Yrs Combined Clinical XP" },
-      { "n": "AIS", "l": "Experienced Staff" },
-      { "n": "Olympic", "l": "Games Physio XP" },
-      { "n": "APD", "l": "Accredited Dietitian" }
+      {
+        "n": "25+",
+        "l": "Yrs Combined Clinical XP"
+      },
+      {
+        "n": "AIS",
+        "l": "Experienced Staff"
+      },
+      {
+        "n": "Olympic",
+        "l": "Games Physio XP"
+      },
+      {
+        "n": "APD",
+        "l": "Accredited Dietitian"
+      }
     ],
     "cardBadge": "Live on the Floor",
     "cardTitle": "Sports Physio & Rehab",
     "cardDesc": "25+ years combined clinical experience — on the floor, not down the road. Your physio and your coach share information, share context, and work from the same plan. No referral delays. No communication gaps.",
     "services": [
-      { "icon": "zap", "text": "Specialist sports physiotherapy — on-site weekly" },
-      { "icon": "microscope", "text": "Injury screening & prevention protocols" },
-      { "icon": "trending-up", "text": "Structured rehabilitation programs" },
-      { "icon": "medal", "text": "Best practice return to sport & return to play" },
-      { "icon": "bar-chart", "text": "Force plate testing & performance benchmarking" }
+      {
+        "icon": "zap",
+        "text": "Specialist sports physiotherapy — on-site weekly"
+      },
+      {
+        "icon": "microscope",
+        "text": "Injury screening & prevention protocols"
+      },
+      {
+        "icon": "trending-up",
+        "text": "Structured rehabilitation programs"
+      },
+      {
+        "icon": "medal",
+        "text": "Best practice return to sport & return to play"
+      },
+      {
+        "icon": "bar-chart",
+        "text": "Force plate testing & performance benchmarking"
+      }
     ],
     "physios": [
       {
@@ -196,7 +329,12 @@
     "dietTitleTop": "Olympic-Credentialed.",
     "dietTitleEm": "In Your Corner.",
     "dietDesc": "Performance nutrition and body composition coaching from a dietitian who has worked at the highest levels of Australian sport — now working with Athletix members to fuel every session.",
-    "dietCreds": ["NRL", "NBL", "Olympic Teams", "APD"]
+    "dietCreds": [
+      "NRL",
+      "NBL",
+      "Olympic Teams",
+      "APD"
+    ]
   },
   "space": {
     "kicker": "The Floor",
@@ -204,11 +342,38 @@
     "h2Em": "Athletix.",
     "body": "Open warehouse. Sprint track. 120sqm of elite S&C space. Built for performance — designed to feel welcoming. Walk in and you'll understand immediately why this is different.",
     "cells": [
-      { "img": "/image/cdn/DSC02067-768x512-132ccb.jpg", "alt": "Main training floor", "labelTop": "Welcome to", "labelBottom": "Athletix", "tall": true, "video": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1" },
-      { "img": "/image/cdn/DSC01921-768x512-94206e.jpg", "alt": "Sprint track", "labelTop": "Performance", "labelBottom": "3-Lane Sprint Track" },
-      { "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.webp", "alt": "Small group coaching", "labelTop": "Coaching", "labelBottom": "Small Group Sessions" },
-      { "img": "/image/cdn/Youth-sport-1-e1684274091394-7bb69e.webp", "alt": "Youth area", "labelTop": "Youth", "labelBottom": "Athletic Development" },
-      { "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.webp", "alt": "Athlete programs", "labelTop": "Elite", "labelBottom": "Athlete Programs" }
+      {
+        "img": "/image/cdn/DSC02067-768x512-132ccb.jpg",
+        "alt": "Main training floor",
+        "labelTop": "Welcome to",
+        "labelBottom": "Athletix",
+        "tall": true,
+        "video": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1"
+      },
+      {
+        "img": "/image/cdn/DSC01921-768x512-94206e.jpg",
+        "alt": "Sprint track",
+        "labelTop": "Performance",
+        "labelBottom": "3-Lane Sprint Track"
+      },
+      {
+        "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.webp",
+        "alt": "Small group coaching",
+        "labelTop": "Coaching",
+        "labelBottom": "Small Group Sessions"
+      },
+      {
+        "img": "/image/cdn/Youth-sport-1-e1684274091394-7bb69e.webp",
+        "alt": "Youth area",
+        "labelTop": "Youth",
+        "labelBottom": "Athletic Development"
+      },
+      {
+        "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.webp",
+        "alt": "Athlete programs",
+        "labelTop": "Elite",
+        "labelBottom": "Athlete Programs"
+      }
     ]
   },
   "testimonials": {
@@ -288,7 +453,13 @@
         "price": "$42",
         "img": "/image/cdn/2-9917b9.webp",
         "alt": "Youth",
-        "features": ["Unlimited S&C Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "Full facility access"],
+        "features": [
+          "Unlimited S&C Classes",
+          "Free benchmark test days",
+          "30 min 1-on-1 consultation",
+          "Physio Screening included",
+          "Full facility access"
+        ],
         "href": "#form"
       },
       {
@@ -297,7 +468,14 @@
         "price": "$50",
         "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.webp",
         "alt": "Adults",
-        "features": ["Unlimited S&C Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "S&C Consultation", "Full facility access"],
+        "features": [
+          "Unlimited S&C Classes",
+          "Free benchmark test days",
+          "30 min 1-on-1 consultation",
+          "Physio Screening included",
+          "S&C Consultation",
+          "Full facility access"
+        ],
         "featured": true,
         "href": "#form"
       },
@@ -307,7 +485,14 @@
         "price": "$120",
         "img": "/image/cdn/DSC06236-scaled-e1733203149463-513964.jpg",
         "alt": "Family",
-        "features": ["Unlimited Classes", "Free benchmark test days", "30 min 1-on-1 consultation", "Physio Screening included", "S&C Consultation", "Full facility access"],
+        "features": [
+          "Unlimited Classes",
+          "Free benchmark test days",
+          "30 min 1-on-1 consultation",
+          "Physio Screening included",
+          "S&C Consultation",
+          "Full facility access"
+        ],
         "href": "#form"
       },
       {
@@ -316,7 +501,14 @@
         "price": "$150",
         "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.webp",
         "alt": "Athlete",
-        "features": ["Unlimited Force Plate Tests", "Unlimited Classes", "Dedicated Coach", "Weekly PT Session", "Sports Dietitian Access", "Full facility access"],
+        "features": [
+          "Unlimited Force Plate Tests",
+          "Unlimited Classes",
+          "Dedicated Coach",
+          "Weekly PT Session",
+          "Sports Dietitian Access",
+          "Full facility access"
+        ],
         "href": "#form"
       }
     ]
@@ -327,21 +519,47 @@
     "hEm": "7 Days.",
     "sub": "Walk in. Get coached. Feel what this community is about.",
     "detail": "Fully Refundable · No Lock-In · 8 to 80 · Every Level Welcome",
-    "primaryBtn": { "label": "Claim My 7-Day Trial →", "href": "#form" },
-    "secondaryBtn": { "label": "See All Plans", "href": "#membership" }
+    "primaryBtn": {
+      "label": "Claim My 7-Day Trial →",
+      "href": "#form"
+    },
+    "secondaryBtn": {
+      "label": "See All Plans",
+      "href": "#membership"
+    }
   },
   "footer": {
     "brandImg": "/image/cdn/athlethix-logo-bcd582.png",
     "tagline": "Pro standard. Open to everyone. Elite S&C coaching, sports physio, sports nutrition and real community — for every kid, adult and family in Brisbane. Fortitude Valley.",
     "contacts": [
-      { "icon": "map-pin", "text": "42 Baxter Street, Fortitude Valley QLD 4006" },
-      { "icon": "phone", "text": "0499 981 286", "href": "tel:+61499981286" },
-      { "icon": "mail", "text": "info@athletix.com.au", "href": "mailto:info@athletix.com.au" },
-      { "icon": "clock", "text": "Mon/Wed/Fri 5:15am–7:30pm · Tue/Thu 6am–7:30pm · Sat 6am–11:30am" }
+      {
+        "icon": "map-pin",
+        "text": "42 Baxter Street, Fortitude Valley QLD 4006"
+      },
+      {
+        "icon": "phone",
+        "text": "0499 981 286",
+        "href": "tel:+61499981286"
+      },
+      {
+        "icon": "mail",
+        "text": "info@athletix.com.au",
+        "href": "mailto:info@athletix.com.au"
+      },
+      {
+        "icon": "clock",
+        "text": "Mon/Wed/Fri 5:15am–7:30pm · Tue/Thu 6am–7:30pm · Sat 6am–11:30am"
+      }
     ],
     "formTitle": "Let's Get Started.",
     "formSub": "Fill this in and a coach will reach out within 24 hours. No pressure. Just a conversation.",
     "formButtonLabel": "Claim My $7 Trial",
-    "joinOptions": ["Adult", "Youth Under 17", "Family", "Athlete — Sub-Elite", "NDIS Participant"]
+    "joinOptions": [
+      "Adult",
+      "Youth Under 17",
+      "Family",
+      "Athlete — Sub-Elite",
+      "NDIS Participant"
+    ]
   }
 }

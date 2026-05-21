@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import {
   Trophy,
   Dumbbell,
@@ -47,16 +48,56 @@ export default function HomeV2({
   const sectionRefs = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
+    // Observer also marks elements as visible if they are above the viewport
+    // (already scrolled past) — handles browser back-navigation where scroll
+    // restoration lands the user mid-page.
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) e.target.classList.add("visible");
+          if (e.isIntersecting || e.boundingClientRect.bottom <= 0) {
+            e.target.classList.add("visible");
+          }
         });
       },
       { threshold: 0.07 }
     );
     sectionRefs.current.forEach((el) => el && observer.observe(el));
-    return () => observer.disconnect();
+
+    // Reveal anything currently at or above the viewport. Called multiple
+    // times to catch browser scroll restoration whenever it lands.
+    const revealAtOrAbove = () => {
+      const vh = window.innerHeight;
+      sectionRefs.current.forEach((el) => {
+        if (el && el.getBoundingClientRect().top < vh) {
+          el.classList.add("visible");
+        }
+      });
+    };
+    revealAtOrAbove();
+    const raf = requestAnimationFrame(() => {
+      revealAtOrAbove();
+      requestAnimationFrame(revealAtOrAbove);
+    });
+    const t1 = window.setTimeout(revealAtOrAbove, 60);
+    const t2 = window.setTimeout(revealAtOrAbove, 250);
+    const onScrollOnce = () => revealAtOrAbove();
+    window.addEventListener("scroll", onScrollOnce, {
+      passive: true,
+      once: true,
+    });
+    const onPageShow = (e: PageTransitionEvent) => {
+      if (e.persisted) revealAtOrAbove();
+    };
+    window.addEventListener("pageshow", onPageShow);
+
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(raf);
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      window.removeEventListener("scroll", onScrollOnce);
+      window.removeEventListener("pageshow", onPageShow);
+    };
   }, []);
 
   const registerRef = (el: HTMLElement | null) => {
@@ -244,23 +285,35 @@ export default function HomeV2({
             </h2>
             <p className="sec-body">{classes.body}</p>
             <div className="classes-grid">
-              {classes.items.map((c, i) => (
-                <a key={i} className="class-card" href={c.href}>
-                  <div className="class-img">
-                    <img src={c.img} alt={c.alt} />
-                    <div className="class-grad"></div>
-                    <div className="class-overlay"></div>
-                  </div>
-                  <div className="class-info">
-                    <span className="class-tag">{c.tag}</span>
-                    <div className="class-name">{c.name}</div>
-                    <p className="class-desc">{c.desc}</p>
-                    <div className="class-cta">
-                      Learn More <span>→</span>
+              {classes.items.map((c, i) => {
+                const isInternal = c.href?.startsWith("/");
+                const inner = (
+                  <>
+                    <div className="class-img">
+                      <img src={c.img} alt={c.alt} />
+                      <div className="class-grad"></div>
+                      <div className="class-overlay"></div>
                     </div>
-                  </div>
-                </a>
-              ))}
+                    <div className="class-info">
+                      <span className="class-tag">{c.tag}</span>
+                      <div className="class-name">{c.name}</div>
+                      <p className="class-desc">{c.desc}</p>
+                      <div className="class-cta">
+                        Learn More <span>→</span>
+                      </div>
+                    </div>
+                  </>
+                );
+                return isInternal ? (
+                  <Link key={i} className="class-card" href={c.href}>
+                    {inner}
+                  </Link>
+                ) : (
+                  <a key={i} className="class-card" href={c.href}>
+                    {inner}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </section>
