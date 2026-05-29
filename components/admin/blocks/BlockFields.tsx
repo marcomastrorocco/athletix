@@ -17,6 +17,14 @@ import type {
   HtmlBlock,
   PodcastBlock,
   CoachesBlock,
+  ClassHeroBlock,
+  ClassInfoBlock,
+  ClassInfoCard,
+  PillarsBlock,
+  ClassBookingBlock,
+  ClassCoachBlock,
+  ClassCoachLink,
+  FaqBlock,
 } from "@/lib/data";
 import ImagePicker from "../ImagePicker";
 
@@ -733,6 +741,401 @@ function CoachesFields({
   );
 }
 
+function ClassHeroFields({
+  block,
+  set,
+}: {
+  block: ClassHeroBlock;
+  set: Setter<ClassHeroBlock>;
+}) {
+  return (
+    <>
+      <TextField
+        label="Eyebrow (small label above title)"
+        value={block.eyebrow}
+        onChange={(v) => set({ ...block, eyebrow: v })}
+        placeholder="Strength · All levels"
+      />
+      <TextField
+        label="Title"
+        value={block.title}
+        onChange={(v) => set({ ...block, title: v })}
+      />
+      <TextField
+        label="Lead (multi-paragraph, Markdown supported)"
+        multiline
+        rows={8}
+        value={block.lead}
+        onChange={(v) => set({ ...block, lead: v })}
+      />
+      <div className="field-row">
+        <TextField
+          label="Primary button label"
+          value={block.primaryBtn?.label ?? ""}
+          onChange={(v) =>
+            set({
+              ...block,
+              primaryBtn: { label: v, href: block.primaryBtn?.href ?? "" },
+            })
+          }
+        />
+        <TextField
+          label="Primary button href"
+          value={block.primaryBtn?.href ?? ""}
+          onChange={(v) =>
+            set({
+              ...block,
+              primaryBtn: { label: block.primaryBtn?.label ?? "", href: v },
+            })
+          }
+        />
+      </div>
+      <div className="field-row">
+        <TextField
+          label="Secondary button label (optional)"
+          value={block.secondaryBtn?.label ?? ""}
+          onChange={(v) =>
+            set({
+              ...block,
+              secondaryBtn: {
+                label: v,
+                href: block.secondaryBtn?.href ?? "",
+              },
+            })
+          }
+        />
+        <TextField
+          label="Secondary button href"
+          value={block.secondaryBtn?.href ?? ""}
+          onChange={(v) =>
+            set({
+              ...block,
+              secondaryBtn: {
+                label: block.secondaryBtn?.label ?? "",
+                href: v,
+              },
+            })
+          }
+        />
+      </div>
+      <ImagePicker
+        label="Hero image"
+        value={block.image}
+        onChange={(image) => set({ ...block, image })}
+      />
+      <TextField
+        label="Image alt text"
+        value={block.imageAlt}
+        onChange={(v) => set({ ...block, imageAlt: v })}
+      />
+      <div className="field-row">
+        <TextField
+          label="Badge (corner label, optional)"
+          value={block.badge ?? ""}
+          onChange={(v) => set({ ...block, badge: v })}
+          placeholder="Strength · Power"
+        />
+        <TextField
+          label="Image frame background (CSS color, optional)"
+          value={block.imageBackground ?? ""}
+          onChange={(v) => set({ ...block, imageBackground: v })}
+          placeholder="#0b0d10"
+        />
+      </div>
+      <div className="field">
+        <label
+          style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer" }}
+        >
+          <input
+            type="checkbox"
+            checked={!!block.imageContain}
+            onChange={(e) =>
+              set({ ...block, imageContain: e.target.checked })
+            }
+          />
+          Fit image inside frame (object-fit: contain)
+        </label>
+      </div>
+    </>
+  );
+}
+
+function ClassInfoFields({
+  block,
+  set,
+}: {
+  block: ClassInfoBlock;
+  set: Setter<ClassInfoBlock>;
+}) {
+  return (
+    <ListEditor
+      items={block.cards}
+      onChange={(cards) => set({ ...block, cards })}
+      newItem={(): ClassInfoCard => ({ icon: "📍", title: "", body: "" })}
+      label="Card"
+      render={(c, _i, upd) => (
+        <>
+          <div className="field-row">
+            <TextField
+              label="Icon (emoji)"
+              value={c.icon}
+              onChange={(v) => upd({ ...c, icon: v })}
+            />
+            <TextField
+              label="Title"
+              value={c.title}
+              onChange={(v) => upd({ ...c, title: v })}
+            />
+          </div>
+          <TextField
+            label="Body (Markdown or HTML)"
+            multiline
+            rows={5}
+            value={c.body}
+            onChange={(v) => upd({ ...c, body: v })}
+          />
+          <div className="field">
+            <label>Variant</label>
+            <select
+              value={c.variant ?? "default"}
+              onChange={(e) =>
+                upd({
+                  ...c,
+                  variant: e.target.value as "default" | "hours",
+                })
+              }
+            >
+              <option value="default">Default</option>
+              <option value="hours">Hours (taller card)</option>
+            </select>
+          </div>
+        </>
+      )}
+    />
+  );
+}
+
+function PillarsFields({
+  block,
+  set,
+}: {
+  block: PillarsBlock;
+  set: Setter<PillarsBlock>;
+}) {
+  return (
+    <>
+      <div className="field-row">
+        <TextField
+          label="Eyebrow"
+          value={block.eyebrow ?? ""}
+          onChange={(v) => set({ ...block, eyebrow: v })}
+        />
+        <TextField
+          label="Heading"
+          value={block.heading ?? ""}
+          onChange={(v) => set({ ...block, heading: v })}
+        />
+      </div>
+      <TextField
+        label="Sub-heading"
+        multiline
+        value={block.sub ?? ""}
+        onChange={(v) => set({ ...block, sub: v })}
+      />
+      <ListEditor
+        items={block.items}
+        onChange={(items) => set({ ...block, items })}
+        newItem={() => ({ n: "01", title: "", body: "" })}
+        label="Pillar"
+        render={(it, _i, upd) => (
+          <>
+            <div className="field-row">
+              <TextField
+                label="Number"
+                value={it.n}
+                onChange={(v) => upd({ ...it, n: v })}
+                placeholder="01"
+              />
+              <TextField
+                label="Title"
+                value={it.title}
+                onChange={(v) => upd({ ...it, title: v })}
+              />
+            </div>
+            <TextField
+              label="Body"
+              multiline
+              rows={4}
+              value={it.body}
+              onChange={(v) => upd({ ...it, body: v })}
+            />
+          </>
+        )}
+      />
+    </>
+  );
+}
+
+function ClassBookingFields({
+  block,
+  set,
+}: {
+  block: ClassBookingBlock;
+  set: Setter<ClassBookingBlock>;
+}) {
+  return (
+    <>
+      <p className="muted" style={{ fontSize: 12, marginTop: 0 }}>
+        Renders the standard 7-day trial booking form. Choose which class is
+        pre-selected and what source label appears in the form submission.
+      </p>
+      <TextField
+        label="Source label (for form analytics)"
+        value={block.sourceLabel}
+        onChange={(v) => set({ ...block, sourceLabel: v })}
+        placeholder="Lift page"
+      />
+      <TextField
+        label="Default class (must match a class option exactly)"
+        value={block.defaultClass}
+        onChange={(v) => set({ ...block, defaultClass: v })}
+        placeholder="Lift"
+      />
+    </>
+  );
+}
+
+function ClassCoachFields({
+  block,
+  set,
+}: {
+  block: ClassCoachBlock;
+  set: Setter<ClassCoachBlock>;
+}) {
+  return (
+    <>
+      <TextField
+        label="Section heading"
+        value={block.heading ?? ""}
+        onChange={(v) => set({ ...block, heading: v })}
+        placeholder="Class coach"
+      />
+      <ImagePicker
+        label="Coach photo"
+        value={block.image}
+        onChange={(image) => set({ ...block, image })}
+      />
+      <TextField
+        label="Photo alt text"
+        value={block.imageAlt}
+        onChange={(v) => set({ ...block, imageAlt: v })}
+      />
+      <div className="field-row">
+        <TextField
+          label="Role (eyebrow above name)"
+          value={block.eyebrow}
+          onChange={(v) => set({ ...block, eyebrow: v })}
+          placeholder="Strength Coach"
+        />
+        <TextField
+          label="Coach name"
+          value={block.name}
+          onChange={(v) => set({ ...block, name: v })}
+        />
+      </div>
+      <TextField
+        label="Bio (Markdown)"
+        multiline
+        rows={5}
+        value={block.bio}
+        onChange={(v) => set({ ...block, bio: v })}
+      />
+      <div className="field">
+        <label>Coach links / buttons</label>
+        <ListEditor
+          items={block.links}
+          onChange={(links) => set({ ...block, links })}
+          newItem={(): ClassCoachLink => ({ label: "", href: "", style: "outline" })}
+          label="Link"
+          render={(l, _i, upd) => (
+            <>
+              <div className="field-row">
+                <TextField
+                  label="Label"
+                  value={l.label}
+                  onChange={(v) => upd({ ...l, label: v })}
+                />
+                <TextField
+                  label="Href"
+                  value={l.href}
+                  onChange={(v) => upd({ ...l, href: v })}
+                />
+              </div>
+              <div className="field">
+                <label>Style</label>
+                <select
+                  value={l.style}
+                  onChange={(e) =>
+                    upd({
+                      ...l,
+                      style: e.target.value as "outline" | "ghost",
+                    })
+                  }
+                >
+                  <option value="outline">Outline (primary)</option>
+                  <option value="ghost">Ghost (subtle)</option>
+                </select>
+              </div>
+            </>
+          )}
+        />
+      </div>
+    </>
+  );
+}
+
+function FaqFields({ block, set }: { block: FaqBlock; set: Setter<FaqBlock> }) {
+  return (
+    <>
+      <div className="field-row">
+        <TextField
+          label="Heading"
+          value={block.heading ?? ""}
+          onChange={(v) => set({ ...block, heading: v })}
+          placeholder="Frequently asked questions"
+        />
+        <TextField
+          label="Sub-heading"
+          value={block.sub ?? ""}
+          onChange={(v) => set({ ...block, sub: v })}
+        />
+      </div>
+      <ListEditor
+        items={block.items}
+        onChange={(items) => set({ ...block, items })}
+        newItem={() => ({ q: "", a: "" })}
+        label="Question"
+        render={(it, _i, upd) => (
+          <>
+            <TextField
+              label="Question"
+              value={it.q}
+              onChange={(v) => upd({ ...it, q: v })}
+            />
+            <TextField
+              label="Answer (Markdown supported)"
+              multiline
+              rows={6}
+              value={it.a}
+              onChange={(v) => upd({ ...it, a: v })}
+            />
+          </>
+        )}
+      />
+    </>
+  );
+}
+
 export default function BlockFields({
   block,
   set,
@@ -785,6 +1188,32 @@ export default function BlockFields({
       return <PodcastFields block={block} set={set as Setter<PodcastBlock>} />;
     case "coaches":
       return <CoachesFields block={block} set={set as Setter<CoachesBlock>} />;
+    case "classHero":
+      return (
+        <ClassHeroFields block={block} set={set as Setter<ClassHeroBlock>} />
+      );
+    case "classInfo":
+      return (
+        <ClassInfoFields block={block} set={set as Setter<ClassInfoBlock>} />
+      );
+    case "pillars":
+      return <PillarsFields block={block} set={set as Setter<PillarsBlock>} />;
+    case "classBooking":
+      return (
+        <ClassBookingFields
+          block={block}
+          set={set as Setter<ClassBookingBlock>}
+        />
+      );
+    case "classCoach":
+      return (
+        <ClassCoachFields
+          block={block}
+          set={set as Setter<ClassCoachBlock>}
+        />
+      );
+    case "faq":
+      return <FaqFields block={block} set={set as Setter<FaqBlock>} />;
     default:
       return null;
   }

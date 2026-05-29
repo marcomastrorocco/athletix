@@ -184,6 +184,21 @@ export type HomeCta = {
   secondaryBtn: Btn;
 };
 
+export type SideHour = { weekday: number; short: string; hours: string };
+export type SocialLink = { platform: string; href: string };
+// A single card inside a nav dropdown (mega) panel.
+export type NavMegaItem = { href: string; title: string; desc: string };
+// A top-level nav entry. If `mega` has items it renders as a dropdown.
+export type NavItem = { label: string; href: string; mega: NavMegaItem[] };
+export type HeaderContent = {
+  nav: NavItem[];
+  sideAbout: string;
+  hoursHeading: string;
+  hours: SideHour[];
+  socialsHeading: string;
+  socials: SocialLink[];
+};
+
 export type FooterContact = { icon: string; text: string; href?: string };
 export type HomeFooter = {
   brandImg: string;
@@ -201,6 +216,7 @@ export type SiteContent = {
   meta: { title: string; description: string };
   contact: { phone: string; email: string; address: string; areas: string };
   trial: { heading: string; body: string };
+  header: HeaderContent;
 
   // homepage sections (HomeV2)
   hero: HomeHero;
@@ -283,7 +299,62 @@ export type BlogPost = {
   tags?: string[];
 };
 
-export const getSite = () => readJson<SiteContent>("site.json");
+// Fallback used when a stored site.json predates the editable header section.
+export const DEFAULT_HEADER: HeaderContent = {
+  nav: [
+    { label: "TIMETABLE", href: "/timetable", mega: [] },
+    {
+      label: "CLASSES",
+      href: "/classes",
+      mega: [
+        { href: "/youth-classes", title: "Youth Classes", desc: "Ages 7–17. Strength, speed and athletic development." },
+        { href: "/adult-classes", title: "Adult Classes", desc: "16+. LIFT, MET-CON, mobility — every level welcome." },
+        { href: "/family-classes", title: "Family Classes", desc: "Train together. Parent + child sessions on the floor." },
+        { href: "/athlete-programs", title: "Athlete Programs", desc: "Pro-standard S&C for serious competitors." },
+      ],
+    },
+    { label: "MEMBERSHIP", href: "/membership", mega: [] },
+    {
+      label: "ABOUT US",
+      href: "/about",
+      mega: [
+        { href: "/our-gym", title: "Our Gym", desc: "A purpose-built sports performance hub in Fortitude Valley." },
+        { href: "/our-team", title: "Our Team", desc: "Meet the coaches and clinicians on the floor." },
+        { href: "/allied-health", title: "Allied Health", desc: "Sports physio, rehab and dietetics under one roof." },
+        { href: "/ndis-program", title: "NDIS Program", desc: "Tailored strength and conditioning for NDIS participants." },
+        { href: "/careers", title: "Careers", desc: "Coach with us. Join the team building elite athletes." },
+      ],
+    },
+    { label: "CONTACT US", href: "/contact", mega: [] },
+    { label: "BLOG", href: "/blog", mega: [] },
+  ],
+  sideAbout:
+    "Athletix is a Fitness and Athletic development centre with S&C coaches, sports physiotherapy and rehab & in-house cafe in the heart of Brisbane (Fortitude Valley) offering Group Classes for Youth, Adults and Athletes in Strength, Speed & Agility, Conditioning, Sprint Mechanics, Pilates, Mobility and more. Book a Trial Class Today!",
+  hoursHeading: "Working Hours",
+  hours: [
+    { weekday: 1, short: "MON", hours: "5:15 AM – 7:30 PM" },
+    { weekday: 2, short: "TUE", hours: "6:00 AM – 7:30 PM" },
+    { weekday: 3, short: "WED", hours: "5:15 AM – 7:30 PM" },
+    { weekday: 4, short: "THU", hours: "6:00 AM – 7:30 PM" },
+    { weekday: 5, short: "FRI", hours: "5:15 AM – 6:00 PM" },
+    { weekday: 6, short: "SAT", hours: "6:00 AM – 11:30 AM" },
+  ],
+  socialsHeading: "Our Socials",
+  socials: [
+    { platform: "youtube", href: "https://www.youtube.com/channel/UCy1b8l1wpqf0lqD7wC6Qd7w" },
+    { platform: "instagram", href: "https://www.instagram.com/athletix_gym/" },
+    { platform: "facebook", href: "https://www.facebook.com/ATHLETIX.BRISBANE/" },
+    { platform: "linkedin", href: "https://www.linkedin.com/company/athletixgym/?originalSubdomain=au" },
+    { platform: "x", href: "https://x.com/athletix_gym" },
+  ],
+};
+
+export const getSite = async (): Promise<SiteContent> => {
+  const site = await readJson<SiteContent>("site.json");
+  // Older stored copies (e.g. production Blob) may lack the header section.
+  if (!site.header) site.header = DEFAULT_HEADER;
+  return site;
+};
 export const setSite = (s: SiteContent) => writeJson("site.json", s);
 
 export const getTeam = () => readJson<Coach[]>("team.json");
@@ -443,6 +514,91 @@ export type CoachesBlock = {
   body: string;
 };
 
+// Class-detail page blocks (used by Lift, Mat Pilates, Met-Con, etc.)
+
+export type ClassHeroBlock = {
+  type: "classHero";
+  id: string;
+  eyebrow: string;
+  title: string;
+  lead: string; // markdown, supports multi-paragraph and inline formatting
+  primaryBtn?: Btn;
+  secondaryBtn?: Btn;
+  image: string;
+  imageAlt: string;
+  badge?: string;
+  imageBackground?: string; // optional CSS color for image frame bg
+  imageContain?: boolean; // use object-fit: contain (for screenshots/illustrations)
+};
+
+export type ClassInfoCard = {
+  icon: string;
+  title: string;
+  body: string; // markdown/HTML
+  variant?: "default" | "hours";
+};
+
+export type ClassInfoBlock = {
+  type: "classInfo";
+  id: string;
+  cards: ClassInfoCard[];
+};
+
+export type PillarsItem = {
+  n: string;
+  title: string;
+  body: string;
+};
+
+export type PillarsBlock = {
+  type: "pillars";
+  id: string;
+  eyebrow?: string;
+  heading?: string;
+  sub?: string;
+  items: PillarsItem[];
+};
+
+export type ClassBookingBlock = {
+  type: "classBooking";
+  id: string;
+  sourceLabel: string;
+  defaultClass: string;
+};
+
+export type ClassCoachLinkStyle = "outline" | "ghost";
+
+export type ClassCoachLink = {
+  label: string;
+  href: string;
+  style: ClassCoachLinkStyle;
+};
+
+export type ClassCoachBlock = {
+  type: "classCoach";
+  id: string;
+  heading?: string; // "Class coach"
+  image: string;
+  imageAlt: string;
+  eyebrow: string; // role
+  name: string;
+  bio: string;
+  links: ClassCoachLink[];
+};
+
+export type FaqItem = {
+  q: string;
+  a: string; // markdown
+};
+
+export type FaqBlock = {
+  type: "faq";
+  id: string;
+  heading?: string;
+  sub?: string;
+  items: FaqItem[];
+};
+
 export type Block =
   | PageBannerBlock
   | RichTextBlock
@@ -457,7 +613,13 @@ export type Block =
   | QuoteBlock
   | HtmlBlock
   | PodcastBlock
-  | CoachesBlock;
+  | CoachesBlock
+  | ClassHeroBlock
+  | ClassInfoBlock
+  | PillarsBlock
+  | ClassBookingBlock
+  | ClassCoachBlock
+  | FaqBlock;
 
 export type BlockType = Block["type"];
 

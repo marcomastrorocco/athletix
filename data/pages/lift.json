@@ -1,0 +1,138 @@
+{
+  "slug": "lift",
+  "title": "Lift",
+  "path": "/lift",
+  "cssFiles": [
+    "/css/classes-page.css",
+    "/css/youth-classes-page.css",
+    "/css/youth-agility-foundations-page.css",
+    "/css/home-v2.css"
+  ],
+  "seo": {
+    "title": "Weight Lifting Gym Brisbane — LIFT Strength Class | ATHLETIX",
+    "description": "ATHLETIX LIFT — a progressive strength training class for athletes and adults. Coached by ESSA/ASCA-accredited S&C coaches in Fortitude Valley, Brisbane."
+  },
+  "blocks": [
+    {
+      "type": "pageBanner",
+      "id": "banner",
+      "compact": true,
+      "title": "",
+      "lede": "",
+      "crumbs": [
+        { "label": "Home", "href": "/" },
+        { "label": "Classes", "href": "/classes" },
+        { "label": "Lift", "href": "" }
+      ]
+    },
+    {
+      "type": "classHero",
+      "id": "hero",
+      "eyebrow": "Strength · All levels",
+      "title": "Lift — Strength Training Class",
+      "lead": "This **strength training class** builds incredibly strong foundations for your weightlifting journey — progressively. Form and detail are drilled to keep your lifts *always* safe, and to lay the groundwork for more complex Olympic lifts and their variations.\n\nIf you're an athlete looking to boost strength and power — or just want to train like one — our team of elite **Strength & Conditioning coaches** (ESSA, ASCA, NCIS accredited) bring practical experience with elite athletes, youth, adult populations and rehab/injury prevention. Programs are tailored to every level across **Netball, Track & Field, Rugby, AFL, Cricket, Soccer and Basketball**.\n\nLIFT progresses you from foundational weightlifting (Squats, Deadlifts, Bench Press) onto power-based movements (Cleans, Jerks, Snatches) — with elite-level athlete coaching every step of the way.",
+      "primaryBtn": { "label": "Book a trial", "href": "#book-form" },
+      "secondaryBtn": { "label": "View timetable", "href": "/class-timetable" },
+      "image": "/image/cdn/lift-hero-a1644.webp",
+      "imageAlt": "LIFT strength training class at ATHLETIX Brisbane",
+      "badge": "Strength · Power",
+      "imageBackground": "#0b0d10",
+      "imageContain": true
+    },
+    {
+      "type": "classInfo",
+      "id": "info",
+      "cards": [
+        {
+          "icon": "📍",
+          "title": "Location",
+          "body": "<a href=\"https://goo.gl/maps/Nb2DQqvUifWCHuPt7\" target=\"_blank\" rel=\"noopener\">42 Baxter Street<br/>Fortitude Valley, QLD 4006</a>"
+        },
+        {
+          "icon": "⏱",
+          "title": "Working hours",
+          "variant": "hours",
+          "body": "<ul class=\"yaf-hours\"><li><span class=\"yaf-day\">Mon</span><span>6:00 AM – 7:30 PM</span></li><li><span class=\"yaf-day\">Tue</span><span>6:00 AM – 7:30 PM</span></li><li><span class=\"yaf-day\">Wed</span><span>5:15 AM – 7:30 PM</span></li><li><span class=\"yaf-day\">Thu</span><span>6:00 AM – 7:30 PM</span></li><li><span class=\"yaf-day\">Fri</span><span>5:15 AM – 6:00 PM</span></li><li><span class=\"yaf-day\">Sat</span><span>6:00 AM – 11:00 AM</span></li></ul>"
+        },
+        {
+          "icon": "☎",
+          "title": "Contact",
+          "body": "<a href=\"tel:0499981286\">0499 981 286</a><br/><a href=\"mailto:info@athletix.com.au\">info@athletix.com.au</a><br/><a class=\"yaf-info-card-link\" href=\"/contact-us\">Get in touch →</a>"
+        }
+      ]
+    },
+    {
+      "type": "pillars",
+      "id": "pillars",
+      "eyebrow": "Why athletes train LIFT",
+      "heading": "Strength training that actually changes things",
+      "sub": "Built around evidence-based loading, technical precision and real athletic outcomes — not just numbers on a barbell.",
+      "items": [
+        {
+          "n": "01",
+          "title": "Build Stronger Muscles",
+          "body": "Lifting drives hypertrophy by boosting your body's natural growth-hormone response, promoting tissue development and progressively stronger muscles session after session."
+        },
+        {
+          "n": "02",
+          "title": "Burn Fat, Build Engine",
+          "body": "Muscle tissue burns more calories than fat. Strength work boosts your metabolism, lowers body-fat percentage and reduces cardiovascular and metabolic risk."
+        },
+        {
+          "n": "03",
+          "title": "Bones, Joints & Tendons",
+          "body": "Resistance training strengthens bone density, builds joint resilience and increases collagen fibrils in tendons — protecting you from injury at every age."
+        },
+        {
+          "n": "04",
+          "title": "Athlete-Grade Coaching",
+          "body": "ESSA, ASCA and NCIS-accredited coaches with hands-on experience in Netball, Track & Field, Rugby, AFL, Cricket, Soccer and Basketball — coaching you like a pro."
+        }
+      ]
+    },
+    {
+      "type": "classBooking",
+      "id": "booking",
+      "sourceLabel": "Lift page",
+      "defaultClass": "Lift"
+    },
+    {
+      "type": "classCoach",
+      "id": "coach",
+      "heading": "Class coach",
+      "image": "/image/cdn/lift-coach-reza-6048.webp",
+      "imageAlt": "Reza Sharifian — Strength Coach",
+      "eyebrow": "Strength Coach",
+      "name": "Reza Sharifian",
+      "bio": "Reza leads the LIFT program at ATHLETIX, taking athletes and adults from foundational lifts to elite-level Olympic variations. His sessions blend technical precision with progressive overload — built to make you stronger, more resilient and more confident under the bar.",
+      "links": [
+        { "label": "Meet the team", "href": "/our-team", "style": "outline" },
+        { "label": "Contact us", "href": "/contact-us", "style": "ghost" }
+      ]
+    },
+    {
+      "type": "faq",
+      "id": "faq",
+      "heading": "Frequently asked questions",
+      "sub": "The most common things people ask before their first LIFT class.",
+      "items": [
+        {
+          "q": "What is the LIFT class?",
+          "a": "LIFT is our progressive strength training class. You balance maximum power and strength development with building an ideal physique — and the stimulus is specific, with regular technical feedback that you'll struggle to find in a regular gym class.\n\nEach session focuses on speed, muscular strength, cardiorespiratory endurance, flexibility, power, coordination and balance — and we diagnose technical faults and apply corrective practice to make you more efficient."
+        },
+        {
+          "q": "What's the difference between powerlifting and weightlifting?",
+          "a": "**Powerlifting** focuses on three controlled lifts — squat, bench press, deadlift — in a single plane of motion. No direct vertical action. Powerlifters typically have time for each attempt.\n\n**Weightlifting** (the Olympic sport) is a technical, ballistic approach built around two overhead lifts — the snatch and the clean & jerk. The pressure is to execute fast. Both sports are open to athletes of every age."
+        },
+        {
+          "q": "What are the age groups in weightlifting?",
+          "a": "In Australia, competitive weightlifting is an Olympic and Commonwealth Games sport with the following age groups at Queensland and national championships:\n\n- Under 15\n- Under 17 (Youth)\n- Under 20 (Junior)\n- Under 23\n- Senior (Open)\n- Masters (35 and above)\n\nPeople of any age can begin training for strength and muscle tone — we just teach the foundational movements and mobility before complex lifts."
+        },
+        {
+          "q": "Where can I find a proper weightlifting gym in Brisbane?",
+          "a": "Proper technique is everything — get it wrong and you risk sprains, strains and fractures. That's why training with knowledgeable S&C specialists matters. **ATHLETIX** in Fortitude Valley is built around that philosophy — accredited coaches, structured progressions, and equipment for everything from foundational lifts to Olympic variations."
+        }
+      ]
+    }
+  ]
+}

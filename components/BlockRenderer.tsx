@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { marked } from "marked";
 import type { Block } from "@/lib/data";
+import ClassBookSection from "./ClassBookSection";
 
 function md(body: string): string {
   return marked.parse(body || "", { async: false }) as string;
@@ -11,6 +12,7 @@ function renderBlock(block: Block): React.ReactNode {
   switch (block.type) {
     case "pageBanner": {
       const isAbout = block.variant === "about";
+      const hasTitle = !!block.title?.trim();
       const accent = block.titleAccent ? (
         <>
           {" "}
@@ -41,10 +43,12 @@ function renderBlock(block: Block): React.ReactNode {
                 ))}
               </p>
             )}
-            <h1>
-              {block.title}
-              {accent}
-            </h1>
+            {hasTitle && (
+              <h1>
+                {block.title}
+                {accent}
+              </h1>
+            )}
             {block.lede && <p className="lede">{block.lede}</p>}
           </div>
         </section>
@@ -318,6 +322,197 @@ function renderBlock(block: Block): React.ReactNode {
       // block here is just config (headings); team grid is rendered by a
       // dedicated component upstream.
       return null;
+
+    case "classHero": {
+      const mediaStyle: React.CSSProperties = {};
+      if (block.imageBackground) mediaStyle.background = block.imageBackground;
+      const imgStyle: React.CSSProperties = block.imageContain
+        ? { objectFit: "contain", objectPosition: "center" }
+        : {};
+      return (
+        <section key={block.id} className="yaf-hero">
+          <div className="container yaf-hero-grid">
+            <div className="yaf-hero-copy">
+              {block.eyebrow && (
+                <p className="yaf-eyebrow">
+                  <span className="yaf-eyebrow-dot" /> {block.eyebrow}
+                </p>
+              )}
+              <h1 className="yaf-title">{block.title}</h1>
+              <hr className="yaf-divider" />
+              <div
+                className="yaf-lead rich-text"
+                dangerouslySetInnerHTML={{ __html: md(block.lead) }}
+              />
+              {(block.primaryBtn || block.secondaryBtn) && (
+                <div className="yaf-hero-cta">
+                  {block.primaryBtn && (
+                    <Link
+                      href={block.primaryBtn.href}
+                      className="btn btn-primary"
+                    >
+                      {block.primaryBtn.label}
+                    </Link>
+                  )}
+                  {block.secondaryBtn && (
+                    <Link
+                      href={block.secondaryBtn.href}
+                      className="btn btn-ghost"
+                    >
+                      {block.secondaryBtn.label}
+                    </Link>
+                  )}
+                </div>
+              )}
+            </div>
+
+            <div className="yaf-media" style={mediaStyle}>
+              <img
+                src={block.image}
+                alt={block.imageAlt}
+                loading="lazy"
+                style={imgStyle}
+              />
+              {block.badge && (
+                <span className="yaf-media-badge">{block.badge}</span>
+              )}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    case "classInfo":
+      return (
+        <section key={block.id} className="yaf-info">
+          <div className="container">
+            <div className="yaf-info-grid">
+              {block.cards.map((c, i) => (
+                <article
+                  key={i}
+                  className={
+                    "yaf-info-card" +
+                    (c.variant === "hours" ? " yaf-info-card--hours" : "")
+                  }
+                >
+                  <span className="yaf-info-card-icon" aria-hidden="true">
+                    {c.icon}
+                  </span>
+                  <h3>{c.title}</h3>
+                  <div
+                    className="rich-text"
+                    dangerouslySetInnerHTML={{ __html: md(c.body) }}
+                  />
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+    case "pillars":
+      return (
+        <section key={block.id} className="yaf-includes">
+          <div className="container">
+            {(block.eyebrow || block.heading || block.sub) && (
+              <header className="yaf-includes-head">
+                {block.eyebrow && (
+                  <p className="yaf-includes-eyebrow">{block.eyebrow}</p>
+                )}
+                {block.heading && <h2>{block.heading}</h2>}
+                {block.sub && <p className="yaf-includes-sub">{block.sub}</p>}
+              </header>
+            )}
+            <div className="yaf-pillars">
+              {block.items.map((p, i) => (
+                <article key={i} className="yaf-pillar">
+                  <span className="yaf-pillar-num">{p.n}</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+
+    case "classBooking":
+      return (
+        <ClassBookSection
+          key={block.id}
+          sourceLabel={block.sourceLabel}
+          defaultClass={block.defaultClass}
+        />
+      );
+
+    case "classCoach":
+      return (
+        <section key={block.id} className="yaf-coach">
+          <div className="container">
+            <h2>{block.heading || "Class coach"}</h2>
+            <div className="yaf-coach-card">
+              <div className="yaf-coach-image">
+                <img
+                  src={block.image}
+                  alt={block.imageAlt}
+                  loading="lazy"
+                  width={320}
+                  height={400}
+                />
+              </div>
+              <div className="yaf-coach-info">
+                {block.eyebrow && (
+                  <p className="yaf-coach-eyebrow">{block.eyebrow}</p>
+                )}
+                <h3 className="yaf-coach-name">{block.name}</h3>
+                <div
+                  className="yaf-coach-bio rich-text"
+                  dangerouslySetInnerHTML={{ __html: md(block.bio) }}
+                />
+                {block.links.length > 0 && (
+                  <div className="yaf-coach-links">
+                    {block.links.map((l, i) => (
+                      <Link
+                        key={i}
+                        href={l.href}
+                        className={
+                          "btn btn-sm " +
+                          (l.style === "outline" ? "btn-outline" : "btn-ghost")
+                        }
+                      >
+                        {l.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+
+    case "faq":
+      return (
+        <section key={block.id} className="yaf-faq">
+          <div className="container">
+            <header className="yaf-faq-head">
+              {block.heading && <h2>{block.heading}</h2>}
+              {block.sub && <p>{block.sub}</p>}
+            </header>
+            <div className="yaf-faq-list">
+              {block.items.map((f, i) => (
+                <details key={i} className="yaf-faq-item">
+                  <summary>{f.q}</summary>
+                  <div
+                    className="yaf-faq-body rich-text"
+                    dangerouslySetInnerHTML={{ __html: md(f.a) }}
+                  />
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
 
     default:
       return null;

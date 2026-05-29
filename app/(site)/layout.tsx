@@ -51,7 +51,7 @@ export default async function SiteLayout({
       <link rel="stylesheet" href="/css/trial-modal.css" />
       <SiteSplash />
       <AnnounceBar />
-      <Header contact={site.contact} />
+      <Header contact={site.contact} header={site.header} />
       {children}
       <Footer />
       <CookieBanner />

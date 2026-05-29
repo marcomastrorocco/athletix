@@ -25,6 +25,7 @@ export async function PUT(req: NextRequest) {
       meta: { ...current.meta, ...(updates.meta ?? {}) },
       contact: { ...current.contact, ...(updates.contact ?? {}) },
       trial: { ...current.trial, ...(updates.trial ?? {}) },
+      header: { ...current.header, ...(updates.header ?? {}) },
       hero: { ...current.hero, ...(updates.hero ?? {}) },
       trust: { ...current.trust, ...(updates.trust ?? {}) },
       community: { ...current.community, ...(updates.community ?? {}) },

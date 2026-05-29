@@ -14,6 +14,7 @@ import {
   LogOut,
   Layers,
   Image as ImageIcon,
+  PanelTop,
 } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -32,6 +33,7 @@ const sections: Section[] = [
   {
     label: "Content",
     items: [
+      { href: "/admin/header", label: "Header", icon: PanelTop },
       { href: "/admin/pages", label: "Pages", icon: Layers },
       { href: "/admin/blog", label: "Blog Posts", icon: FileText },
       { href: "/admin/site", label: "Homepage & SEO", icon: Type },

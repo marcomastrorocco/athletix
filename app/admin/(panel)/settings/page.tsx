@@ -1,5 +1,6 @@
-import { ShieldCheck, Settings as SettingsIcon, KeyRound } from "lucide-react";
+import { Settings as SettingsIcon } from "lucide-react";
 import BackupRestore from "@/components/admin/BackupRestore";
+import PasswordChange from "@/components/admin/PasswordChange";
 
 export const dynamic = "force-dynamic";
 
@@ -16,38 +17,9 @@ export default function SettingsPage() {
         </div>
       </div>
 
-      <BackupRestore />
+      <PasswordChange />
 
-      <div className="card">
-        <div className="head">
-          <div className="icon-bg">
-            <KeyRound size={16} />
-          </div>
-          <div>
-            <h2>Authentication</h2>
-            <p className="muted" style={{ margin: 0 }}>
-              Set <code>ADMIN_PASSWORD</code> and <code>ADMIN_SECRET</code> in{" "}
-              <code>.env.local</code>. Restart the dev server after changes.
-            </p>
-          </div>
-        </div>
-        <div
-          style={{
-            color: "var(--text-2)",
-            fontSize: 13,
-            background: "var(--bg-2)",
-            border: "1px solid var(--border)",
-            borderRadius: 10,
-            padding: 14,
-            fontFamily: "JetBrains Mono, ui-monospace, monospace",
-            whiteSpace: "pre-wrap",
-          }}
-        >
-{`# .env.local
-ADMIN_PASSWORD=your-strong-password
-ADMIN_SECRET=long-random-string-for-cookie-signing`}
-        </div>
-      </div>
+      <BackupRestore />
 
       <div className="card">
         <div className="head">

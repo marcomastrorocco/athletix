@@ -14,6 +14,53 @@
     "heading": "$7 for 7 days. Unlimited access.",
     "body": "All classes included. Fully refundable. Meet the coaches, test the floor, and see why athletes across Brisbane train with us."
   },
+  "header": {
+    "nav": [
+      { "label": "TIMETABLE", "href": "/timetable", "mega": [] },
+      {
+        "label": "CLASSES",
+        "href": "/classes",
+        "mega": [
+          { "href": "/youth-classes", "title": "Youth Classes", "desc": "Ages 7–17. Strength, speed and athletic development." },
+          { "href": "/adult-classes", "title": "Adult Classes", "desc": "16+. LIFT, MET-CON, mobility — every level welcome." },
+          { "href": "/family-classes", "title": "Family Classes", "desc": "Train together. Parent + child sessions on the floor." },
+          { "href": "/athlete-programs", "title": "Athlete Programs", "desc": "Pro-standard S&C for serious competitors." }
+        ]
+      },
+      { "label": "MEMBERSHIP", "href": "/membership", "mega": [] },
+      {
+        "label": "ABOUT US",
+        "href": "/about",
+        "mega": [
+          { "href": "/our-gym", "title": "Our Gym", "desc": "A purpose-built sports performance hub in Fortitude Valley." },
+          { "href": "/our-team", "title": "Our Team", "desc": "Meet the coaches and clinicians on the floor." },
+          { "href": "/allied-health", "title": "Allied Health", "desc": "Sports physio, rehab and dietetics under one roof." },
+          { "href": "/ndis-program", "title": "NDIS Program", "desc": "Tailored strength and conditioning for NDIS participants." },
+          { "href": "/careers", "title": "Careers", "desc": "Coach with us. Join the team building elite athletes." }
+        ]
+      },
+      { "label": "CONTACT US", "href": "/contact", "mega": [] },
+      { "label": "BLOG", "href": "/blog", "mega": [] }
+    ],
+    "sideAbout": "Athletix is a Fitness and Athletic development centre with S&C coaches, sports physiotherapy and rehab & in-house cafe in the heart of Brisbane (Fortitude Valley) offering Group Classes for Youth, Adults and Athletes in Strength, Speed & Agility, Conditioning, Sprint Mechanics, Pilates, Mobility and more. Book a Trial Class Today!",
+    "hoursHeading": "Working Hours",
+    "hours": [
+      { "weekday": 1, "short": "MON", "hours": "5:15 AM – 7:30 PM" },
+      { "weekday": 2, "short": "TUE", "hours": "6:00 AM – 7:30 PM" },
+      { "weekday": 3, "short": "WED", "hours": "5:15 AM – 7:30 PM" },
+      { "weekday": 4, "short": "THU", "hours": "6:00 AM – 7:30 PM" },
+      { "weekday": 5, "short": "FRI", "hours": "5:15 AM – 6:00 PM" },
+      { "weekday": 6, "short": "SAT", "hours": "6:00 AM – 11:30 AM" }
+    ],
+    "socialsHeading": "Our Socials",
+    "socials": [
+      { "platform": "youtube", "href": "https://www.youtube.com/channel/UCy1b8l1wpqf0lqD7wC6Qd7w" },
+      { "platform": "instagram", "href": "https://www.instagram.com/athletix_gym/" },
+      { "platform": "facebook", "href": "https://www.facebook.com/ATHLETIX.BRISBANE/" },
+      { "platform": "linkedin", "href": "https://www.linkedin.com/company/athletixgym/?originalSubdomain=au" },
+      { "platform": "x", "href": "https://x.com/athletix_gym" }
+    ]
+  },
   "hero": {
     "kicker": "Fortitude Valley, Brisbane · Pro Standards · Every Level Welcome",
     "h1Top": "Sports Performance",

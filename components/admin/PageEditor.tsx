@@ -11,6 +11,7 @@ import {
   Sparkles,
   Search,
   ExternalLink,
+  GripVertical,
 } from "lucide-react";
 import type { Block, BlockType, PageContent } from "@/lib/data";
 import { showToast } from "./Toast";
@@ -20,6 +21,12 @@ import LivePreview from "./LivePreview";
 
 const BLOCK_OPTIONS: BlockType[] = [
   "pageBanner",
+  "classHero",
+  "classInfo",
+  "pillars",
+  "classBooking",
+  "classCoach",
+  "faq",
   "richText",
   "video",
   "numberedList",
@@ -45,6 +52,25 @@ export default function PageEditor({ initial }: { initial: PageContent }) {
     for (const b of initial.blocks) o[b.id] = true;
     return o;
   });
+  // Drag-and-drop reordering state. `dragEnabled` is only flipped on while the
+  // grip handle is pressed so the card's inputs stay normally selectable.
+  const [dragEnabled, setDragEnabled] = useState(false);
+  const [dragIndex, setDragIndex] = useState<number | null>(null);
+  const [overIndex, setOverIndex] = useState<number | null>(null);
+
+  const resetDrag = () => {
+    setDragEnabled(false);
+    setDragIndex(null);
+    setOverIndex(null);
+  };
+
+  const moveBlockTo = (from: number, to: number) => {
+    if (from === to || from < 0 || to < 0) return;
+    const arr = [...page.blocks];
+    const [moved] = arr.splice(from, 1);
+    arr.splice(to, 0, moved);
+    setPage({ ...page, blocks: arr });
+  };
 
   const save = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -149,8 +175,42 @@ export default function PageEditor({ initial }: { initial: PageContent }) {
         {page.blocks.map((b, i) => {
           const isOpen = open[b.id] !== false;
           return (
-            <div key={b.id} className="card block-card">
+            <div
+              key={b.id}
+              className={`card block-card${
+                overIndex === i && dragIndex !== null && dragIndex !== i
+                  ? " drag-over"
+                  : ""
+              }${dragIndex === i ? " dragging" : ""}`}
+              draggable={dragEnabled}
+              onDragStart={(e) => {
+                setDragIndex(i);
+                e.dataTransfer.effectAllowed = "move";
+              }}
+              onDragOver={(e) => {
+                if (dragIndex === null) return;
+                e.preventDefault();
+                e.dataTransfer.dropEffect = "move";
+                if (overIndex !== i) setOverIndex(i);
+              }}
+              onDrop={(e) => {
+                e.preventDefault();
+                if (dragIndex !== null) moveBlockTo(dragIndex, i);
+                resetDrag();
+              }}
+              onDragEnd={resetDrag}
+            >
               <div className="head block-head">
+                <button
+                  type="button"
+                  className="block-drag"
+                  aria-label="Drag to reorder"
+                  title="Drag to reorder"
+                  onMouseDown={() => setDragEnabled(true)}
+                  onMouseUp={() => setDragEnabled(false)}
+                >
+                  <GripVertical size={16} />
+                </button>
                 <button
                   type="button"
                   className="block-toggle"

@@ -19,6 +19,12 @@ export const BLOCK_LABELS: Record<BlockType, string> = {
   html: "Raw HTML",
   podcast: "Podcast Feature",
   coaches: "Coaches Grid",
+  classHero: "Class Hero",
+  classInfo: "Class Info Cards",
+  pillars: "Pillars Grid",
+  classBooking: "Class Booking Form",
+  classCoach: "Class Coach",
+  faq: "FAQ Accordion",
 };
 
 export function blockDefaults(type: BlockType): Block {
@@ -124,6 +130,85 @@ export function blockDefaults(type: BlockType): Block {
         headingTop: "Our Elite",
         headingBottom: "Coaches.",
         body: "",
+      };
+    case "classHero":
+      return {
+        type: "classHero",
+        id: id("class-hero"),
+        eyebrow: "Class · All levels",
+        title: "Class title",
+        lead: "Short description of this class.",
+        primaryBtn: { label: "Book a trial", href: "#book-form" },
+        secondaryBtn: { label: "View timetable", href: "/class-timetable" },
+        image: "",
+        imageAlt: "",
+        badge: "",
+      };
+    case "classInfo":
+      return {
+        type: "classInfo",
+        id: id("class-info"),
+        cards: [
+          {
+            icon: "📍",
+            title: "Location",
+            body: "<a href=\"https://goo.gl/maps/Nb2DQqvUifWCHuPt7\" target=\"_blank\" rel=\"noopener\">42 Baxter Street<br/>Fortitude Valley, QLD 4006</a>",
+          },
+          {
+            icon: "⏱",
+            title: "Working hours",
+            variant: "hours",
+            body: "<ul class=\"yaf-hours\"><li><span class=\"yaf-day\">Mon</span><span>6:00 AM – 7:30 PM</span></li><li><span class=\"yaf-day\">Tue</span><span>6:00 AM – 7:30 PM</span></li><li><span class=\"yaf-day\">Wed</span><span>5:15 AM – 7:30 PM</span></li><li><span class=\"yaf-day\">Thu</span><span>6:00 AM – 7:30 PM</span></li><li><span class=\"yaf-day\">Fri</span><span>5:15 AM – 6:00 PM</span></li><li><span class=\"yaf-day\">Sat</span><span>6:00 AM – 11:00 AM</span></li></ul>",
+          },
+          {
+            icon: "☎",
+            title: "Contact",
+            body: "<a href=\"tel:0499981286\">0499 981 286</a><br/><a href=\"mailto:info@athletix.com.au\">info@athletix.com.au</a>",
+          },
+        ],
+      };
+    case "pillars":
+      return {
+        type: "pillars",
+        id: id("pillars"),
+        eyebrow: "Why train here",
+        heading: "Section heading",
+        sub: "Optional sub-heading.",
+        items: [
+          { n: "01", title: "Pillar one", body: "Description." },
+          { n: "02", title: "Pillar two", body: "Description." },
+          { n: "03", title: "Pillar three", body: "Description." },
+          { n: "04", title: "Pillar four", body: "Description." },
+        ],
+      };
+    case "classBooking":
+      return {
+        type: "classBooking",
+        id: id("booking"),
+        sourceLabel: "Class page",
+        defaultClass: "",
+      };
+    case "classCoach":
+      return {
+        type: "classCoach",
+        id: id("class-coach"),
+        heading: "Class coach",
+        image: "",
+        imageAlt: "",
+        eyebrow: "Coach",
+        name: "",
+        bio: "",
+        links: [
+          { label: "Meet the team", href: "/our-team", style: "outline" },
+        ],
+      };
+    case "faq":
+      return {
+        type: "faq",
+        id: id("faq"),
+        heading: "Frequently asked questions",
+        sub: "",
+        items: [{ q: "Question?", a: "Answer." }],
       };
   }
 }

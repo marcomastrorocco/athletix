@@ -1018,6 +1018,31 @@ code {
   background: var(--panel-2);
   color: var(--text);
 }
+.block-card .block-drag {
+  width: 24px;
+  height: 28px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: none;
+  cursor: grab;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.block-card .block-drag:hover {
+  color: var(--text);
+}
+.block-card .block-drag:active {
+  cursor: grabbing;
+}
+.block-card.dragging {
+  opacity: 0.5;
+}
+.block-card.drag-over {
+  border-color: var(--accent);
+  box-shadow: 0 -3px 0 0 var(--accent) inset;
+}
 .block-card .block-body {
   margin-top: 14px;
   padding-top: 14px;
