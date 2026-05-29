@@ -312,6 +312,18 @@ function renderBlock(block: Block): React.ReactNode {
                   </Link>
                 )}
               </div>
+              {block.logos && block.logos.length > 0 && (
+                <div className="about-podcast-logos">
+                  {block.logos.map((logo, i) => (
+                    <img
+                      key={`${logo.src}-${i}`}
+                      src={logo.src}
+                      alt={logo.alt}
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
+              )}
             </aside>
           </div>
         </section>

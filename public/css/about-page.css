@@ -325,6 +325,22 @@
   flex-wrap: wrap;
   gap: 12px;
 }
+.about-podcast-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 28px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.about-podcast-logos img {
+  height: 48px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  border-radius: 8px;
+}
 
 /* Stats strip */
 .about-stats {

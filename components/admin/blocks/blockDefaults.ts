@@ -121,6 +121,7 @@ export function blockDefaults(type: BlockType): Block {
         body: "Body",
         primaryLabel: "Listen",
         primaryHref: "#",
+        logos: [],
       };
     case "coaches":
       return {

@@ -64,7 +64,12 @@
       "primaryLabel": "Listen to the podcast",
       "primaryHref": "https://strengthandconditioning.org/asca-podcast",
       "secondaryLabel": "Talk to a Coach",
-      "secondaryHref": "/contact"
+      "secondaryHref": "/contact",
+      "logos": [
+        { "src": "/image/cdn/asca-logo.png", "alt": "Australian Strength & Conditioning Association" },
+        { "src": "/image/cdn/australian-athletics-logo.png", "alt": "Australian Athletics" },
+        { "src": "/image/cdn/athletix-podcast-logo.jpeg", "alt": "Athletix — Human & Sports Performance" }
+      ]
     },
     {
       "type": "stats",

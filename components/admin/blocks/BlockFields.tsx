@@ -697,6 +697,29 @@ function PodcastFields({
           onChange={(v) => set({ ...block, secondaryHref: v })}
         />
       </div>
+      <div className="field">
+        <label>Logos (shown below the buttons)</label>
+        <ListEditor
+          items={block.logos ?? []}
+          onChange={(logos) => set({ ...block, logos })}
+          newItem={() => ({ src: "", alt: "" })}
+          label="Logo"
+          render={(l, _i, upd) => (
+            <>
+              <ImagePicker
+                label="Logo image"
+                value={l.src}
+                onChange={(src) => upd({ ...l, src })}
+              />
+              <TextField
+                label="Alt text"
+                value={l.alt}
+                onChange={(v) => upd({ ...l, alt: v })}
+              />
+            </>
+          )}
+        />
+      </div>
     </>
   );
 }

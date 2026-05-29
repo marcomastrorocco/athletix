@@ -503,6 +503,7 @@ export type PodcastBlock = {
   primaryHref: string;
   secondaryLabel?: string;
   secondaryHref?: string;
+  logos?: { src: string; alt: string }[];
 };
 
 export type CoachesBlock = {
