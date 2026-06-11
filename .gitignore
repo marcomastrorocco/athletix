@@ -3,6 +3,7 @@ node_modules
 out
 build
 .env*.local
+.blob-token.local
 .DS_Store
 *.tsbuildinfo
 next-env.d.ts
