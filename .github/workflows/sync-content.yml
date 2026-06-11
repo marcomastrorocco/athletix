@@ -1,0 +1,49 @@
+name: Sync live content to GitHub
+
+# Keeps GitHub (data/*.json) in sync with content edited via the live
+# admin dashboard (stored in Vercel Blob). Runs on a schedule, and can
+# also be triggered manually from the Actions tab.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  workflow_dispatch: {} # manual "Run workflow" button
+
+# Allow the workflow to push commits back to the repo.
+permissions:
+  contents: write
+
+# Never run two syncs at once.
+concurrency:
+  group: sync-content
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Pull live content (download only)
+        env:
+          SYNC_SKIP_GIT: "1"
+        run: node scripts/sync-from-live.mjs
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No content changes — nothing to commit."
+          else
+            git commit -m "Auto-sync content from live admin (Blob)"
+            git push
+            echo "Pushed updated content."
+          fi

@@ -117,6 +117,12 @@ async function main() {
   const n = token ? await syncWithToken(token) : await syncPublic();
   console.log(`\n✓ ${n} ta file download holo.`);
 
+  // In CI the workflow handles git itself; just download and exit.
+  if (process.env.SYNC_SKIP_GIT) {
+    console.log("\n✓ Download done (git skipped — CI will commit).");
+    return;
+  }
+
   const status = git("status --porcelain -- data/");
   if (!status) {
     console.log("\n✅ GitHub already up-to-date — kono notun change nai.");
