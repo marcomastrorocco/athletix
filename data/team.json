@@ -22,22 +22,6 @@
     "spotify": "https://open.spotify.com/embed/episode/6zEuLcM78SzYN1ViZqgTDZ?utm_source=generator"
   },
   {
-    "id": "isaac",
-    "name": "Isaac Corvo",
-    "displayName": "Isaac Corvo",
-    "role": "Strength & Conditioning Coach",
-    "image": "/image/Elite%20Coach/isaac.jpg",
-    "bio": "Isaac Corvo has lived and breathed sport his entire life. Currently serving as the **Head of Strength and Conditioning for the Brisbane Bullets** and a **Senior Performance Coach at Athletix**, Isaac combines his passion for athletic development with extensive experience as a sub-elite AFL player over the past five years. This exposure to high-level coaching inspired him to pursue a **Bachelor in Exercise Science** and specialize in **Strength and Conditioning**.\n\nIsaac's mission is to assist individuals on their journey to become better versions of themselves — whether that means becoming fitter, stronger, faster, or excelling in other areas of performance. His coaching philosophy is rooted in an **evidence-based approach**, focusing on mastering fundamental movements such as **squatting, pressing, pulling, and hinging**, alongside enhancing motor patterns critical for athletic performance, including **running, jumping, and sprinting**.\n\nAt Athletix, Isaac brings his expertise and passion for performance to help clients achieve their goals, using a structured and scientific methodology tailored to individual needs.",
-    "qualifications": [
-      "Head of S&C - Brisbane Bullets",
-      "Strength & Conditioning Coach - ASCA Level 1",
-      "Bachelor in Exercise and Sports Science (ACU)",
-      "Sub-Elite AFL Athlete"
-    ],
-    "linkedin": "https://www.linkedin.com/in/isaac-corvo-186395233/",
-    "instagram": "https://www.instagram.com/strength2stride"
-  },
-  {
     "id": "reza",
     "name": "Reza Sharifian",
     "displayName": "Reza Sharifian",
@@ -51,20 +35,6 @@
       "ESSA accredited Exercise and Sport Scientist (AES, ASpS)"
     ],
     "instagram": "https://www.instagram.com/m_reza_sharifian"
-  },
-  {
-    "id": "ritti",
-    "name": "Ritti Kagi",
-    "displayName": "Ritti Kagi",
-    "role": "S&C Coach",
-    "image": "/image/Elite%20Coach/ritti.jpg",
-    "bio": "For Ritti, sport has always been the drumbeat to his life. With a passion for movement and performance, Ritti completed a **Bachelor of High Performance Sport**, equipping him with the tools and knowledge to guide others in achieving their fitness and performance goals.\n\nDedicated to helping individuals get stronger, fitter, and faster, Ritti embraces a commitment to continuous professional development, ensuring that his coaching is always grounded in the latest scientific evidence.\n\nAs a first-generation South Sudanese, Ritti is passionate about working with **multicultural athletes**, uncovering untapped potential, and empowering individuals to achieve greatness. He believes in the transformative power of sport to inspire and uplift, fostering growth in both youth and adults alike.\n\nAt Athletix, Ritti plays a vital role in delivering results-driven training programs and contributing to a supportive, inclusive environment where every client can thrive.\n\nRitti's enthusiasm, knowledge, and dedication to his craft make him an integral part of the Athletix coaching team, helping clients of all backgrounds unlock their full potential.",
-    "qualifications": [
-      "Strength & Conditioning Coach - ASCA Level 1",
-      "Bachelor in High Performance Sports",
-      "S&C Coach Villanova College"
-    ],
-    "instagram": "https://www.instagram.com/ritxscience/"
   },
   {
     "id": "sasha",
@@ -81,6 +51,36 @@
       "Mayne Tigers AFL - Lead Performance Coach"
     ],
     "instagram": "https://www.instagram.com/coach_sashacochrane/"
+  },
+  {
+    "id": "ritti",
+    "name": "Ritti Kagi",
+    "displayName": "Ritti Kagi",
+    "role": "S&C Coach",
+    "image": "/image/Elite%20Coach/ritti.jpg",
+    "bio": "For Ritti, sport has always been the drumbeat to his life. With a passion for movement and performance, Ritti completed a **Bachelor of High Performance Sport**, equipping him with the tools and knowledge to guide others in achieving their fitness and performance goals.\n\nDedicated to helping individuals get stronger, fitter, and faster, Ritti embraces a commitment to continuous professional development, ensuring that his coaching is always grounded in the latest scientific evidence.\n\nAs a first-generation South Sudanese, Ritti is passionate about working with **multicultural athletes**, uncovering untapped potential, and empowering individuals to achieve greatness. He believes in the transformative power of sport to inspire and uplift, fostering growth in both youth and adults alike.\n\nAt Athletix, Ritti plays a vital role in delivering results-driven training programs and contributing to a supportive, inclusive environment where every client can thrive.\n\nRitti's enthusiasm, knowledge, and dedication to his craft make him an integral part of the Athletix coaching team, helping clients of all backgrounds unlock their full potential.",
+    "qualifications": [
+      "Strength & Conditioning Coach - ASCA Level 1",
+      "Bachelor in High Performance Sports",
+      "S&C Coach Villanova College"
+    ],
+    "instagram": "https://www.instagram.com/ritxscience/"
+  },
+  {
+    "id": "isaac",
+    "name": "David Lawrence",
+    "displayName": "David Lawrence",
+    "role": "Exercise Physiologist",
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpkfth8u-img_0147-e1685322267891.jpg",
+    "bio": "Isaac Corvo has lived and breathed sport his entire life. Currently serving as the **Head of Strength and Conditioning for the Brisbane Bullets** and a **Senior Performance Coach at Athletix**, Isaac combines his passion for athletic development with extensive experience as a sub-elite AFL player over the past five years. This exposure to high-level coaching inspired him to pursue a **Bachelor in Exercise Science** and specialize in **Strength and Conditioning**.\n\nIsaac's mission is to assist individuals on their journey to become better versions of themselves — whether that means becoming fitter, stronger, faster, or excelling in other areas of performance. His coaching philosophy is rooted in an **evidence-based approach**, focusing on mastering fundamental movements such as **squatting, pressing, pulling, and hinging**, alongside enhancing motor patterns critical for athletic performance, including **running, jumping, and sprinting**.\n\nAt Athletix, Isaac brings his expertise and passion for performance to help clients achieve their goals, using a structured and scientific methodology tailored to individual needs.",
+    "qualifications": [
+      "Head of S&C - Brisbane Bullets",
+      "Strength & Conditioning Coach - ASCA Level 1",
+      "Bachelor in Exercise and Sports Science (ACU)",
+      "Sub-Elite AFL Athlete"
+    ],
+    "linkedin": "https://www.linkedin.com/in/isaac-corvo-186395233/",
+    "instagram": "https://www.instagram.com/strength2stride"
   },
   {
     "id": "mulherin",

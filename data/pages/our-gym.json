@@ -13,25 +13,58 @@
       "id": "banner",
       "compact": true,
       "crumbs": [
-        { "label": "Home", "href": "/" },
-        { "label": "About", "href": "/about" },
-        { "label": "Our Gym", "href": "" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "About",
+          "href": "/about"
+        },
+        {
+          "label": "Our Gym",
+          "href": ""
+        }
       ],
       "title": "OUR",
       "titleAccent": "GYM",
-      "lede": "A purpose-built facility in Fortitude Valley designed around how athletes actually train — lift, sprint, recover, repeat."
+      "lede": "A purpose-built facility in Fortitude Valley designed around movement and how athletes actually train! Lift, sprint, Jump, Throw, recover, repeat."
     },
     {
       "type": "featureGrid",
       "id": "facility-features",
-      "lede": "Every square metre of Athletix has been built around the way elite athletes train. From olympic platforms and force plates to a 30m sprint track and dedicated mobility studio, the floor is engineered for results.",
+      "lede": "Every square metre of Athletix has been built around the way elite athletes train. Force plates platforms for testing, 20m sprint lane for running analysis, Astroturf field for movement practice, every piece of equipment is there for purpose not for look! The floor is engineered for results.",
       "items": [
-        { "icon": "⛓", "title": "Lifting Platforms", "desc": "Eight Olympic platforms with calibrated bumpers and mixed loading options." },
-        { "icon": "⚡", "title": "Sprint Track", "desc": "Indoor 30m sprint lane with timing gates and force plates for objective measurement." },
-        { "icon": "📊", "title": "Force Plates", "desc": "VALD ForceDecks for jump, landing and asymmetry profiling — included in athlete tier." },
-        { "icon": "🌀", "title": "Mobility Studio", "desc": "Dedicated space for Pilates, mobility flows and warm-ups, away from the lifting floor." },
-        { "icon": "🏥", "title": "Allied Health Suite", "desc": "Private rooms for physiotherapy and rehab — seamlessly integrated with your coaching team." },
-        { "icon": "☕", "title": "In-house Cafe", "desc": "Refuel post-session with proper coffee and high-protein options without leaving the building." }
+        {
+          "icon": "⛓",
+          "title": "Lifting Stations",
+          "desc": "6 Lifting Stations with bumpers and mixed loading options."
+        },
+        {
+          "icon": "⚡",
+          "title": "Sprint Track",
+          "desc": "Indoor 20m sprint lane, for sprint mechanic and gait analysis, used with timing gates and fitness assessments."
+        },
+        {
+          "icon": "📊",
+          "title": "Force Plates",
+          "desc": "Hawkins Dynamics Force Plates: objective data to make informed training decisions. Metrics such as Peak Force, Peak Power, Asymmetries, Reactive Strength Index... and much more."
+        },
+        {
+          "icon": "🌀",
+          "title": "Mobility & Pilates",
+          "desc": "Dedicated classes, coached by our accredited Coaches or Sports Physios, to support your recovery and improve your movement capacity, control and overall wellbeing."
+        },
+        {
+          "icon": "🏥",
+          "title": "Allied Health Suite",
+          "desc": "Sports & Exercise Physiotherapy - leading physio clinic, led by experienced high performance practitioners to help you - seamlessly integrated with your coaching team."
+        },
+        {
+          "icon": "☕",
+          "title": "In-house Cafe",
+          "desc": "Refuel post-session with proper coffee and high-protein options without leaving the building."
+        }
       ]
     },
     {
@@ -40,13 +73,35 @@
       "eyebrow": "The Floor",
       "heading": "Inside Athletix.",
       "images": [
-        { "src": "", "alt": "", "video": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1" },
-        { "src": "/image/652790960_18080497415576243_5969545006560046515_n.heiclow.webp", "alt": "" },
-        { "src": "/image/607718345_1795235724507459_1936522859625566512_nlow.webp", "alt": "" },
-        { "src": "/image/507904702_1813077742981167_7068029986108632745_nlow.webp", "alt": "" },
-        { "src": "/image/506356270_1850290438880885_6376136528084228693_n.heiclow.webp", "alt": "" },
-        { "src": "/image/504826122_1801023404182559_3046626601898411463_n.heiclow.webp", "alt": "" },
-        { "src": "/image/imgpsh_fullsize_anim-17-600x310.png", "alt": "" }
+        {
+          "src": "",
+          "alt": "",
+          "video": "https://www.youtube.com/embed/EXsxZCSffHA?autoplay=1&mute=1&loop=1&playlist=EXsxZCSffHA&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&disablekb=1"
+        },
+        {
+          "src": "/image/652790960_18080497415576243_5969545006560046515_n.heiclow.webp",
+          "alt": ""
+        },
+        {
+          "src": "/image/607718345_1795235724507459_1936522859625566512_nlow.webp",
+          "alt": "Nikhil Chaudhary (Pro Cricketer - BBL, IPL)"
+        },
+        {
+          "src": "/image/507904702_1813077742981167_7068029986108632745_nlow.webp",
+          "alt": "OUR COMMUNITY"
+        },
+        {
+          "src": "/image/506356270_1850290438880885_6376136528084228693_n.heiclow.webp",
+          "alt": ""
+        },
+        {
+          "src": "/image/504826122_1801023404182559_3046626601898411463_n.heiclow.webp",
+          "alt": ""
+        },
+        {
+          "src": "/image/imgpsh_fullsize_anim-17-600x310.png",
+          "alt": ""
+        }
       ]
     },
     {
@@ -57,7 +112,7 @@
       "body": "Book a trial and experience the facility firsthand — fully refundable, all classes included.",
       "buttonLabel": "Claim the Trial",
       "buttonHref": "/contact",
-      "bgImage": "/image/607446330_18072010325576243_3418190524375577855_n.heiclow.webp"
+      "bgImage": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpqrcyl7-screenshot-2025-09-05-202435.png"
     }
   ]
 }

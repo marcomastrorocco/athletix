@@ -1,60 +1,111 @@
 [
   {
-    "id": "youth",
-    "title": "Youth",
-    "price": "$42",
-    "cycle": "/ week",
-    "note": "",
-    "featured": false,
-    "image": "/image/membership%20plan/youth.png",
-    "imageAlt": "Youth membership training",
-    "features": [
-      "Unlimited Classes",
-      "Free benchmark test days",
-      "30 min of 1-1 consultation (development only)",
-      "Physio Screening",
-      "All Area Access"
-    ]
-  },
-  {
     "id": "adult",
-    "title": "Adults",
+    "title": "Adults - 12 Months",
     "price": "$50",
     "cycle": "/ week",
-    "note": "",
+    "note": "12 Months Subscription",
     "featured": true,
     "image": "/image/membership%20plan/adult.jpg",
     "imageAlt": "Adult membership training",
     "features": [
+      "Best value for long-term commitment",
       "Unlimited Classes",
-      "Free benchmark test days",
       "30 min of 1-1 consultation",
       "Physio Screening",
-      "S&C Consultation",
-      "All Area Access"
+      "All Area Access (following S&C Consultation)"
+    ]
+  },
+  {
+    "id": "plan-1779619200524",
+    "title": "ADULT - 6 Months",
+    "price": "$60",
+    "cycle": "/ week",
+    "note": "6 months subscription ",
+    "featured": false,
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjndqc6-atx-04.04-05-scaled-e1731986974819.jpg",
+    "imageAlt": "6 months adult membership",
+    "features": [
+      "Balance flexibility and commitment",
+      "Unlimited Classes",
+      "30 min of 1-1 consultation",
+      "Physio Screening",
+      "All Area Access (following S&C Consultation)"
+    ]
+  },
+  {
+    "id": "plan-1779619957948",
+    "title": "Adult - 3 Months",
+    "price": "$65",
+    "cycle": "/ week",
+    "note": "3 months minimum contract",
+    "featured": false,
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjnu1gi-atx-04.04-03-scaled.jpg",
+    "imageAlt": "Adult-3-months",
+    "features": [
+      "Ideal for those trialling our services with a shorter-term commitment",
+      "Unlimited Classes",
+      "30 min of 1-1 consultation",
+      "Physio Screening",
+      "All Area Access (following S&C Consultation)"
+    ]
+  },
+  {
+    "id": "plan-1779620125206",
+    "title": "Adult Month-To-Month",
+    "price": "$70",
+    "cycle": "/ week",
+    "note": "Maximum flexibility for short term access",
+    "featured": false,
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjnx5js-atx-04.04-09-1-scaled.jpg",
+    "imageAlt": "Adult-Month-To-Month",
+    "features": [
+      "Maximum flexibility for short term access",
+      "Unlimited Classes",
+      "30 min of 1-1 consultation",
+      "Physio Screening",
+      "All Area Access (following S&C Consultation)"
+    ]
+  },
+  {
+    "id": "youth",
+    "title": "Youth - 12 Months",
+    "price": "$42",
+    "cycle": "/ week",
+    "note": "12 Months Subscription",
+    "featured": false,
+    "image": "/image/membership%20plan/youth.png",
+    "imageAlt": "Youth membership training",
+    "features": [
+      "Provides the best value and supports long-term athletic development",
+      "All Youth Classes (FOUNDATION GROUP - Primary School/DEVELOPMENT GROUP - High School)",
+      "Free benchmark test days",
+      "30 min of 1-1 consultation (development group only)"
     ]
   },
   {
     "id": "family",
-    "title": "Family",
+    "title": "Family 12 Months",
     "price": "$120",
     "cycle": "/ week",
-    "note": "",
+    "note": "12 Months minimum subscription - Covers for up to 4 family members",
     "featured": false,
-    "image": "/image/membership%20plan/family.jpg",
-    "imageAlt": "Family membership training",
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjofv23-athletix-aft-31-1300x1300.jpg",
+    "imageAlt": "Family 12m membership training",
     "features": [
+      "Best value for families committed to long-term health and fitness",
+      "Covers for up to 4 family members*",
       "Unlimited Classes",
+      "ALL AREA ACCESS",
       "Free benchmark test days",
-      "30 min of 1-1 consultation",
+      "30 min of 1-1 S&C consultation",
       "Physio Screening",
-      "S&C Consultation",
-      "All Area Access"
+      "*Extra members added at pro rata"
     ]
   },
   {
     "id": "athlete",
-    "title": "Athlete",
+    "title": "Athletes ",
     "price": "$150",
     "cycle": "/ week",
     "note": "12 months subscription",
@@ -63,9 +114,153 @@
     "imageAlt": "Athlete membership training",
     "features": [
       "Unlimited Force Plates Tests",
-      "Dedicated Coach",
-      "Weekly PT",
-      "All Area Access"
+      "Dedicated S&C Coach",
+      "Weekly private session",
+      "Programs and workload management",
+      "Gym and Classes - Full access",
+      "Designed for athletes (elite, sub-elite and recreational) pursuing structured, long-term performance development."
+    ]
+  },
+  {
+    "id": "plan-1779620253856",
+    "title": "YOUTH 6 Months",
+    "price": "$48",
+    "cycle": "/ week",
+    "note": "6 months minimum subscription",
+    "featured": false,
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjo4ly5-athletix-aft-17-1300x1300.jpg",
+    "imageAlt": "Youth-3-Months",
+    "features": [
+      "Great for parents looking for medium-term results",
+      "All Youth Classes (FOUNDATION GROUP - Primary School/DEVELOPMENT GROUP - High School)",
+      "Unlimited Classes",
+      "Free benchmark test days",
+      "30 min of 1-1 consultation (Development group only)"
+    ]
+  },
+  {
+    "id": "plan-1779620383575",
+    "title": "YOUTH 3 months",
+    "price": "$52",
+    "cycle": "/ week",
+    "note": "3 months minimum subscription",
+    "featured": false,
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjoeedh-dsc07565-1300x1300.jpg",
+    "imageAlt": "youth-3-months",
+    "features": [
+      "Suitable for those exploring the benefits of structured training",
+      "All Youth Classes (FOUNDATION GROUP - Primary School/DEVELOPMENT GROUP - High School)",
+      "Unlimited Classes",
+      "Free benchmark test days",
+      "30 min of 1-1 consultation (Development group only)"
+    ]
+  },
+  {
+    "id": "plan-1779621058194",
+    "title": "Family 6 months",
+    "price": "$140",
+    "cycle": "/ week",
+    "note": "minimum 6 months subscription -Covers for up to 4 family members",
+    "featured": false,
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjoj0bd-dsc06236-scaled-e1733203149463.jpg",
+    "imageAlt": "Family-6-months",
+    "features": [
+      "Great for families with shorter-term goals.",
+      "Unlimited Classes",
+      "ALL AREA ACCESS",
+      "Free benchmark test days",
+      "30 min of 1-1 S&C consultation",
+      "Physio Screening",
+      "*Extra members added at pro rata"
+    ]
+  },
+  {
+    "id": "plan-1779621389331",
+    "title": "Family 3 Months",
+    "price": "$155",
+    "cycle": "/ week",
+    "note": "3 months minimum subscription - Covers for up to 4 family members",
+    "featured": false,
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjop2ri-dsc06050-1300x1300.jpg",
+    "imageAlt": "Family 3 months",
+    "features": [
+      "Flexible option for families trying out our gym",
+      "Unlimited Classes",
+      "ALL AREA ACCESS",
+      "Free benchmark test days",
+      "30 min of 1-1 S&C consultation",
+      "Physio Screening",
+      "*Extra members added at pro rata"
+    ]
+  },
+  {
+    "id": "plan-1779621636199",
+    "title": "Family Month to Month",
+    "price": "165",
+    "cycle": "/ week",
+    "note": "1 month minimum subscription - Covers for up to 4 family members",
+    "featured": false,
+    "image": "",
+    "imageAlt": "",
+    "features": [
+      "Allows families to access our facilities on a short-term",
+      "Unlimited Classes",
+      "ALL AREA ACCESS",
+      "Free benchmark test days",
+      "30 min of 1-1 S&C consultation",
+      "Physio Screening",
+      "*Extra members added at pro rata"
+    ]
+  },
+  {
+    "id": "plan-1779621830407",
+    "title": "PT + Gym Access",
+    "price": "120",
+    "cycle": "/ week",
+    "note": "3 Months minimum subscription ",
+    "featured": false,
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjoz367-athletix-05-scaled-e1731985595686.jpg",
+    "imageAlt": "PT&GYM",
+    "features": [
+      "Free Physio Led Screening",
+      "Training programs provided",
+      "1 weekly 45min PT session",
+      "Full Gym access during open hours",
+      "Access to one weekly RECOVERY class (Mat Pilates/Mobility)",
+      "Support for workload management"
+    ]
+  },
+  {
+    "id": "plan-1779622052606",
+    "title": "PT+CLASSES",
+    "price": "$140",
+    "cycle": "/ week",
+    "note": "3months minimum subscription",
+    "featured": false,
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjp1pil-athletix-16-arvo-28-1300x1300.jpg",
+    "imageAlt": "PT & CLASSES",
+    "features": [
+      "Free Physio Led Screening",
+      "Training programs provided",
+      "1 weekly PT session",
+      "UNLIMITED CLASSES",
+      "FULL GYM access during open hours",
+      "Support for workload management"
+    ]
+  },
+  {
+    "id": "plan-1779622149953",
+    "title": "RECOVERY",
+    "price": "45",
+    "cycle": "/ week",
+    "note": "3 Months minimum subscription",
+    "featured": false,
+    "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjp3jpo-athletix-16.apr-08-scaled-e1731987059716.jpg",
+    "imageAlt": "Recovery membership",
+    "features": [
+      "Free Physio Led Screening",
+      "FULL GYM access during open hours",
+      "Unlimited Pilates/Mobility classes"
     ]
   }
 ]

@@ -2,7 +2,10 @@
   "slug": "about",
   "title": "About Us",
   "path": "/about",
-  "cssFiles": ["/css/home-v2.css", "/css/about-page.css"],
+  "cssFiles": [
+    "/css/home-v2.css",
+    "/css/about-page.css"
+  ],
   "seo": {
     "title": "About Us — ATHLETIX Brisbane",
     "description": "Founded in 2021 by Marco Mastrorocco and Jovan Vucetic, ATHLETIX is on a mission to become the number one private high-performance facility in Australia."
@@ -14,8 +17,14 @@
       "variant": "about",
       "compact": true,
       "crumbs": [
-        { "label": "Home", "href": "/" },
-        { "label": "About Us", "href": "" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "About Us",
+          "href": ""
+        }
       ],
       "title": "ABOUT",
       "titleAccent": "US",
@@ -41,7 +50,7 @@
         {
           "num": "02",
           "title": "What We Do",
-          "body": "At ATHLETIX, we specialise in:\n\n- **Strength and conditioning** training\n- **Athlete training programs**\n- Unique, evidence-based **group fitness classes**\n- Long-term **athlete development (LTAD) pathways for youth athletes**\n- **In-house sports rehabilitation programs**\n- Coaching **professional athletes**\n- Supporting the physical preparedness for any sport"
+          "body": "At ATHLETIX, we specialise in:\n\n- **Strength and conditioning** training\n- **Athlete training programs**\n- Unique, evidence-based **group S^C classes**\n- Long-term **athlete development (LTAD) pathways for youth athletes**\n- **In-house sports rehabilitation programs**\n- Coaching **professional athletes**\n- Supporting the physical preparedness for any sport"
         },
         {
           "num": "03",
@@ -66,19 +75,40 @@
       "secondaryLabel": "Talk to a Coach",
       "secondaryHref": "/contact",
       "logos": [
-        { "src": "/image/cdn/asca-logo.png", "alt": "Australian Strength & Conditioning Association" },
-        { "src": "/image/cdn/australian-athletics-logo.png", "alt": "Australian Athletics" },
-        { "src": "/image/cdn/athletix-podcast-logo.jpeg", "alt": "Athletix — Human & Sports Performance" }
+        {
+          "src": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpqh05c8-asca.png",
+          "alt": ""
+        },
+        {
+          "src": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpqh0ecu-australian-athletics.png",
+          "alt": ""
+        },
+        {
+          "src": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpqh15tn-logo-cropped.jpeg",
+          "alt": ""
+        }
       ]
     },
     {
       "type": "stats",
       "id": "about-stats",
       "items": [
-        { "value": "2021", "label": "Founded in Fortitude Valley" },
-        { "value": "8+", "label": "ASCA & ESSA accredited coaches" },
-        { "value": "9", "label": "Pro sporting partners" },
-        { "value": "200+", "label": "University placement students" }
+        {
+          "value": "2021",
+          "label": "Founded in Fortitude Valley"
+        },
+        {
+          "value": "11",
+          "label": "In-House Practitioners (S&C, Physios, Ex Phys)"
+        },
+        {
+          "value": "12",
+          "label": "Pro Clubs partners"
+        },
+        {
+          "value": "50+",
+          "label": "Resident Athletes "
+        }
       ]
     },
     {
@@ -87,7 +117,7 @@
       "eyebrow": "The People",
       "heading": "THE ATHLETIX S&C TEAM",
       "lede": "ATHLETIX is made up of an exceptionally talented team of professionals. Our coaches blend higher education (Exercise Science, Human Movement, Physiotherapy degrees) with practical on-the-field experience — training elite athletes, general population and clinical patients.",
-      "image": "/image/new-team.webp",
+      "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpmjg4bv-wa_1776648532015-1-.jpeg",
       "imageAlt": "The Athletix S&C team"
     },
     {
@@ -104,14 +134,38 @@
       "heading": "Trusted by Brisbane's Elite Clubs & Institutions",
       "tagline": "The coaches and physios who work with **professional athletes** choose Athletix for their own players. If they trust us — you can too.",
       "logos": [
-        { "src": "/image/Trusted%20By/brisbane-lions-logo.png", "alt": "Brisbane Lions" },
-        { "src": "/image/Trusted%20By/cricket-australia-logo.png", "alt": "Cricket Australia" },
-        { "src": "/image/Trusted%20By/Queensland-Bulls.png", "alt": "Queensland Bulls" },
-        { "src": "/image/Trusted%20By/gold-coast-titans-logo.png", "alt": "Gold Coast Titans" },
-        { "src": "/image/Trusted%20By/Brisbane-Bullets-logo.png", "alt": "Brisbane Bullets" },
-        { "src": "/image/Trusted%20By/kisspng-brisbane-heat-logo.png", "alt": "Brisbane Heat" },
-        { "src": "/image/Trusted%20By/Baseball_Australia_logo.png", "alt": "Baseball Australia" },
-        { "src": "/image/Trusted%20By/crest-villanova-crest-logo.png", "alt": "Villanova College" }
+        {
+          "src": "/image/Trusted%20By/brisbane-lions-logo.png",
+          "alt": "Brisbane Lions"
+        },
+        {
+          "src": "/image/Trusted%20By/cricket-australia-logo.png",
+          "alt": "Cricket Australia"
+        },
+        {
+          "src": "/image/Trusted%20By/Queensland-Bulls.png",
+          "alt": "Queensland Bulls"
+        },
+        {
+          "src": "/image/Trusted%20By/gold-coast-titans-logo.png",
+          "alt": "Gold Coast Titans"
+        },
+        {
+          "src": "/image/Trusted%20By/Brisbane-Bullets-logo.png",
+          "alt": "Brisbane Bullets"
+        },
+        {
+          "src": "/image/Trusted%20By/kisspng-brisbane-heat-logo.png",
+          "alt": "Brisbane Heat"
+        },
+        {
+          "src": "/image/Trusted%20By/Baseball_Australia_logo.png",
+          "alt": "Baseball Australia"
+        },
+        {
+          "src": "/image/Trusted%20By/crest-villanova-crest-logo.png",
+          "alt": "Villanova College"
+        }
       ],
       "quote": "\"The same science, the same standards, the same care used by **NRL, cricket, and basketball clubs** — built into a facility where every kid, adult, and family in Brisbane can access it.\""
     }
