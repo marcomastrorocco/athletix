@@ -15,6 +15,7 @@ import {
   Layers,
   Image as ImageIcon,
   PanelTop,
+  Inbox,
 } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -42,6 +43,10 @@ const sections: Section[] = [
       { href: "/admin/timetable", label: "Timetable", icon: CalendarDays },
       { href: "/admin/media", label: "Media Library", icon: ImageIcon },
     ],
+  },
+  {
+    label: "Enquiries",
+    items: [{ href: "/admin/leads", label: "Form Enquiries", icon: Inbox }],
   },
   {
     label: "System",

@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { randomUUID } from "crypto";
+import { getLeads, setLeads, type Lead } from "@/lib/data";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -54,16 +56,41 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "Please enter a valid phone number." }, { status: 400 });
   }
 
+  // Always save the lead first — so it's captured in the admin dashboard
+  // even if email isn't configured or fails.
+  let saved = false;
+  try {
+    const leads = await getLeads();
+    const lead: Lead = {
+      id: randomUUID(),
+      name,
+      email,
+      phone,
+      trainingAs: trainingAs || undefined,
+      source,
+      message: message || undefined,
+      createdAt: new Date().toISOString(),
+    };
+    leads.unshift(lead);
+    await setLeads(leads.slice(0, 1000));
+    saved = true;
+  } catch (e) {
+    console.error("[lead] save failed:", e);
+  }
+
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
   const mailTo = process.env.MAIL_TO || smtpUser;
   const mailFrom = process.env.MAIL_FROM || smtpUser;
 
+  // Email is best-effort: if SMTP isn't set up, the lead is still saved.
   if (!smtpUser || !smtpPass || !mailTo) {
-    console.error("[lead] SMTP env vars missing");
+    console.warn("[lead] SMTP not configured — saved to dashboard only");
     return NextResponse.json(
-      { ok: false, error: "Email service not configured. Please contact us directly." },
-      { status: 500 }
+      saved
+        ? { ok: true }
+        : { ok: false, error: "Could not save right now. Please call 0499 981 286." },
+      { status: saved ? 200 : 500 }
     );
   }
 
@@ -118,13 +145,17 @@ export async function POST(req: Request) {
       text: textLines,
       html,
     });
-    return NextResponse.json({ ok: true });
   } catch (err) {
     const msg = err instanceof Error ? err.message : "Unknown email error";
     console.error("[lead] sendMail failed:", msg);
-    return NextResponse.json(
-      { ok: false, error: "Could not send right now. Please call 0499 981 286." },
-      { status: 502 }
-    );
+    // Lead is already saved; only fail the request if saving also failed.
+    if (!saved) {
+      return NextResponse.json(
+        { ok: false, error: "Could not send right now. Please call 0499 981 286." },
+        { status: 502 }
+      );
+    }
   }
+
+  return NextResponse.json({ ok: true });
 }

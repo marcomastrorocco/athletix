@@ -18,3 +18,8 @@ javascript/
 
 # Local editor/tooling config
 .claude/
+
+# Private runtime content — never commit (PII / secrets / logs)
+data/leads.json
+data/admin.json
+data/activity.json

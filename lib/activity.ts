@@ -11,7 +11,8 @@ export type ActivityEntry = {
     | "timetable"
     | "upload"
     | "page"
-    | "media";
+    | "media"
+    | "leads";
   action: "create" | "update" | "delete";
   target: string;
 };

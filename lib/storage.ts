@@ -28,7 +28,7 @@ function blobEnabled(): boolean {
 //
 // These files must NEVER land in the public repo (password hash, edit log),
 // so they always use Blob (or local fs in dev), never GitHub.
-const GIT_SENSITIVE = new Set(["admin.json", "activity.json"]);
+const GIT_SENSITIVE = new Set(["admin.json", "activity.json", "leads.json"]);
 
 type GitHubCfg = { token: string; owner: string; name: string; branch: string };
 

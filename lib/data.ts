@@ -375,6 +375,21 @@ export const setTimetable = (t: TimetableData) => writeJson("timetable.json", t)
 export const getBlog = () => readJson<BlogPost[]>("blog.json");
 export const setBlog = (b: BlogPost[]) => writeJson("blog.json", b);
 
+// Lead/enquiry submissions from the website forms (stored privately, never git).
+export type Lead = {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  trainingAs?: string;
+  source?: string;
+  message?: string;
+  createdAt: string; // ISO
+};
+export const getLeads = async (): Promise<Lead[]> =>
+  (await tryReadJson<Lead[]>("leads.json")) ?? [];
+export const setLeads = (l: Lead[]) => writeJson("leads.json", l);
+
 // ============================================================
 // Block-based page content
 // ============================================================
