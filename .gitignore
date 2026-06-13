@@ -15,3 +15,6 @@ javascript/
 
 # Standalone duplicate of public/appconcept/, kept on disk for reference only
 /appconcept/
+
+# Local editor/tooling config
+.claude/

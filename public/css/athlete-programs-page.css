@@ -124,7 +124,7 @@
 .coach-body {
   padding: 36px 36px 36px 0;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 15px;
+  font-size: 18.5px;
   line-height: 1.8;
 }
 .coach-body p {
@@ -149,7 +149,7 @@
 .coach-list li {
   margin: 0 0 8px;
   color: rgba(255, 255, 255, 0.78);
-  font-size: 14.5px;
+  font-size: 18px;
   line-height: 1.6;
 }
 .coach-list li::marker {
@@ -175,4 +175,16 @@
   .coach-body {
     padding: 28px 24px 32px;
   }
+}
+
+/* --- Casual download deterrent (mounted via NoDownloadGuard) --- */
+body.no-download img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+body.no-download {
+  -webkit-user-select: none;
+  user-select: none;
 }

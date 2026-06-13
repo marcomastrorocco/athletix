@@ -85,7 +85,7 @@
 .about-why-lede {
   max-width: 620px;
   margin: 6px auto 30px;
-  font-size: 15px;
+  font-size: 18.5px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.65);
 }
@@ -166,7 +166,7 @@
   line-height: 1.1;
 }
 .about-block-body p {
-  font-size: 16px;
+  font-size: 19.5px;
   line-height: 1.85;
   color: rgba(255, 255, 255, 0.75);
   margin: 0 0 14px;
@@ -183,7 +183,7 @@
   font-style: italic;
 }
 .about-lead {
-  font-size: 17.5px !important;
+  font-size: 20px !important;
   line-height: 1.7 !important;
   color: rgba(255, 255, 255, 0.92) !important;
 }
@@ -214,7 +214,7 @@
 }
 .about-list li {
   position: relative;
-  font-size: 15px;
+  font-size: 18.5px;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.78);
   padding-left: 26px;
@@ -314,7 +314,7 @@
   max-width: 80%;
 }
 .about-podcast-body {
-  font-size: 15.5px;
+  font-size: 19px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.78);
   margin: 0 0 22px;
@@ -396,7 +396,7 @@
 }
 .about-team-lede {
   text-align: center;
-  font-size: 16px;
+  font-size: 19.5px;
   line-height: 1.85;
   color: rgba(255, 255, 255, 0.72);
   margin: 14px auto 40px;
@@ -487,7 +487,7 @@
    Rich text inside numbered/about blocks (overrides global)
    ============================================================ */
 .about-block-body .rich-text p {
-  font-size: 16px;
+  font-size: 19.5px;
   line-height: 1.85;
   color: rgba(255, 255, 255, 0.75);
   margin: 0 0 14px;
@@ -523,7 +523,7 @@
 }
 .about-block-body .rich-text li {
   position: relative;
-  font-size: 15px;
+  font-size: 18.5px;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.78);
   padding-left: 26px;

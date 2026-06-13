@@ -94,7 +94,7 @@
   align-items: center;
 }
 .nd-intro-copy p {
-  font-size: 16.5px;
+  font-size: 19.5px;
   line-height: 1.75;
   color: var(--nd-ink);
   margin: 0 0 16px;
@@ -115,7 +115,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14.5px;
+  font-size: 18px;
   color: var(--nd-ink);
   padding: 10px 14px;
   background: rgba(0, 212, 240, 0.04);
@@ -174,7 +174,7 @@
 .nd-offer-lede {
   max-width: 920px;
   margin: 0 auto 56px;
-  font-size: 16.5px;
+  font-size: 19.5px;
   line-height: 1.75;
   color: var(--nd-ink);
   text-align: center;
@@ -244,7 +244,7 @@
   line-height: 1.1;
 }
 .nd-offer-card > p {
-  font-size: 14.5px;
+  font-size: 18px;
   line-height: 1.65;
   color: var(--nd-ink);
   margin: 0;
@@ -260,7 +260,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 13.5px;
+  font-size: 17px;
   line-height: 1.55;
   color: var(--nd-ink);
 }
@@ -290,7 +290,7 @@
   border: 1px solid var(--nd-line);
 }
 .nd-offer-copy p {
-  font-size: 15.5px;
+  font-size: 18.5px;
   line-height: 1.75;
   color: var(--nd-ink);
   margin: 0 0 14px;
@@ -320,7 +320,7 @@
   margin: 0 auto;
 }
 .nd-why-body p {
-  font-size: 16px;
+  font-size: 19.5px;
   line-height: 1.85;
   color: var(--nd-ink);
   margin: 0 0 18px;
@@ -371,7 +371,7 @@
   border-radius: 2px;
 }
 .nd-collab-block > p {
-  font-size: 15.5px;
+  font-size: 18.5px;
   line-height: 1.75;
   color: var(--nd-ink);
   margin: 0 0 18px;
@@ -388,7 +388,7 @@
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid var(--nd-line);
   border-radius: 10px;
-  font-size: 14.5px;
+  font-size: 18px;
   line-height: 1.6;
   color: var(--nd-ink);
   transition: border-color 0.2s, background 0.2s;
@@ -469,7 +469,7 @@
 .nd-close-card p {
   max-width: 680px;
   margin: 0 auto 14px;
-  font-size: 16px;
+  font-size: 19.5px;
   line-height: 1.75;
   color: var(--nd-ink);
 }
@@ -539,7 +539,7 @@
 .nd-faq-body {
   padding: 0 22px 20px;
   color: var(--nd-ink);
-  font-size: 14.5px;
+  font-size: 18px;
   line-height: 1.7;
 }
 .nd-faq-body p {

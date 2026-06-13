@@ -367,8 +367,18 @@ export default function HomeV2({
               <div className="cred-bar">
                 {coachesCfg.credBar.map((c, i) => (
                   <div key={i} className="cred-item">
-                    <span className="cred-val">{c.val}</span>
-                    <span className="cred-lbl">{c.lbl}</span>
+                    {c.img ? (
+                      <img
+                        className="cred-logo"
+                        src={c.img}
+                        alt={c.alt || c.lbl || ""}
+                      />
+                    ) : (
+                      <>
+                        <span className="cred-val">{c.val}</span>
+                        <span className="cred-lbl">{c.lbl}</span>
+                      </>
+                    )}
                   </div>
                 ))}
               </div>
@@ -452,22 +462,28 @@ export default function HomeV2({
                   ))}
                 </div>
 
-                <div className="dietitian-callout">
-                  <span className="diet-label">{hub.dietLabel}</span>
-                  <div className="diet-title">
-                    {hub.dietTitleTop}
-                    <br />
-                    <em>{hub.dietTitleEm}</em>
+                {(hub.dietLabel ||
+                  hub.dietTitleTop ||
+                  hub.dietTitleEm ||
+                  hub.dietDesc ||
+                  hub.dietCreds.length > 0) && (
+                  <div className="dietitian-callout">
+                    <span className="diet-label">{hub.dietLabel}</span>
+                    <div className="diet-title">
+                      {hub.dietTitleTop}
+                      <br />
+                      <em>{hub.dietTitleEm}</em>
+                    </div>
+                    <p className="diet-desc">{hub.dietDesc}</p>
+                    <div className="diet-creds">
+                      {hub.dietCreds.map((c, i) => (
+                        <span key={i} className="diet-cred">
+                          {c}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <p className="diet-desc">{hub.dietDesc}</p>
-                  <div className="diet-creds">
-                    {hub.dietCreds.map((c, i) => (
-                      <span key={i} className="diet-cred">
-                        {c}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
@@ -533,7 +549,12 @@ export default function HomeV2({
               {testimonials.videos.map((t, i) => (
                 <div key={i} className="testi-card">
                   <div className="testi-video" onClick={toggleVideo}>
-                    <video preload="none" loop>
+                    <video
+                      preload="none"
+                      poster={t.src.replace(/\.[^/.]+$/, ".jpg")}
+                      loop
+                      playsInline
+                    >
                       <source src={t.src} type="video/mp4" />
                     </video>
                     <div className="testi-play">
@@ -619,12 +640,21 @@ export default function HomeV2({
                         </li>
                       ))}
                     </ul>
-                    <a
-                      className={p.featured ? "btn-plan" : "btn-plan-out"}
-                      href={p.href}
-                    >
-                      View Plan
-                    </a>
+                    {p.href?.startsWith("/") ? (
+                      <Link
+                        className={p.featured ? "btn-plan" : "btn-plan-out"}
+                        href={p.href}
+                      >
+                        View Plan
+                      </Link>
+                    ) : (
+                      <a
+                        className={p.featured ? "btn-plan" : "btn-plan-out"}
+                        href={p.href}
+                      >
+                        View Plan
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}

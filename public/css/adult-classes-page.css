@@ -70,7 +70,7 @@
 
 /* Tile body wrapper — for cards with multiple paragraphs (e.g. Family page) */
 .class-tile .tile-body {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.7);
   margin: 0 0 18px;
@@ -157,7 +157,7 @@
 .faq-body {
   padding: 0 22px 22px;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 14.5px;
+  font-size: 18px;
   line-height: 1.8;
 }
 .faq-body p {
@@ -183,7 +183,7 @@
 }
 .faq-list-numbered li p {
   margin: 0;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 @media (max-width: 600px) {

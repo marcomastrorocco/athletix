@@ -1,5 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import TrustSection from "@/components/TrustSection";
+import NoDownloadGuard from "@/components/NoDownloadGuard";
+import { getSite } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Athlete Programs — ATHLETIX Brisbane",
@@ -338,27 +342,11 @@ const FAQS: FAQ[] = [
   },
 ];
 
-const TESTIMONIALS = [
-  { src: "/image/video/DARCY.mp4#t=5" },
-  { src: "/image/video/GEORGIA02.mp4#t=5" },
-  { src: "/image/video/Testimonial-1-Website.mp4#t=5" },
-  { src: "/image/video/Testimonial-2-Website.mp4#t=3" },
-];
-
-const TRUSTED = [
-  { src: "/image/Trusted%20By/Baseball_Australia_logo.png", alt: "Baseball Australia" },
-  { src: "/image/Trusted%20By/Brisbane-Bullets-logo.png", alt: "Brisbane Bullets" },
-  { src: "/image/Trusted%20By/brisbane-lions-logo.png", alt: "Brisbane Lions" },
-  { src: "/image/Trusted%20By/crest-villanova-crest-logo.png", alt: "Villanova" },
-  { src: "/image/Trusted%20By/cricket-australia-logo.png", alt: "Cricket Australia" },
-  { src: "/image/Trusted%20By/gold-coast-titans-logo.png", alt: "Gold Coast Titans" },
-  { src: "/image/Trusted%20By/kisspng-brisbane-heat-logo.png", alt: "Brisbane Heat" },
-  { src: "/image/Trusted%20By/Queensland-Bulls.png", alt: "Queensland Bulls" },
-];
-
-export default function AthleteProgramsPage() {
+export default async function AthleteProgramsPage() {
+  const site = await getSite();
   return (
     <>
+      <NoDownloadGuard />
       <link rel="stylesheet" href="/css/classes-page.css" />
       <link rel="stylesheet" href="/css/youth-classes-page.css" />
       <link rel="stylesheet" href="/css/adult-classes-page.css" />
@@ -385,9 +373,7 @@ export default function AthleteProgramsPage() {
               speed and agility?
             </p>
 
-            <details className="intro-collapse">
-              <summary className="intro-collapse-toggle">Read more</summary>
-              <div className="intro-collapse-body">
+            <div className="youth-intro-more">
                 <p>
                   At ATHLETIX, our team of{" "}
                   <strong>Strength &amp; Conditioning coaches</strong> (ESSA, ASCA,
@@ -446,84 +432,8 @@ export default function AthleteProgramsPage() {
                     We offer a 7-day trial, book your spot below.
                   </strong>
                 </p>
-              </div>
-            </details>
+            </div>
 
-            <h3 className="youth-intro-sub">BOOK 7-DAY TRIAL</h3>
-            <form
-              className="youth-form athlete-inline-form"
-              method="post"
-              action="/contact"
-            >
-              <div className="youth-form-field youth-form-field-full">
-                <input
-                  type="text"
-                  name="full_name"
-                  id="ap-name"
-                  placeholder=" "
-                  required
-                />
-                <label htmlFor="ap-name">
-                  Name<span className="req">*</span>
-                </label>
-              </div>
-              <div className="youth-form-field youth-form-field-full">
-                <input
-                  type="tel"
-                  name="phone"
-                  id="ap-phone"
-                  placeholder=" "
-                />
-                <label htmlFor="ap-phone">Phone Number</label>
-              </div>
-              <div className="youth-form-field youth-form-field-full">
-                <input
-                  type="email"
-                  name="email"
-                  id="ap-email"
-                  placeholder=" "
-                  required
-                />
-                <label htmlFor="ap-email">
-                  Email<span className="req">*</span>
-                </label>
-              </div>
-
-              <fieldset className="adult-radio-group">
-                <legend>About you:</legend>
-                <label className="radio-pill">
-                  <input type="radio" name="audience" value="youth" />
-                  <span>Youth</span>
-                </label>
-                <label className="radio-pill">
-                  <input
-                    type="radio"
-                    name="audience"
-                    value="adult"
-                    defaultChecked
-                  />
-                  <span>Adult</span>
-                </label>
-                <label className="radio-pill">
-                  <input type="radio" name="audience" value="family" />
-                  <span>Family</span>
-                </label>
-              </fieldset>
-
-              <div className="youth-form-actions">
-                <div
-                  className="youth-captcha"
-                  aria-label="reCAPTCHA placeholder"
-                >
-                  <span className="yc-box" />
-                  <span className="yc-label">I&rsquo;m not a robot</span>
-                  <span className="yc-logo">reCAPTCHA</span>
-                </div>
-                <button type="submit" className="youth-form-submit">
-                  BOOK NOW <span aria-hidden="true">&#10148;</span>
-                </button>
-              </div>
-            </form>
           </div>
 
           <div className="youth-intro-image athlete-intro-image">
@@ -535,82 +445,102 @@ export default function AthleteProgramsPage() {
         </div>
       </section>
 
-      <section className="testimonials" id="testimonials">
+      <section className="youth-form-section" id="athlete-form">
         <div className="container">
-          <div className="testimonials-header">
-            <p className="eyebrow center">Real Results</p>
-            <h2 className="section-heading center">WHAT OUR MEMBERS SAY</h2>
-            <p className="testimonials-sub">
-              Don&rsquo;t just take our word for it. Hear directly from the
-              athletes and individuals who train with us every day.
+          <div className="youth-form-head">
+            <h2>
+              BOOK 7-DAY <span className="accent">TRIAL</span>
+            </h2>
+            <p className="youth-form-lead">
+              <strong>Contact us today</strong> to{" "}
+              <strong>book your 7-day trial</strong> and start training with our{" "}
+              <strong>elite performance team.</strong>
             </p>
           </div>
-          <div
-            className="slider-wrapper"
-            style={{
-              position: "relative",
-              maxWidth: "1200px",
-              margin: "0 auto",
-              width: "100%",
-            }}
-          >
-            <div className="slider-container" id="testimonialSlider">
-              <div className="slider-track" id="testimonialTrack">
-                {TESTIMONIALS.map((t) => (
-                  <div key={t.src} className="video-card">
-                    <video
-                      src={t.src}
-                      preload="metadata"
-                      playsInline
-                    />
-                    <div className="card-frame" />
-                    <button className="play-overlay" aria-label="Play Video">
-                      <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </button>
-                  </div>
-                ))}
+
+          <form className="youth-form" method="post" action="/contact">
+            <div className="youth-form-row">
+              <div className="youth-form-field">
+                <input
+                  type="text"
+                  name="full_name"
+                  id="ap-name"
+                  placeholder=" "
+                  required
+                />
+                <label htmlFor="ap-name">Your full name</label>
+              </div>
+              <div className="youth-form-field">
+                <input
+                  type="email"
+                  name="email"
+                  id="ap-email"
+                  placeholder=" "
+                  required
+                />
+                <label htmlFor="ap-email">E-mail address</label>
               </div>
             </div>
+            <div className="youth-form-field youth-form-field-full">
+              <input type="tel" name="phone" id="ap-phone" placeholder=" " />
+              <label htmlFor="ap-phone">Phone</label>
+            </div>
 
-            <div className="slider-controls">
-              <button
-                type="button"
-                className="slider-btn prev-btn"
-                aria-label="Previous Testimonial"
-              >
-                &larr;
-              </button>
-              <button
-                type="button"
-                className="slider-btn next-btn"
-                aria-label="Next Testimonial"
-              >
-                &rarr;
+            <fieldset className="adult-radio-group">
+              <legend>About you:</legend>
+              <label className="radio-pill">
+                <input type="radio" name="audience" value="athlete" />
+                <span>Athlete</span>
+              </label>
+              <label className="radio-pill">
+                <input type="radio" name="audience" value="youth" />
+                <span>Youth</span>
+              </label>
+              <label className="radio-pill">
+                <input
+                  type="radio"
+                  name="audience"
+                  value="adult"
+                  defaultChecked
+                />
+                <span>Adult</span>
+              </label>
+              <label className="radio-pill">
+                <input type="radio" name="audience" value="family" />
+                <span>Family</span>
+              </label>
+            </fieldset>
+
+            <div className="youth-form-actions">
+              <div className="youth-captcha">
+                <input
+                  type="checkbox"
+                  name="not_robot"
+                  id="ap-captcha"
+                  className="yc-check"
+                  required
+                />
+                <label
+                  htmlFor="ap-captcha"
+                  className="yc-box"
+                  aria-label="I'm not a robot"
+                />
+                <label htmlFor="ap-captcha" className="yc-label">
+                  I&rsquo;m not a robot
+                </label>
+                <span className="yc-logo">reCAPTCHA</span>
+              </div>
+              <button type="submit" className="youth-form-submit">
+                BOOK NOW <span aria-hidden="true">&#10148;</span>
               </button>
             </div>
-            <div
-              className="slider-dots"
-              id="testimonialDots"
-              aria-label="Testimonial Slider Dots"
-            />
-          </div>
+          </form>
         </div>
       </section>
 
-      <section className="trusted-by" id="trusted">
-        <div className="container">
-          <h3 className="trusted-title">TRUSTED BY</h3>
-          <ul className="trusted-logos">
-            {TRUSTED.map((t) => (
-              <li key={t.src}>
-                <img src={t.src} alt={t.alt} />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <TestimonialsSection data={site.testimonials} />
+
+      <TrustSection data={site.trust} />
 
       <section className="coaches">
         <div className="container">

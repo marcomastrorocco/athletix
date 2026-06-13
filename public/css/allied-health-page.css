@@ -65,7 +65,7 @@
   align-items: center;
 }
 .ah-intro-copy p {
-  font-size: 16.5px;
+  font-size: 19.5px;
   line-height: 1.75;
   color: var(--ah-ink);
   margin: 0 0 16px;
@@ -263,7 +263,7 @@
   border-radius: 2px;
 }
 .ah-prac-body p {
-  font-size: 15.5px;
+  font-size: 18.5px;
   line-height: 1.7;
   color: var(--ah-ink);
   margin: 0 0 14px;
@@ -308,7 +308,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 14.5px;
+  font-size: 18px;
   line-height: 1.55;
   color: var(--ah-ink);
   padding: 8px 12px;
@@ -420,7 +420,7 @@
 .ah-faq-body {
   padding: 0 22px 20px;
   color: var(--ah-ink);
-  font-size: 14.5px;
+  font-size: 18px;
   line-height: 1.7;
 }
 .ah-faq-body p {

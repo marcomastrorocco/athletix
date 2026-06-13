@@ -63,7 +63,7 @@ export default function YouthSpeedDevelopmentPage() {
               <Link href="#book-form" className="btn btn-primary">
                 Book a class
               </Link>
-              <Link href="/class-timetable" className="btn btn-ghost">
+              <Link href="/timetable" className="btn btn-ghost">
                 View timetable
               </Link>
             </div>

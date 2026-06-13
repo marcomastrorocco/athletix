@@ -73,7 +73,7 @@
   border: 1px solid var(--ot-line);
 }
 .ot-intro-copy p {
-  font-size: 16.5px;
+  font-size: 20px;
   line-height: 1.75;
   color: var(--ot-ink);
   margin: 0 0 16px;
@@ -208,7 +208,7 @@
 }
 .ot-coach-card-bio {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 17px;
   line-height: 1.6;
   color: var(--ot-ink);
   display: -webkit-box;
@@ -229,7 +229,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1.5;
   color: var(--ot-ink);
 }

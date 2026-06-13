@@ -8,7 +8,7 @@ import {
 export type Btn = { label: string; href: string };
 export type ImgRef = { src: string; alt: string };
 export type NL = { n: string; l: string }; // number + label
-export type KV = { val: string; lbl: string }; // value + label (credentials)
+export type KV = { val: string; lbl: string; img?: string; alt?: string }; // value + label (credentials); optional logo image
 
 export type HomeHero = {
   kicker: string;

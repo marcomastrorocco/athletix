@@ -186,13 +186,8 @@ export default async function YouthClassesPage() {
               sport practice), <strong>ATHLETICISM</strong> (S&amp;C) and{" "}
               <strong>INJURY REDUCTION</strong> (S&amp;C) longevity.
             </p>
-            <Link href="/contact" className="btn btn-outline">
-              Book a Trial
-            </Link>
 
-            <details className="intro-collapse">
-              <summary className="intro-collapse-toggle">Read more</summary>
-              <div className="intro-collapse-body">
+            <div className="intro-collapse-body">
                 <p>
                   Whether your child is involved in court sports such as tennis,
                   netball, or basketball, or field sports such as rugby, AFL,
@@ -239,8 +234,14 @@ export default async function YouthClassesPage() {
                   our Youth Strength and Conditioning programs are designed to help
                   them reach their full potential and achieve their goals.
                 </p>
-              </div>
-            </details>
+            </div>
+            <Link
+              href="/contact"
+              className="btn btn-primary"
+              style={{ marginTop: "26px" }}
+            >
+              Book a Trial
+            </Link>
           </div>
           <div className="youth-intro-image">
             <video autoPlay muted loop playsInline preload="metadata">
@@ -253,11 +254,16 @@ export default async function YouthClassesPage() {
 
       <section className="youth-form-section" id="youth-form">
         <div className="container">
-          <p className="youth-form-lead">
-            <strong>Contact us today</strong> to{" "}
-            <strong>book a trial</strong> and to{" "}
-            <strong>enrol your child in our programs.</strong>
-          </p>
+          <div className="youth-form-head">
+            <h2>
+              BOOK A <span className="accent">TRIAL</span>
+            </h2>
+            <p className="youth-form-lead">
+              <strong>Contact us today</strong> to{" "}
+              <strong>book a trial</strong> and to{" "}
+              <strong>enrol your child in our programs.</strong>
+            </p>
+          </div>
 
           <form className="youth-form" method="post" action="/contact">
             <div className="youth-form-row">
@@ -311,10 +317,42 @@ export default async function YouthClassesPage() {
               />
               <label htmlFor="yf-message">Drop us a few lines here&hellip;</label>
             </div>
+            <fieldset className="adult-radio-group">
+              <legend>About you:</legend>
+              <label className="radio-pill">
+                <input type="radio" name="audience" value="youth" defaultChecked />
+                <span>Youth</span>
+              </label>
+              <label className="radio-pill">
+                <input type="radio" name="audience" value="adult" />
+                <span>Adult</span>
+              </label>
+              <label className="radio-pill">
+                <input type="radio" name="audience" value="athlete" />
+                <span>Athlete</span>
+              </label>
+              <label className="radio-pill">
+                <input type="radio" name="audience" value="family" />
+                <span>Family</span>
+              </label>
+            </fieldset>
             <div className="youth-form-actions">
-              <div className="youth-captcha" aria-label="reCAPTCHA placeholder">
-                <span className="yc-box" />
-                <span className="yc-label">I&rsquo;m not a robot</span>
+              <div className="youth-captcha">
+                <input
+                  type="checkbox"
+                  name="not_robot"
+                  id="yf-captcha"
+                  className="yc-check"
+                  required
+                />
+                <label
+                  htmlFor="yf-captcha"
+                  className="yc-box"
+                  aria-label="I'm not a robot"
+                />
+                <label htmlFor="yf-captcha" className="yc-label">
+                  I&rsquo;m not a robot
+                </label>
                 <span className="yc-logo">reCAPTCHA</span>
               </div>
               <button type="submit" className="youth-form-submit">

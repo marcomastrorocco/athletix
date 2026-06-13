@@ -32,7 +32,7 @@
       "title": "Lift — Strength Training Class",
       "lead": "This **strength training class** builds incredibly strong foundations for your weightlifting journey — progressively. Form and detail are drilled to keep your lifts *always* safe, and to lay the groundwork for more complex Olympic lifts and their variations.\n\nIf you're an athlete looking to boost strength and power — or just want to train like one — our team of elite **Strength & Conditioning coaches** (ESSA, ASCA, NCIS accredited) bring practical experience with elite athletes, youth, adult populations and rehab/injury prevention. Programs are tailored to every level across **Netball, Track & Field, Rugby, AFL, Cricket, Soccer and Basketball**.\n\nLIFT progresses you from foundational weightlifting (Squats, Deadlifts, Bench Press) onto power-based movements (Cleans, Jerks, Snatches) — with elite-level athlete coaching every step of the way.",
       "primaryBtn": { "label": "Book a trial", "href": "#book-form" },
-      "secondaryBtn": { "label": "View timetable", "href": "/class-timetable" },
+      "secondaryBtn": { "label": "View timetable", "href": "/timetable" },
       "image": "/image/cdn/lift-hero-a1644.webp",
       "imageAlt": "LIFT strength training class at ATHLETIX Brisbane",
       "badge": "Strength · Power",

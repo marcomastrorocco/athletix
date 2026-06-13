@@ -324,13 +324,8 @@ export default async function AdultClassesPage() {
               teamwork in general, is a large contributing factor to improving
               performance and achieving fitness goals.
             </p>
-            <Link href="#adult-form" className="btn btn-outline">
-              Book a Trial
-            </Link>
 
-            <details className="intro-collapse">
-              <summary className="intro-collapse-toggle">Read more</summary>
-              <div className="intro-collapse-body">
+            <div className="intro-collapse-body">
                 <p>
                   When you&rsquo;re in a small group, there&rsquo;s a motivation to
                   do your best and <strong>push your limits</strong>. When the
@@ -353,8 +348,14 @@ export default async function AdultClassesPage() {
                   coaches guide you through each exercise, ensuring proper
                   technique and progression. <strong>Book your spot today!</strong>
                 </p>
-              </div>
-            </details>
+            </div>
+            <Link
+              href="#adult-form"
+              className="btn btn-primary"
+              style={{ marginTop: "26px" }}
+            >
+              Book a Trial
+            </Link>
           </div>
           <div className="youth-intro-image">
             <video autoPlay muted loop playsInline preload="metadata">
@@ -367,9 +368,14 @@ export default async function AdultClassesPage() {
 
       <section className="youth-form-section" id="adult-form">
         <div className="container">
-          <p className="youth-form-lead">
-            <strong>Book your spot today!</strong>
-          </p>
+          <div className="youth-form-head">
+            <h2>
+              BOOK A <span className="accent">TRIAL</span>
+            </h2>
+            <p className="youth-form-lead">
+              <strong>Book your spot today!</strong>
+            </p>
+          </div>
 
           <form className="youth-form" method="post" action="/contact">
             <div className="youth-form-field youth-form-field-full">
@@ -415,6 +421,10 @@ export default async function AdultClassesPage() {
                   defaultChecked
                 />
                 <span>Adult</span>
+              </label>
+              <label className="radio-pill">
+                <input type="radio" name="audience" value="athlete" />
+                <span>Athlete</span>
               </label>
               <label className="radio-pill">
                 <input type="radio" name="audience" value="family" />

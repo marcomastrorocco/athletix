@@ -53,6 +53,25 @@ export default function TrialForm() {
           <option>NDIS Program</option>
         </select>
       </div>
+      <fieldset className="adult-radio-group">
+        <legend>About you:</legend>
+        <label className="radio-pill">
+          <input type="radio" name="audience" value="youth" />
+          <span>Youth</span>
+        </label>
+        <label className="radio-pill">
+          <input type="radio" name="audience" value="adult" defaultChecked />
+          <span>Adult</span>
+        </label>
+        <label className="radio-pill">
+          <input type="radio" name="audience" value="athlete" />
+          <span>Athlete</span>
+        </label>
+        <label className="radio-pill">
+          <input type="radio" name="audience" value="family" />
+          <span>Family</span>
+        </label>
+      </fieldset>
       <div className="field">
         <label htmlFor="msg">Message</label>
         <textarea

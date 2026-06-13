@@ -170,7 +170,7 @@
         "tag": "Ages 8–16",
         "name": "Youth Classes",
         "desc": "Real coaching. Real development. Our LTAD approach builds athleticism through age appropriate structure, movement freedom, and skill development. No adult drills forced onto kids. Just smart coaching that develops confidence, coordination, creativity, and long term resilience.",
-        "href": "/membership#youth"
+        "href": "/youth-classes"
       },
       {
         "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.webp",
@@ -178,7 +178,7 @@
         "tag": "All Levels Welcome",
         "name": "Adult Classes",
         "desc": "A real coach. A real program. A room full of people working just as hard as you. Challenging enough to change you. Personal enough to keep you coming back. This is training that actually works.",
-        "href": "/membership#adult"
+        "href": "/adult-classes"
       },
       {
         "img": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpjl6lqu-athletix-16-arvo-10-scaled-e1718759410478.jpg",
@@ -194,7 +194,7 @@
         "tag": "Sub-Elite & Pro",
         "name": "Athlete Programs",
         "desc": "Same methods. Same science. Same physio and dietitian as the pros. If you're chasing a contract, a squad spot, or simply the best version of yourself — this is where the gap gets closed.",
-        "href": "/membership#performance"
+        "href": "/athlete-programs"
       }
     ]
   },
@@ -254,20 +254,20 @@
     "body": "ASCA and ESSA accredited coaches with real world experience across elite sport, youth development, and rehabilitation. Evidence based, detail driven, and genuinely invested in helping every person progress — from first session to long term results.",
     "credBar": [
       {
-        "val": "ASCA & ESSA",
+        "val": "ASCA",
         "lbl": "Accredited"
       },
       {
+        "val": "ESSA",
+        "lbl": "Certified"
+      },
+      {
         "val": "8",
-        "lbl": "S&C Coaches"
+        "lbl": "Elite Coaches"
       },
       {
-        "val": "",
-        "lbl": ""
-      },
-      {
-        "val": "",
-        "lbl": ""
+        "val": "Uni",
+        "lbl": "All Qualified"
       }
     ]
   },
@@ -471,7 +471,7 @@
           "Physio Screening included",
           "Full facility access"
         ],
-        "href": "#form"
+        "href": "/membership#youth"
       },
       {
         "tier": "All Levels",
@@ -488,7 +488,7 @@
           "Full facility access"
         ],
         "featured": true,
-        "href": "#form"
+        "href": "/membership#adult"
       },
       {
         "tier": "All Ages Together",
@@ -504,7 +504,7 @@
           "S&C Consultation",
           "Full facility access"
         ],
-        "href": "#form"
+        "href": "/membership#family"
       },
       {
         "tier": "12-Month Subscription",
@@ -520,7 +520,7 @@
           "Sports Dietitian Access",
           "Full facility access"
         ],
-        "href": "#form"
+        "href": "/membership#performance"
       }
     ]
   },
@@ -593,6 +593,11 @@
             "href": "/adult-classes",
             "title": "Adult Classes",
             "desc": "17+. S&C Group classes: LIFT, MET-CON, HIT SLED, PILATES, MOBILITY. Every level welcome."
+          },
+          {
+            "href": "/family-classes",
+            "title": "Family Classes",
+            "desc": "All ages, together. Train as a family on one membership — Fortitude Valley, Brisbane."
           },
           {
             "href": "/athlete-programs",

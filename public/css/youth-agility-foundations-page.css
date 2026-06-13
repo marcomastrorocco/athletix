@@ -61,14 +61,14 @@
   margin: 4px 0 6px;
 }
 .yaf-lead {
-  font-size: 16px;
+  font-size: 19.5px;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.78);
   margin: 0;
 }
 .yaf-lead--muted {
   color: rgba(255, 255, 255, 0.55);
-  font-size: 14px;
+  font-size: 18px;
 }
 .yaf-lead a {
   color: #00d4f0;
@@ -224,7 +224,7 @@
   margin: 0;
 }
 .yaf-info-card p {
-  font-size: 15px;
+  font-size: 18.5px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.78);
 }
@@ -380,7 +380,7 @@
 }
 .yaf-book-sub {
   margin: 0;
-  font-size: 16px;
+  font-size: 19.5px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.65);
 }
@@ -420,7 +420,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.82);
 }
@@ -770,7 +770,7 @@
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.75;
   margin: 0 0 22px;
-  font-size: 15px;
+  font-size: 18.5px;
 }
 .yaf-coach-links {
   display: flex;
@@ -870,7 +870,7 @@
 }
 .yaf-includes-sub {
   color: rgba(255, 255, 255, 0.65);
-  font-size: 15px;
+  font-size: 18.5px;
   line-height: 1.7;
   margin: 0;
 }
@@ -907,7 +907,7 @@
   margin: 0;
 }
 .yaf-pillar p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.72);
   margin: 0;
@@ -932,7 +932,7 @@
 }
 .yaf-faq-head p {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 15px;
+  font-size: 18.5px;
   margin: 0;
 }
 .yaf-faq-list {
@@ -988,7 +988,7 @@
 .yaf-faq-body {
   padding: 0 26px 22px;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.75;
 }
 .yaf-faq-body p {

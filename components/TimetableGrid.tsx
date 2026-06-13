@@ -13,8 +13,14 @@ const CLASS_DETAIL_ROUTES: { match: RegExp; href: string }[] = [
   { match: /youth\s*agility\s*foundations|^yaf\b/i, href: "/youth-agility-foundations" },
   { match: /youth\s*agility\s*development|^yad\b/i, href: "/youth-agility-development" },
   { match: /youth\s*speed\s*development/i, href: "/youth-speed-development" },
+  { match: /youth\s*speed\s*foundation/i, href: "/youth-speed-foundation" },
   { match: /youth\s*(strength|fitness)\s*development/i, href: "/youth-fitness-development" },
+  { match: /youth\s*fitness\s*foundation/i, href: "/youth-fitness-foundations" },
+  { match: /youth\s*open\s*workout/i, href: "/youth-open-workout" },
   { match: /^lift\b/i, href: "/lift" },
+  { match: /met-?\s*con/i, href: "/met-con" },
+  { match: /push\s*&?\s*drag|hi+t\s*-?\s*push/i, href: "/hiit-push-and-drag" },
+  { match: /strength\s*&\s*con/i, href: "/strength-con" },
 ];
 
 function routeForClass(title: string): string {

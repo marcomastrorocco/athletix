@@ -71,7 +71,7 @@
   color: #00d4f0;
 }
 .og-tour-sub {
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
@@ -134,7 +134,7 @@
 }
 .og-tour-meta p {
   margin: 0;
-  font-size: 15px;
+  font-size: 18.5px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -179,7 +179,7 @@
   color: #00d4f0;
 }
 .og-story-lede {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.65;
   color: #fff;
   margin: 0 0 28px;
@@ -197,7 +197,7 @@
   text-underline-offset: 3px;
 }
 .og-story-body {
-  font-size: 16px;
+  font-size: 19.5px;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.75);
   margin: 0 0 16px;
@@ -351,7 +351,7 @@
 }
 .og-story-quote p {
   margin: 0;
-  font-size: 15.5px;
+  font-size: 19px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.86);
   font-style: italic;
@@ -398,7 +398,7 @@
   color: #00d4f0;
 }
 .og-layout-sub {
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
@@ -485,7 +485,7 @@
 }
 .og-zone-body p {
   margin: 0;
-  font-size: 14.5px;
+  font-size: 18.5px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.72);
 }
@@ -493,7 +493,7 @@
 .og-layout-outro {
   text-align: center;
   font-style: italic;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.75);
   margin: 56px auto 0;

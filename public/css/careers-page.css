@@ -66,7 +66,7 @@
   align-items: center;
 }
 .cr-intro-copy p {
-  font-size: 16.5px;
+  font-size: 19.5px;
   line-height: 1.75;
   color: var(--cr-ink);
   margin: 0 0 16px;
@@ -153,7 +153,7 @@
 }
 .cr-perk-desc {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 17px;
   line-height: 1.55;
   color: var(--cr-ink);
 }
@@ -243,7 +243,7 @@
   line-height: 1.1;
 }
 .cr-job-desc {
-  font-size: 14.5px;
+  font-size: 18px;
   line-height: 1.65;
   color: var(--cr-ink);
   margin: 0 0 18px;
@@ -312,7 +312,7 @@
   top: 100px;
 }
 .cr-apply-copy p {
-  font-size: 16px;
+  font-size: 19.5px;
   line-height: 1.75;
   color: var(--cr-ink);
   margin: 0 0 16px;
@@ -328,7 +328,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 14.5px;
+  font-size: 18px;
   line-height: 1.55;
   color: var(--cr-ink);
 }
@@ -485,7 +485,7 @@
 .cf-success p {
   max-width: 420px;
   margin: 0 auto 22px;
-  font-size: 15px;
+  font-size: 18.5px;
   line-height: 1.6;
   color: var(--cr-ink);
 }
