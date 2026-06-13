@@ -6,6 +6,7 @@ import PageScripts from "@/components/PageScripts";
 import SiteSplash from "@/components/SiteSplash";
 import CookieBanner from "@/components/CookieBanner";
 import ScrollToTop from "@/components/ScrollToTop";
+import LeadFormEnhancer from "@/components/LeadFormEnhancer";
 import { getSite } from "@/lib/data";
 
 const anton = Anton({
@@ -54,6 +55,7 @@ export default async function SiteLayout({
       <Header contact={site.contact} header={site.header} />
       {children}
       <Footer />
+      <LeadFormEnhancer />
       <CookieBanner />
       <ScrollToTop />
       <PageScripts />

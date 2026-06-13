@@ -2,14 +2,15 @@
 
 export default function TrialForm() {
   return (
-    <form
-      className="contact-form"
-      onSubmit={(e) => {
-        e.preventDefault();
-        alert("Thanks! A coach will be in touch shortly.");
-        e.currentTarget.reset();
-      }}
-    >
+    <form className="contact-form" data-lead data-source="Contact page">
+      <input
+        type="text"
+        name="_hp"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
       <h3>Book your trial</h3>
       <div className="field">
         <label htmlFor="name">Full name</label>

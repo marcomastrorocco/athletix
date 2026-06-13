@@ -377,7 +377,15 @@ export default async function AdultClassesPage() {
             </p>
           </div>
 
-          <form className="youth-form" method="post" action="/contact">
+          <form className="youth-form" data-lead data-source="Adult Classes page">
+            <input
+              type="text"
+              name="_hp"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+            />
             <div className="youth-form-field youth-form-field-full">
               <input
                 type="text"
