@@ -19,6 +19,84 @@ function blobEnabled(): boolean {
   return !!process.env.BLOB_READ_WRITE_TOKEN;
 }
 
+// ---------- Git-backed content (single source of truth = the repo) ----------
+//
+// When GH_CONTENT_TOKEN + GH_CONTENT_REPO are set (on Vercel), admin saves
+// of content JSON are committed straight to the GitHub repo, and reads come
+// from the deployed bundle (which always reflects the latest commit). This
+// means admin edits and local `git push` edits share ONE source — no merge.
+//
+// These files must NEVER land in the public repo (password hash, edit log),
+// so they always use Blob (or local fs in dev), never GitHub.
+const GIT_SENSITIVE = new Set(["admin.json", "activity.json"]);
+
+type GitHubCfg = { token: string; owner: string; name: string; branch: string };
+
+function githubConfig(): GitHubCfg | null {
+  const token = process.env.GH_CONTENT_TOKEN;
+  const repo = process.env.GH_CONTENT_REPO; // "owner/name"
+  if (!token || !repo) return null;
+  const [owner, name] = repo.split("/");
+  if (!owner || !name) return null;
+  return { token, owner, name, branch: process.env.GH_CONTENT_BRANCH || "main" };
+}
+
+function githubEnabled(): boolean {
+  return !!githubConfig();
+}
+
+function ghContents(
+  cfg: GitHubCfg,
+  filePath: string,
+  init?: RequestInit
+): Promise<Response> {
+  return fetch(
+    `https://api.github.com/repos/${cfg.owner}/${cfg.name}/contents/${filePath}`,
+    {
+      ...init,
+      headers: {
+        Authorization: `Bearer ${cfg.token}`,
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "Content-Type": "application/json",
+        ...(init?.headers || {}),
+      },
+      cache: "no-store",
+    }
+  );
+}
+
+/** Create/update data/<key> in the repo. Retries on SHA races. */
+async function commitJson(
+  cfg: GitHubCfg,
+  key: string,
+  body: string
+): Promise<void> {
+  const filePath = `data/${key}`;
+  const contentB64 = Buffer.from(body, "utf8").toString("base64");
+  for (let attempt = 0; attempt < 3; attempt++) {
+    let sha: string | undefined;
+    const head = await ghContents(cfg, `${filePath}?ref=${cfg.branch}`);
+    if (head.status === 200) sha = (await head.json()).sha;
+    else if (head.status !== 404)
+      throw new Error(`GitHub read failed (${head.status})`);
+
+    const res = await ghContents(cfg, filePath, {
+      method: "PUT",
+      body: JSON.stringify({
+        message: `Update ${key} via admin`,
+        content: contentB64,
+        branch: cfg.branch,
+        ...(sha ? { sha } : {}),
+      }),
+    });
+    if (res.ok) return;
+    if (res.status === 409 || res.status === 422) continue; // SHA race — retry
+    throw new Error(`GitHub commit failed (${res.status}): ${await res.text()}`);
+  }
+  throw new Error("GitHub commit failed after retries");
+}
+
 async function findBlob(pathname: string) {
   // list() returns up to 1000 by default; for a small CMS this is plenty.
   let cursor: string | undefined;
@@ -39,23 +117,51 @@ async function readBundledJson<T>(key: string): Promise<T> {
   return JSON.parse(raw) as T;
 }
 
-export async function readJson<T>(key: string): Promise<T> {
-  if (blobEnabled()) {
-    try {
-      const blob = await findBlob(`data/${key}`);
-      if (blob) {
-        const res = await fetch(blob.url, { cache: "no-store" });
-        if (res.ok) return (await res.json()) as T;
-      }
-    } catch {
-      /* fall back to bundled */
+async function readFromBlob<T>(key: string): Promise<T | null> {
+  try {
+    const blob = await findBlob(`data/${key}`);
+    if (blob) {
+      const res = await fetch(blob.url, { cache: "no-store" });
+      if (res.ok) return (await res.json()) as T;
     }
+  } catch {
+    /* ignore */
+  }
+  return null;
+}
+
+export async function readJson<T>(key: string): Promise<T> {
+  // Sensitive files (password hash, log) live in Blob, never git.
+  if (GIT_SENSITIVE.has(key)) {
+    if (blobEnabled()) {
+      const fromBlob = await readFromBlob<T>(key);
+      if (fromBlob !== null) return fromBlob;
+    }
+    return readBundledJson<T>(key);
+  }
+  // Git-backed: the deployed bundle IS the latest committed content.
+  if (githubEnabled()) {
+    return readBundledJson<T>(key);
+  }
+  // Legacy/transition (no git token yet): Blob if configured, else bundled.
+  if (blobEnabled()) {
+    const fromBlob = await readFromBlob<T>(key);
+    if (fromBlob !== null) return fromBlob;
   }
   return readBundledJson<T>(key);
 }
 
 export async function writeJson<T>(key: string, data: T): Promise<void> {
   const body = JSON.stringify(data, null, 2) + "\n";
+  // Content -> commit to the git repo (single source of truth) when set up.
+  if (!GIT_SENSITIVE.has(key)) {
+    const cfg = githubConfig();
+    if (cfg) {
+      await commitJson(cfg, key, body);
+      return;
+    }
+  }
+  // Sensitive files, or git not configured yet: Blob if available.
   if (blobEnabled()) {
     await put(`data/${key}`, body, {
       access: "public",
@@ -65,6 +171,7 @@ export async function writeJson<T>(key: string, data: T): Promise<void> {
     });
     return;
   }
+  // Local dev: filesystem.
   await fs.mkdir(path.dirname(path.join(dataDir, key)), { recursive: true });
   await fs.writeFile(path.join(dataDir, key), body, "utf8");
 }
