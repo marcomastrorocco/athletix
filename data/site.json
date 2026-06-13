@@ -598,6 +598,11 @@
             "href": "/athlete-programs",
             "title": "Athlete Programs",
             "desc": "Pro-standard S&C for serious competitors."
+          },
+          {
+            "href": "https://athletix-nine.vercel.app/family-classes",
+            "title": "Family Classes",
+            "desc": "All ages, together. Train as a family on one membership, Fortitude Valley, brisbane"
           }
         ]
       },
@@ -629,11 +634,6 @@
             "href": "/ndis-program",
             "title": "NDIS Program",
             "desc": "Tailored strength and conditioning for NDIS participants (Group and Private sessions)"
-          },
-          {
-            "href": "/careers",
-            "title": "Careers",
-            "desc": "Are you an accredited S&C Coach with a minimum of a degree in Exercise Science (or equivalent)? Interested in working with us? Join the team building elite athletes."
           }
         ]
       },
