@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sync-live": "node scripts/sync-from-live.mjs"
+    "sync-live": "node scripts/sync-from-live.mjs",
+    "push-live": "node scripts/push-to-live.mjs"
   },
   "dependencies": {
     "@vercel/blob": "^2.3.3",

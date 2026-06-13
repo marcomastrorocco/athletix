@@ -1,0 +1,81 @@
+name: Push code content to live
+
+# When data/*.json changes are pushed to main, MERGE those changes up into
+# Vercel Blob (what the live site reads) using a 3-way merge, so the dev's
+# code changes apply WITHOUT erasing content the client edited via the live
+# admin dashboard.
+#
+# This only writes to Blob (no git commits), so it can't loop with the
+# scheduled sync-content workflow (which pulls Blob -> GitHub).
+#
+# Requires repo secret: BLOB_READ_WRITE_TOKEN (Vercel Blob read-write token).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**.json"
+  workflow_dispatch:
+    inputs:
+      files:
+        description: "Specific files to push (space-separated, e.g. site.json). Empty = all changed."
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: push-to-live
+  cancel-in-progress: false
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo (full history for 3-way merge base)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Merge-push changed content to live Blob
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+        run: |
+          if [ -z "$BLOB_READ_WRITE_TOKEN" ]; then
+            echo "::error::BLOB_READ_WRITE_TOKEN secret is not set."
+            exit 1
+          fi
+
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+          MANUAL="${{ github.event.inputs.files }}"
+
+          if [ -n "$MANUAL" ]; then
+            CHANGED="$MANUAL"
+            BASEREF="$BEFORE"
+          elif [ -z "$BEFORE" ] || echo "$BEFORE" | grep -qE '^0+$'; then
+            # New branch / no usable base — push files present in this commit.
+            CHANGED=$(git show --name-only --pretty="" "$AFTER" -- 'data/**.json' | sed 's#^data/##')
+            BASEREF=""
+          else
+            CHANGED=$(git diff --name-only "$BEFORE" "$AFTER" -- 'data/**.json' | sed 's#^data/##')
+            BASEREF="$BEFORE"
+          fi
+
+          CHANGED=$(echo "$CHANGED" | tr '\n' ' ' | xargs)
+          if [ -z "$CHANGED" ]; then
+            echo "No data/*.json changes to push."
+            exit 0
+          fi
+
+          echo "Pushing (merge): $CHANGED"
+          node scripts/push-to-live.mjs --base-ref="$BASEREF" $CHANGED
