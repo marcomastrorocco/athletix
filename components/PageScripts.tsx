@@ -265,7 +265,12 @@ export default function PageScripts() {
     const revealIO = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) {
+          // Reveal when entering the viewport OR when already scrolled past
+          // (bottom <= 0). The latter handles browser back-navigation where
+          // scroll restoration lands mid/bottom of the page — without it,
+          // every target above the restored scroll position stays at
+          // opacity:0 and the page looks black.
+          if (e.isIntersecting || e.boundingClientRect.bottom <= 0) {
             e.target.classList.add("visible");
             revealIO.unobserve(e.target);
           }
@@ -274,7 +279,32 @@ export default function PageScripts() {
       { threshold: 0.12 }
     );
     revealTargets.forEach((el) => revealIO.observe(el));
-    cleanups.push(() => revealIO.disconnect());
+
+    // Failsafe: reveal anything already at or above the viewport. Re-run
+    // across a few frames/timeouts to catch the browser's scroll restoration
+    // whenever it lands (it can fire before or after this effect).
+    const revealAtOrAbove = () => {
+      const vh = window.innerHeight;
+      revealTargets.forEach((el) => {
+        if (el.getBoundingClientRect().top < vh) {
+          el.classList.add("visible");
+          revealIO.unobserve(el);
+        }
+      });
+    };
+    revealAtOrAbove();
+    const revealRaf = requestAnimationFrame(() => {
+      revealAtOrAbove();
+      requestAnimationFrame(revealAtOrAbove);
+    });
+    const revealT1 = window.setTimeout(revealAtOrAbove, 60);
+    const revealT2 = window.setTimeout(revealAtOrAbove, 250);
+    cleanups.push(() => {
+      revealIO.disconnect();
+      cancelAnimationFrame(revealRaf);
+      window.clearTimeout(revealT1);
+      window.clearTimeout(revealT2);
+    });
 
     return () => cleanups.forEach((fn) => fn());
   }, [pathname]);
