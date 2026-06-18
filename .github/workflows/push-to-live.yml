@@ -1,0 +1,47 @@
+name: Push repo content to live
+
+# The REVERSE of sync-content.yml: pushes content committed in the repo
+# (data/*.json) up to the live site (Vercel Blob), so a local `git push`
+# shows up on the live site automatically. Uses a 3-way merge, so anything
+# the client edited via the live admin dashboard is preserved.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+  workflow_dispatch: {} # manual "Run workflow" button
+
+# Read-only repo access is enough — this job only writes to Blob, not git.
+permissions:
+  contents: read
+
+# Never run two pushes to live at once.
+concurrency:
+  group: push-to-live
+  cancel-in-progress: false
+
+jobs:
+  push-live:
+    # Skip the auto-sync bot's own commits, otherwise Blob -> repo (sync-content)
+    # -> Blob (this) would loop on every scheduled sync.
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # HEAD~1 is the base for the 3-way merge
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Merge-push data/*.json to live Blob
+        env:
+          BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+        run: npm run push-live
