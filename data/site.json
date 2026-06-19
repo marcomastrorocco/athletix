@@ -471,7 +471,7 @@
           "Physio Screening included",
           "Full facility access"
         ],
-        "href": "#form"
+        "href": "/membership#youth"
       },
       {
         "tier": "All Levels",
@@ -488,7 +488,7 @@
           "Full facility access"
         ],
         "featured": true,
-        "href": "#form"
+        "href": "/membership#adult"
       },
       {
         "tier": "All Ages Together",
@@ -504,7 +504,7 @@
           "S&C Consultation",
           "Full facility access"
         ],
-        "href": "#form"
+        "href": "/membership#family"
       },
       {
         "tier": "12-Month Subscription",
@@ -520,7 +520,7 @@
           "Sports Dietitian Access",
           "Full facility access"
         ],
-        "href": "#form"
+        "href": "/membership#performance"
       }
     ]
   },
