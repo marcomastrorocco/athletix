@@ -10,7 +10,17 @@ on:
     branches: [main]
     paths:
       - "data/**"
-  workflow_dispatch: {} # manual "Run workflow" button
+  workflow_dispatch: # manual "Run workflow" button
+    inputs:
+      files:
+        description: "Space-separated files to push (e.g. 'site.json'). Empty = all."
+        required: false
+        default: ""
+      overwrite:
+        description: "Overwrite live (skip 3-way merge). WARNING: drops un-synced client edits to those files."
+        type: boolean
+        required: false
+        default: false
 
 # Read-only repo access is enough — this job only writes to Blob, not git.
 permissions:
@@ -31,7 +41,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2 # HEAD~1 is the base for the 3-way merge
+          fetch-depth: 0 # full history so github.event.before resolves for multi-commit pushes
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -44,4 +54,25 @@ jobs:
       - name: Merge-push data/*.json to live Blob
         env:
           BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
-        run: npm run push-live
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT_BEFORE: ${{ github.event.before }}
+          INPUT_FILES: ${{ github.event.inputs.files }}
+          INPUT_OVERWRITE: ${{ github.event.inputs.overwrite }}
+        run: |
+          ARGS=()
+          if [ "$EVENT_NAME" = "push" ]; then
+            # Apply every commit in this push (before -> after), not just HEAD~1,
+            # so a multi-commit push doesn't silently drop earlier changes.
+            if [ -n "$EVENT_BEFORE" ] && ! echo "$EVENT_BEFORE" | grep -qE '^0+$'; then
+              ARGS+=("--base-ref=$EVENT_BEFORE")
+            fi
+          else
+            # Manual run: optional overwrite + targeted files.
+            [ "$INPUT_OVERWRITE" = "true" ] && ARGS+=("--overwrite")
+            if [ -n "$INPUT_FILES" ]; then
+              # shellcheck disable=SC2206
+              ARGS+=($INPUT_FILES)
+            fi
+          fi
+          echo "Running: npm run push-live -- ${ARGS[*]}"
+          npm run push-live -- "${ARGS[@]}"
