@@ -198,5 +198,31 @@
         null
       ]
     }
+  ],
+  "closures": [
+    {
+      "closed": false,
+      "reason": ""
+    },
+    {
+      "closed": false,
+      "reason": ""
+    },
+    {
+      "closed": false,
+      "reason": ""
+    },
+    {
+      "closed": false,
+      "reason": ""
+    },
+    {
+      "closed": false,
+      "reason": ""
+    },
+    {
+      "closed": false,
+      "reason": ""
+    }
   ]
 }
