@@ -263,9 +263,14 @@ export type MembershipPlan = {
 };
 
 export type TimetableCell = { kind: string; title: string; sub: string } | null;
+// A day can be marked closed (public holiday, gym shut). Index in `closures`
+// aligns with the matching column in `days`; an optional reason is shown to
+// visitors (e.g. "Public Holiday — ANZAC Day").
+export type DayClosure = { closed: boolean; reason?: string };
 export type TimetableData = {
   days: string[];
   rows: { time: string; cells: TimetableCell[] }[];
+  closures?: DayClosure[];
 };
 
 export type MembershipCategoryPlan = {

@@ -364,7 +364,12 @@ export default function HomeV2({
                 </h2>
                 <p className="sec-body">{coachesCfg.body}</p>
               </div>
-              <div className="cred-bar">
+              <div
+                className="cred-bar"
+                style={{
+                  gridTemplateColumns: `repeat(${coachesCfg.credBar.length}, 1fr)`,
+                }}
+              >
                 {coachesCfg.credBar.map((c, i) => (
                   <div key={i} className="cred-item">
                     {c.img ? (

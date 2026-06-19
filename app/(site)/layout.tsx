@@ -7,6 +7,7 @@ import SiteSplash from "@/components/SiteSplash";
 import CookieBanner from "@/components/CookieBanner";
 import ScrollToTop from "@/components/ScrollToTop";
 import LeadFormEnhancer from "@/components/LeadFormEnhancer";
+import PageTransition from "@/components/PageTransition";
 import { getSite } from "@/lib/data";
 
 const anton = Anton({
@@ -48,12 +49,13 @@ export default async function SiteLayout({
     <div
       className={`${anton.variable} ${inter.variable} ${barlow.variable} ${barlowCondensed.variable}`}
     >
-      <link rel="stylesheet" href="/css/styles.css?v=nav-fix-3" />
+      <link rel="stylesheet" href="/css/styles.css?v=tt-closures" />
       <link rel="stylesheet" href="/css/trial-modal.css" />
+      <link rel="stylesheet" href="/css/page-transition.css" />
       <SiteSplash />
       <AnnounceBar />
       <Header contact={site.contact} header={site.header} />
-      {children}
+      <PageTransition>{children}</PageTransition>
       <Footer />
       <LeadFormEnhancer />
       <CookieBanner />

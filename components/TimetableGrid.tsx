@@ -53,6 +53,9 @@ export default function TimetableGrid({ data }: { data: TimetableData }) {
   const [selected, setSelected] = useState<Selected | null>(null);
   const [trialOpen, setTrialOpen] = useState(false);
 
+  const isClosed = (colIdx: number) => !!data.closures?.[colIdx]?.closed;
+  const closeReason = (colIdx: number) => data.closures?.[colIdx]?.reason?.trim() || "";
+
   const matches = (cell: TimetableCell) =>
     !!cell && (kindFilter === "all" || cell.kind === kindFilter);
 
@@ -107,22 +110,39 @@ export default function TimetableGrid({ data }: { data: TimetableData }) {
           </button>
           {data.days.map((d, i) => {
             const [name, ...rest] = d.split(" ");
+            const closed = isClosed(i);
             return (
               <button
                 key={d}
                 type="button"
                 role="tab"
                 aria-selected={dayFilter === i}
-                className={`tt-tab ${dayFilter === i ? "is-active" : ""}`}
+                className={`tt-tab ${dayFilter === i ? "is-active" : ""}${closed ? " tt-tab--closed" : ""}`}
                 onClick={() => setDayFilter(i)}
               >
                 <strong>{name.slice(0, 3)}</strong>
-                <span>{rest.join(" ")}</span>
+                <span>{closed ? "Closed" : rest.join(" ")}</span>
               </button>
             );
           })}
         </div>
       </div>
+
+      {data.days.some((_, i) => isClosed(i)) && (
+        <div className="tt-closures" role="note">
+          <strong>Closed:</strong>
+          <ul>
+            {data.days.map((d, i) =>
+              isClosed(i) ? (
+                <li key={d}>
+                  {d}
+                  {closeReason(i) && <span> — {closeReason(i)}</span>}
+                </li>
+              ) : null
+            )}
+          </ul>
+        </div>
+      )}
 
       {dayFilter === "all" ? (
         <div className="tt-scroll">
@@ -133,11 +153,16 @@ export default function TimetableGrid({ data }: { data: TimetableData }) {
             }}
           >
             <div className="tt-head-cell tt-corner">Time</div>
-            {data.days.map((d) => {
+            {data.days.map((d, i) => {
               const [name, ...rest] = d.split(" ");
+              const closed = isClosed(i);
               return (
-                <div key={d} className="tt-head-cell">
+                <div
+                  key={d}
+                  className={`tt-head-cell${closed ? " tt-head-cell--closed" : ""}`}
+                >
                   {name} <span>{rest.join(" ")}</span>
+                  {closed && <span className="tt-closed-flag">Closed</span>}
                 </div>
               );
             })}
@@ -145,21 +170,32 @@ export default function TimetableGrid({ data }: { data: TimetableData }) {
             {data.rows.map((row) => (
               <Fragment key={row.time}>
                 <div className="tt-time-cell">{row.time}</div>
-                {row.cells.map((cell, i) => (
-                  <div key={`${row.time}-${i}`} className="tt-cell">
-                    {cell && (
-                      <button
-                        type="button"
-                        className={`tt-item ${cell.kind} ${matches(cell) ? "" : "is-faded"}`}
-                        onClick={() => openDetails(cell, data.days[i], row.time)}
-                        aria-label={`${cell.title} on ${data.days[i]} at ${row.time}`}
-                      >
-                        <h3>{cell.title}</h3>
-                        <p>{cell.sub}</p>
-                      </button>
-                    )}
-                  </div>
-                ))}
+                {row.cells.map((cell, i) => {
+                  if (isClosed(i)) {
+                    return (
+                      <div
+                        key={`${row.time}-${i}`}
+                        className="tt-cell tt-cell--closed"
+                        aria-label={`${data.days[i]} — closed`}
+                      />
+                    );
+                  }
+                  return (
+                    <div key={`${row.time}-${i}`} className="tt-cell">
+                      {cell && (
+                        <button
+                          type="button"
+                          className={`tt-item ${cell.kind} ${matches(cell) ? "" : "is-faded"}`}
+                          onClick={() => openDetails(cell, data.days[i], row.time)}
+                          aria-label={`${cell.title} on ${data.days[i]} at ${row.time}`}
+                        >
+                          <h3>{cell.title}</h3>
+                          <p>{cell.sub}</p>
+                        </button>
+                      )}
+                    </div>
+                  );
+                })}
               </Fragment>
             ))}
           </div>
@@ -167,7 +203,12 @@ export default function TimetableGrid({ data }: { data: TimetableData }) {
       ) : (
         <div className="tt-day-view">
           <h2 className="tt-day-heading">{data.days[dayFilter]}</h2>
-          {dayList.length === 0 ? (
+          {isClosed(dayFilter) ? (
+            <div className="tt-day-closed">
+              <strong>Closed</strong>
+              {closeReason(dayFilter) && <span>{closeReason(dayFilter)}</span>}
+            </div>
+          ) : dayList.length === 0 ? (
             <p className="tt-day-empty">
               No {kindFilter === "all" ? "" : KIND_LABEL[kindFilter] + " "}
               classes scheduled for this day.

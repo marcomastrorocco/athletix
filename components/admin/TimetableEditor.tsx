@@ -1,15 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { Save, PlusCircle, ArrowUp, ArrowDown, Trash2, CalendarDays } from "lucide-react";
+import { Save, PlusCircle, ArrowUp, ArrowDown, Trash2, CalendarDays, CalendarX } from "lucide-react";
 import { showToast } from "./Toast";
-import type { TimetableData, TimetableCell } from "@/lib/data";
+import type { TimetableData, TimetableCell, DayClosure } from "@/lib/data";
 
 const KINDS = ["adult", "youth", "recovery", "performance"];
 
 type Filled = NonNullable<TimetableCell>;
 function emptyCell(): Filled {
   return { kind: "adult", title: "", sub: "" };
+}
+
+// Normalise the closures list to one entry per day column so the editor can
+// always index into it safely, even for older saved timetables without it.
+function normalizeClosures(data: TimetableData): DayClosure[] {
+  return data.days.map(
+    (_, i) => data.closures?.[i] ?? { closed: false, reason: "" }
+  );
 }
 
 export default function TimetableEditor({ initial }: { initial: TimetableData }) {
@@ -21,6 +29,13 @@ export default function TimetableEditor({ initial }: { initial: TimetableData })
       ...d,
       days: d.days.map((day, idx) => (idx === i ? value : day)),
     }));
+
+  const updateClosure = (i: number, patch: Partial<DayClosure>) =>
+    setData((d) => {
+      const closures = normalizeClosures(d);
+      closures[i] = { ...closures[i], ...patch };
+      return { ...d, closures };
+    });
 
   const updateRowTime = (rowIdx: number, time: string) =>
     setData((d) => ({
@@ -117,6 +132,78 @@ export default function TimetableEditor({ initial }: { initial: TimetableData })
               }}
             />
           ))}
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="head">
+          <div className="icon-bg"><CalendarX size={16} /></div>
+          <div>
+            <h2>Closures &amp; public holidays</h2>
+            <p className="muted" style={{ margin: 0 }}>
+              Mark a day closed (public holiday, or the gym is shut). The whole
+              column shows as CLOSED on the public timetable, with the reason if
+              you add one.
+            </p>
+          </div>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          {data.days.map((d, i) => {
+            const c = data.closures?.[i] ?? { closed: false, reason: "" };
+            return (
+              <div
+                key={i}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "150px auto 1fr",
+                  alignItems: "center",
+                  gap: 10,
+                  background: "#0e0e14",
+                  border: "1px solid var(--border)",
+                  borderRadius: 6,
+                  padding: "8px 10px",
+                }}
+              >
+                <span style={{ fontSize: 13, fontWeight: 600 }}>
+                  {d || `Day ${i + 1}`}
+                </span>
+                <label
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 6,
+                    fontSize: 13,
+                    color: c.closed ? "var(--danger)" : "var(--muted)",
+                    cursor: "pointer",
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={c.closed}
+                    onChange={(e) =>
+                      updateClosure(i, { closed: e.target.checked })
+                    }
+                  />
+                  Closed
+                </label>
+                <input
+                  value={c.reason ?? ""}
+                  placeholder="Reason (optional) — e.g. Public Holiday — ANZAC Day"
+                  disabled={!c.closed}
+                  onChange={(e) => updateClosure(i, { reason: e.target.value })}
+                  style={{
+                    background: "#1a1a22",
+                    border: "1px solid var(--border)",
+                    color: "var(--text)",
+                    borderRadius: 4,
+                    padding: "6px 8px",
+                    fontSize: 12,
+                    opacity: c.closed ? 1 : 0.45,
+                  }}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
 
