@@ -307,7 +307,7 @@ export type BlogPost = {
 // Fallback used when a stored site.json predates the editable header section.
 export const DEFAULT_HEADER: HeaderContent = {
   nav: [
-    { label: "TIMETABLE", href: "/timetable", mega: [] },
+    { label: "TIMETABLE", href: "/class-timetable", mega: [] },
     {
       label: "CLASSES",
       href: "/classes",
@@ -315,22 +315,22 @@ export const DEFAULT_HEADER: HeaderContent = {
         { href: "/youth-classes", title: "Youth Classes", desc: "Ages 7–17. Strength, speed and athletic development." },
         { href: "/adult-classes", title: "Adult Classes", desc: "16+. LIFT, MET-CON, mobility — every level welcome." },
         { href: "/family-classes", title: "Family Classes", desc: "Train together. Parent + child sessions on the floor." },
-        { href: "/athlete-programs", title: "Athlete Programs", desc: "Pro-standard S&C for serious competitors." },
+        { href: "/athletes-program", title: "Athlete Programs", desc: "Pro-standard S&C for serious competitors." },
       ],
     },
-    { label: "MEMBERSHIP", href: "/membership", mega: [] },
+    { label: "MEMBERSHIP", href: "/memberships", mega: [] },
     {
       label: "ABOUT US",
-      href: "/about",
+      href: "/about-us",
       mega: [
         { href: "/our-gym", title: "Our Gym", desc: "A purpose-built sports performance hub in Fortitude Valley." },
         { href: "/our-team", title: "Our Team", desc: "Meet the coaches and clinicians on the floor." },
-        { href: "/allied-health", title: "Allied Health", desc: "Sports physio, rehab and dietetics under one roof." },
+        { href: "/allied-health-staff", title: "Allied Health", desc: "Sports physio, rehab and dietetics under one roof." },
         { href: "/ndis-program", title: "NDIS Program", desc: "Tailored strength and conditioning for NDIS participants." },
         { href: "/careers", title: "Careers", desc: "Coach with us. Join the team building elite athletes." },
       ],
     },
-    { label: "CONTACT US", href: "/contact", mega: [] },
+    { label: "CONTACT US", href: "/contact-us", mega: [] },
     { label: "BLOG", href: "/blog", mega: [] },
   ],
   sideAbout:
@@ -644,12 +644,57 @@ export type Block =
 
 export type BlockType = Block["type"];
 
+// ---------------------------------------------------------------------------
+// SEO model
+// ---------------------------------------------------------------------------
+// `PageSeo` is stored on each page's JSON (the `seo` field). Older stored copies
+// only have { title, description }; every richer field is optional so existing
+// pages keep validating and progressively gain data as the SEO editor saves.
+export type RobotsIndex = "index" | "noindex";
+export type RobotsFollow = "follow" | "nofollow";
+
+export type SocialMeta = {
+  title?: string;
+  description?: string;
+  image?: string; // absolute URL or site-relative path (e.g. /image/og.jpg)
+};
+
+export type SchemaType =
+  | "none"
+  | "Organization"
+  | "LocalBusiness"
+  | "Article"
+  | "Product"
+  | "FAQPage"
+  | "Event";
+
+// Free-form key/value bag for the schema builder. We keep it loose so the same
+// editor can drive every schema type without a separate type per shape; the
+// JSON-LD generator (lib/seo.ts) reads the keys it needs per `type`.
+export type PageSchema = {
+  type: SchemaType;
+  data?: Record<string, string>;
+  faq?: { question: string; answer: string }[];
+};
+
+export type PageSeo = {
+  title?: string;
+  description?: string;
+  focusKeyword?: string;
+  canonical?: string;
+  robotsIndex?: RobotsIndex;
+  robotsFollow?: RobotsFollow;
+  og?: SocialMeta;
+  twitter?: SocialMeta;
+  schema?: PageSchema;
+};
+
 export type PageContent = {
   slug: string;
   title: string;
   path: string;
   cssFiles?: string[];
-  seo: { title: string; description: string };
+  seo: PageSeo;
   blocks: Block[];
 };
 
@@ -666,6 +711,105 @@ export async function getPage(slug: string): Promise<PageContent | null> {
 
 export async function setPage(slug: string, page: PageContent): Promise<void> {
   await writeJson(`pages/${slug}.json`, page);
+}
+
+/** Update only the SEO block of a page, leaving title/blocks untouched. */
+export async function setPageSeo(
+  slug: string,
+  seo: PageSeo
+): Promise<PageContent | null> {
+  const page = await getPage(slug);
+  if (!page) return null;
+  const next: PageContent = { ...page, seo };
+  await setPage(slug, next);
+  return next;
+}
+
+// ---------------------------------------------------------------------------
+// Global SEO settings (site-wide defaults + analytics + organization schema)
+// ---------------------------------------------------------------------------
+export type SeoSettings = {
+  siteUrl: string; // canonical origin, no trailing slash
+  titleTemplate: string; // "%s" is replaced with the page title
+  defaultTitle: string; // used when a page has no SEO title
+  defaultDescription: string;
+  defaultOgImage: string; // absolute or site-relative
+  twitterHandle: string; // "@athletix"
+  analytics: {
+    gaId?: string; // G-XXXXXXX
+    gtmId?: string; // GTM-XXXXXXX
+    googleVerification?: string; // search console token
+  };
+  organization: {
+    name: string;
+    logo: string;
+    sameAs: string[]; // social profile URLs
+  };
+};
+
+export const DEFAULT_SEO_SETTINGS: SeoSettings = {
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://athletix.com.au",
+  titleTemplate: "%s | ATHLETIX",
+  defaultTitle:
+    "ATHLETIX — Train Like an Athlete | Brisbane Strength & Conditioning",
+  defaultDescription:
+    "Elite strength and conditioning in Fortitude Valley, Brisbane. Small group classes, athlete programs, allied health and NDIS support.",
+  defaultOgImage: "/image/athlethix-logo.png",
+  twitterHandle: "@athletix_gym",
+  analytics: {},
+  organization: {
+    name: "ATHLETIX",
+    logo: "/image/athlethix-logo.png",
+    sameAs: [
+      "https://www.instagram.com/athletix_gym/",
+      "https://www.facebook.com/ATHLETIX.BRISBANE/",
+    ],
+  },
+};
+
+/** Read global SEO settings, merged over defaults so new fields never break. */
+export async function getSeoSettings(): Promise<SeoSettings> {
+  const stored = await tryReadJson<Partial<SeoSettings>>("seo-settings.json");
+  if (!stored) return DEFAULT_SEO_SETTINGS;
+  return {
+    ...DEFAULT_SEO_SETTINGS,
+    ...stored,
+    analytics: { ...DEFAULT_SEO_SETTINGS.analytics, ...stored.analytics },
+    organization: {
+      ...DEFAULT_SEO_SETTINGS.organization,
+      ...stored.organization,
+    },
+  };
+}
+
+export const setSeoSettings = (s: SeoSettings) =>
+  writeJson("seo-settings.json", s);
+
+// ---------------------------------------------------------------------------
+// Path-keyed SEO overrides
+// ---------------------------------------------------------------------------
+// Every site route — including hardcoded React pages that aren't block-based —
+// can have its SEO managed from the dashboard. Overrides are stored in one map
+// keyed by route path ("/contact-us", "/our-gym", "/"). A page's own static
+// metadata stays as the fallback until an override exists, so nothing is lost.
+export type SeoOverrides = Record<string, PageSeo>;
+
+export async function getSeoOverrides(): Promise<SeoOverrides> {
+  return (await tryReadJson<SeoOverrides>("seo-overrides.json")) ?? {};
+}
+
+export async function getSeoOverride(path: string): Promise<PageSeo | null> {
+  const all = await getSeoOverrides();
+  return all[path] ?? null;
+}
+
+export async function setSeoOverride(
+  path: string,
+  seo: PageSeo
+): Promise<void> {
+  const all = await getSeoOverrides();
+  all[path] = seo;
+  await writeJson("seo-overrides.json", all);
 }
 
 export async function listPages(): Promise<PageSummary[]> {

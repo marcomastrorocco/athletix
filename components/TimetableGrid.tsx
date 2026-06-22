@@ -8,18 +8,18 @@ import type { TimetableData, TimetableCell } from "@/lib/data";
 // Map class-title strings (as they appear in the timetable) to the
 // matching detail-page route. Unknown titles fall back to /classes.
 const CLASS_DETAIL_ROUTES: { match: RegExp; href: string }[] = [
-  { match: /mat\s*pilates/i, href: "/mat-pilates" },
-  { match: /mobility/i, href: "/mobility" },
-  { match: /youth\s*agility\s*foundations|^yaf\b/i, href: "/youth-agility-foundations" },
-  { match: /youth\s*agility\s*development|^yad\b/i, href: "/youth-agility-development" },
-  { match: /youth\s*speed\s*development/i, href: "/youth-speed-development" },
-  { match: /youth\s*speed\s*foundation/i, href: "/youth-speed-foundation" },
-  { match: /youth\s*(strength|fitness)\s*development/i, href: "/youth-fitness-development" },
-  { match: /youth\s*fitness\s*foundation/i, href: "/youth-fitness-foundations" },
+  { match: /mat\s*pilates/i, href: "/classes/mat-pilates" },
+  { match: /mobility/i, href: "/classes/mobility" },
+  { match: /youth\s*agility\s*foundations|^yaf\b/i, href: "/classes/youth-agility-foundations" },
+  { match: /youth\s*agility\s*development|^yad\b/i, href: "/classes/youth-agility-development" },
+  { match: /youth\s*speed\s*development/i, href: "/classes/youth-speed-development" },
+  { match: /youth\s*speed\s*foundation/i, href: "/classes/youth-speed-foundation" },
+  { match: /youth\s*(strength|fitness)\s*development/i, href: "/classes/youth-fitness-development" },
+  { match: /youth\s*fitness\s*foundation/i, href: "/classes/youth-fitness-foundations" },
   { match: /youth\s*open\s*workout/i, href: "/youth-open-workout" },
-  { match: /^lift\b/i, href: "/lift" },
-  { match: /met-?\s*con/i, href: "/met-con" },
-  { match: /push\s*&?\s*drag|hi+t\s*-?\s*push/i, href: "/hiit-push-and-drag" },
+  { match: /^lift\b/i, href: "/classes/weightlifting" },
+  { match: /met-?\s*con/i, href: "/classes/met-con" },
+  { match: /push\s*&?\s*drag|hi+t\s*-?\s*push/i, href: "/classes/hiit-push-and-drag" },
   { match: /strength\s*&\s*con/i, href: "/strength-con" },
 ];
 

@@ -1,13 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resolvePageMetadata } from "@/lib/seo-server";
 import TimetableGrid from "@/components/TimetableGrid";
 import { getTimetable } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "Adult Classes — ATHLETIX Brisbane",
-  description:
-    "Group strength and conditioning classes for adults at Athletix Brisbane. Small group coaching for Lift, HIIT, Mobility, Mat Pilates, Met-Con and Strength & Con.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return resolvePageMetadata("/adult-classes");
+}
 
 type ClassTile = {
   type: string;
@@ -45,7 +44,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MOBILITY",
-    href: "/mobility",
+    href: "/classes/mobility",
     body: (
       <>
         Our Mobility class focuses on active recovery and uses a science-based
@@ -58,7 +57,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MAT PILATES",
-    href: "/mat-pilates",
+    href: "/classes/mat-pilates",
     body: (
       <>
         Our Mat Pilates class focuses on improving postural alignment, core
@@ -452,7 +451,7 @@ export default async function AdultClassesPage() {
             </div>
           </form>
 
-          <Link href="/contact" className="btn btn-outline youth-form-readmore">
+          <Link href="/contact-us" className="btn btn-outline youth-form-readmore">
             READ MORE
           </Link>
         </div>
@@ -468,7 +467,7 @@ export default async function AdultClassesPage() {
                 </p>
                 <h3>{c.title}</h3>
                 <p>{c.body}</p>
-                <Link href={c.href || "/contact"} className="arrow-link">
+                <Link href={c.href || "/contact-us"} className="arrow-link">
                   MORE HERE <span>&rarr;</span>
                 </Link>
               </article>

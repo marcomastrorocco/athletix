@@ -1,12 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resolvePageMetadata } from "@/lib/seo-server";
 import ClassBookSection from "@/components/ClassBookSection";
 
-export const metadata: Metadata = {
-  title: "Strength & Conditioning Class Brisbane | ATHLETIX Gym",
-  description:
-    "A coach-led Strength & Conditioning class that builds real strength, power and resilience with structured programming — every level welcome.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return resolvePageMetadata("/strength-con");
+}
 
 const BENEFITS = [
   {
@@ -82,7 +81,7 @@ export default function StrengthConPage() {
               <Link href="#book-form" className="btn btn-primary">
                 Book a trial
               </Link>
-              <Link href="/timetable" className="btn btn-ghost">
+              <Link href="/class-timetable" className="btn btn-ghost">
                 View timetable
               </Link>
             </div>
@@ -166,7 +165,7 @@ export default function StrengthConPage() {
                 <br />
                 <a href="mailto:info@athletix.com.au">info@athletix.com.au</a>
               </p>
-              <Link href="/contact" className="yaf-info-card-link">
+              <Link href="/contact-us" className="yaf-info-card-link">
                 Get in touch →
               </Link>
             </article>

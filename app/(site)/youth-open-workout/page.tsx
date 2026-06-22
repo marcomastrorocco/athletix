@@ -1,12 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resolvePageMetadata } from "@/lib/seo-server";
 import ClassBookSection from "@/components/ClassBookSection";
 
-export const metadata: Metadata = {
-  title: "Youth Open Workout Brisbane | ATHLETIX Gym",
-  description:
-    "An invite-only training session for our youth athletes — supervised open training to refine skills, build strength and progress under the eye of an S&C coach.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return resolvePageMetadata("/youth-open-workout");
+}
 
 const BENEFITS = [
   {
@@ -81,7 +80,7 @@ export default function YouthOpenWorkoutPage() {
               <Link href="#book-form" className="btn btn-primary">
                 Enquire about a spot
               </Link>
-              <Link href="/timetable" className="btn btn-ghost">
+              <Link href="/class-timetable" className="btn btn-ghost">
                 View timetable
               </Link>
             </div>
@@ -165,7 +164,7 @@ export default function YouthOpenWorkoutPage() {
                 <br />
                 <a href="mailto:info@athletix.com.au">info@athletix.com.au</a>
               </p>
-              <Link href="/contact" className="yaf-info-card-link">
+              <Link href="/contact-us" className="yaf-info-card-link">
                 Get in touch →
               </Link>
             </article>

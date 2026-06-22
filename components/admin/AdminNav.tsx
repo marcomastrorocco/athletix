@@ -16,6 +16,7 @@ import {
   Image as ImageIcon,
   PanelTop,
   Inbox,
+  Search,
 } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
@@ -38,6 +39,7 @@ const sections: Section[] = [
       { href: "/admin/pages", label: "Pages", icon: Layers },
       { href: "/admin/blog", label: "Blog Posts", icon: FileText },
       { href: "/admin/site", label: "Homepage & SEO", icon: Type },
+      { href: "/admin/seo", label: "SEO Manager", icon: Search },
       { href: "/admin/team", label: "Team / Coaches", icon: Users },
       { href: "/admin/membership", label: "Membership Plans", icon: Tag },
       { href: "/admin/timetable", label: "Timetable", icon: CalendarDays },

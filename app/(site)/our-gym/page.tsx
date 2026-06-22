@@ -1,12 +1,16 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getSite } from "@/lib/data";
+import { getSite, getPage } from "@/lib/data";
+import { resolvePageMetadata } from "@/lib/seo-server";
 
-export const metadata: Metadata = {
-  title: "S & C Gym Brisbane | Cricket, Netball, Soccer, Rugby — ATHLETIX",
-  description:
-    "ATHLETIX is a top-of-the-line Strength & Conditioning gym and Human and Sports Performance Center dedicated to helping athletes of all levels achieve their goals. Our Brisbane gym with a sprint track, is staffed with experienced Strength and Conditioning Coaches, Sports Scientists, Physiotherapists and Exercise Physiologists, who work together to provide personalised training programs tailored to each individual's needs.",
-};
+// SEO is editable via the admin SEO Manager; the page body below stays bespoke.
+export async function generateMetadata(): Promise<Metadata> {
+  const page = await getPage("our-gym");
+  return resolvePageMetadata("/our-gym", {
+    title: page?.seo?.title,
+    description: page?.seo?.description,
+  });
+}
 
 export default async function OurGymPage() {
   const site = await getSite();
@@ -22,7 +26,7 @@ export default async function OurGymPage() {
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>
-            <span>/</span> <Link href="/about">About</Link>{" "}
+            <span>/</span> <Link href="/about-us">About</Link>{" "}
             <span>/</span> Our Gym
           </p>
           <h1>
@@ -323,10 +327,10 @@ export default async function OurGymPage() {
               Fully Refundable · No Lock-In · Every Level Welcome
             </p>
             <div className="cta-btns">
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact-us" className="btn-primary">
                 Claim Your Trial
               </Link>
-              <Link href="/membership" className="btn-ghost">
+              <Link href="/memberships" className="btn-ghost">
                 See All Plans
               </Link>
             </div>

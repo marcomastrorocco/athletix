@@ -1,11 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resolvePageMetadata } from "@/lib/seo-server";
 
-export const metadata: Metadata = {
-  title: "NDIS & DVA Training Program — ATHLETIX Gym Brisbane",
-  description:
-    "Are you seeking an individualised and supportive approach to help you manage your condition and achieve your goals within your NDIS or DVA packages? Athletix is here to help.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return resolvePageMetadata("/ndis-program");
+}
 
 const FAQS: { q: string; a: string; open?: boolean }[] = [
   {
@@ -45,7 +44,7 @@ export default function NdisPage() {
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>
-            <span>/</span> <Link href="/about">About</Link>{" "}
+            <span>/</span> <Link href="/about-us">About</Link>{" "}
             <span>/</span> NDIS &amp; DVA Program
           </p>
           <h1>
@@ -296,7 +295,7 @@ export default function NdisPage() {
             <p>
               To learn more about our NDIS and DVA programs and how we can
               assist you,{" "}
-              <Link href="/contact" className="nd-close-link">
+              <Link href="/contact-us" className="nd-close-link">
                 please get in touch
               </Link>
               .
@@ -339,10 +338,10 @@ export default function NdisPage() {
               In-house physio &middot; EP-led screening &middot; Inclusive facility
             </p>
             <div className="cta-btns">
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact-us" className="btn-primary">
                 Enquire About NDIS &amp; DVA
               </Link>
-              <Link href="/allied-health" className="btn-ghost">
+              <Link href="/allied-health-staff" className="btn-ghost">
                 Meet the Allied Health Team
               </Link>
             </div>

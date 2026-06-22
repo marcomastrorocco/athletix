@@ -1,14 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resolvePageMetadata } from "@/lib/seo-server";
 import { getTeam, getSite } from "@/lib/data";
 import CoachSlider from "@/components/CoachSlider";
 
-export const metadata: Metadata = {
-  title:
-    "Elite Strength & Conditioning Coaches Brisbane — ATHLETIX",
-  description:
-    "Meet the ATHLETIX team — accredited S&C coaches, exercise scientists and sports physios delivering high-performance training in Brisbane.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return resolvePageMetadata("/our-team");
+}
 
 export const dynamic = "force-dynamic";
 
@@ -25,7 +23,7 @@ export default async function OurTeamPage() {
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>
-            <span>/</span> <Link href="/about">About</Link>{" "}
+            <span>/</span> <Link href="/about-us">About</Link>{" "}
             <span>/</span> Our Team
           </p>
           <h1>

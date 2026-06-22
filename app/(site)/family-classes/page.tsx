@@ -1,13 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resolvePageMetadata } from "@/lib/seo-server";
 import TimetableGrid from "@/components/TimetableGrid";
 import { getTimetable } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "Family Classes — ATHLETIX Brisbane",
-  description:
-    "Athletix is a family friendly gym in Fortitude Valley, Brisbane. Train together with up to 4 family members on one membership.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return resolvePageMetadata("/family-classes");
+}
 
 type ClassTile = {
   type?: string;
@@ -32,7 +31,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MOBILITY",
-    href: "/mobility",
+    href: "/classes/mobility",
     body: (
       <>
         A recovery class designed for athletic and general populations. A
@@ -46,7 +45,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MAT PILATES",
-    href: "/mat-pilates",
+    href: "/classes/mat-pilates",
     body: (
       <>
         Low-impact flexibility and muscular strength and endurance movements.
@@ -211,7 +210,7 @@ export default async function FamilyClassesPage() {
             <strong>4 members</strong> can be included under one membership
             and prices are from <strong>$120 per week</strong>.
           </p>
-          <Link href="/membership" className="btn btn-outline">
+          <Link href="/memberships" className="btn btn-outline">
             See Membership Plans
           </Link>
 
@@ -245,7 +244,7 @@ export default async function FamilyClassesPage() {
                 )}
                 <h3>{c.title}</h3>
                 <div className="tile-body">{c.body}</div>
-                <Link href={c.href || "/contact"} className="arrow-link">
+                <Link href={c.href || "/contact-us"} className="arrow-link">
                   MORE HERE <span>&rarr;</span>
                 </Link>
               </article>

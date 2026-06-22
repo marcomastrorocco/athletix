@@ -1,13 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resolvePageMetadata } from "@/lib/seo-server";
 import TimetableGrid from "@/components/TimetableGrid";
 import { getTimetable } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "Youth Classes — ATHLETIX Brisbane",
-  description:
-    "A Strength & Conditioning gym for kids and teens in Brisbane. Youth Athletic Foundations (7–11) and Youth Athletic Development (12–16).",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return resolvePageMetadata("/youth-classes");
+}
 
 type ClassTile = {
   type: string;
@@ -20,7 +19,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "CONDITIONING",
     title: "YOUTH SPEED FOUNDATIONS",
-    href: "/youth-agility-foundations",
+    href: "/classes/youth-agility-foundations",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong>
@@ -38,7 +37,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "CONDITIONING",
     title: "YOUTH AGILITY FOUNDATIONS",
-    href: "/youth-agility-foundations",
+    href: "/classes/youth-agility-foundations",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong>
@@ -56,7 +55,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "CONDITIONING",
     title: "YOUTH FITNESS FOUNDATIONS",
-    href: "/youth-agility-development",
+    href: "/classes/youth-agility-development",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong>
@@ -73,7 +72,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "STRENGTH",
     title: "YOUTH STRENGTH DEVELOPMENT",
-    href: "/youth-fitness-development",
+    href: "/classes/youth-fitness-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years old</strong>
@@ -91,7 +90,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SPEED SKILLS",
     title: "YOUTH SPEED DEVELOPMENT",
-    href: "/youth-speed-development",
+    href: "/classes/youth-speed-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years old</strong>
@@ -110,7 +109,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "MULTIDIRECTIONAL SPEED",
     title: "YOUTH AGILITY DEVELOPMENT",
-    href: "/youth-speed-development",
+    href: "/classes/youth-speed-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years old</strong>
@@ -129,7 +128,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MOBILITY",
-    href: "/mobility",
+    href: "/classes/mobility",
     body: (
       <>
         A recovery class designed for athletic and general populations. A
@@ -143,7 +142,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MAT PILATES",
-    href: "/mat-pilates",
+    href: "/classes/mat-pilates",
     body: (
       <>
         Low-impact flexibility and muscular strength and endurance movements.
@@ -236,7 +235,7 @@ export default async function YouthClassesPage() {
                 </p>
             </div>
             <Link
-              href="/contact"
+              href="/contact-us"
               className="btn btn-primary"
               style={{ marginTop: "26px" }}
             >
@@ -369,7 +368,7 @@ export default async function YouthClassesPage() {
             </div>
           </form>
 
-          <Link href="/contact" className="btn btn-outline youth-form-readmore">
+          <Link href="/contact-us" className="btn btn-outline youth-form-readmore">
             READ MORE
           </Link>
         </div>
@@ -385,7 +384,7 @@ export default async function YouthClassesPage() {
                 </p>
                 <h3>{c.title}</h3>
                 <p>{c.body}</p>
-                <Link href={c.href || "/contact"} className="arrow-link">
+                <Link href={c.href || "/contact-us"} className="arrow-link">
                   MORE HERE <span>&rarr;</span>
                 </Link>
               </article>

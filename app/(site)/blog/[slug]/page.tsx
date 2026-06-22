@@ -173,7 +173,7 @@ export default async function BlogPostPage({ params }: Ctx) {
                   Unlimited classes. Fully refundable. Brisbane&rsquo;s elite
                   S&amp;C gym.
                 </p>
-                <Link href="/contact" className="sidebar-cta-btn">
+                <Link href="/contact-us" className="sidebar-cta-btn">
                   Book Trial
                 </Link>
               </div>

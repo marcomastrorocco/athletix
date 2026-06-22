@@ -1,7 +1,7 @@
 {
   "slug": "lift",
   "title": "Lift",
-  "path": "/lift",
+  "path": "/classes/weightlifting",
   "cssFiles": [
     "/css/classes-page.css",
     "/css/youth-classes-page.css",
@@ -46,7 +46,7 @@
       },
       "secondaryBtn": {
         "label": "View timetable",
-        "href": "/timetable"
+        "href": "/class-timetable"
       },
       "image": "/image/cdn/lift-hero-a1644.webp",
       "imageAlt": "LIFT strength training class at ATHLETIX Brisbane",

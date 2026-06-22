@@ -1,13 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resolvePageMetadata } from "@/lib/seo-server";
 import TrialCTA from "@/components/TrialCTA";
 import { getPublishedBlog, type BlogPost } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "Blog — ATHLETIX",
-  description:
-    "Training tips, science-backed insights, athlete stories and behind-the-scenes from the Athletix Brisbane floor.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return resolvePageMetadata("/blog");
+}
 
 export const dynamic = "force-dynamic";
 

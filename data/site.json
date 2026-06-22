@@ -1,8 +1,8 @@
 {
   "announce": "$7 FOR 7 DAYS TRIAL PASS · REFUNDABLE · ALL CLASSES INCLUDED",
   "meta": {
-    "title": "ATHLETIX — Train Like an Athlete | Brisbane Strength & Conditioning",
-    "description": "Elite strength and conditioning in Fortitude Valley, Brisbane. small group S&C classes, athlete programs, allied health and NDIS support."
+    "title": "ATHLETIX Brisbane | Strength & Conditioning Gym",
+    "description": "Exclusive Independent Gym and Human Performance Center in Brisbane's Fortitude Valley tailored for adults as well as youth: kids, children and teenagers. Our Strength and Conditioning gym offers group fitness classes, workouts and individual Personal Training (PT) and personal trainers and strength and conditioning coaches in Brisbane."
   },
   "contact": {
     "phone": "0499 981 286",
@@ -186,7 +186,7 @@
         "tag": "PRIVATE COACHING",
         "name": "ANY GOAL - ANY AGE",
         "desc": "Private coaching for every age and goal. From youth athletes to elite performers and everyday adults, our experienced coaches deliver individualised training built around your needs. Big goals or small wins, we help you move, perform, and progress better.",
-        "href": "/membership"
+        "href": "/memberships"
       },
       {
         "img": "/image/cdn/ATHLETIX-AFT-53-scaled-e1733206277887-33d14a.webp",
@@ -194,7 +194,7 @@
         "tag": "Sub-Elite & Pro",
         "name": "Athlete Programs",
         "desc": "Same methods. Same science. Same physio and dietitian as the pros. If you're chasing a contract, a squad spot, or simply the best version of yourself — this is where the gap gets closed.",
-        "href": "/athlete-programs"
+        "href": "/athletes-program"
       }
     ]
   },
@@ -569,7 +569,7 @@
     "nav": [
       {
         "label": "TIMETABLE",
-        "href": "/timetable",
+        "href": "/class-timetable",
         "mega": []
       },
       {
@@ -587,7 +587,7 @@
             "desc": "17+. S&C Group classes: LIFT, MET-CON, HIT SLED, PILATES, MOBILITY. Every level welcome."
           },
           {
-            "href": "/athlete-programs",
+            "href": "/athletes-program",
             "title": "Athlete Programs",
             "desc": "Pro-standard S&C for serious competitors."
           },
@@ -600,12 +600,12 @@
       },
       {
         "label": "MEMBERSHIP",
-        "href": "/membership",
+        "href": "/memberships",
         "mega": []
       },
       {
         "label": "ABOUT US",
-        "href": "/about",
+        "href": "/about-us",
         "mega": [
           {
             "href": "/our-gym",
@@ -618,7 +618,7 @@
             "desc": "Meet the practitioners: Our S&C coaches & Sports Scientists on the floor."
           },
           {
-            "href": "/allied-health",
+            "href": "/allied-health-staff",
             "title": "Allied Health",
             "desc": "Sports physio, Exercise Physiologists and Dietitian under one roof."
           },
@@ -631,7 +631,7 @@
       },
       {
         "label": "CONTACT US",
-        "href": "/contact",
+        "href": "/contact-us",
         "mega": []
       },
       {

@@ -1,13 +1,12 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resolvePageMetadata } from "@/lib/seo-server";
 import TimetableGrid from "@/components/TimetableGrid";
 import { getTimetable } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "Classes — ATHLETIX Brisbane",
-  description:
-    "S&C group classes in Brisbane — Lift, Mobility, Mat Pilates, HIIT, Youth agility and more. Elite small-group coaching for every level.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return resolvePageMetadata("/classes");
+}
 
 type ClassTile = {
   type: string;
@@ -20,7 +19,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "STRENGTH",
     title: "LIFT",
-    href: "/lift",
+    href: "/classes/weightlifting",
     body: (
       <>
         LIFT is not Cross Fit, not bodybuilding, not a circuit class with weights. WE WORK IN TEAMS and go through periodized blocks of
@@ -32,7 +31,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SKILL/CONDITIONING",
     title: "YOUTH AGILITY FOUNDATIONS",
-    href: "/youth-agility-foundations",
+    href: "/classes/youth-agility-foundations",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong> This class merges elements of physical fitness, injury prevention, linear and lateral
@@ -43,7 +42,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SKILL/CONDITIONING",
     title: "YOUTH AGILITY DEVELOPMENT",
-    href: "/youth-agility-development",
+    href: "/classes/youth-agility-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years</strong> Everything around Team (Court/Field) sports conditioning. Move faster with confidence!
@@ -55,7 +54,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SKILLS/STRENGTH/FITNESS",
     title: "YOUTH FITNESS FOUNDATIONS",
-    href: "/youth-fitness-foundations",
+    href: "/classes/youth-fitness-foundations",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong> Starter program for Primary School aged kids, developing foundation skills and movement
@@ -67,7 +66,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "STRENGTH",
     title: "YOUTH STRENGTH DEVELOPMENT",
-    href: "/youth-fitness-development",
+    href: "/classes/youth-fitness-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years</strong> High School kids will be guided through learning the foundation of resistance
@@ -78,7 +77,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SKILL/CONDITIONING",
     title: "YOUTH SPEED FOUNDATION",
-    href: "/youth-speed-foundation",
+    href: "/classes/youth-speed-foundation",
     body: (
       <>
         <strong>AGE GROUP: 7–11 years</strong>
@@ -91,7 +90,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "SKILL/CONDITIONING",
     title: "YOUTH SPEED DEVELOPMENT",
-    href: "/youth-speed-development",
+    href: "/classes/youth-speed-development",
     body: (
       <>
         <strong>AGE GROUP: 12–16 years</strong>
@@ -104,7 +103,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "CONDITIONING",
     title: "HIIT — PUSH AND DRAG",
-    href: "/hiit-push-and-drag",
+    href: "/classes/hiit-push-and-drag",
     body: (
       <>
         Develop insane fitness, strength, and resilience! Our SLED and PROWLERS workout is filled with functional movements, a great
@@ -115,7 +114,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "CONDITIONING",
     title: "MET-CON",
-    href: "/met-con",
+    href: "/classes/met-con",
     body: (
       <>
         A circuit class meant to help you enhance metabolic rate and overall conditioning regardless of your starting fitness level.
@@ -137,7 +136,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "RECOVERY/RELEASE",
     title: "MOBILITY",
-    href: "/mobility",
+    href: "/classes/mobility",
     body: (
       <>
         A recovery class designed for athletic and general populations. Trusted by Cricket Australia and the QLD Bulls. A science-based
@@ -148,7 +147,7 @@ const CLASSES: ClassTile[] = [
   {
     type: "MAT PILATES",
     title: "MAT PILATES",
-    href: "/mat-pilates",
+    href: "/classes/mat-pilates",
     body: (
       <>
         Coached by our in-house Physiotherapists. Low-impact flexibility, muscular strength and endurance movements. Pilates emphasizes
@@ -189,7 +188,7 @@ export default async function ClassesPage() {
                 </p>
                 <h3>{c.title}</h3>
                 <p>{c.body}</p>
-                <Link href={c.href || "/contact"} className="arrow-link">
+                <Link href={c.href || "/contact-us"} className="arrow-link">
                   More here <span>→</span>
                 </Link>
               </article>
@@ -390,10 +389,10 @@ export default async function ClassesPage() {
             <p className="cta-sub">Unlimited access. All classes. Meet the coaches. Feel the difference.</p>
             <p className="cta-detail">Fully Refundable · No Lock-In · Every Level Welcome</p>
             <div className="cta-btns">
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact-us" className="btn-primary">
                 Claim Your Trial
               </Link>
-              <Link href="/membership" className="btn-ghost">
+              <Link href="/memberships" className="btn-ghost">
                 See All Plans
               </Link>
             </div>
@@ -416,7 +415,7 @@ export default async function ClassesPage() {
             to take the same approach used in elite sport teams and provide it to our children. To help improve your teens performance
             at sport or motivate your children to exercise, our S&amp;C gym in Brisbane offers the following classes below:
           </p>
-          <Link href="/contact" className="btn btn-outline">
+          <Link href="/contact-us" className="btn btn-outline">
             Read More
           </Link>
         </div>

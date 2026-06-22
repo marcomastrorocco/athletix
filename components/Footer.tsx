@@ -27,8 +27,8 @@ export default async function Footer() {
         <div className="footer-col">
           <h4>Explore</h4>
           <Link href="/classes">Classes</Link>
-          <Link href="/membership">Membership</Link>
-          <Link href="/timetable">Timetable</Link>
+          <Link href="/memberships">Membership</Link>
+          <Link href="/class-timetable">Timetable</Link>
           <Link href="/our-team">Team</Link>
         </div>
         <div className="footer-col">
@@ -109,7 +109,6 @@ export default async function Footer() {
           <p className="links">
             <a href="#">Terms &amp; Conditions</a>
             <a href="#">Privacy Policy</a>
-            <Link href="/seo-dashboard">SEO Dashboard</Link>
             <Link href="/admin">Admin</Link>
           </p>
         </div>

@@ -1,12 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { resolvePageMetadata } from "@/lib/seo-server";
 import CareerForm from "@/components/CareerForm";
 
-export const metadata: Metadata = {
-  title: "Careers — ATHLETIX",
-  description:
-    "Coach, intern or grow with ATHLETIX. Roles for accredited S&C coaches, sports physiotherapists, exercise physiologists and university placement students in Brisbane.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return resolvePageMetadata("/careers");
+}
 
 type Job = {
   title: string;
@@ -87,7 +86,7 @@ export default function CareersPage() {
         <div className="container">
           <p className="crumbs">
             <Link href="/">Home</Link>
-            <span>/</span> <Link href="/about">About</Link>{" "}
+            <span>/</span> <Link href="/about-us">About</Link>{" "}
             <span>/</span> Careers
           </p>
           <h1>

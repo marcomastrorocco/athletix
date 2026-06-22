@@ -140,7 +140,7 @@ export function blockDefaults(type: BlockType): Block {
         title: "Class title",
         lead: "Short description of this class.",
         primaryBtn: { label: "Book a trial", href: "#book-form" },
-        secondaryBtn: { label: "View timetable", href: "/timetable" },
+        secondaryBtn: { label: "View timetable", href: "/class-timetable" },
         image: "",
         imageAlt: "",
         badge: "",

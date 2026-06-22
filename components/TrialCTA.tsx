@@ -30,7 +30,7 @@ export default async function TrialCTA({
         <p className="eyebrow light">{eyebrow}</p>
         <h2>{renderHeading}</h2>
         <p>{renderBody}</p>
-        <Link href="/contact" className="btn btn-primary btn-lg">
+        <Link href="/contact-us" className="btn btn-primary btn-lg">
           {cta}
         </Link>
       </div>
