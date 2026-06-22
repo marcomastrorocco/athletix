@@ -1473,6 +1473,7 @@ code {
   color: var(--accent); background: var(--accent-soft);
   padding: 2px 7px; border-radius: 999px;
 }
+.seo-pill.draft { color: var(--muted); background: var(--border); }
 .seo-list-meta .muted { font-size: 12px; }
 .seo-list-score {
   font-weight: 800; font-size: 14px;

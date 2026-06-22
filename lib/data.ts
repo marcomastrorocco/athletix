@@ -302,6 +302,7 @@ export type BlogPost = {
   body: string;
   author?: string;
   tags?: string[];
+  seo?: PageSeo; // per-post SEO overrides; falls back to title/excerpt/cover image
 };
 
 // Fallback used when a stored site.json predates the editable header section.

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import BlogEditor from "@/components/admin/BlogEditor";
-import { getBlogBySlug } from "@/lib/data";
+import { getBlogBySlug, getSeoSettings } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
 
@@ -8,7 +8,10 @@ type Ctx = { params: Promise<{ slug: string }> };
 
 export default async function EditBlogPostPage({ params }: Ctx) {
   const { slug } = await params;
-  const post = await getBlogBySlug(slug);
+  const [post, settings] = await Promise.all([
+    getBlogBySlug(slug),
+    getSeoSettings(),
+  ]);
   if (!post) notFound();
 
   return (
@@ -21,7 +24,7 @@ export default async function EditBlogPostPage({ params }: Ctx) {
           </p>
         </div>
       </div>
-      <BlogEditor mode="edit" initial={post} />
+      <BlogEditor mode="edit" initial={post} siteUrl={settings.siteUrl} />
     </>
   );
 }

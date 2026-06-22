@@ -1,6 +1,10 @@
 import BlogEditor from "@/components/admin/BlogEditor";
+import { getSeoSettings } from "@/lib/data";
 
-export default function NewBlogPostPage() {
+export const dynamic = "force-dynamic";
+
+export default async function NewBlogPostPage() {
+  const settings = await getSeoSettings();
   return (
     <>
       <div className="admin-header">
@@ -9,7 +13,7 @@ export default function NewBlogPostPage() {
           <p>Write a new article. Save as draft, publish when ready.</p>
         </div>
       </div>
-      <BlogEditor mode="create" />
+      <BlogEditor mode="create" siteUrl={settings.siteUrl} />
     </>
   );
 }

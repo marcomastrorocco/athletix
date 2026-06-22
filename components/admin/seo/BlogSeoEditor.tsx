@@ -3,26 +3,31 @@
 import { useState } from "react";
 import { Save } from "lucide-react";
 import type { PageSeo } from "@/lib/data";
-import type { ContentSignals, MetaFallback } from "@/lib/seo";
+import type { MetaFallback } from "@/lib/seo";
 import { showToast } from "../Toast";
 import SeoFields from "./SeoFields";
 
-export default function SeoEditor({
+const NO_SIGNALS = {
+  hasH1: false,
+  imagesTotal: 0,
+  imagesWithAlt: 0,
+  internalLinks: 0,
+};
+
+// SEO editor for a single blog post, used inside the SEO Manager. Saves just the
+// post's `seo` block via the blog API (the PUT route merges it into the post).
+export default function BlogSeoEditor({
   slug,
   path,
   siteUrl,
   initial,
   defaults,
-  signals,
-  analyzeContent,
 }: {
   slug: string;
   path: string;
   siteUrl: string;
   initial: PageSeo;
   defaults: MetaFallback;
-  signals: ContentSignals;
-  analyzeContent: boolean;
 }) {
   const [seo, setSeo] = useState<PageSeo>(initial ?? {});
   const [saving, setSaving] = useState(false);
@@ -30,10 +35,10 @@ export default function SeoEditor({
   const save = async () => {
     setSaving(true);
     try {
-      const res = await fetch(`/api/admin/seo/${slug}`, {
+      const res = await fetch(`/api/admin/blog/${slug}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(seo),
+        body: JSON.stringify({ seo }),
       });
       if (res.ok) showToast("SEO saved", "ok");
       else {
@@ -55,8 +60,8 @@ export default function SeoEditor({
         path={path}
         siteUrl={siteUrl}
         defaults={defaults}
-        signals={signals}
-        analyzeContent={analyzeContent}
+        signals={NO_SIGNALS}
+        analyzeContent={false}
       />
       <div className="seo-editor-actions">
         <button className="btn primary" type="button" onClick={save} disabled={saving}>

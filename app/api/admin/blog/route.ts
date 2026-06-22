@@ -51,6 +51,7 @@ export async function POST(req: NextRequest) {
       body: body.body ?? "",
       author: body.author || undefined,
       tags: body.tags && body.tags.length ? body.tags : undefined,
+      seo: body.seo || undefined,
     };
 
     await setBlog([post, ...posts]);

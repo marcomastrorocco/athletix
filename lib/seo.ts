@@ -69,7 +69,11 @@ export function buildPageMetadata(
   };
 }
 
-export type MetaFallback = { title?: string; description?: string };
+export type MetaFallback = {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+};
 
 // ===========================================================================
 // 2. Content signals derived from a page's blocks

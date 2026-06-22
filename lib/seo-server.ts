@@ -3,6 +3,8 @@ import type { PageSeo } from "./data";
 import {
   getPage,
   getSite,
+  getBlog,
+  getBlogBySlug,
   getSeoOverride,
   getSeoOverrides,
   getSeoSettings,
@@ -150,4 +152,69 @@ export async function getSeoOverview(): Promise<SeoOverviewRow[]> {
       };
     })
   );
+}
+
+export type SeoBlogRow = {
+  slug: string;
+  title: string;
+  path: string;
+  date: string;
+  published: boolean;
+  score: number;
+  hasOverride: boolean;
+};
+
+/** One row per blog post for the SEO Manager's "Blog" group, newest first. */
+export async function getBlogSeoOverview(): Promise<SeoBlogRow[]> {
+  const posts = await getBlog();
+  const rows = posts.map((post): SeoBlogRow => {
+    const title = post.seo?.title || `${post.title} — ATHLETIX Blog`;
+    const description = post.seo?.description || post.excerpt;
+    const score = scoreSeo(
+      { title, description, focusKeyword: post.seo?.focusKeyword },
+      { analyzeContent: false }
+    ).score;
+    return {
+      slug: post.slug,
+      title: post.title,
+      path: `/blog/${post.slug}`,
+      date: post.date,
+      published: post.published,
+      hasOverride: !!post.seo,
+      score,
+    };
+  });
+  return rows.sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+export type BlogSeoContext = {
+  slug: string;
+  title: string;
+  path: string;
+  seo: PageSeo;
+  defaults: MetaFallback;
+  siteUrl: string;
+};
+
+/** Everything the per-post SEO editor (inside the SEO Manager) needs. */
+export async function getBlogSeoContext(
+  slug: string
+): Promise<BlogSeoContext | null> {
+  const [post, settings] = await Promise.all([
+    getBlogBySlug(slug),
+    getSeoSettings(),
+  ]);
+  if (!post) return null;
+  return {
+    slug: post.slug,
+    title: post.title,
+    path: `/blog/${post.slug}`,
+    seo: post.seo ?? {},
+    defaults: {
+      title: `${post.title} — ATHLETIX Blog`,
+      description: post.excerpt || undefined,
+      ogImage: post.image || undefined,
+    },
+    siteUrl: settings.siteUrl,
+  };
 }

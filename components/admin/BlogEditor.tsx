@@ -10,14 +10,24 @@ import {
   Eye,
   EyeOff,
   Tag as TagIcon,
+  Search,
 } from "lucide-react";
 import { showToast } from "./Toast";
 import ImagePicker from "./ImagePicker";
-import type { BlogPost } from "@/lib/data";
+import SeoFields from "./seo/SeoFields";
+import type { BlogPost, PageSeo } from "@/lib/data";
 
 type Props = {
   initial?: BlogPost;
   mode: "create" | "edit";
+  siteUrl: string;
+};
+
+const NO_SIGNALS = {
+  hasH1: false,
+  imagesTotal: 0,
+  imagesWithAlt: 0,
+  internalLinks: 0,
 };
 
 function defaultPost(): Partial<BlogPost> {
@@ -35,7 +45,7 @@ function defaultPost(): Partial<BlogPost> {
   };
 }
 
-export default function BlogEditor({ initial, mode }: Props) {
+export default function BlogEditor({ initial, mode, siteUrl }: Props) {
   const router = useRouter();
   const [post, setPost] = useState<Partial<BlogPost>>(initial ?? defaultPost());
   const [tagsInput, setTagsInput] = useState((initial?.tags ?? []).join(", "));
@@ -266,6 +276,34 @@ export default function BlogEditor({ initial, mode }: Props) {
           </div>
           <div className="preview" dangerouslySetInnerHTML={{ __html: previewHtml }} />
         </div>
+      </div>
+
+      <div className="card">
+        <div className="head">
+          <div className="icon-bg">
+            <Search size={16} />
+          </div>
+          <div>
+            <h2>SEO</h2>
+            <p className="muted" style={{ margin: 0 }}>
+              Search title, description, social card &amp; schema. Blank fields
+              fall back to the title, excerpt and cover image.
+            </p>
+          </div>
+        </div>
+        <SeoFields
+          seo={post.seo ?? {}}
+          onChange={(next) => update("seo", next as PageSeo)}
+          path={`/blog/${initial?.slug ?? "post"}`}
+          siteUrl={siteUrl}
+          defaults={{
+            title: post.title ? `${post.title} — ATHLETIX Blog` : undefined,
+            description: post.excerpt || undefined,
+            ogImage: post.image || undefined,
+          }}
+          signals={NO_SIGNALS}
+          analyzeContent={false}
+        />
       </div>
 
       <div className="card">
