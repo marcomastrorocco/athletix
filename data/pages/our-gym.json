@@ -4,8 +4,8 @@
   "path": "/our-gym",
   "cssFiles": [],
   "seo": {
-    "title": "S & C Gym Brisbane | Cricket, Netball, Soccer, Rugby ATHLETIX",
-    "description": "ATHLETIX is a top-of-the-line Strength & Conditioning gym and Human and Sports Performance Center dedicated to helping athletes of all levels achieve their goals. Our Brisbane gym with a sprint track, is staffed with experienced Strength and Conditioning Coaches, Sports Scientists, Physiotherapists and Exercise Physiologists, who work together to provide personalised training programs tailored to each individual's needs."
+    "title": "Our Gym — ATHLETIX",
+    "description": "A purpose-built strength and conditioning facility in Fortitude Valley, Brisbane — designed around how athletes actually train."
   },
   "blocks": [
     {
@@ -19,7 +19,7 @@
         },
         {
           "label": "About",
-          "href": "/about-us"
+          "href": "/about"
         },
         {
           "label": "Our Gym",
@@ -111,7 +111,7 @@
       "heading": "Come tour the floor.<br /><span class=\"accent\">$7 for 7 days.</span>",
       "body": "Book a trial and experience the facility firsthand — fully refundable, all classes included.",
       "buttonLabel": "Claim the Trial",
-      "buttonHref": "/contact-us",
+      "buttonHref": "/contact",
       "bgImage": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpqrcyl7-screenshot-2025-09-05-202435.png"
     }
   ]
