@@ -1,0 +1,151 @@
+{
+  "intro": {
+    "eyebrow": "Multi-disciplinary team",
+    "heading": "Specialist care, <em>under one roof.</em>",
+    "bodyHtml": "<p>ATHLETIX is proud to offer a multi-disciplinary group of brilliant practitioners, ranging from <strong>Specialist Sports Physiotherapists</strong>, to <strong>Clinical Exercise Physiologists</strong>, and a <strong>Massage Therapist</strong>.</p><p>Having an Allied Health team in-house means you can be guided in each stage of your rehab by different professionals — from pre-surgery, to acute management, to return to sport or activity.</p><p>The team have over <strong>25 years of combined clinical experience</strong>, including work for the Australian Institute of Sport, Australian Representative teams and the Olympic Games. Our practitioners help diagnose and manage sports or exercise-related injuries in everyday and elite athletes, as well as working with chronic disease, veterans and older populations.</p>",
+    "image": {
+      "src": "/image/cdn/Youth-sport-1-e1684274091394-7bb69e.webp",
+      "alt": "ATHLETIX allied health team supporting athlete rehab"
+    }
+  },
+  "practitioners": [
+    {
+      "id": "myles",
+      "name": "Myles Burfield",
+      "role": "Head of Rehab",
+      "title": "Head Physiotherapist",
+      "image": "/image/cdn/IMG_9100-scaled-e1670906460682-49a90c.webp",
+      "bioHtml": "<p>Myles is a <strong>Specialist Sports Physiotherapist</strong> (Fellowship of the Australian College of Physiotherapists in 2023) with a special interest in injury management, rehabilitation, running analysis and injury prevention. He is currently undergoing expert training with the Australian College of Physiotherapists to become a <a href='https://sportsandexercise.physio/careerpathway/' target='_blank' rel='noopener noreferrer'>Sports and Exercise Specialist physio</a>.</p><p>With 16 years of private practice experience and extensive involvement within elite sport, Myles provides expert treatment and management for all general musculoskeletal and sporting injuries. He has previously worked within the <strong>Australian Institute of Sport</strong>, <strong>Cirque du Soleil</strong>, and as team physio for the <strong>Australian Canoe/Kayaking team</strong> (including the Rio Olympic Games in 2016, where they won Bronze). He now practises in Brisbane while completing his specialisation and teaching the next generation of Physiotherapists at Australian Catholic University.</p><p>You can book your appointment with Myles and his team <a href='https://sportsandexercise.physio/' target='_blank' rel='noopener noreferrer'>here</a>.</p>",
+      "qualifications": [
+        "Specialist Sports and Exercise Physiotherapist (2023)",
+        "Masters of Sports Physiotherapy (2016)",
+        "Bachelor of Physiotherapy (2007)",
+        "Clinical educator at Australian Catholic University (2021 – current)"
+      ],
+      "experience": [
+        "Australian Institute of Sport (2012 – 2015)",
+        "Australian Olympic Canoe/Kayak Team Physiotherapist (2013 – 2018)",
+        "Cirque du Soleil (2010 – 2012)"
+      ],
+      "links": [
+        {
+          "type": "linkedin",
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/mylesspex/"
+        }
+      ]
+    },
+    {
+      "id": "bridie",
+      "name": "Bridie Nicholson",
+      "role": "Sports Rehab / Physio",
+      "title": "Physiotherapist",
+      "image": "/image/cdn/IMG-20240130-WA0019-e1727084066284-1efb74.webp",
+      "bioHtml": "<p>Bridie is a <strong>Titled Sport and Exercise Physiotherapist</strong>, as awarded by the Australian College of Physiotherapists, who is passionate about making modern, high-quality physiotherapy care available to all people — not just professional athletes.</p><p>With more than 7 years of sports physio experience, Bridie has worked with a variety of sporting and professional teams including the <strong>Canadian Basketball team</strong>, <strong>Brisbane Roar Football Team</strong>, NHL (Ice Hockey), Ultimate Frisbee, Para-Swimming, running, boxing, powerlifting, rugby and AFL.</p><p>Alongside working in private practice, Bridie is the <strong>Head Physiotherapist for the Brisbane Roar Women's team</strong> and a consultant for the UQ ParaSTART Paralympic development program. She is passionate about helping developing and adolescent athletes and runs the physiotherapy services for Villanova College contact sports.</p>",
+      "qualifications": [
+        "Titled Sport Physiotherapist (2022)",
+        "Masters of Sports Physiotherapy (2022)",
+        "Master of Physiotherapy (2017)",
+        "Bachelor of Exercise & Nutrition (2015)"
+      ],
+      "experience": [
+        "Lead Physio Brisbane Roar W (2021 – present)",
+        "Sports Physio consultant paraSTART (2022 – present)",
+        "Lead Physio Villanova College (2023 – present)",
+        "Basketball & NHL Canada (2019 – 2021)"
+      ],
+      "links": []
+    },
+    {
+      "id": "campbell",
+      "name": "Campbell Antonio",
+      "role": "Sports Rehab / Physio",
+      "title": "Physiotherapist",
+      "image": "/image/cdn/IMG-20230131-WA0002-e1723499488364-68c055.webp",
+      "bioHtml": "<p>Campbell has a deep interest in Sports Physiotherapy. After obtaining his Bachelor in Physiotherapy (2019), he decided that in order to truly help his clients and athletes, he needed to be more than a general Physio.</p><p>Campbell is currently undertaking <strong>two Masters simultaneously</strong> — Master of Sports and Exercise Physiotherapy and Master in High Performance Sports — to gain further knowledge in both S&amp;C and Sports Physiotherapy.</p><p>Together with Myles, they help our athletes, members and corporates stay on top of their game. Campbell is the Lead Physio for the <strong>Women Reds program</strong> and also enjoys teaching our physio-led Pilates small-group classes.</p><p>You can book your appointment with Campbell <a href='https://sportsandexercise.physio/' target='_blank' rel='noopener noreferrer'>here</a>.</p>",
+      "qualifications": [
+        "Bachelor of Physiotherapy — Honours (2019)",
+        "Masters of Sports and Exercise Physiotherapy (ongoing)",
+        "Master of High Performance Sports (ongoing)"
+      ],
+      "experience": [
+        "Wallaroos (2020)",
+        "Mayne Tigers AFC (2020 – 2021)",
+        "UQFC (2020)"
+      ],
+      "links": [
+        {
+          "type": "linkedin",
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/campbell-antonio-545a97247/"
+        }
+      ]
+    },
+    {
+      "id": "david",
+      "name": "David Lawrence",
+      "role": "Exercise Physiologist",
+      "title": "Exercise Physiologist",
+      "image": "/image/cdn/IMG_0147-e1685322267891-48889f.webp",
+      "bioHtml": "<p>Dave started as an Exercise Scientist and has accumulated <strong>over 10,000 hours</strong> of face-to-face experience with clients from all walks of life — from national-level athletes to pregnant mums and 92-year-olds.</p><p>While working with athletes remains a strong passion, David developed an interest in helping people with injuries and clinical conditions, and went back to university to complete a second degree in <strong>Clinical Exercise Physiology (Honours)</strong> at the University of Queensland.</p><p>He now works with <strong>NDIS clients</strong>, <strong>Veterans</strong> and people suffering from chronic diseases. In his spare time he trains regularly and is an avid touch footballer.</p><p class='ah-prac-sub'>Training Focus</p><ul class='ah-prac-list'><li><span class='ah-tick'>✓</span> Strength and Power development</li><li><span class='ah-tick'>✓</span> Management and rehab of musculoskeletal issues</li><li><span class='ah-tick'>✓</span> Mental health considerations</li><li><span class='ah-tick'>✓</span> Management of clinical health conditions</li></ul>",
+      "qualifications": [
+        "Bachelor of Clinical Exercise Physiology (Honours)",
+        "Bachelor of Exercise and Nutrition Sciences"
+      ],
+      "experience": [],
+      "links": [
+        {
+          "type": "instagram",
+          "label": "Instagram",
+          "href": "https://www.instagram.com/nudojo/"
+        }
+      ]
+    },
+    {
+      "id": "dietician",
+      "name": "[Dietician Name]",
+      "role": "Dietician",
+      "title": "Accredited Practising Dietitian",
+      "image": "",
+      "bioHtml": "<p>Add the dietician's bio here from the admin dashboard. You can include <strong>bold text</strong> and <a href='https://example.com' target='_blank' rel='noopener noreferrer'>links</a>.</p>",
+      "qualifications": [],
+      "experience": [],
+      "links": []
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What's the difference between a sports physio and a regular physio?",
+      "a": "A sports physio specialises in injury prevention, management, and performance optimisation for athletes and active individuals. While regular physios treat a broader range of conditions, sports physios focus on sport-specific demands and rehabilitation to ensure a safe return to activity.",
+      "open": true
+    },
+    {
+      "q": "How do I know if I need to see a physio or just rest?",
+      "a": "If pain persists for more than a few days, limits your ability to perform daily activities, or affects your movement, it's best to see a physio. Early assessment can help prevent further damage and speed up recovery."
+    },
+    {
+      "q": "How is Sports Rehab tailored to my specific needs?",
+      "a": "Rehabilitation is individualised to your goals, sport and injury, ensuring you stay as active as possible. Your treatment plan focuses on your specific complaints and includes sport or goal-specific exercises to optimise recovery and performance."
+    },
+    {
+      "q": "What happens during the assessment phase?",
+      "a": "Your sports therapist will conduct a thorough assessment of your injury or complaints, providing an expert diagnosis. This is followed by a detailed explanation of your condition and a tailored plan to address your needs."
+    },
+    {
+      "q": "What sports rehab treatment techniques might be used?",
+      "a": "Depending on your injury, your therapist may use hands-on techniques such as massage, dry needling, mobilisations and manipulations. These treatments are combined with mobility and strength exercises, ensuring a comprehensive approach to recovery."
+    },
+    {
+      "q": "How does the Sports Rehab clinic ensure I stay active during rehabilitation?",
+      "a": "Our approach focuses on keeping you active both in the gym and on the track. With guidance on modifying activities and specific exercises, we help you maintain fitness and progress towards a safe return to your sport."
+    },
+    {
+      "q": "Will my sports therapist communicate with my coach or other specialists?",
+      "a": "Yes — communication with your coach or referral to specialists is part of our holistic approach to injury management. This ensures that everyone involved in your performance and care is aligned with your rehabilitation goals."
+    },
+    {
+      "q": "What support is provided after I recover?",
+      "a": "To prevent recurrence of your injury and further improve performance, we offer ongoing support. This may include continued exercise guidance, performance-focused sessions and regular check-ins to ensure long-term success."
+    }
+  ]
+}

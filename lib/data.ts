@@ -381,6 +381,39 @@ export const setTimetable = (t: TimetableData) => writeJson("timetable.json", t)
 export const getBlog = () => readJson<BlogPost[]>("blog.json");
 export const setBlog = (b: BlogPost[]) => writeJson("blog.json", b);
 
+// ---------- Allied Health page ----------
+// A profile/contact link shown under a practitioner. `type` drives the icon
+// (linkedin / instagram / website); any other value falls back to a generic
+// external-link icon so the team can add arbitrary links.
+export type PracLink = { type: string; label: string; href: string };
+export type Practitioner = {
+  id: string;
+  name: string;
+  role: string;
+  title: string;
+  image: string;
+  bioHtml: string; // rich HTML — supports paragraphs, <strong> and <a> links
+  qualifications: string[];
+  experience: string[];
+  links: PracLink[];
+};
+export type AhFaq = { q: string; a: string; open?: boolean };
+export type AlliedHealthContent = {
+  intro: {
+    eyebrow: string;
+    heading: string; // may contain <em> for the accent
+    bodyHtml: string; // rich HTML paragraphs
+    image: ImgRef;
+  };
+  practitioners: Practitioner[];
+  faqs: AhFaq[];
+};
+
+export const getAlliedHealth = () =>
+  readJson<AlliedHealthContent>("allied-health.json");
+export const setAlliedHealth = (a: AlliedHealthContent) =>
+  writeJson("allied-health.json", a);
+
 // Lead/enquiry submissions from the website forms (stored privately, never git).
 export type Lead = {
   id: string;

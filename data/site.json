@@ -390,7 +390,7 @@
         "quote": "The coaches here genuinely care about your progress. ",
         "bold": "It's not just a gym — it's a community",
         "tail": " where everyone pushes each other to be better, every session.",
-        "avatar": "💪",
+        "avatar": "A",
         "name": "Adult Member",
         "meta": "Adult Program"
       },
@@ -399,7 +399,7 @@
         "quote": "I never thought I'd be someone who loves training. ",
         "bold": "The coaches met me exactly where I was.",
         "tail": " I haven't looked back since.",
-        "avatar": "🏃",
+        "avatar": "A",
         "name": "Athletix Member",
         "meta": "Adult Program · 14 months"
       },
@@ -592,7 +592,7 @@
             "desc": "Pro-standard S&C for serious competitors."
           },
           {
-            "href": "https://athletix-nine.vercel.app/family-classes",
+            "href": "/family-classes",
             "title": "Family Classes",
             "desc": "All ages, together. Train as a family on one membership, Fortitude Valley, brisbane"
           }

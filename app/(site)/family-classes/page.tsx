@@ -1,8 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { resolvePageMetadata } from "@/lib/seo-server";
-import TimetableGrid from "@/components/TimetableGrid";
-import { getTimetable } from "@/lib/data";
 
 export async function generateMetadata(): Promise<Metadata> {
   return resolvePageMetadata("/family-classes");
@@ -176,8 +174,6 @@ const FAQS: FAQ[] = [
 ];
 
 export default async function FamilyClassesPage() {
-  const tt = await getTimetable();
-
   return (
     <>
       <link rel="stylesheet" href="/css/classes-page.css" />
@@ -210,23 +206,17 @@ export default async function FamilyClassesPage() {
             <strong>4 members</strong> can be included under one membership
             and prices are from <strong>$120 per week</strong>.
           </p>
-          <Link href="/memberships" className="btn btn-outline">
+          <p>
+            Our certified strength and conditioning coaches are dedicated to
+            completing your fitness goals. You will never feel like you are
+            working hard for fitness. Instead, you&rsquo;ll love to spend your
+            fitness quality time with your family and us. For more information,
+            see our <strong>family membership options</strong> and{" "}
+            <strong>book a weekly trial to all our classes</strong>.
+          </p>
+          <Link href="/memberships" className="btn btn-ghost">
             See Membership Plans
           </Link>
-
-          <details className="intro-collapse">
-            <summary className="intro-collapse-toggle">Read more</summary>
-            <div className="intro-collapse-body">
-              <p>
-                Our certified strength and conditioning coaches are dedicated to
-                completing your fitness goals. You will never feel like you are
-                working hard for fitness. Instead, you&rsquo;ll love to spend your
-                fitness quality time with your family and us. For more
-                information, see our <strong>family membership options</strong>{" "}
-                and <strong>book a weekly trial to all our classes</strong>.
-              </p>
-            </div>
-          </details>
         </div>
       </section>
 
@@ -259,11 +249,15 @@ export default async function FamilyClassesPage() {
             <p className="eyebrow">Athletix Club</p>
             <h2>Timetable</h2>
             <p className="section-sub">
-              Weekly training schedule inspired by our in-gym board. Sunday is
-              reserved for recovery.
+              See the full weekly training schedule — class times for every age
+              group, with Sunday reserved for recovery.
             </p>
           </div>
-          <TimetableGrid data={tt} />
+          <div style={{ textAlign: "center" }}>
+            <Link href="/class-timetable" className="btn btn-primary">
+              View the full timetable
+            </Link>
+          </div>
         </div>
       </section>
 

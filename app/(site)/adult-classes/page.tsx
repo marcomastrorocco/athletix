@@ -1,8 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { resolvePageMetadata } from "@/lib/seo-server";
-import TimetableGrid from "@/components/TimetableGrid";
-import { getTimetable } from "@/lib/data";
 
 export async function generateMetadata(): Promise<Metadata> {
   return resolvePageMetadata("/adult-classes");
@@ -289,8 +287,6 @@ const FAQS: FAQ[] = [
 ];
 
 export default async function AdultClassesPage() {
-  const tt = await getTimetable();
-
   return (
     <>
       <link rel="stylesheet" href="/css/classes-page.css" />
@@ -473,20 +469,6 @@ export default async function AdultClassesPage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="timetable" id="timetable">
-        <div className="container">
-          <div className="timetable-head">
-            <p className="eyebrow">Athletix Club</p>
-            <h2>Timetable</h2>
-            <p className="section-sub">
-              Weekly training schedule inspired by our in-gym board. Sunday is
-              reserved for recovery.
-            </p>
-          </div>
-          <TimetableGrid data={tt} />
         </div>
       </section>
 

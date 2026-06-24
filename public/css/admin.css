@@ -734,6 +734,32 @@ code {
 .coach-row input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
 
 /* ============================================================
+   allied health editor
+   ============================================================ */
+
+.ah-editor .prac-block {
+  border-bottom: 1px solid var(--border);
+  padding: 4px 0 16px;
+}
+.ah-editor .prac-block:last-child { border-bottom: 0; }
+.ah-editor .ah-sublabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 14px 0 8px;
+}
+.ah-editor .ah-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.ah-editor .ah-checkbox input { width: auto; }
+
+/* ============================================================
    blog editor split view
    ============================================================ */
 
