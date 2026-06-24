@@ -1,13 +1,13 @@
 {
   "slug": "about",
   "title": "About Us",
-  "path": "/about-us",
+  "path": "/about",
   "cssFiles": [
     "/css/home-v2.css",
     "/css/about-page.css"
   ],
   "seo": {
-    "title": "ATHLETIX: High Performance Athletic Development Gym Brisbane",
+    "title": "About Us — ATHLETIX Brisbane",
     "description": "Founded in 2021 by Marco Mastrorocco and Jovan Vucetic, ATHLETIX is on a mission to become the number one private high-performance facility in Australia."
   },
   "blocks": [
@@ -73,7 +73,7 @@
       "primaryLabel": "Listen to the podcast",
       "primaryHref": "https://strengthandconditioning.org/asca-podcast",
       "secondaryLabel": "Talk to a Coach",
-      "secondaryHref": "/contact-us",
+      "secondaryHref": "/contact",
       "logos": [
         {
           "src": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpqh05c8-asca.png",
