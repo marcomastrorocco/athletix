@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { showToast } from "./Toast";
 import ImagePicker from "./ImagePicker";
+import RichTextEditor from "./RichTextEditor";
 import type {
   AlliedHealthContent,
   Practitioner,
@@ -373,13 +374,15 @@ export default function AlliedHealthEditor({
 
                 <div className="field" style={{ marginTop: 14 }}>
                   <label>
-                    Bio (HTML — paragraphs, &lt;strong&gt;, and &lt;a href&gt;
-                    links)
+                    Description — use the toolbar for bold, italic, lists and
+                    links
                   </label>
-                  <textarea
-                    rows={8}
+                  <RichTextEditor
                     value={p.bioHtml}
-                    onChange={(e) => updatePrac(i, { bioHtml: e.target.value })}
+                    onChange={(html) => updatePrac(i, { bioHtml: html })}
+                    minHeight={180}
+                    ariaLabel={`Description for ${p.name || "practitioner"}`}
+                    placeholder="Write the full practitioner description…"
                   />
                 </div>
 

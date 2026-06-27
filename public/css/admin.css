@@ -522,6 +522,67 @@ code {
 .field-row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 
 /* ============================================================
+   rich text editor (RichTextEditor.tsx)
+   ============================================================ */
+
+.rte {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  transition: border 0.15s, box-shadow 0.15s;
+}
+[data-theme="light"] .rte { background: rgba(255, 255, 255, 0.55); }
+.rte:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.rte-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel-2);
+}
+.rte-tb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border 0.15s;
+}
+.rte-tb-btn:hover {
+  background: var(--panel-3);
+  color: var(--text);
+  border-color: var(--border);
+}
+.rte-tb-btn svg { width: 15px; height: 15px; }
+.rte-area {
+  padding: 12px 14px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+  outline: none;
+  overflow-wrap: anywhere;
+}
+.rte-area:empty::before {
+  content: attr(data-placeholder);
+  color: var(--muted);
+}
+.rte-area p { margin: 0 0 10px; }
+.rte-area p:last-child { margin-bottom: 0; }
+.rte-area a { color: var(--accent); text-decoration: underline; }
+.rte-area ul { margin: 0 0 10px; padding-left: 20px; }
+.rte-area li { margin: 0 0 4px; }
+
+/* ============================================================
    stats / KPIs
    ============================================================ */
 
