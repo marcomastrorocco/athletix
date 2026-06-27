@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { resolvePageMetadata } from "@/lib/seo-server";
-import TrialCTA from "@/components/TrialCTA";
+import HomeCTA from "@/components/HomeCTA";
 import TimetableGrid from "@/components/TimetableGrid";
 import { getTimetable } from "@/lib/data";
 
@@ -43,7 +43,7 @@ export default async function TimetablePage() {
         </div>
       </section>
 
-      <TrialCTA />
+      <HomeCTA />
     </>
   );
 }

@@ -313,7 +313,7 @@ export const DEFAULT_HEADER: HeaderContent = {
       label: "CLASSES",
       href: "/classes",
       mega: [
-        { href: "/youth-classes", title: "Youth Classes", desc: "Ages 7–17. Strength, speed and athletic development." },
+        { href: "/youth-classes-2", title: "Youth Classes", desc: "Ages 7–17. Strength, speed and athletic development." },
         { href: "/adult-classes", title: "Adult Classes", desc: "16+. LIFT, MET-CON, mobility — every level welcome." },
         { href: "/family-classes", title: "Family Classes", desc: "Train together. Parent + child sessions on the floor." },
         { href: "/athletes-program", title: "Athlete Programs", desc: "Pro-standard S&C for serious competitors." },

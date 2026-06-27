@@ -60,14 +60,30 @@
   background: var(--ot-bg);
 }
 .ot-intro-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 56px;
-  align-items: center;
+  display: block;
+}
+/* Clear the floated image so the section wraps it fully. */
+.ot-intro-grid::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Image floats left; copy flows to its right and continues full-width
+   below it once the text runs past the image's bottom edge. */
+.ot-intro-media {
+  float: left;
+  width: 40%;
+  margin: 6px 48px 28px 0;
 }
 .ot-intro-media img {
   width: 100%;
   height: auto;
+  /* Cap the height so the photo stays shorter than the copy column; the
+     remaining paragraphs then wrap full-width beneath the image. The group
+     is centred (ceiling above, blue floor below), so this crop keeps everyone. */
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 14px;
   display: block;
   border: 1px solid var(--ot-line);
@@ -334,9 +350,10 @@
 
 /* ===== Responsive ===== */
 @media (max-width: 980px) {
-  .ot-intro-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .ot-intro-media {
+    float: none;
+    width: 100%;
+    margin: 0 0 32px;
   }
   .ot-slide-item {
     padding: 0 8px;

@@ -112,15 +112,6 @@
       ]
     },
     {
-      "type": "imageBlock",
-      "id": "team-photo",
-      "eyebrow": "The People",
-      "heading": "THE ATHLETIX S&C TEAM",
-      "lede": "ATHLETIX is made up of an exceptionally talented team of professionals. Our coaches blend higher education (Exercise Science, Human Movement, Physiotherapy degrees) with practical on-the-field experience — training elite athletes, general population and clinical patients.",
-      "image": "https://o0aibyc5xwhg4z00.public.blob.vercel-storage.com/uploads/mpmjg4bv-wa_1776648532015-1-.jpeg",
-      "imageAlt": "The Athletix S&C team"
-    },
-    {
       "type": "coaches",
       "id": "coaches-grid",
       "eyebrow": "Our Team",

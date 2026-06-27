@@ -110,7 +110,7 @@ export default function YouthFitnessFoundationsPage() {
           <p className="crumbs">
             <Link href="/">Home</Link>
             <span>/</span> <Link href="/classes">Classes</Link> <span>/</span>{" "}
-            <Link href="/youth-classes">Youth Classes</Link> <span>/</span>{" "}
+            <Link href="/youth-classes-2">Youth Classes</Link> <span>/</span>{" "}
             Youth Fitness Foundations
           </p>
         </div>
@@ -140,7 +140,7 @@ export default function YouthFitnessFoundationsPage() {
             </p>
             <p className="yaf-lead">
               See more of our{" "}
-              <Link href="/youth-classes">
+              <Link href="/youth-classes-2">
                 children&apos;s gym fitness classes here
               </Link>
               .

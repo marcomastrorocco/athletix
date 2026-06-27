@@ -70,7 +70,7 @@ export const SEO_PAGES: SeoPage[] = [
     defaultDescription: "With our speed and agility development classes, kids learn to move faster with confidence! Plyometrics, Change of Directions, Injury prevention drills for any team sports including cricket, rugby, netball, basketball, soccer and more..." },
   { slug: "youth-agility-foundations", path: "/classes/youth-agility-foundations", label: "Youth Agility Foundations", source: "static", group: "Youth", defaultTitle: "Youth Agility Foundations — ATHLETIX Brisbane",
     defaultDescription: "A class that merges physical fitness, injury prevention and linear/lateral speed for kids aged 7–11. Brisbane CBD location." },
-  { slug: "youth-classes", path: "/youth-classes", label: "Youth Classes", source: "static", group: "Youth", defaultTitle: "Youth / Kids Gym - S&C Programs & Classes for Kids, Teenagers & Children Brisbane",
+  { slug: "youth-classes", path: "/youth-classes-2", label: "Youth Classes", source: "static", group: "Youth", defaultTitle: "Youth / Kids Gym - S&C Programs & Classes for Kids, Teenagers & Children Brisbane",
     defaultDescription: "Kids Gym Brisbane. Youth strength and conditioning and speed training programs and classes for kids, children and teenagers in Brisbane." },
   { slug: "youth-fitness-development", path: "/classes/youth-fitness-development", label: "Youth Fitness Development", source: "static", group: "Youth", defaultTitle: "Youth Strength Training Class Brisbane - ATHLETIX Gym",
     defaultDescription: "Youth Strength Development (12–16 yrs). Teens learn the foundations of strength and resistance training through a criteria-based, sequential program at ATHLETIX Brisbane." },

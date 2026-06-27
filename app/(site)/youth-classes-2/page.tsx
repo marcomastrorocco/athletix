@@ -5,7 +5,7 @@ import TimetableGrid from "@/components/TimetableGrid";
 import { getTimetable } from "@/lib/data";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return resolvePageMetadata("/youth-classes");
+  return resolvePageMetadata("/youth-classes-2");
 }
 
 type ClassTile = {

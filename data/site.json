@@ -170,7 +170,7 @@
         "tag": "Ages 8–16",
         "name": "Youth Classes",
         "desc": "Real coaching. Real development. Our LTAD approach builds athleticism through age appropriate structure, movement freedom, and skill development. No adult drills forced onto kids. Just smart coaching that develops confidence, coordination, creativity, and long term resilience.",
-        "href": "/youth-classes"
+        "href": "/youth-classes-2"
       },
       {
         "img": "/image/cdn/DSC06320-scaled-e1723546921926-9bba71.webp",
@@ -577,7 +577,7 @@
         "href": "/classes",
         "mega": [
           {
-            "href": "/youth-classes",
+            "href": "/youth-classes-2",
             "title": "Youth Classes",
             "desc": "Age 7-16. Long Term Athletic Development programs: Strength, speed and agility."
           },

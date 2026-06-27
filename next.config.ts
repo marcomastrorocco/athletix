@@ -7,7 +7,7 @@ const SEO_REDIRECTS: Record<string, string> = {
   // Old timetable URL -> the live timetable page
   "/timetable": "/class-timetable",
   // Duplicate / variant URLs funnelled to the closest current page
-  "/youth-classes-2": "/youth-classes",
+  "/youth-classes": "/youth-classes-2",
   "/ndis-dva-program": "/ndis-program",
   "/adults-membership": "/memberships",
   "/athletix-membership": "/memberships",

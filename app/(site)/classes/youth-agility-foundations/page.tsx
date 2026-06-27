@@ -20,7 +20,7 @@ export default function YouthAgilityFoundationsPage() {
           <p className="crumbs">
             <Link href="/">Home</Link>
             <span>/</span> <Link href="/classes">Classes</Link> <span>/</span>{" "}
-            <Link href="/youth-classes">Youth Classes</Link> <span>/</span>{" "}
+            <Link href="/youth-classes-2">Youth Classes</Link> <span>/</span>{" "}
             Youth Agility Foundations
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function YouthAgilityFoundationsPage() {
               This class merges elements of physical fitness, injury prevention,
               linear and lateral speed. The basis for safe movement in a
               dynamic, fast-pace environment. See more of our{" "}
-              <Link href="/youth-classes">
+              <Link href="/youth-classes-2">
                 children&apos;s gym fitness classes here
               </Link>
               .
