@@ -35,7 +35,7 @@ export async function PUT(req: NextRequest, { params }: Ctx) {
       target: updated.title,
     });
     revalidatePath("/blog");
-    revalidatePath(`/blog/${slug}`);
+    revalidatePath(`/${slug}`);
     return NextResponse.json(updated);
   } catch (e) {
     console.error(`[/api/admin/blog/${slug} PUT] error:`, e);
@@ -61,7 +61,7 @@ export async function DELETE(_req: NextRequest, { params }: Ctx) {
       target: target?.title ?? slug,
     });
     revalidatePath("/blog");
-    revalidatePath(`/blog/${slug}`);
+    revalidatePath(`/${slug}`);
     return NextResponse.json({ ok: true });
   } catch (e) {
     console.error(`[/api/admin/blog/${slug} DELETE] error:`, e);

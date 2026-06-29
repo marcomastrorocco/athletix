@@ -294,7 +294,7 @@ export default function BlogEditor({ initial, mode, siteUrl }: Props) {
         <SeoFields
           seo={post.seo ?? {}}
           onChange={(next) => update("seo", next as PageSeo)}
-          path={`/blog/${initial?.slug ?? "post"}`}
+          path={`/${initial?.slug ?? "post"}`}
           siteUrl={siteUrl}
           defaults={{
             title: post.title ? `${post.title} — ATHLETIX Blog` : undefined,
@@ -337,7 +337,7 @@ export default function BlogEditor({ initial, mode, siteUrl }: Props) {
           )}
           {mode === "edit" && initial && (
             <a
-              href={`/blog/${initial.slug}`}
+              href={`/${initial.slug}`}
               target="_blank"
               rel="noopener"
               className="btn"

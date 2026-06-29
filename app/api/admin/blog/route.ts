@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
     await setBlog([post, ...posts]);
     await logActivity({ kind: "blog", action: "create", target: post.title });
     revalidatePath("/blog");
-    revalidatePath(`/blog/${slug}`);
+    revalidatePath(`/${slug}`);
     return NextResponse.json(post, { status: 201 });
   } catch (e) {
     console.error("[/api/admin/blog POST] error:", e);

@@ -208,7 +208,7 @@ export async function getBlogSeoContext(
   return {
     slug: post.slug,
     title: post.title,
-    path: `/blog/${post.slug}`,
+    path: `/${post.slug}`,
     seo: post.seo ?? {},
     defaults: {
       title: `${post.title} — ATHLETIX Blog`,

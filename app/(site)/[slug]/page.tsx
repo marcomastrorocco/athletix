@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Ctx): Promise<Metadata> {
   if (!post) return { title: "Not found" };
   const seo = resolvePostSeo(post);
   return buildPageMetadata(
-    { path: `/blog/${slug}`, title: seo.title || post.title, seo },
+    { path: `/${slug}`, title: seo.title || post.title, seo },
     settings
   );
 }
@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: Ctx) {
     faq: post.seo?.schema?.faq,
   };
   const jsonLd = buildJsonLd(schema, settings, {
-    path: `/blog/${slug}`,
+    path: `/${slug}`,
     title: post.title,
     seo: resolvePostSeo(post),
   });
@@ -202,7 +202,7 @@ export default async function BlogPostPage({ params }: Ctx) {
                   {sidebarPosts.map((p) => (
                     <li key={p.slug}>
                       <Link
-                        href={`/blog/${p.slug}`}
+                        href={`/${p.slug}`}
                         className="sidebar-item"
                       >
                         <span className="sidebar-thumb">
@@ -247,7 +247,7 @@ export default async function BlogPostPage({ params }: Ctx) {
               {bottomPosts.map((p) => (
                 <Link
                   key={p.slug}
-                  href={`/blog/${p.slug}`}
+                  href={`/${p.slug}`}
                   className="related-row-card"
                 >
                   <span className="related-row-thumb">

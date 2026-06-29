@@ -5,23 +5,23 @@
     "og": {
       "title": "ATHLETIX Brisbane | Strength & Conditioning Gym",
       "description": "Exclusive Independent Gym and Human Performance Center in Brisbane's Fortitude Valley tailored for adults as well as youth: kids, children and teenagers. Our Strength and Conditioning gym offers group fitness classes, workouts and individual Personal Training (PT) and personal trainers and strength and conditioning coaches in Brisbane.",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/B_W_1-1-908x1024.jpeg"
+      "image": "/image/cdn/B_W_1-1-908x1024-bd030f.jpeg"
     },
     "twitter": {
       "title": "ATHLETIX Brisbane | Strength & Conditioning Gym",
       "description": "Exclusive Independent Gym and Human Performance Center in Brisbane's Fortitude Valley tailored for adults as well as youth: kids, children and teenagers. Our Strength and Conditioning gym offers group fitness classes, workouts and individual Personal Training (PT) and personal trainers and strength and conditioning coaches in Brisbane.",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/B_W_1-1-908x1024.jpeg"
+      "image": "/image/cdn/B_W_1-1-908x1024-bd030f.jpeg"
     }
   },
   "/about-us": {
     "title": "ATHLETIX: High Performance Athletic Development Gym Brisbane",
     "og": {
       "title": "ATHLETIX: High Performance Athletic Development Gym Brisbane",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/B_W_1-908x1024.jpeg"
+      "image": "/image/cdn/B_W_1-908x1024-e04daf.jpeg"
     },
     "twitter": {
       "title": "ATHLETIX: High Performance Athletic Development Gym Brisbane",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/B_W_1-908x1024.jpeg"
+      "image": "/image/cdn/B_W_1-908x1024-e04daf.jpeg"
     }
   },
   "/adult-classes": {
@@ -30,12 +30,12 @@
     "og": {
       "title": "Strength & Conditioning Group Classes & Coaching Brisbane - ATHLETIX Gym",
       "description": "ATHLETIX offers small group fitness classes and training in Brisbane including Pilates · Circuit Training · HIIT · Weightlifting · Kettlebells · Boxing · Mobility · Strength & Conditioning for all ages including beginners, seniors, women and elderly. Get fit, lose weight with our group fitness training classes.",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/11/Pilates.jpg"
+      "image": "/image/cdn/Pilates-55412e.jpg"
     },
     "twitter": {
       "title": "Strength & Conditioning Group Classes & Coaching Brisbane - ATHLETIX Gym",
       "description": "ATHLETIX offers small group fitness classes and training in Brisbane including Pilates · Circuit Training · HIIT · Weightlifting · Kettlebells · Boxing · Mobility · Strength & Conditioning for all ages including beginners, seniors, women and elderly. Get fit, lose weight with our group fitness training classes.",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/11/Pilates.jpg"
+      "image": "/image/cdn/Pilates-55412e.jpg"
     }
   },
   "/allied-health-staff": {
@@ -44,12 +44,12 @@
     "og": {
       "title": "Physiotherapist Brisbane, Dietitian & Nutritionist in Brisbane - ATHLETIX Gym",
       "description": "Athletix Allied Health Team including Sports Scientists to Physiotherapists and Nutritionists & Dieticians in Brisbane",
-      "image": "https://athletix.com.au/wp-content/uploads/2022/01/Youth-sport-1-e1684274091394.png"
+      "image": "/image/cdn/Youth-sport-1-e1684274091394-7bb69e.png"
     },
     "twitter": {
       "title": "Physiotherapist Brisbane, Dietitian & Nutritionist in Brisbane - ATHLETIX Gym",
       "description": "Athletix Allied Health Team including Sports Scientists to Physiotherapists and Nutritionists & Dieticians in Brisbane",
-      "image": "https://athletix.com.au/wp-content/uploads/2022/01/Youth-sport-1-e1684274091394.png"
+      "image": "/image/cdn/Youth-sport-1-e1684274091394-7bb69e.png"
     }
   },
   "/athletes-program": {
@@ -58,12 +58,12 @@
     "og": {
       "title": "Athlete Training Program Brisbane / Sports Performance Center - ATHLETIX Gym",
       "description": "High performance athletic hub and Athlete Training Programs in the heart of Brisbane.",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06407-scaled-e1723517273203.jpg"
+      "image": "/image/cdn/DSC06407-scaled-e1723517273203-764f1b.jpg"
     },
     "twitter": {
       "title": "Athlete Training Program Brisbane / Sports Performance Center - ATHLETIX Gym",
       "description": "High performance athletic hub and Athlete Training Programs in the heart of Brisbane.",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06407-scaled-e1723517273203.jpg"
+      "image": "/image/cdn/DSC06407-scaled-e1723517273203-764f1b.jpg"
     }
   },
   "/blog": {
@@ -72,23 +72,23 @@
     "og": {
       "title": "Athletic Development Center S&C Coaches - ATHLETIX Blog",
       "description": "Read articles from our Strength and Conditioning coaches on topics such as Sports Rehab, Athlete training programs, functional fitness training and more...",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-16-arvo-12-819x1024.jpg"
+      "image": "/image/cdn/ATHLETIX-16-arvo-12-819x1024-9e2102.jpg"
     },
     "twitter": {
       "title": "Athletic Development Center S&C Coaches - ATHLETIX Blog",
       "description": "Read articles from our Strength and Conditioning coaches on topics such as Sports Rehab, Athlete training programs, functional fitness training and more...",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-16-arvo-12-819x1024.jpg"
+      "image": "/image/cdn/ATHLETIX-16-arvo-12-819x1024-9e2102.jpg"
     }
   },
   "/careers": {
     "title": "Careers - ATHLETIX",
     "og": {
       "title": "Careers - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2022/03/194836106_122380406677504_6038653187848322302_n.jpeg"
+      "image": "/image/cdn/194836106_122380406677504_6038653187848322302_n-97657c.jpeg"
     },
     "twitter": {
       "title": "Careers - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2022/03/194836106_122380406677504_6038653187848322302_n.jpeg"
+      "image": "/image/cdn/194836106_122380406677504_6038653187848322302_n-97657c.jpeg"
     }
   },
   "/classes": {
@@ -97,23 +97,23 @@
     "og": {
       "title": "Group Strength & Conditioning Classes Brisbane | ATHLETIX Gym",
       "description": "Group Strength & Conditioning fitness classes in Brisbane at ATHLETIX, Australia's premier strength & conditioning gym. Train like an Athlete!",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/06/elite_coaches.jpeg"
+      "image": "/image/cdn/elite_coaches-12fc71.jpeg"
     },
     "twitter": {
       "title": "Group Strength & Conditioning Classes Brisbane | ATHLETIX Gym",
       "description": "Group Strength & Conditioning fitness classes in Brisbane at ATHLETIX, Australia's premier strength & conditioning gym. Train like an Athlete!",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/06/elite_coaches.jpeg"
+      "image": "/image/cdn/elite_coaches-12fc71.jpeg"
     }
   },
   "/contact-us": {
     "title": "Contact Us - ATHLETIX",
     "og": {
       "title": "Contact Us - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2022/03/194836106_122380406677504_6038653187848322302_n.jpeg"
+      "image": "/image/cdn/194836106_122380406677504_6038653187848322302_n-97657c.jpeg"
     },
     "twitter": {
       "title": "Contact Us - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2022/03/194836106_122380406677504_6038653187848322302_n.jpeg"
+      "image": "/image/cdn/194836106_122380406677504_6038653187848322302_n-97657c.jpeg"
     }
   },
   "/family-classes": {
@@ -122,12 +122,12 @@
     "og": {
       "title": "Adult & Youth Family Gym Membership Plans Brisbane - Save $ with ATHLETIX",
       "description": "Our family membership plans and passes allow families to train together or individually in group classes or by themselves and save money on their gym memberships. Up to 4 members can be included under one membership and prices start from $100 per week.",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/20210626_061843-1024x461.jpg"
+      "image": "/image/cdn/20210626_061843-1024x461-4f96c2.jpg"
     },
     "twitter": {
       "title": "Adult & Youth Family Gym Membership Plans Brisbane - Save $ with ATHLETIX",
       "description": "Our family membership plans and passes allow families to train together or individually in group classes or by themselves and save money on their gym memberships. Up to 4 members can be included under one membership and prices start from $100 per week.",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/20210626_061843-1024x461.jpg"
+      "image": "/image/cdn/20210626_061843-1024x461-4f96c2.jpg"
     }
   },
   "/classes/hiit-push-and-drag": {
@@ -136,12 +136,12 @@
     "og": {
       "title": "Premier HIIT Class in Brisbane / Sled Push Workouts / Athletix Gym",
       "description": "Our HIIT Sled push workout classes are designed for men and women who want to burn fat, push their limits, work every part of the body and get stronger. If",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/04/ATX-04.04-05-scaled-e1731986974819-1024x960.jpg"
+      "image": "/image/cdn/ATX-04.04-05-scaled-e1731986974819-1024x960-d7372f.jpg"
     },
     "twitter": {
       "title": "Premier HIIT Class in Brisbane / Sled Push Workouts / Athletix Gym",
       "description": "Our HIIT Sled push workout classes are designed for men and women who want to burn fat, push their limits, work every part of the body and get stronger. If",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/04/ATX-04.04-05-scaled-e1731986974819-1024x960.jpg"
+      "image": "/image/cdn/ATX-04.04-05-scaled-e1731986974819-1024x960-d7372f.jpg"
     }
   },
   "/classes/weightlifting": {
@@ -150,12 +150,12 @@
     "og": {
       "title": "Weight Lifting Gym Brisbane ATHLETIX",
       "description": "Looking for a top weight lifting gym in Brisbane? ATHLETIX offers expert training, state-of-the-art equipment, and a supportive fitness community.",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/A-scaled-e1644142353337.jpeg"
+      "image": "/image/cdn/A-scaled-e1644142353337-306bd1.jpeg"
     },
     "twitter": {
       "title": "Weight Lifting Gym Brisbane ATHLETIX",
       "description": "Looking for a top weight lifting gym in Brisbane? ATHLETIX offers expert training, state-of-the-art equipment, and a supportive fitness community.",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/A-scaled-e1644142353337.jpeg"
+      "image": "/image/cdn/A-scaled-e1644142353337-306bd1.jpeg"
     }
   },
   "/classes/mat-pilates": {
@@ -164,12 +164,12 @@
     "og": {
       "title": "Top Mat Pilates Class Brisbane $7 Weekly Trial ATHLETIX Gym",
       "description": "Our Mat Pilates class is led by a certified Physiotherapist and focuses on improving posture, core strength and muscle balance. A perfect low-impact",
-      "image": "https://athletix.com.au/wp-content/uploads/2023/05/NDIS-athletix.jpg"
+      "image": "/image/cdn/NDIS-athletix-c750a6.jpg"
     },
     "twitter": {
       "title": "Top Mat Pilates Class Brisbane $7 Weekly Trial ATHLETIX Gym",
       "description": "Our Mat Pilates class is led by a certified Physiotherapist and focuses on improving posture, core strength and muscle balance. A perfect low-impact",
-      "image": "https://athletix.com.au/wp-content/uploads/2023/05/NDIS-athletix.jpg"
+      "image": "/image/cdn/NDIS-athletix-c750a6.jpg"
     }
   },
   "/memberships": {
@@ -178,12 +178,12 @@
     "og": {
       "title": "Gym Membership Prices / Cost Brisbane - ATHLETIX Gym",
       "description": "ATHLETIX is a high level Human Performance Center in the heart of Brisbane City. We combine high level coaching with Physiotherapy and Sports Rehab. Check out our gym membership options, costs and various plans from Adults, Youth to Athletes and Rehab/Recovery.",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06407-scaled-e1723517273203.jpg"
+      "image": "/image/cdn/DSC06407-scaled-e1723517273203-764f1b.jpg"
     },
     "twitter": {
       "title": "Gym Membership Prices / Cost Brisbane - ATHLETIX Gym",
       "description": "ATHLETIX is a high level Human Performance Center in the heart of Brisbane City. We combine high level coaching with Physiotherapy and Sports Rehab. Check out our gym membership options, costs and various plans from Adults, Youth to Athletes and Rehab/Recovery.",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/08/DSC06407-scaled-e1723517273203.jpg"
+      "image": "/image/cdn/DSC06407-scaled-e1723517273203-764f1b.jpg"
     }
   },
   "/classes/met-con": {
@@ -192,12 +192,12 @@
     "og": {
       "title": "MET-CON Body Conditioning Class Brisbane | ATHLETIX Gym",
       "description": "A circuit body conditioning class meant to help you enhance metabolic rate and overall conditioning regardless of your starting fitness level.",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-16-arvo-12-819x1024.jpg"
+      "image": "/image/cdn/ATHLETIX-16-arvo-12-819x1024-9e2102.jpg"
     },
     "twitter": {
       "title": "MET-CON Body Conditioning Class Brisbane | ATHLETIX Gym",
       "description": "A circuit body conditioning class meant to help you enhance metabolic rate and overall conditioning regardless of your starting fitness level.",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-16-arvo-12-819x1024.jpg"
+      "image": "/image/cdn/ATHLETIX-16-arvo-12-819x1024-9e2102.jpg"
     }
   },
   "/classes/mobility": {
@@ -206,12 +206,12 @@
     "og": {
       "title": "Mobility Class Brisbane - Flexibility & Movement Gym ATHLETIX",
       "description": "Mobility refers to exercises that improve the range of motion and stabilises joints. Don't be confused with mobility; both terms are closely related. Mobility",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/11/Pilates.jpg"
+      "image": "/image/cdn/Pilates-55412e.jpg"
     },
     "twitter": {
       "title": "Mobility Class Brisbane - Flexibility & Movement Gym ATHLETIX",
       "description": "Mobility refers to exercises that improve the range of motion and stabilises joints. Don't be confused with mobility; both terms are closely related. Mobility",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/11/Pilates.jpg"
+      "image": "/image/cdn/Pilates-55412e.jpg"
     }
   },
   "/ndis-program": {
@@ -220,12 +220,12 @@
     "og": {
       "title": "NDIS & DVA Training Program - ATHLETIX Gym Brisbane",
       "description": "Are you seeking an individualized and supportive approach to help you manage your condition and achieve your goals within your NDIS or DVA packages? Athletix",
-      "image": "https://athletix.com.au/wp-content/uploads/2023/05/NDIS-athletix.jpg"
+      "image": "/image/cdn/NDIS-athletix-c750a6.jpg"
     },
     "twitter": {
       "title": "NDIS & DVA Training Program - ATHLETIX Gym Brisbane",
       "description": "Are you seeking an individualized and supportive approach to help you manage your condition and achieve your goals within your NDIS or DVA packages? Athletix",
-      "image": "https://athletix.com.au/wp-content/uploads/2023/05/NDIS-athletix.jpg"
+      "image": "/image/cdn/NDIS-athletix-c750a6.jpg"
     }
   },
   "/our-gym": {
@@ -234,12 +234,12 @@
     "og": {
       "title": "S & C Gym Brisbane | Cricket, Netball, Soccer, Rugby ATHLETIX",
       "description": "ATHLETIX is a top-of-the-line Strength & Conditioning gym and Human and Sports Performance Center dedicated to helping athletes of all levels achieve their goals. Our Brisbane gym with a sprint track, is staffed with experienced Strength and Conditioning Coaches, Sports Scientists, Physiotherapists and Exercise Physiologists, who work together to provide personalised training programs tailored to each individual’s needs.",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/07/DSC02067-768x512.jpg"
+      "image": "/image/cdn/DSC02067-768x512-132ccb.jpg"
     },
     "twitter": {
       "title": "S & C Gym Brisbane | Cricket, Netball, Soccer, Rugby ATHLETIX",
       "description": "ATHLETIX is a top-of-the-line Strength & Conditioning gym and Human and Sports Performance Center dedicated to helping athletes of all levels achieve their goals. Our Brisbane gym with a sprint track, is staffed with experienced Strength and Conditioning Coaches, Sports Scientists, Physiotherapists and Exercise Physiologists, who work together to provide personalised training programs tailored to each individual’s needs.",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/07/DSC02067-768x512.jpg"
+      "image": "/image/cdn/DSC02067-768x512-132ccb.jpg"
     }
   },
   "/our-team": {
@@ -248,23 +248,23 @@
     "og": {
       "title": "Elite Strength & Conditioning Coaches Brisbane Personal Trainers - ATHLETIX Gym",
       "description": "ATHLETIX offers one-on-one personal training in Brisbane and strength and conditioning coaches who are experts in their field including Exercise and Sports Scientists to Physioterapists and Nutritionists. We have practical experience with elite athletes, general population, and clinical patients. We take the importance of personal fitness training in every stage of life (youth, young adults and mature adults) very seriously. Appropriate evidence-based protocols allow our Fitness Coaches to support the whole community to aspire and achieve a better physical development.",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-16-arvo-12-819x1024.jpg"
+      "image": "/image/cdn/ATHLETIX-16-arvo-12-819x1024-9e2102.jpg"
     },
     "twitter": {
       "title": "Elite Strength & Conditioning Coaches Brisbane Personal Trainers - ATHLETIX Gym",
       "description": "ATHLETIX offers one-on-one personal training in Brisbane and strength and conditioning coaches who are experts in their field including Exercise and Sports Scientists to Physioterapists and Nutritionists. We have practical experience with elite athletes, general population, and clinical patients. We take the importance of personal fitness training in every stage of life (youth, young adults and mature adults) very seriously. Appropriate evidence-based protocols allow our Fitness Coaches to support the whole community to aspire and achieve a better physical development.",
-      "image": "https://athletix.com.au/wp-content/uploads/2024/06/ATHLETIX-16-arvo-12-819x1024.jpg"
+      "image": "/image/cdn/ATHLETIX-16-arvo-12-819x1024-9e2102.jpg"
     }
   },
   "/class-timetable": {
     "title": "Class Timetable - ATHLETIX",
     "og": {
       "title": "Class Timetable - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2022/03/194836106_122380406677504_6038653187848322302_n.jpeg"
+      "image": "/image/cdn/194836106_122380406677504_6038653187848322302_n-97657c.jpeg"
     },
     "twitter": {
       "title": "Class Timetable - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2022/03/194836106_122380406677504_6038653187848322302_n.jpeg"
+      "image": "/image/cdn/194836106_122380406677504_6038653187848322302_n-97657c.jpeg"
     }
   },
   "/classes/youth-agility-development": {
@@ -273,23 +273,23 @@
     "og": {
       "title": "Youth Speed & Agility Training Classes - ATHLETIX Gym",
       "description": "With our speed and agility development classes, kids learn to move faster with confidence! Plyometrics, Change of Directions, Injury prevention drills for any team sports including cricket, rugby, netball, basketball, soccer and more...",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/06/f2b0daef-722e-4f78-9d83-7e14bb70d01a.jpg"
+      "image": "/image/cdn/f2b0daef-722e-4f78-9d83-7e14bb70d01a-ca3078.jpg"
     },
     "twitter": {
       "title": "Youth Speed & Agility Training Classes - ATHLETIX Gym",
       "description": "With our speed and agility development classes, kids learn to move faster with confidence! Plyometrics, Change of Directions, Injury prevention drills for any team sports including cricket, rugby, netball, basketball, soccer and more...",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/06/f2b0daef-722e-4f78-9d83-7e14bb70d01a.jpg"
+      "image": "/image/cdn/f2b0daef-722e-4f78-9d83-7e14bb70d01a-ca3078.jpg"
     }
   },
   "/classes/youth-agility-foundations": {
     "title": "YOUTH AGILITY FOUNDATIONS - ATHLETIX",
     "og": {
       "title": "YOUTH AGILITY FOUNDATIONS - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/06/f2b0daef-722e-4f78-9d83-7e14bb70d01a.jpg"
+      "image": "/image/cdn/f2b0daef-722e-4f78-9d83-7e14bb70d01a-ca3078.jpg"
     },
     "twitter": {
       "title": "YOUTH AGILITY FOUNDATIONS - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/06/f2b0daef-722e-4f78-9d83-7e14bb70d01a.jpg"
+      "image": "/image/cdn/f2b0daef-722e-4f78-9d83-7e14bb70d01a-ca3078.jpg"
     }
   },
   "/youth-classes-2": {
@@ -298,12 +298,12 @@
     "og": {
       "title": "Youth / Kids Gym - S&C Programs & Classes for Kids, Teenagers & Children Brisbane",
       "description": "Kids Gym Brisbane. Youth strength and conditioning and speed training programs and classes for kids, children and teenagers in Brisbane.",
-      "image": "https://athletix.com.au/wp-content/uploads/2023/05/youth-athletix-e1733213824315.jpg"
+      "image": "/image/cdn/youth-athletix-e1733213824315-37bcfc.jpg"
     },
     "twitter": {
       "title": "Youth / Kids Gym - S&C Programs & Classes for Kids, Teenagers & Children Brisbane",
       "description": "Kids Gym Brisbane. Youth strength and conditioning and speed training programs and classes for kids, children and teenagers in Brisbane.",
-      "image": "https://athletix.com.au/wp-content/uploads/2023/05/youth-athletix-e1733213824315.jpg"
+      "image": "/image/cdn/youth-athletix-e1733213824315-37bcfc.jpg"
     }
   },
   "/classes/youth-fitness-development": {
@@ -312,23 +312,23 @@
     "og": {
       "title": "Youth Strength Training Class Brisbane - ATHLETIX Gym",
       "description": "AGE GROUP: 12 - 16This class takes teens through the foundations of strength and resistance training. A criteria based approach, by which our students develop",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/IMG_5995-scaled-e1629458499922.jpeg"
+      "image": "/image/cdn/IMG_5995-scaled-e1629458499922-d6f987.jpeg"
     },
     "twitter": {
       "title": "Youth Strength Training Class Brisbane - ATHLETIX Gym",
       "description": "AGE GROUP: 12 - 16This class takes teens through the foundations of strength and resistance training. A criteria based approach, by which our students develop",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/IMG_5995-scaled-e1629458499922.jpeg"
+      "image": "/image/cdn/IMG_5995-scaled-e1629458499922-d6f987.jpeg"
     }
   },
   "/classes/youth-fitness-foundations": {
     "title": "YOUTH FITNESS FOUNDATIONS - ATHLETIX",
     "og": {
       "title": "YOUTH FITNESS FOUNDATIONS - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/06/f2b0daef-722e-4f78-9d83-7e14bb70d01a.jpg"
+      "image": "/image/cdn/f2b0daef-722e-4f78-9d83-7e14bb70d01a-ca3078.jpg"
     },
     "twitter": {
       "title": "YOUTH FITNESS FOUNDATIONS - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/06/f2b0daef-722e-4f78-9d83-7e14bb70d01a.jpg"
+      "image": "/image/cdn/f2b0daef-722e-4f78-9d83-7e14bb70d01a-ca3078.jpg"
     }
   },
   "/classes/youth-speed-development": {
@@ -337,23 +337,23 @@
     "og": {
       "title": "Youth Speed / Sprint Development Classes | ATHLETIX Gym",
       "description": "AGE GROUP:12-16 years old.Learn the foundations of Sprinting and Acceleration.Work on technical drills, develop physiological adaptations and injury-proof",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/IMG_5995-scaled-e1629458499922.jpeg"
+      "image": "/image/cdn/IMG_5995-scaled-e1629458499922-d6f987.jpeg"
     },
     "twitter": {
       "title": "Youth Speed / Sprint Development Classes | ATHLETIX Gym",
       "description": "AGE GROUP:12-16 years old.Learn the foundations of Sprinting and Acceleration.Work on technical drills, develop physiological adaptations and injury-proof",
-      "image": "https://athletix.com.au/wp-content/uploads/2021/07/IMG_5995-scaled-e1629458499922.jpeg"
+      "image": "/image/cdn/IMG_5995-scaled-e1629458499922-d6f987.jpeg"
     }
   },
   "/classes/youth-speed-foundation": {
     "title": "YOUTH SPEED FOUNDATION - ATHLETIX",
     "og": {
       "title": "YOUTH SPEED FOUNDATION - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2019/06/h1-team-img-1.jpg"
+      "image": "/image/cdn/h1-team-img-1-06eb81.jpg"
     },
     "twitter": {
       "title": "YOUTH SPEED FOUNDATION - ATHLETIX",
-      "image": "https://athletix.com.au/wp-content/uploads/2019/06/h1-team-img-1.jpg"
+      "image": "/image/cdn/h1-team-img-1-06eb81.jpg"
     }
   }
 }

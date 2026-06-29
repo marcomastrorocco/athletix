@@ -63,7 +63,7 @@ export function BlogListing({
                   return (
                     <article key={p.slug} className="blog-card">
                       <Link
-                        href={`/blog/${p.slug}`}
+                        href={`/${p.slug}`}
                         className="blog-card-media"
                         aria-hidden="true"
                         tabIndex={-1}
@@ -76,10 +76,10 @@ export function BlogListing({
                       </Link>
                       <div className="body">
                         <h3>
-                          <Link href={`/blog/${p.slug}`}>{p.title}</Link>
+                          <Link href={`/${p.slug}`}>{p.title}</Link>
                         </h3>
                         <p>{p.excerpt}</p>
-                        <Link href={`/blog/${p.slug}`} className="view-here">
+                        <Link href={`/${p.slug}`} className="view-here">
                           View here <span aria-hidden="true">→</span>
                         </Link>
                       </div>
